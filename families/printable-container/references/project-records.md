@@ -32,7 +32,7 @@ Use these compact records to make long builds restartable and auditable. Adapt t
 - Validation run now and its exact limits
 - Physical feedback received
 - Compromise register changes
-- Independent-audit findings and dispositions
+- Review findings and dispositions
 - Open risks, held artifacts, and next step
 
 ## Test record
@@ -60,7 +60,7 @@ Use these compact records to make long builds restartable and auditable. Adapt t
 - Alternatives and tradeoffs
 - Builder recommendation
 - User decision
-- Required follow-up audit or test
+- Required follow-up review or test
 
 ## Release record
 
@@ -75,4 +75,3 @@ Use these compact records to make long builds restartable and auditable. Adapt t
 - Remaining untested behavior
 - Safety limitations
 - Accepted compromises
-- Independent release-audit result

@@ -32,9 +32,9 @@ Build a complete low-cost blockout before decorative detail. Show actual structu
 
 For recognizable organic elements, establish anatomy, gesture, attachments, and major folds before texture. Review actual geometry with neutral materials and multiple views; dramatic lighting and color can conceal form errors.
 
-## Faithfulness audit
+## Faithfulness review
 
-Compare the authoritative concept with renders of the actual current model. Use matched viewpoints or silhouette overlays when practical, plus diagnostic views for hidden contacts. Do not rely only on the most attractive presentation render.
+Compare the authoritative concept with renders of the actual current model, side by side in one image the user can judge. Use matched viewpoints or silhouette overlays when practical, plus diagnostic views for hidden contacts. Do not rely only on the most attractive presentation render.
 
 Review:
 
