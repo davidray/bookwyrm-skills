@@ -1,0 +1,109 @@
+# Engineering and validation
+
+Read this before detailed mechanical design, segmentation, electronics integration, print preparation, or release.
+
+## Functional architecture
+
+Protect the finished usable interior after accounting for lining, paint, fasteners, locators, hinges, wiring, and any false floor. Size compartments around actual contents and include finger access rather than only nominal object envelopes.
+
+Design the complete lifecycle as geometry:
+
+- printing orientation and support access;
+- assembly sequence and insertion paths;
+- hinge sweep, lid stop, and closure alignment;
+- tool, finger, connector, and unplug travel;
+- wire path and bend radius;
+- battery safety and removal;
+- paint and glue access;
+- resin drainage, washing, and curing access;
+- maintenance, replacement, and disassembly.
+
+A collision-free final pose does not prove an assembly or service path.
+
+For a heavy or highly decorated lid, evaluate center of mass, open-lid tipping, hinge torque, hinge and fastener loads, lid-stop loads, opening stability, and repeated-cycle wear. Do not treat a hinge that merely fits as load-qualified.
+
+## Structure and decoration
+
+Provide explicit load paths through structural walls, cores, ribs, ledges, bosses, rails, backing, and broad attachment roots. Do not rely on incidental overlap or decorative contact. Keep brittle ornament, inscriptions, foliage, thin membranes, and panel edges out of primary handling loads unless deliberately reinforced.
+
+Prefer reversible adjustment where it reduces reprints: shims, removable retainers, service panels, replaceable mounts, separate inserts, and independently printable ornaments. Protect glue lands and mating surfaces from finish buildup.
+
+Model parts as solid material volumes and let the slicer determine infill. Retain only intentional voids such as sockets, wire channels, light chambers, drainage paths, and service bays.
+
+## Process allocation
+
+Select process and material per function. FDM often suits shells and load-bearing structure; resin may suit compact high-detail ornament. This is a decision criterion, not a fixed allocation. Evaluate final scale, nozzle or pixel size, layer direction, anisotropy, brittleness, heat, optical behavior, painting, post-processing, support damage, and actual supported build envelope.
+
+Print orientation is part of the design. Consider bed contact, bridging, overhangs, tall-part wobble, support scars, support removal, seam location, strength direction, and accessible finished surfaces before finalizing geometry.
+
+## Energy, lighting, and electronics safety
+
+Classify the intended source before designing around it: unpowered, low-voltage battery/LED, externally powered low-voltage, mains-powered, heat-producing lamp, or open flame. Ordinary printed-plastic lanterns should default to LED-only. Hold mains, open-flame, high-energy battery, or other safety-critical designs unless appropriate domain requirements and evidence are provided.
+
+For low-voltage electronics, record as relevant:
+
+- voltage, worst-case current and power budget;
+- battery chemistry, protection, charging method, and safe removal;
+- wire gauge, insulation, polarity/keying, strain relief, and short protection;
+- component and connector ratings;
+- worst-case heat sources, ventilation, material temperature limits, and a defined thermal test;
+- switch, USB, connector, and fuse access;
+- magnet polarity, retention, and possible interference with electronics;
+- failure state and safe shutdown.
+
+An electrical configuration read-back or illuminated render does not verify temperature, wiring quality, power integrity, optical uniformity, or safe use. Record the physical test conditions and hold release claims whose required electrical or thermal evidence is missing.
+
+## Interface experiments
+
+Treat tolerances as interface- and process-specific. Start with explicit provisional values, then test the intended printer, material, orientation, and profile. Useful experiments include:
+
+- stepped sliding or press-fit coupons;
+- magnet-pocket arrays;
+- peg/socket or tongue/groove sections;
+- representative thin relief and lettering;
+- hinge and closure sections;
+- connector holder, engagement, and cable-access gauges;
+- optical thickness and LED-spacing samples;
+- shallow full-footprint seam assemblies when overall alignment matters.
+
+Lock the successful dimensions and conditions in the checkpoint. Do not generalize a result to a different feature, orientation, material, or printer without evidence. Where practical, make the final design adjustable rather than relying on one nominal dimension.
+
+Before printing, define pass/fail criteria, measurement method and reasonable uncertainty, number of repetitions or cycles when wear matters, and what result triggers a revision. A single successful insertion may establish basic fit but does not automatically establish retention, durability, or safe repeated use.
+
+## Evidence and validation
+
+Keep these distinct:
+
+- **Visual:** appearance and concept fidelity.
+- **Dimensional:** measured envelopes, protected space, contacts, clearances, and motion.
+- **Topology:** finite coordinates, winding, manifoldness, degeneracy, components, and intersections.
+- **Manufacturing:** minimum walls/features, load paths, segmentation, orientation, supports, and complete layer preview.
+- **Physical:** printed fit, strength, stability, assembly, service, lighting, and use.
+- **Release:** authoritative deliverables, instructions, provenance, and accurate claims.
+
+For exported STLs, check as relevant:
+
+- millimetre units and intended scale;
+- expected bounds and print orientation;
+- finite coordinates, positive face areas, consistent winding, and positive volume;
+- zero unintended boundary, overused, or non-manifold edges;
+- expected connected components;
+- no unintended duplicate triangles, intersections, gaps, or tiny fragments;
+- round-trip import matching the export;
+- equality or documented change relative to protected source geometry.
+
+Then inspect the selected slicer's actual layer and support result. Record machine, nozzle/process, material profile, layer settings, orientation, supports, warnings, and whether the review was CLI-only or visually inspected. A warning-free slice is not a physical test.
+
+## Release threshold
+
+Do not use the ambiguous standalone label “print-ready.” Apply the claim levels defined in `SKILL.md`, and do not use “fit-tested” or equivalent wording more broadly than the evidence. A qualified assembled release requires a complete physical assembly and intended-use test; a multi-part functional design without that evidence remains a prototype or, where supported, an interface-fit-tested release. A release should identify:
+
+- authoritative source and version;
+- printable files, quantity, units, and orientation;
+- printer/process and material assumptions;
+- hardware and assembly order;
+- validated interfaces and exact test conditions;
+- remaining untested behavior and safety constraints;
+- compromise register and independent audit disposition;
+- checksums or a reproducible package when appropriate.
+
