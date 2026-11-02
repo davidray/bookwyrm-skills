@@ -15,6 +15,16 @@ Record which source governs each property rather than treating every reference a
 
 A generated concept establishes visible intent, not reliable hidden geometry. Labels or pictured hardware become requirements only through the user's instructions or measurements. A later focused reference may replace one element without replacing the whole design.
 
+When sources differ or are incomplete, apply this order:
+
+1. Supplied or explicitly identified user references govern the visual properties assigned to them.
+2. Explicit user requirements govern contents and function.
+3. Generated concepts are provisional until the user approves them.
+4. Approved generated concepts govern only the visible properties the user reviewed.
+5. Depicted mechanics remain proposals until designed and validated.
+
+For a single-color hand-painted object, keep four review lanes apart: sculptural fidelity (the printed relief), paintability (boundaries a brush can follow), the finish plan (palette and painted look), and physical optics (the real light path, for lithophanes and lit parts). A painted render informs the finish plan only.
+
 ## Brief and blockout
 
 Translate the idea into observable constraints:

@@ -1,0 +1,150 @@
+{
+  "schema_version": 2,
+  "finish_mode_resolution": {
+    "status": "resolved",
+    "source": "user-brief",
+    "evidence": "Print the object in one color, then hand paint it.",
+    "modes": ["single-color-hand-painted"]
+  },
+  "source_artifact": {
+    "path": "skills/printable-container/tests/fixtures/production-relief/source.blend",
+    "sha256": "ef341e4634e57d9c170aab927d9aa75c56ecbbb56aba34fffe15ccafd32f4e87"
+  },
+  "governed_properties": [
+    {
+      "id": "focal-star-relief",
+      "description": "Layered star and outline remain printable and paintable.",
+      "authority": "production-geometry",
+      "legibility_requirement": "focused-detail",
+      "paint_transition_ids": ["star-to-outline"]
+    },
+    {
+      "id": "paint-palette",
+      "description": "Turquoise and brass palette guides hand finishing.",
+      "authority": "finish-plan"
+    }
+  ],
+  "source_objects": [
+    {
+      "id": "star-relief-object",
+      "name": "PRODUCTION_FocalStarRelief",
+      "classification": "production"
+    }
+  ],
+  "export_parts": [
+    {
+      "id": "lid-production",
+      "export_included": true,
+      "included_object_ids": ["star-relief-object"],
+      "export_artifact": {
+        "path": "skills/printable-container/tests/fixtures/production-relief/lid-production.stl",
+        "sha256": "6a7ee039bb54790431e9fd8dcc78719dacddcdae9bf699098b76f2b123dc1f23"
+      },
+      "round_trip": {
+        "verified": true,
+        "artifact": {
+          "path": "skills/printable-container/tests/fixtures/production-relief/lid-round-trip.stl",
+          "sha256": "3e4a17d9dbc3c35c1becb649892629e46bcf6ac30b87fecb44db9389fbe9a5a9"
+        },
+        "inspection": "Raised star, recessed outline, and paint boundaries remain present after round-trip import."
+      }
+    }
+  ],
+  "neutral_production_renders": [
+    {
+      "id": "neutral-lid",
+      "path": "skills/printable-container/tests/fixtures/production-relief/neutral-production.pgm",
+      "sha256": "ca9ee2790812149cf39d91aaaab688d064f1380dba942d70d223b56f90f7bb5d",
+      "neutral_single_color": true,
+      "production_only": true,
+      "included_object_ids": ["star-relief-object"],
+      "role": "matched-composition",
+      "property_ids": ["focal-star-relief"],
+      "review_scale": "whole lid at retained native resolution",
+      "framing": "lid fills the frame while preserving the concept-matched composition",
+      "neutral_nondescriptive_material": true,
+      "subject_background_separation": true,
+      "legibility_status": "readable",
+      "prohibited_effects_excluded": true,
+      "applied_effects": ["ambient-occlusion", "grazing-light"]
+    },
+    {
+      "id": "neutral-lid-detail",
+      "path": "skills/printable-container/tests/fixtures/production-relief/neutral-production-detail.pgm",
+      "sha256": "a102b84350372d6c06f6b644c176a926fb23d7e8b4f7e6bfe6c6c33943d7f8a8",
+      "neutral_single_color": true,
+      "production_only": true,
+      "included_object_ids": ["star-relief-object"],
+      "role": "focused-legibility",
+      "property_ids": ["focal-star-relief"],
+      "review_scale": "1:1 retained-pixel crop of the shallow relief",
+      "framing": "orthographic close detail with grazing light across the relief boundary",
+      "neutral_nondescriptive_material": true,
+      "subject_background_separation": true,
+      "legibility_status": "readable",
+      "prohibited_effects_excluded": true,
+      "applied_effects": ["ambient-occlusion", "grazing-light"]
+    }
+  ],
+  "neutral_evidence_packet": {
+    "path": "skills/printable-container/tests/fixtures/production-relief/neutral-evidence-packet.txt",
+    "sha256": "8f2e582d783b1c93b91bf2da0bd749bcef4377212752dde5f41950c66d0b9e43"
+  },
+  "legibility_preflight": {
+    "status": "pass",
+    "auditor_id": "independent-legibility-auditor",
+    "builder_id": "fixture-builder",
+    "run_id": "legibility-fixture-run-v2",
+    "reviewed_render_ids": ["neutral-lid", "neutral-lid-detail"],
+    "reviewed_render_hashes": {
+      "neutral-lid": "ca9ee2790812149cf39d91aaaab688d064f1380dba942d70d223b56f90f7bb5d",
+      "neutral-lid-detail": "a102b84350372d6c06f6b644c176a926fb23d7e8b4f7e6bfe6c6c33943d7f8a8"
+    },
+    "packet_sha256": "8f2e582d783b1c93b91bf2da0bd749bcef4377212752dde5f41950c66d0b9e43",
+    "reviewed_property_ids": ["focal-star-relief"],
+    "scores_or_classifications_assigned_before_preflight": false,
+    "affected_render_ids": [],
+    "affected_property_ids": [],
+    "artifact": {
+      "path": "skills/printable-container/tests/fixtures/production-relief/legibility-preflight.txt",
+      "sha256": "6128168935709782eee3591a5d6fdfbe97626f58583952f325e2f50550ba3286"
+    }
+  },
+  "evidence_revision": {
+    "change_type": "initial",
+    "geometry_changed": false
+  },
+  "finish_plans": [
+    {
+      "id": "painted-preview",
+      "path": "skills/printable-container/tests/fixtures/production-relief/painted-finish-plan.pgm",
+      "sha256": "63c2e09735a58113e32000634815475e71822bfd7f9f1d57bb38129a3b140353",
+      "evidence_role": "finish-plan",
+      "property_ids": ["paint-palette"],
+      "palette_note": "Turquoise star and brass outline; exact printed color is intentionally absent."
+    }
+  ],
+  "paint_boundaries": [
+    {
+      "id": "star-to-outline",
+      "property_id": "focal-star-relief",
+      "source_object_id": "star-relief-object",
+      "export_part_id": "lid-production",
+      "evidence_kind": "geometry",
+      "boundary_type": "raised",
+      "dimensions": {
+        "relief_mm": 0.6,
+        "minimum_width_mm": 1.2
+      },
+      "process": {
+        "kind": "FDM",
+        "tool_or_resolution": "0.4 mm nozzle",
+        "viability_evidence": "Neutral render and round-trip export retain two nozzle-width boundary features."
+      },
+      "brush_access": "Star faces and perimeter can be reached by a fine brush without entering a blind pocket.",
+      "masking_access": "Continuous raised perimeter supports tape or liquid-mask trimming.",
+      "neutral_render_ids": ["neutral-lid", "neutral-lid-detail"]
+    }
+  ],
+  "physical_optical_evidence": []
+}
