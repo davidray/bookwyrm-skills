@@ -20,15 +20,27 @@ Design the complete lifecycle as geometry:
 
 A collision-free final pose does not prove an assembly or service path.
 
+Before detailed modeling, show every applicable operating state: closed, open, removed, inverted, loaded, serviced, carried, and stored. Mark which face is up, where hands and tools act, what moves, and what must stay reachable. A misunderstood use orientation is an architecture error, not a detail to repair later.
+
+Define a coordinate system and named datum surfaces for critical interfaces. Every critical dimension names both endpoints, and every tolerance stack lists the contributing thicknesses, clearances, finish or adhesive allowances, and measurement uncertainty. Do not let a dimension silently change from mounting-face spacing to outside-face spacing.
+
 For a heavy or highly decorated lid, evaluate center of mass, open-lid tipping, hinge torque, hinge and fastener loads, lid-stop loads, opening stability, and repeated-cycle wear. Do not treat a hinge that merely fits as load-qualified.
 
 ## Structure and decoration
 
 Provide explicit load paths through structural walls, cores, ribs, ledges, bosses, rails, backing, and broad attachment roots. Do not rely on incidental overlap or decorative contact. Keep brittle ornament, inscriptions, foliage, thin membranes, and panel edges out of primary handling loads unless deliberately reinforced.
 
+Locate assemblies with dedicated geometry and carry loads through broad, stable bearing surfaces. Magnets retain; they should not become accidental feet or narrow seating datums. Route user forces (plugging, lifting, pressing, pulling, carrying) into structural or replaceable parts, not circuit boards, lenses, artwork, or stored objects.
+
 Prefer reversible adjustment where it reduces reprints: shims, removable retainers, service panels, replaceable mounts, separate inserts, and independently printable ornaments. Protect glue lands and mating surfaces from finish buildup.
 
 Model parts as solid material volumes and let the slicer determine infill. Retain only intentional voids such as sockets, wire channels, light chambers, drainage paths, and service bays.
+
+### Production relief and paint access
+
+Classify decorative objects as production or presentation. Only production geometry that survives the export counts as printable relief; helpers, shaders, textures and compositor effects do not. Check carving on neutral single-color renders of the exported part, with a grazing-light or close-up view for shallow detail.
+
+For each intended paint transition on a hand-painted part, know its boundary type (raised, recessed, grooved, or separate part), its depth and width, and whether a brush and masking can reach it. There is no universal paint-boundary size; judge it against the process, primer and paint allowance, and technique. `scripts/validate_production_relief_evidence.py` can check a full evidence record when a project wants that rigor.
 
 ## Process allocation
 
@@ -51,7 +63,7 @@ For low-voltage electronics, record as relevant:
 - magnet polarity, retention, and possible interference with electronics;
 - failure state and safe shutdown.
 
-An electrical configuration read-back or illuminated render does not verify temperature, wiring quality, power integrity, optical uniformity, or safe use. Record the physical test conditions and hold release claims whose required electrical or thermal evidence is missing.
+An electrical configuration read-back or illuminated render does not verify temperature, wiring quality, power integrity, optical uniformity, light transmission, diffusion, leakage, or safe use. Emission and bloom are presentation only. Record the physical light path and test conditions, and hold optical, electrical or thermal claims whose physical evidence is missing.
 
 ## Interface experiments
 
@@ -103,6 +115,8 @@ For exported STLs, check as relevant:
 - no unintended duplicate triangles, intersections, gaps, or tiny fragments;
 - round-trip import matching the export;
 - equality or documented change relative to protected source geometry.
+
+For physical print evidence, record the printer, nozzle, material, scale, layer height, walls, top and bottom layers, infill, supports, and orientation. When a condition was wrong, invalidate only the conclusions that depend on it.
 
 Then inspect the selected slicer's actual layer and support result. Record machine, nozzle/process, material profile, layer settings, orientation, supports, warnings, and whether the review was CLI-only or visually inspected. A warning-free slice is not a physical test.
 

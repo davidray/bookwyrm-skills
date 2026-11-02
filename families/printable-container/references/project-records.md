@@ -8,6 +8,13 @@ Use these compact records to make long builds restartable and auditable. Adapt t
 - Definition of done and project-specific acceptance criteria
 - Authoritative references and the property each governs
 - Explicit user requirements
+- Exact contents list in the user's own words and quantities
+- Photographed-object inventory: required content, optional content, packaging, scale reference, or excluded
+- Operating states and orientations: which face is up, what moves, where hands act
+- Measurement source for each critical dimension: measured, manufacturer, photo estimate, or assumption
+- Coordinate system and named datums for critical interfaces
+- How color will be made: single-color hand-painted, multi-color, separate parts, illumination, or presentation only
+- Concept-art decision: image and revision, approved visible properties, open assumptions
 - Protected usable interior
 - Contents and measured envelopes
 - Available printers, processes, materials, and known profiles
@@ -28,6 +35,7 @@ Use these compact records to make long builds restartable and auditable. Adapt t
 - Accepted visual decisions
 - Accepted physical interface dimensions and test conditions
 - Protected objects, geometry, transforms, and interfaces
+- Interface memory: hardware, measured stock, printed dimensions, process conditions, load path, result, and limits of reuse
 - Changes in this revision
 - Validation run now and its exact limits
 - Physical feedback received
@@ -41,9 +49,11 @@ Use these compact records to make long builds restartable and auditable. Adapt t
 - Predeclared pass/fail criteria
 - Part or coupon version
 - Governing dimensions
-- Printer/process, material, orientation, and slicer profile
+- Printer, nozzle, material, scale, layer height, walls, infill, supports, orientation, and slicer profile
+- Hardware batch or measured actual dimensions
 - Assembly or measurement procedure
 - Measurement method, reasonable uncertainty, and repetition/cycle count
+- Fit: loose, free, snug, press fit, or failed; removal and hand access; rubbing, rattling or binding
 - Result and observation
 - Photographs or measurements retained
 - Decision: lock, revise, reject, or inconclusive
@@ -75,3 +85,6 @@ Use these compact records to make long builds restartable and auditable. Adapt t
 - Remaining untested behavior
 - Safety limitations
 - Accepted compromises
+- Assembly pictures: exploded view, sectional stack, numbered steps, orientation markers, magnet polarity
+- What the release does not claim
+- One obvious active release folder, with superseded files kept outside it
