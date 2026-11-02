@@ -70,6 +70,18 @@ Lock the successful dimensions and conditions in the checkpoint. Do not generali
 
 Before printing, define pass/fail criteria, measurement method and reasonable uncertainty, number of repetitions or cycles when wear matters, and what result triggers a revision. A single successful insertion may establish basic fit but does not automatically establish retention, durability, or safe repeated use.
 
+## Stack-ups across separable parts
+
+When an interface spans two printed parts, such as mated connectors between lid and base, write the stack-up before release: each mounting face's height from the seam, each part thickness, and the required mated distance. Then check it in the assembled pose with a section. The Shire lid sat about 2 mm high on the connector side because the base holder face was 8.92 mm below the seam, the V2.1 tray put the lid holder at the seam, and the mated Set B pair needs 11.84 mm. The tray was 2.92 mm short; tray r3 added a 2.92 mm pocket. Inherited parts are not exempt: this fault predated the carved shell.
+
+## Source orientation
+
+Before decorating or re-exporting an inherited part, confirm which way its file is stored. The V2.1 outer lid STL is stored face-down for printing; used unflipped, the carved Shire lid r1 had its magnet pockets on top. Check landmarks (magnet pockets face the mating part, pull bays at the seam, rounded edge on the visible top) in an assembled render.
+
+## Shared tools and files
+
+Several threads can drive the same Blender app. Before generating or saving, check which file is open and whether it has unsaved changes (`bpy.data.is_dirty`). Keep each project's objects in its own file, and never save or close a file another job opened.
+
 ## Evidence and validation
 
 Keep these distinct:
@@ -96,7 +108,7 @@ Then inspect the selected slicer's actual layer and support result. Record machi
 
 ## Release threshold
 
-Do not use the ambiguous standalone label “print-ready.” Apply the claim levels defined in `SKILL.md`, and do not use “fit-tested” or equivalent wording more broadly than the evidence. A qualified assembled release requires a complete physical assembly and intended-use test; a multi-part functional design without that evidence remains a prototype or, where supported, an interface-fit-tested release. A release should identify:
+Do not use the ambiguous standalone label “print-ready.” Describe evidence as `SKILL.md` does, and do not use “fit-tested” or equivalent wording more broadly than the evidence. A multi-part functional design without a complete physical assembly test remains a prototype, or fit-tested only for the named interfaces that passed. A release should identify:
 
 - authoritative source and version;
 - printable files, quantity, units, and orientation;
@@ -104,6 +116,6 @@ Do not use the ambiguous standalone label “print-ready.” Apply the claim lev
 - hardware and assembly order;
 - validated interfaces and exact test conditions;
 - remaining untested behavior and safety constraints;
-- compromise register and independent audit disposition;
+- accepted compromises;
 - checksums or a reproducible package when appropriate.
 

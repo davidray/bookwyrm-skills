@@ -1,0 +1,29 @@
+# Reviews
+
+Keep review light and aimed at catching real faults. The user's reaction to a matched render decides faithfulness; these checklists catch the faults that cost reprints.
+
+## Faithfulness
+
+Show the concept and the current model, rendered from the same view, side by side in one image. Use neutral materials for at least one view, because dramatic lighting hides form errors. Note any visible departure from the concept and why, using the compromise register in [concept and faithfulness](concept-and-faithfulness.md) only when the departure is a real trade-off the user should decide.
+
+## Before a long print
+
+- Proportions match the real envelope; nothing is stretched to fit.
+- Protected zones are clear: seam, pull notches, service openings, magnet pockets, connector ports.
+- Frames and bands wrap every corner; edge rounds survive along every side.
+- Protruding ornament is chunky or a separate part; nothing thin stands free.
+- Mating features (pegs, tabs, sockets) are exact and unsmoothed.
+- Stack-ups across separable parts add up (see engineering and validation).
+- Print orientation, supports and bed size are decided; carved faces are not on the bed.
+- A coupon covers the riskiest new interface, unless the user waived it.
+
+## Before handing over a print folder
+
+- Every part needed to build the object is in one numbered folder, with orientation and quantity in each file name.
+- Exported files are closed solids at the right scale and orientation.
+- An assembled render of the exported files shows magnet pockets, seams and pull bays facing their mating parts.
+- PRINT-AND-TEST.md lists print order, settings, hardware, assembly and what is still untested.
+
+## Independent reviewer
+
+Use a separate reviewing agent only for a new box architecture, a safety-relevant change (power, heat, batteries), or when the user asks. Give it the brief, references and actual current files, not the builder's conclusions, and ask it to cite evidence and say what it could not check.
