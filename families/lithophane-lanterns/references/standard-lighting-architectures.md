@@ -33,6 +33,52 @@ Selecting **split lighting** imports the following system together. Do not subst
 - Daisy-chain `DIN→DOUT` around the post across the four strips as one 48-pixel serial data chain connected to the controller's single light output. In this definition, “wired in serial” refers to the addressable data order; preserve a correctly sized, serviceable 5 V/GND distribution path rather than placing the strip power rails electrically in series.
 - Reference firmware/load configuration: WLED with an 850 mA current limit. Re-check current, voltage drop, wiring, connector capacity, battery runtime, and heat before increasing the count or limit.
 
+### Governing divider-to-frame relationship
+
+These relationships are part of the split-lighting definition even though their numerical dimensions change with the lantern:
+
+- **The divider is full optical height, not a short insert.** Its body runs from a positive seat on the base/light-carrier structure to a positive seat at the underside of the roof or top frame. Its blades must block direct chamber-to-chamber sightlines across the entire exposed lithophane image height.
+- **Derive its height from the inside of the assembled frame.** The governing dimension is the distance between the lower divider seat and upper divider seat, including any keyed engagement and assembly clearance. Do not derive divider height from overall lantern height or stop it at the end of the LED strip.
+- **Top and bottom transitions stay behind opaque frame coverage.** A blade may end slightly above or below the physical lithophane edge only where the opaque top or bottom capture rail overlaps that region. No vertical gap may expose one illuminated chamber to another through the visible lithophane field.
+- **The divider nests entirely inside the outside frame.** It is an internal optical and LED carrier, not an exterior wall, corner post, lithophane capture frame, or silhouette-defining part.
+- **Each blade ends at a panel-bay junction.** In plan view, its outer tip points to and meets the inside of the opaque vertical corner/frame member between two neighboring lithophanes. It must not terminate behind the middle of a lithophane or cross its panel channel.
+- **Use light-blocking overlap rather than structural substitution.** The outer frame continues to locate and retain the lithophanes. The blade end may use a keyed pocket, shallow slot, labyrinth overlap, or close removable fit at the frame's inner corner. Small assembly clearance is acceptable only when hidden by opaque overlap and shown not to leak objectionable light.
+- **Keep service systems independent.** Removing the divider must not require flexing the lithophanes or dismantling the outside frame unless the project's approved assembly order explicitly says otherwise.
+
+Simplified top section:
+
+```text
+                 LITHOPHANE
+          ┌─────────────────────┐
+          │      chamber        │
+          │         ↑           │
+          │       LED face      │
+ FRAME ───●─────────□───────────●─── FRAME
+          │ blade  central  blade│
+          │        post          │
+          │                       │
+ LITHO ←  │ chamber       chamber│  → LITHO
+
+● = opaque outside-frame junction between adjacent panel bays
+□ = hollow central post; one outward-facing LED strip per face
+```
+
+Simplified vertical section:
+
+```text
+        roof / opaque top frame
+      ┌──────────────────────────┐
+      │ keyed upper divider seat │
+      ├──────────────────────────┤ ← opaque overlap
+      │                          │
+      │ exposed lithophane field │ ← divider blocks full height
+      │                          │
+      ├──────────────────────────┤ ← opaque overlap
+      │ keyed lower divider seat │
+      └──────────────────────────┘
+        base / light carrier
+```
+
 ### Physical divider reference
 
 These user-supplied photos define the intended spatial relationship. Treat them as form and assembly evidence, not dimensioned drawings.
@@ -49,7 +95,7 @@ The isolated view shows the hollow central wire passage, four vertical strip cha
 
 The name locks the system topology and established hardware envelopes, but not every geometric or optical dimension. Determine and verify for each lantern:
 
-- divider height, blade span and thickness, central-post section, strip-channel fit, interlock, and base/roof key geometry;
+- numerical divider height derived from the base-to-roof seat distance, blade span and thickness, central-post section, strip-channel fit, interlock, and base/roof key geometry;
 - perimeter light sealing, reflectivity, diffuser use, and seam leakage;
 - LED pitch and strip length if the purchased strip differs from the established 12-pixel segment;
 - LED-to-lithophane spacing, panel thickness range, color balance, and hotspot control;
