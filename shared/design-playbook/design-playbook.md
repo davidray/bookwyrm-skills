@@ -1,6 +1,6 @@
 # Future 3D Design Playbook
 
-Lessons distilled from the Shire Travel Case and Interior v1 work, 2026-10-25.
+Lessons distilled from the Shire Travel Case and Interior v1 work, 2026-10-25, and the decorated Shire and Mirkwood cases, 2026-11-02.
 
 ## Central lesson
 
@@ -118,6 +118,56 @@ If the arrangement cannot be explained clearly in one page, the assembly or the 
 A 5 × 2 mm magnet pocket that works behind a 0.8 mm roof against a steel miniature washer does not automatically validate side-wall lid magnets. Same hardware does not mean same load, orientation, roof, installation access, or failure consequence.
 
 **Process change:** reuse an interface only when hardware stock, printer/material conditions, insertion direction, surrounding geometry, and load path are materially equivalent. Otherwise reuse it as a starting candidate and retest.
+
+## Lessons from the decorated Shire and Mirkwood cases, 2026-11-02
+
+### 1. The method capped the quality
+
+Six scripted Mirkwood blockouts laid bevel curves and primitives on a plain box and never looked carved, even though an AI audit passed revision 6 at 85/100. One Meshy pass, wrapped onto the real shell as a height map, matched the concept.
+
+**Process change:** pick a method that can reach the target look before iterating on it. Judge progress by a side-by-side render the user looks at, not by audit scores.
+
+### 2. Concept art carried the wrong proportions
+
+Mirkwood concept r2 showed a box about half the real height. Every faithful model of it read too tall, or stretched the carving 1.8x.
+
+**Process change:** render a neutral guide of the real envelope and draw or generate concepts on top of it.
+
+### 3. Decoration broke the edges
+
+Panel frames on the Shire base stopped at the plain rounded corners and left square-ended lips. Carved bands on the lid refilled its 6 mm round along the straight sides, so the round survived only at the corners.
+
+**Process change:** check corners and edge rounds as their own pass, along every side.
+
+### 4. Organic parts were too fragile, then too lumpy
+
+Generated root feet looked good but had thin roots that would snap. A hand-built replacement was strong but read as dough. Generated stumps made chunky by rule (thick short roots, drip-filled overhangs, fused stems) passed.
+
+**Process change:** generate the organic form, then enforce strength rules on it; do not trade detail for strength by hand.
+
+### 5. Smoothing destroyed fits
+
+A remesh rounded the Shire foot pegs and flared their sides, and they failed the fit test.
+
+**Process change:** add mating geometry last, as exact solids, after any smoothing.
+
+### 6. The lithophane needed a flat, photoreal, bright source
+
+Flattening lid art painted at an angle stretched Bilbo 1.6x. The local image model drifted to cartoon over three rounds. David's own photoreal image, brightened heavily, gave a test crop and full pane that both looked great.
+
+**Process change:** generate the scene flat at the pane's aspect, escalate to a stronger model or the user's image after two misses, and brighten for backlight.
+
+### 7. Inherited parts hid faults
+
+The V2.1 outer lid STL is stored face-down, and the first carved Shire lid used it unflipped, putting the magnet pockets on top. Separately, the V2.1 tray mounted the lid connector holder 2.92 mm too low for the 11.84 mm mated distance, leaving a 2 mm gap on the connector side.
+
+**Process change:** check the orientation of every inherited file in an assembled render, and write the stack-up for every interface that spans two parts.
+
+### 8. Incomplete print folders cost round trips
+
+David asked several times where the lithophane and the light tray were, because only the changed parts were in the print folder.
+
+**Process change:** one numbered print folder holds every part needed to build the object, with orientation and quantity in each file name.
 
 ## Default workflow for future projects
 
@@ -247,7 +297,17 @@ Future fit feedback should capture this compact set:
 10. Freeze successful versions; make geometry changes in successor revisions.
 11. Preserve evidence, but keep only one obvious active release.
 12. Claim only what the evidence actually demonstrates.
+13. Check concept proportions against the real envelope before modeling from it.
+14. Choose a method that can reach the target look; do not iterate a method that cannot.
+15. Frames, bands and beads wrap corners; relief never fills an edge round.
+16. Protruding ornament is chunky and fused, or a separate glued part.
+17. Mating features are exact solids added after any smoothing.
+18. Lithophanes come from flat, bright, proportion-checked images, tested as a crop first.
+19. Write and check the stack-up for every interface that spans two parts, inherited parts included.
+20. Ship one numbered print folder with every part, orientation in each file name.
 
 ## What remains specific to the Shire Travel Case
 
 The exact magnet pockets, connector datum, seam clearances, optical depths, storage dimensions, artwork range, and case envelope remain project-specific. They are valuable precedents, not universal printer tolerances. Future projects should reuse the method—measure, coupon, record, and scope—not blindly copy the numbers.
+
+The reusable numbers for this box family (magnets, Gridfinity, pane, case, connectors, fonts) are kept in `skills/printable-container/references/box-family-standards.md`.
