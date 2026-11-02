@@ -1,0 +1,4 @@
+interface:
+  display_name: "Lithophane Lanterns"
+  short_description: "Design and validate printable LED lithophane lanterns"
+  default_prompt: "Use $lithophane-lanterns to design a printable LED lantern with removable lithophane panels."
