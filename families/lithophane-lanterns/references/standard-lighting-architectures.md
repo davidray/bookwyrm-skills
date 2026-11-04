@@ -29,9 +29,11 @@ Selecting **split lighting** imports the following system together. Do not subst
 - Run the divider continuously between keyed base and roof seats. Preserve the hollow center as a protected vertical wiring/service passage, including usable entry and exit openings.
 - The divider must not block panel installation, panel removal, roof removal, or controller service.
 - Provide one vertical recessed or positively located LED-strip channel on each of the four central post faces.
-- Mount one vertical 12-pixel addressable-LED strip in each channel, aimed outward toward the corresponding lithophane: four strips and 48 pixels total. Keep the LEDs and channel edges clear of the two adjacent divider blades so the full lithophane field receives light.
-- Daisy-chain `DIN→DOUT` around the post across the four strips as one 48-pixel serial data chain connected to the controller's single light output. In this definition, “wired in serial” refers to the addressable data order; preserve a correctly sized, serviceable 5 V/GND distribution path rather than placing the strip power rails electrically in series.
-- Reference firmware/load configuration: WLED with an 850 mA current limit. Re-check current, voltage drop, wiring, connector capacity, battery runtime, and heat before increasing the count or limit.
+- Mount one vertical addressable-LED strip in each channel, aimed outward toward the corresponding lithophane: four strips of equal length, `4 × N` pixels total. Keep the LEDs and channel edges clear of the two adjacent divider blades so the full lithophane field receives light.
+- Standard strip: BTF-LIGHTING WS2812B, 5 V, 144 LEDs/m (pitch about 6.94 mm), Amazon ASIN B01CDTE9UC. Measure the purchased strip's width, thickness and pixel pitch before fixing the channel; record any other strip as a project-specific departure.
+- Derive the pixel count per strip from the lantern, not a fixed number: `N = floor((H_field − 2 × m) / p)`, where `H_field` is the exposed lithophane image height, `m` is an end margin (start at 2 mm) and `p` is the measured pitch. Center each strip vertically on its panel's field, and use the same `N` on all four faces. Example: a 165 mm field at 144/m gives `N = 23` (about 160 mm), so 92 pixels total.
+- Daisy-chain `DIN→DOUT` around the post across the four strips as one `4 × N`-pixel serial data chain connected to the controller's single light output. In this definition, “wired in serial” refers to the addressable data order; preserve a correctly sized, serviceable 5 V/GND distribution path rather than placing the strip power rails electrically in series.
+- Reference firmware/load configuration: WLED with an 850 mA current limit and the LED count set to `4 × N`. The limit, not the pixel count, bounds the load: more pixels at the same limit spread the same current over a taller field. Re-check current, voltage drop, wiring, connector capacity, battery runtime, and heat before raising the limit, and confirm the voltage drop along the chain for the derived `N`.
 
 ### Governing divider-to-frame relationship
 
@@ -97,7 +99,7 @@ The name locks the system topology and established hardware envelopes, but not e
 
 - numerical divider height derived from the base-to-roof seat distance, blade span and thickness, central-post section, strip-channel fit, interlock, and base/roof key geometry;
 - perimeter light sealing, reflectivity, diffuser use, and seam leakage;
-- LED pitch and strip length if the purchased strip differs from the established 12-pixel segment;
+- pixel count per strip `N` derived from the field height and measured pitch, and the resulting strip length and channel length;
 - LED-to-lithophane spacing, panel thickness range, color balance, and hotspot control;
 - final harness lengths, power injection, connector selections, wire gauge, and service routing;
 - enclosure fit, antenna performance, powered temperature, and runtime.
