@@ -7,7 +7,7 @@ description: Design, model, test, and package 3D-printable LED lithophane (litho
 
 Create an illuminated object whose exterior, panels, light path, assembly, and print process work as one product. A convincing render is only visual evidence; a lithophane lantern succeeds when the printed panels read under the actual light, fit and remain retained, and the light can be installed, switched, and removed.
 
-For a complete printable-product lifecycle, also apply `$printable-container`. This skill supplies the lantern-specific decisions and evidence that the general container workflow does not cover.
+This skill covers the whole lantern lifecycle, from brief and concept through part-by-part decoration, print engineering, and locked release.
 
 ## Establish the real design inputs
 
@@ -24,13 +24,18 @@ Use a battery-powered or otherwise low-voltage LED source. Exclude open flame. D
 
 Read [workflow and gates](references/workflow-and-gates.md) for a new build or a material redesign. Read [engineering](references/engineering.md) before fixing dimensions, interfaces, segmentation, or orientation.
 
-For Dave's lantern projects, read [Dave's lantern print profile](references/dave-print-profile.md) before selecting the build envelope, exterior feature sizes, segmentation, material, nozzle, or compatibility target. Treat that profile as a reusable equipment preference only; keep project-specific proportions, visual approvals, hardware, and exceptions in the project checkpoint.
+For Dave's lantern projects, read [Dave's lantern print profile](references/dave-print-profile.md) before selecting the build envelope, exterior feature sizes, segmentation, material, nozzle, compatibility target, lithophane recipe, or fit clearances. It holds physically proven settings; reuse them instead of proposing new coupons for the same interfaces. Keep project-specific proportions, visual approvals, hardware, and exceptions in the project checkpoint.
+
+For Dave's lantern projects, read [Dave's art pipeline](references/dave-art-pipeline.md) before generating concept, part, or panel art or any AI mesh, and before spending generation credits.
+
+In a series of lanterns, keep the shared interfaces consistent: panel slot and retention, divider or LED post, strip, hardware plate, and tolerances. Overall size is a target the approved art may break; say so when it does rather than distorting the art to match a sibling.
 
 ## Select the lighting architecture
 
-For Dave's lantern projects, record one of these standard lighting architectures before fixing the internal structure: **split lighting**, **puck light**, or **tea light**. Do not silently combine their assumptions.
+For Dave's lantern projects, record one of these standard lighting architectures before fixing the internal structure: **split lighting**, **lit shell**, **puck light**, or **tea light**. Do not silently combine their assumptions.
 
-- When **split lighting** is selected, read and apply [standard lighting architectures](references/standard-lighting-architectures.md). The named choice imports the established controller PCB, battery, four-chamber divider, and four-strip lighting topology as one baseline system.
+- When **split lighting** is selected, read and apply [standard lighting architectures](references/standard-lighting-architectures.md). The named choice imports the established controller and power system, swappable hardware plate, four-chamber divider, and four-strip lighting topology as one baseline system.
+- When **lit shell** is selected (an opaque hollow sculpture with lithophane regions printed into its wall, lit from a central LED post), read and apply its section of the same reference. It shares the split-lighting controller, power, and hardware plate but has no divider.
 - For **puck light** or **tea light**, model the actual selected light and its service envelope. Do not inherit the split-lighting PCB, battery, divider, or strip topology unless the user explicitly requests a hybrid.
 
 Treat a standard architecture as a reusable starting system, not proof that it fits a new lantern. Preserve its locked interfaces and revalidate the lantern-specific optical spacing, divider fit, service path, heat behavior, and enclosure integration.
@@ -47,6 +52,16 @@ Block out these systems together:
 6. protected silhouette, focal forms, and decorative hierarchy.
 
 Model clearance and motion reserves as named, visible non-production objects. Do not decorate over them or silently shrink them. A scale change is a redesign whenever it changes the protected hardware envelope, minimum printable features, panel thickness range, light spacing, or service access. Never uniformly scale a finished reference mesh and call the result engineered.
+
+Record how panels go in and how the roof or lid comes off at blockout, and show it in the review. Default to positive roof location (pegs or a keyed lip); gravity-only seating needs the user's explicit acceptance.
+
+## Decorate part by part, and let the art win
+
+Whole-lantern decoration has fallen well short of the concept every time it was tried. After the overall concept and the functional blockout are approved, split the decoration into a few parts, make and approve concept art for each part alone, model each part separately until it is faithful to (or better than) its art, and only then assemble and compare with the overall concept. Read [workflow and gates](references/workflow-and-gates.md) gate 3 for the procedure.
+
+The approved art is the priority, not the blockout geometry. When a faithful part breaks the blockout, change the structure (wider plinth, wider body, taller lantern, lid pocket) or ask the user; do not squash, fold, clamp, or stretch the art to fit. Scale decoration uniformly. Never stretch carved or organic detail along one axis.
+
+Label your own ideas. A printability or production change you propose is a proposal until the user accepts it; never write it into the approved visible properties, and do not alter the approved look for printability risk you have not evidenced.
 
 Keep lithophanes as separate replaceable parts by default. Integrate them only when the process and assembly plan make that deliberate. Give every panel a positive seat and retention strategy, plus a plausible assembly and replacement path. Mere intersection with a frame is not retention.
 
@@ -67,15 +82,15 @@ In Blender or another source model, separate at minimum:
 - functional/service reserves and motion paths;
 - presentation-only artwork, materials, glow, and staging.
 
-Use editable source geometry and repeatable generators where they improve reliability. Imported or AI-generated meshes may be visual foundations, reference components, or decorative donors; they are not functional lantern architecture until openings, load paths, panel seats, service paths, segmentation, and printable topology are deliberately rebuilt and verified.
+Use editable source geometry and repeatable generators where they improve reliability. An approved AI-generated part mesh is authoritative for visible form: keep it as the exterior and cut or add the function into it (hollowing, slots, seats, bays, lid pockets, hidden internals). It is not functional lantern architecture until those openings, load paths, panel seats, service paths, segmentation, and printable topology are deliberately added and verified, but the visible surface stays as the art made it.
 
-Produce neutral production-only views as well as attractive lit views. A useful review packet normally includes a matched three-quarter view, front/elevation view, neutral geometry view, cutaway, exploded/service view, underside access view, and isolated panel previews. Show reserves only in functional views, with a clear legend.
+Produce neutral production-only views as well as attractive lit views. A useful review packet normally includes a matched three-quarter view, front/elevation view, neutral geometry view, cutaway, exploded/service view, underside access view, and isolated panel previews. Put the approved concept or part art beside the model on every sheet. Show reserves only in functional views, with a clear legend.
 
 Read [modeling and evidence](references/modeling-and-evidence.md) when building the source scene, adapting a generated mesh, or preparing review artifacts.
 
 ## Retire uncertainty with small physical tests
 
-Use the cheapest representative coupon before a long print. Common coupons include:
+First check the proven settings in the print profile: lithophane relief, panel print settings, pane seats, sliding fits, tongue and groove, and wire exits are already physically proven for Dave's lanterns, so do not propose new coupons for those interfaces. For a genuinely new interface, use the cheapest representative coupon before a long print. Common coupons include:
 
 - the actual light-source opening or carrier interface;
 - panel channel, ledge, latch, or roof-capture cross-section;
@@ -95,6 +110,8 @@ Read [validation and release](references/validation-and-release.md) before produ
 
 ## Deliver a durable project state
 
-Maintain a checkpoint that identifies the active source, exact accepted decisions, protected interfaces, measured hardware, panel parameters, physical results, superseded files, open risks, current evidence level, and next unsatisfied gate. Preserve user-approved visual references and working branches; change locally rather than destructively replacing them.
+Maintain a checkpoint whose top block is the current state, rewritten every session: gate, evidence level, active files, open decisions, and next step. Below it, keep the dated history. The checkpoint identifies the active source, exact accepted decisions, protected interfaces, measured hardware, panel parameters, physical results, superseded files, open risks, current evidence level, and next unsatisfied gate. Preserve user-approved visual references and working branches; change locally rather than destructively replacing them.
 
 For release, provide the editable source, production meshes, panel-to-face mapping, quantities, material and orientation guidance, assembly/service order, hardware requirements, tested and untested interfaces, safety boundary, validation results, and the highest supportable claim level. Avoid the unqualified label “print-ready.”
+
+When the user approves a version for printing, lock it by pull request under `lanterns/<lantern>/v<N>/` in this repository, with one 3MF per part, every generating script, the approved art, the review sheets, and a README. See [validation and release](references/validation-and-release.md).

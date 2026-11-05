@@ -23,7 +23,15 @@ Specify for each face:
 
 Use a representative channel coupon before locking all faces. Long panels need allowance for printer variation, elephant foot, edge roughness, and warping. Do not choose a clearance solely from a generic tolerance table when a quick physical coupon is possible.
 
-Common service patterns include roof-captured vertical panels, removable frames, side-loading channels, or separately fastened panels. Choose by actual assembly and replacement needs. A removable roof also needs positive location and retention; gravity alone may be acceptable only when the use case and evidence support it.
+Common service patterns include roof-captured vertical panels, removable frames, side-loading channels, or separately fastened panels. Choose by actual assembly and replacement needs.
+
+**Series default for Dave's square lanterns:** flat 3.2 mm panel plates drop into 3.8 mm slots from the top, rest on the slot floor, and are captured by the roof (0.2 mm above the panel). The relief faces the LEDs and the flat back faces out, so the image is mirrored in the relief. Service order: lift the roof, lift the panel. All three split-lit lanterns use this.
+
+A removable roof needs positive location by default: locating pegs into the body (Bag End: four 6 × 5 mm pegs in 6.6 × 6.5 mm holes) or a keyed lip. Gravity-only seating needs the user's explicit acceptance. A decorative roof may sit over the body like a lid, with a pocket the body top nests into, as long as it still lifts straight off.
+
+## Service face, door, and switch
+
+Put the hardware plate's port window behind a service face. A decorative door can cover it (Bag End: a 38 mm green door held by four 6 × 3 mm magnets, with a full-window clearance pocket in its back). When the user wants a power switch, an SS12D00-type slide switch on the battery positive line before the charger/boost board, operated through a slot behind the door, is the recorded pattern. Without a switch request, keep a switch reserve at the service face.
 
 ## Light path
 
@@ -40,6 +48,10 @@ Choose segmentation from build volume, support burden, panel installation, servi
 ## Scaling
 
 Scale the architecture selectively. Keep real hardware, required clearances, printable wall/relief features, and usable access at viable absolute dimensions. Recompose the exterior around them. When a larger light replaces a smaller one, expect footprint, base, and proportion changes; do not hide the change behind a uniform scale or stale visual approval.
+
+Faithful decor parts often grow the lantern (wider plinth to carry the body, taller roof, canopy wider than the walls). That is acceptable when the art needs it. Re-check the build envelope for every part and say how the overall size changed.
+
+Supports: decks that bridge a base bay print upright with tree supports inside the bay only, removed through the open bottom. Keep supports out of hollow lit interiors.
 
 ## Finish
 
