@@ -6,6 +6,7 @@ Read this before decorating a shell or lid, or adding feet, handles or other orn
 
 - Aim for epic, classical carved relief, not storybook or cartoon. David rejected the first Shire mockup as "too cartoonish" and liked the carved-panel r2.
 - Prompt generators with "intricate realistic classical wood carving, deep bas-relief, not cartoon".
+- Carve upright walls, not faces printed facing up. Relief on a lid top comes out flat at normal layer heights: Mirkwood's carved top frame printed poorly and David chose a flat top like Shire. Lid tops stay flat for now; print a coupon first if a top must carry relief.
 - Build a depth hierarchy: focal forms (trunks, plaques, doors) up to about 10 mm proud; webs, branches and texture 1.5 to 3 mm. Sharp-edged relief takes a dark wash and drybrush well from a one-colour print.
 
 ## Pipeline that works

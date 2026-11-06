@@ -34,7 +34,7 @@ Locate assemblies with dedicated geometry and carry loads through broad, stable 
 
 Prefer reversible adjustment where it reduces reprints: shims, removable retainers, service panels, replaceable mounts, separate inserts, and independently printable ornaments. Protect glue lands and mating surfaces from finish buildup.
 
-Model parts as solid material volumes and let the slicer determine infill. Retain only intentional voids such as sockets, wire channels, light chambers, drainage paths, and service bays.
+Model parts as solid material volumes and let the slicer determine infill. Retain only intentional voids such as sockets, wire channels, light chambers, drainage paths, and service bays. Hollowing a model for FDM adds a second set of walls and an unsupported roof, so it often uses more plastic; save filament with Lightning infill and fewer walls instead (see [moving parts and figures](moving-parts-and-figures.md)).
 
 ### Production relief and paint access
 
@@ -49,6 +49,8 @@ Select process and material per function. FDM often suits shells and load-bearin
 Print orientation is part of the design. Consider bed contact, bridging, overhangs, tall-part wobble, support scars, support removal, seam location, strength direction, and accessible finished surfaces before finalizing geometry.
 
 ## Energy, lighting, and electronics safety
+
+For LED scenes, WLED and circuit-board lessons, see [lighting and electronics](lighting-and-electronics.md).
 
 Classify the intended source before designing around it: unpowered, low-voltage battery/LED, externally powered low-voltage, mains-powered, heat-producing lamp, or open flame. Ordinary printed-plastic lanterns should default to LED-only. Hold mains, open-flame, high-energy battery, or other safety-critical designs unless appropriate domain requirements and evidence are provided.
 
@@ -116,7 +118,7 @@ For exported STLs, check as relevant:
 - round-trip import matching the export;
 - equality or documented change relative to protected source geometry.
 
-For physical print evidence, record the printer, nozzle, material, scale, layer height, walls, top and bottom layers, infill, supports, and orientation. When a condition was wrong, invalidate only the conclusions that depend on it.
+When the user reports a print result, ask for the printer, filament and main slicer settings if they weren't given, so the release can record them. For physical print evidence, record the printer, nozzle, material, scale, layer height, walls, top and bottom layers, infill, supports, and orientation. When a condition was wrong, invalidate only the conclusions that depend on it.
 
 Then inspect the selected slicer's actual layer and support result. Record machine, nozzle/process, material profile, layer settings, orientation, supports, warnings, and whether the review was CLI-only or visually inspected. A warning-free slice is not a physical test.
 

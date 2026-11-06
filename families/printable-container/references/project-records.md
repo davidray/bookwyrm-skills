@@ -72,6 +72,17 @@ Use these compact records to make long builds restartable and auditable. Adapt t
 - User decision
 - Required follow-up review or test
 
+## Release and lock
+
+Finished work ends in a versioned release. Use the same layout for every box and board:
+
+1. Folder `projects/<box>/release-vX.Y/` (or `shared/<area>/<part>/release-vX.Y/`), with numbered parts whose file names carry part, revision, quantity and print orientation. Editable sources and superseded files stay outside it.
+2. `README.md` with a part table giving each part's physical status (printed, fit-tested, approved for looks, not reported), hardware, assembly steps, digital checks done, what is not yet tested, and what the release doesn't claim. `projects/mirkwood-travel-case/release-v1.0/README.md` is the model.
+3. `LOCK.md` recording who locked it, when, and their words. Documentation fixes keep the version; any change to a mesh, size, clearance, pocket or assembly position starts vX.Y+1.
+4. `SHA256SUMS.txt` and a mesh audit (bounds, closed, components). Make the folder read-only on the Mac.
+5. Commit on a branch and open a pull request; never push to main without the user's say-so. A lock freezes the design; it adds no test evidence.
+6. Git LFS has limited space, so only release meshes go in it, stored as 3MF where the STL is large (Mirkwood went from 244 to 65 MB). Check each 3MF against its STL for triangle count, bounds and area. The cloud container can't reach lfs.github.com, so mesh uploads go from the Mac clone (`~/code/bookwyrm-boxes`); give the user the command block.
+
 ## Release record
 
 - Version and authoritative source

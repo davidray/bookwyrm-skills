@@ -16,6 +16,7 @@ Show the concept and the current model, rendered from the same view, side by sid
 - Stack-ups across separable parts add up (see engineering and validation).
 - Print orientation, supports and bed size are decided; carved faces are not on the bed.
 - A coupon covers the riskiest new interface, unless the user waived it.
+- Moving parts clear through the whole motion, not only at its ends; print-in-place mechanisms were tested on their own first.
 
 ## Before handing over a print folder
 
@@ -23,6 +24,12 @@ Show the concept and the current model, rendered from the same view, side by sid
 - Exported files are closed solids at the right scale and orientation.
 - An assembled render of the exported files shows magnet pockets, seams and pull bays facing their mating parts.
 - PRINT-AND-TEST.md lists print order, settings, hardware, assembly and what is still untested.
+
+## Before changing a part
+
+- When the user names a part by colour or look in a preview, confirm which file it is before changing it ("the gray dice holder" was the lift key dock).
+- Change only the part asked for, and undo anything changed by mistake.
+- Never change a locked release; start a successor version.
 
 ## Independent reviewer
 

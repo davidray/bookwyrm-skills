@@ -1,6 +1,6 @@
 ---
 name: printable-container
-description: Design decorative 3D-printable containers from concept art or a brief through dimensional architecture, editable modeling, carved relief, lithophanes, fit tests, printable STL files, and release documentation. Use for boxes, chests, cases, lanterns, enclosures, and similar hollow assemblies; do not use for ordinary standalone miniatures, purely visual renders, or safety-critical pressure, medical, food-contact, mains-voltage, open-flame, or high-energy battery products without domain-specific engineering requirements.
+description: Design decorative 3D-printable containers from concept art or a brief through dimensional architecture, editable modeling, carved relief, lithophanes, fit tests, printable STL files, and release documentation. Use for boxes, chests, cases, lanterns, enclosures, sculpted figural containers (such as a figure holding a print-in-place ring box), and similar hollow assemblies, including their lighting and controller boards; do not use for ordinary standalone miniatures with no container, purely visual renders, or safety-critical pressure, medical, food-contact, mains-voltage, open-flame, or high-energy battery products without domain-specific engineering requirements.
 ---
 
 # Printable container
@@ -12,10 +12,12 @@ References:
 - [concept and faithfulness](references/concept-and-faithfulness.md): new or substantially changed designs.
 - [decorative relief](references/decorative-relief.md): carved exteriors, feet, handles, mating features.
 - [lithophanes](references/lithophanes.md): lit panes, scene images, inscriptions and fonts.
-- [engineering and validation](references/engineering-and-validation.md): joints, stack-ups, electronics, orientation, exports.
+- [engineering and validation](references/engineering-and-validation.md): joints, stack-ups, energy safety, orientation, exports.
+- [moving parts and figures](references/moving-parts-and-figures.md): hinges, print-in-place mechanisms, sculpted figures, filament saving.
+- [lighting and electronics](references/lighting-and-electronics.md): LED scenes on WLED, controller boards.
 - [box-family standards](references/box-family-standards.md): house dimensions, hardware and defaults.
 - [reviews](references/reviews.md): review checklists and when to use an independent reviewer.
-- [project records](references/project-records.md): checkpoint, test and release record forms.
+- [project records](references/project-records.md): checkpoint, test and release records, and the release-and-lock layout.
 
 ## Begin with authority and evidence
 
@@ -45,7 +47,7 @@ Create or update a checkpoint containing the active source, accepted decisions, 
 4. Develop the design as editable systems: shell, mechanisms, inserts, decoration, sculpture, lighting/electronics, and release geometry. Preserve accepted sources and change locally.
 5. Choose methods by form: dimension-controlled solids for functional geometry; generated or sculpted meshes converted to height maps for organic relief; exact CSG for anything that mates. Blender, interactive or headless `bpy`, holds the authoritative source model; do not use OpenSCAD or another parametric CAD tool for the container. Scripted primitives and bevel curves cannot produce carved relief; six Mirkwood blockout revisions proved it. Pick a method that can reach the target look before iterating on it.
 6. Engineer solid material volumes at final scale. Let the slicer create infill; create voids only when they serve a deliberate function.
-7. Build decoration into the real shell and lid rather than adding parts. Every added piece (a glued bezel, a skin) needs a reason the user accepts. Decide print orientation before carving a face: a face printed against the bed comes out flat.
+7. Build decoration into the real shell and lid rather than adding parts. Carve walls, not upward-facing tops; lid tops stay flat for now. Every added piece (a glued bezel, a skin) needs a reason the user accepts. Decide print orientation before carving a face: a face printed against the bed comes out flat.
 
 ## Retire uncertainty cheaply
 
@@ -69,4 +71,9 @@ Audit the exported files rather than relying only on the source scene: units, sc
 
 - One numbered print folder holds every part needed to build the object, including unchanged inherited parts (light tray, lithophane, inserts). Each file name carries part number, revision, quantity and print orientation, for example `05-stump-foot-r3-print-x4-roots-down.stl`. Superseded files move to `superseded/`.
 - Render the exported files in the assembled pose before release, and check that magnet pockets, seams and pull bays face their mating parts.
+- Test a print-in-place mechanism on its own before the full part, and check its clearance through the whole motion.
 - Include a PRINT-AND-TEST.md with print order, orientation, supports, hardware, assembly steps, and what is still untested. For a multi-part build, add the pictures that make assembly unambiguous: an exploded view, a sectional stack, numbered steps, front and up markers, and magnet polarity.
+
+## Release and lock
+
+When the user says to cut a version or lock it, build a `release-vX.Y/` folder as described in [project records](references/project-records.md): part table with physical status per part, `LOCK.md`, checksums, and a pull request on a branch. A locked release never changes; any geometry change starts the next version.
