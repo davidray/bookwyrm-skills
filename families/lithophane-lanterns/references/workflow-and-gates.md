@@ -6,6 +6,8 @@ Use the earliest unsatisfied gate to decide what work is authorized. Preserve ea
 
 Reconcile the lantern's use, scale, panel count and story, hardware, finish, and authoritative visual references. If no concept exists, create a visual interpretation before committing to CAD. List what the concept invents.
 
+Concept art is not to scale. Before blockout, measure the concept's key ratios in pixels and record them: body height to width, base or deck width to body width, roof height and overhang to body, panel field aspect. Carry them into the blockout and compare all of them, not only the body, at every matched view. (Lake-town: only body H/W was checked, and the deck came out 1.12× the body against the concept's ~1.4× until assembly.)
+
 Ask for approval of named visible properties such as silhouette, composition, roof language, supports, panel prominence, and illuminated mood. Concept approval authorizes blockout only; it does not validate hidden construction, dimensions, panel performance, mechanics, safety, or printability.
 
 Keep the approved concept's look intact. If you think a visible feature is a printing risk, list it separately as your proposal, with the evidence, and let the user decide. Do not record it as an approved "production change". (Dragon: "wings folded" was the agent's idea, written in as if approved; the user has printed many open wings without trouble.)
@@ -21,6 +23,8 @@ Build around the real hardware and panel system, not around the outside silhouet
 - roof/base removal and positive location;
 - print segmentation and assembly order.
 
+Run two automated checks before review: a pairwise clash check between every blockout part (target 0 mm³) and a minimum-engagement check for every slot, peg and seat (Lake-town: a panel edge engaged its post by only 0.7 mm until the posts were widened). Check the connector approach path with a ray or swept box.
+
 Show assembled, cutaway, exploded, and access states, and say in words how panels go in and how the roof or lid comes off. Record a small geometry-facts artifact with overall bounds, hardware reserve, panel field and thickness assumptions, clearances, service architecture, and known exclusions.
 
 Obtain visual/functional blockout review before expensive detail. A material change to protected hardware, scale, panel architecture, or service direction reopens this gate.
@@ -30,11 +34,11 @@ Obtain visual/functional blockout review before expensive detail. A material cha
 Do not decorate the whole lantern at once. Procedural whole-lantern decor and AI meshes fitted straight onto the whole blockout both fell well short of the concept on every lantern tried. Work part by part:
 
 1. **Split the decoration into a few parts** (for example: plinth, corner column, panel surround, cornice and roof; or plinth plus four trees). Repeated parts are designed once and placed several times. Part boundaries should make sense as print or assembly segments where possible, but the visual split comes first.
-2. **Write a part brief** for each: what it owns visually, which protected interfaces it must respect, and the key protected dimensions (for example "upper step at least 90% of the lower step's width"). Check the art against the blockout before turning it into 3D; plinth art twice came back too narrow to carry the body.
+2. **Write a part brief** for each: which of the approved concept's named visible properties it owns, what it owns visually, which protected interfaces it must respect, and the key protected dimensions (for example "upper step at least 90% of the lower step's width"). Check the art against the blockout and against the visible properties it owns before turning it into 3D. Plinth art twice came back too narrow to carry the body; Lake-town body art came back as an open frame that dropped the concept's plank walls and still missed its ratio. Art that fails either check is regenerated or the failure goes to the user; do not accept it and plan to fix it later.
 3. **Make concept art for each part alone** and get each approved. Brief it in the approved concept's style, alone and centred on a plain mid-grey backdrop, three-quarter view from slightly above, whole part in frame, no text. For a single-colour hand-painted print, all detail must be carved relief and nothing finer than about 1.5 mm.
 4. **Model each part separately** from its approved art (image-to-3D from the part art works well). Review it with a three-up sheet: approved art, textured model, bare geometry. The bare view matters because texture can fake detail the print will not have. Also show the raw model before any fitting. A part passes when it is faithful to, or better than, its art.
 5. **Variants.** Approve one design, then make sibling art by image-to-image from it (same style, camera, and backdrop; change only the dressing), then model each.
-6. **Fit each part to its place** without deforming it (see modeling and evidence). Show a part on a ghost of its neighbours when it cannot be judged alone (a quarter canopy).
+6. **Fit each part to its place** without deforming it (see modeling and evidence). If fitting changes a window or panel opening, record the final visible size and re-crop the panel art to it (Lake-town: the opening shrank from 110 to 100 mm wide and the crops were not redone). Show a part on a ghost of its neighbours when it cannot be judged alone (a quarter canopy).
 7. **Assemble** only after every part has passed, then compare matched views with the overall concept.
 
 The art is the priority. When a faithful part breaks the blockout envelope, change the structure or ask; do not distort the part. Expect natural forms to break the box (a canopy wider than the lantern, roots over the plinth) and ask about overhang early. A cosmetic protected interface may change when the art needs it (a panel mask following a branch arch); record it so panel prep follows.
@@ -56,6 +60,12 @@ Generate actual image-bearing relief, verify polarity and mapping, and print a r
 ## 6. Export, slice, and release review
 
 Export each production part from the current source. Round-trip it, audit the exported geometry, and inspect every sliced plate. Confirm quantities, orientation, material, supports, and assembly sequence. Package only the claim level actually supported by digital and physical evidence.
+
+## Autonomous runs
+
+When the user hands every decision to the agent (a stress test, or "make all the decisions"), keep every gate but replace the user's approvals with an independent review: a separate agent that is given only the approved art, the current renders, and the gate's checklist, not the builder's reasoning. Use it at least at gate 1 (concept and named properties), gate 3 (each part and the final matched view), and gate 5 (the panel set, including story and style consistency). Self-review missed a mismatched panel set, a figure that read as the wrong character, and a body that had drifted from the concept.
+
+Log every decision the user would normally make, with the reason, in the checkpoint. Lock the result as described in validation and release, and do not merge it before the user's verdict.
 
 ## Reopening rules
 

@@ -2,7 +2,7 @@
 
 ## Prepare the image for transmitted light
 
-Start from the intended visible crop and final aspect ratio. Protect recognizable faces, silhouettes, gestures, and narrative focal points. Simplify or remove low-value background detail that will become noise at print scale.
+Start from the intended visible crop and final aspect ratio. The visible crop is the final window opening after the frame is fitted, which can be smaller than the panel field; re-crop when the opening changes and keep focal content inside it. Protect recognizable faces, silhouettes, gestures, and narrative focal points. Simplify or remove low-value background detail that will become noise at print scale.
 
 Convert and tune in grayscale while monitoring the histogram. Preserve separation in faces and focal forms; avoid broad clipped black areas that become needlessly thick and broad clipped white areas that become fragile. Local contrast is usually more useful than global drama. Process every panel as a member of one set so brightness and relief feel coherent around the lantern.
 
@@ -12,6 +12,7 @@ Prep that has worked on Dave's panels:
 
 - A 1% autocontrast inside the visible field (0.5/99.5% for very dark images, plus a black-point lift so near-black areas still transmit some light).
 - For a subject that must glow but is a dark colour in the art (a red dragon), a channel-weighted grey mix such as 0.75R + 0.2G + 0.05B so it prints thin and bright.
+- Never crop panel art from an image that shows a lit lithophane, frame, or hand. Its tones already contain fake relief and glow and print muddy. Regenerate it as flat art (see the art pipeline's panel briefs).
 - Generated art often paints its own arch, disc, or grey surround. Mask that away so the panel's own mask sits on or inside it, and keep focal content out of zones the frame covers.
 - When panels sit behind the relief-faces-LEDs convention, mirror the image in the relief so it reads correctly from outside.
 
@@ -59,4 +60,4 @@ A lithophane region can be printed into an opaque wall instead of as a separate 
 
 ## Multi-panel consistency
 
-Name panels by face and viewing direction. Include a face map in the release. Normalize the set so one panel does not dominate because its source image was brighter or its relief range differed. Confirm installed orientation in an assembled test; a correct isolated panel can still be reversed or mirrored in the lantern.
+Name panels by face and viewing direction. Include a face map in the release. Generate the set in one style (one shared style line in every prompt, all four in the same pass) and regenerate any panel whose medium differs. Normalize the set so one panel does not dominate because its source image was brighter or its relief range differed. Confirm installed orientation in an assembled test; a correct isolated panel can still be reversed or mirrored in the lantern.

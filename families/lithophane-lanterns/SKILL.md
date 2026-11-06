@@ -26,6 +26,10 @@ Read [workflow and gates](references/workflow-and-gates.md) for a new build or a
 
 For Dave's lantern projects, read [Dave's lantern print profile](references/dave-print-profile.md) before selecting the build envelope, exterior feature sizes, segmentation, material, nozzle, compatibility target, lithophane recipe, or fit clearances. It holds physically proven settings; reuse them instead of proposing new coupons for the same interfaces. Keep project-specific proportions, visual approvals, hardware, and exceptions in the project checkpoint.
 
+When the user hands every decision to you, follow the autonomous-run rules in [workflow and gates](references/workflow-and-gates.md): keep every gate and use an independent reviewer in place of the user's approvals.
+
+For tool setup (headless Blender in a container, slicing from the command line), read [tooling](references/tooling.md).
+
 For Dave's lantern projects, read [Dave's art pipeline](references/dave-art-pipeline.md) before generating concept, part, or panel art or any AI mesh, and before spending generation credits.
 
 In a series of lanterns, keep the shared interfaces consistent: panel slot and retention, divider or LED post, strip, hardware plate, and tolerances. Overall size is a target the approved art may break; say so when it does rather than distorting the art to match a sibling.

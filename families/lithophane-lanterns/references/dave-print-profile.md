@@ -37,6 +37,10 @@ These were printed and verified on earlier projects (davidray/shire-travel-case 
 | Three-wire exit | 10 × 3.6 mm | Shire tray |
 | LED-to-lithophane distance | 15–25 mm proven; about 54–61 mm used in the user's working lanterns | Shire; user, 2026-11-05 |
 
+## Exterior process preset (provisional, not yet proven)
+
+The profile has no proven exterior settings yet. Until the user supplies theirs, slice structure parts with Bambu's stock "0.30mm Standard @BBL A2L 0.6" process, Bambu Matte PLA, and tree supports, and say in the release that slice times, supports, and filament use come from this stock preset. Replace this section with the user's own settings (layer height, walls, infill, support style) when known.
+
 Two-colour prints (an opaque body with integrated white lithophane) use the X2D with both nozzles and its 235.5 × 256 × 256 mm two-nozzle area. The opaque colour is ordinary PLA, not Matte.
 
 ## Cross-fleet engineering rules

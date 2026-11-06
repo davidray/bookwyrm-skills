@@ -22,7 +22,7 @@ A watertight decorative mesh can still be useless as a lantern because it has no
 ### Fitting a part without deforming it
 
 - **Scale uniformly.** Never stretch carved or organic detail along one axis: stretched roots became plates and a stretched diamond boss read as broken. Earlier non-uniform fits (a 1.15× plan-only plinth stretch, compressed frame bands) predate this rule and are not precedents.
-- **Change length by modules or bands.** Repeat a repeating module (a column's diamond panel, 3 to 5 per face) or remove plain horizontal bands from the middle of stone rows so each stone keeps its own edges.
+- **Change length by modules or bands.** Repeat a repeating module (a column's diamond panel, 3 to 5 per face) or remove plain horizontal bands from the middle of stone rows so each stone keeps its own edges. Inserting a straight band is allowed only where the profile is genuinely constant along the axis (a plain shaft section of a turned post), measured by sections; record the band's position and length, and show the result close up so the user can see no plain stretched section reads (Lake-town: a 37 mm band at the posts' flat baluster section).
 - **Cover a neighbour with a pocket.** When a part must sit over another (a roof over the body like a lid), scale it uniformly and cut a pocket so the neighbour nests inside.
 - **Sink and subtract at contacts.** Where decor meets another part, sink it into the neighbour and boolean-subtract the neighbour. That gives exact glue faces without changing the decor's shape.
 - **Move rigidly, don't fill.** To close a gap, move the art onto its neighbour (in rigid slices along a path if it must follow a surface) rather than growing filler geometry.

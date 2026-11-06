@@ -19,7 +19,9 @@ Evidence at one level does not imply the next.
 
 For each exported part, verify units, scale, bounds, orientation, triangle/face health, manifoldness as appropriate, normals/winding, positive volume, disconnected components, unintended gaps or intersections, and round-trip import. Check that presentation-only objects and service reserves are absent.
 
-Slice every production part with the intended machine and profile. Inspect first layers, thin walls, small features, bridges, overhangs, supports, seams, panel relief reproduction, total plate fit, and whether support removal can damage visible or optical surfaces. A successful slicer return code alone is not a review.
+Audit round-trips with the indexing the slicer reads. Merging vertices by position can re-join a boolean library's deliberately split pinch points and report a sound body as many shells (Lake-town: 96 shells from a watertight manifold3d result); write 3MFs from the solver's own indexing and audit that. Watch for inside-out output (negative volume) from marching cubes and zero-volume slivers from booleans.
+
+Slice every production part with the intended machine and profile. Inspect first layers, thin walls, small features, bridges, overhangs, supports, seams, panel relief reproduction, total plate fit, and whether support removal can damage visible or optical surfaces. A successful slicer return code alone is not a review. Look for floating islands and parts that start above the bed; a zero-clash assembly can still contain a part that cannot print (Lake-town: divider blades started 3 mm above the bed). Project supports from the G-code onto the part to see where they touch carved or visible surfaces. See [tooling](tooling.md) for slicing from the command line.
 
 ## Physical tests
 
@@ -70,3 +72,5 @@ lanterns/<lantern>/v<N>/
 The README covers: what the lantern is; what the user approved and when; a per-part table (file, part, size, orientation, supports, material); the panel face map; lighting and hardware (strip, pixels per face, WLED limit, plate); the source pipeline in run order, with tool versions; where large source meshes live and their generation task IDs; and known open items, including what has not been printed.
 
 Before locking, check that every script takes its paths as arguments, that every 3MF re-imports with the expected bounds and shell count, and that no placeholder or reserve geometry is in a print file. A later change is a new `v<N+1>` folder; never edit a locked version in place.
+
+In an autonomous run, open the locking PR as soon as the candidate is complete so the user can review it, say in the README and PR that the version was not user-approved, and leave it unmerged until the user's verdict.
