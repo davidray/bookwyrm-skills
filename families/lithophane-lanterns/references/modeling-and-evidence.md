@@ -26,7 +26,8 @@ A watertight decorative mesh can still be useless as a lantern because it has no
 - **Cover a neighbour with a pocket.** When a part must sit over another (a roof over the body like a lid), scale it uniformly and cut a pocket so the neighbour nests inside.
 - **Sink and subtract at contacts.** Where decor meets another part, sink it into the neighbour and boolean-subtract the neighbour. That gives exact glue faces without changing the decor's shape.
 - **Move rigidly, don't fill.** To close a gap, move the art onto its neighbour (in rigid slices along a path if it must follow a surface) rather than growing filler geometry.
-- **Trim only true blockers.** Remove only what blocks a window, a panel slot, a light box, or a lift path.
+- **Trim only true blockers.** Remove only what blocks a window, a panel slot, a light box, or a lift path. After any trim, check that each named property the part owns is still there and still has its character (a trim once deleted a hanging lantern). Never cut a pointed form flat: taper it or shorten it to a point.
+- **Make hanging and pendant decor separate parts** (a hanging lantern, keys, a pendant sign), pinned or glued in place. On Gollum's Cave, a pendant at the lowest point lifted the roof slab about 120 mm and made the roof 72% support. Fringes print best as separate strips with the tips up (the Christmas village icicles).
 - **Split by the art's own pieces when a part must be placed in parts** (trunk, limbs, crown), and map each piece rigidly. Paths that must follow an exact line (a branch arch) can be made by sweeping a length of the art's own surface along it.
 
 ### Working with Meshy meshes
@@ -34,7 +35,7 @@ A watertight decorative mesh can still be useless as a lantern because it has no
 - Raw Meshy output is in arbitrary units (about 1 to 2 units tall). Before any review or fit, scale it uniformly to the part's real size from the blockout, set it Z-up with its base on z = 0, and record the scale factor.
 - Pull the full-resolution source for each region you need instead of one decimated copy of the whole model (a trunk went from 11k to 252k triangles).
 - When geometry cannot separate two materials (flame from rock, leaf from bark), segment by colour: a retexture of the same model, or the mean texture colour of each UV chart.
-- Meshy meshes are often open, hollow skins with internal shells. Make them solid by voxel close, fill, and an inset core unioned with the skin, or by generalized winding numbers (libigl) on open or boolean-damaged meshes, then marching cubes. Avoid mesh smoothing plus decimation, which leaves needles and holes; smooth the voxel field instead. Canopies and domes need a solid core under the surface.
+- Meshy meshes are often open, hollow skins with internal shells. Make them solid by voxel close, fill, and an inset core unioned with the skin, or by generalized winding numbers (libigl) on open or boolean-damaged meshes, then marching cubes. Avoid mesh smoothing plus decimation, which leaves needles and holes; smooth the voxel field instead. Canopies and domes need a solid core under the surface. Voxel size, smoothing and decimation all round off fine tips and thin edges. Compare close-ups of the finest features before and after, and use a smaller voxel for parts with points.
 
 ### Boolean and export checks
 

@@ -6,9 +6,11 @@ Use this profile for Dave's lithophane-lantern projects unless a project explici
 
 | Printer | Intended nozzle | Official build volume | Design note |
 | --- | ---: | ---: | --- |
-| Bambu Lab A2L | 0.6 mm | 330 × 320 × 325 mm | Largest bed; the 0.6 mm nozzle governs conservative shared exterior feature sizing. |
+| Bambu Lab A2L | 0.6 mm | 330 × 320 × 325 mm | Largest bed; the 0.6 mm nozzle governs conservative shared exterior feature sizing. Usable footprint in Bambu Studio is about 290 × 290 mm (see below). |
 | Bambu Lab A1 | 0.4 mm | 256 × 256 × 256 mm | Smallest ordinary single-nozzle build envelope in the fleet. |
 | Bambu Lab X2D | 0.4 mm | 256 × 256 × 260 mm using the main/left nozzle | When both nozzles or the auxiliary/right nozzle are required, use the smaller applicable official print area instead of the main-nozzle envelope. |
+
+**Usable A2L footprint.** On 2026-11-06, Bambu Studio 02.09.01.70 accepted a 290 × 290 mm box on the A2L but refused 300 × 300 mm and a 317 × 159 mm half, with or without a brim. Design A2L parts to fit 290 × 290 mm until a larger size is shown to slice. Plan any split at blockout.
 
 The X2D official areas recorded on 2026-11-02 are:
 
@@ -39,7 +41,7 @@ These were printed and verified on earlier projects (davidray/shire-travel-case 
 
 ## Exterior process preset (provisional, not yet proven)
 
-The profile has no proven exterior settings yet. Until the user supplies theirs, slice structure parts with Bambu's stock "0.30mm Standard @BBL A2L 0.6" process, Bambu Matte PLA, and tree supports, and say in the release that slice times, supports, and filament use come from this stock preset. Replace this section with the user's own settings (layer height, walls, infill, support style) when known.
+The profile has no proven exterior settings yet. Until the user supplies theirs, slice structure parts with Bambu's stock "0.30mm Standard @BBL A2L 0.6" process, Bambu Matte PLA, and tree supports, and say in the release that slice times, supports, and filament use come from this stock preset. For A1 or X2D parts, use the matching stock 0.4 mm process: A2L presets don't load on them. Where tree supports leave overhangs uncovered (window heads, bay ceilings), switch that part to normal supports and check the projection again. Replace this section with the user's own settings (layer height, walls, infill, support style) when known.
 
 Two-colour prints (an opaque body with integrated white lithophane) use the X2D with both nozzles and its 235.5 × 256 × 256 mm two-nozzle area. The opaque colour is ordinary PLA, not Matte.
 

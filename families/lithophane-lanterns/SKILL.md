@@ -73,7 +73,7 @@ Keep lithophanes as separate replaceable parts by default. Integrate them only w
 
 Use actual image-derived relief for production panels. Textures, emission, and images mapped onto flat plates are presentation-only. Dark image regions normally become thicker and transmit less light; bright regions become thinner and transmit more. Confirm polarity with a rendered height preview or test strip before generating all panels.
 
-Treat base thickness, relief range, image resolution, tonal curve, border, panel orientation, and light spacing as process-dependent parameters, not universal constants. Preserve important faces and silhouettes through crop and tonal preparation; avoid relying on tiny low-contrast details that disappear in transmitted light.
+Treat base thickness, relief range, image resolution, tonal curve, border, panel orientation, and light spacing as process-dependent parameters, not universal constants. Preserve important faces and silhouettes through crop and tonal preparation; avoid relying on tiny low-contrast details that disappear in transmitted light. Sharpness is limited by the extrusion line and by light scattering, not by layer height: detail narrower than about two line widths won't read (see the detail limits in panels and optics).
 
 Read [lithophane panels and optics](references/panels-and-optics.md) whenever creating, replacing, resizing, or diagnosing panels.
 

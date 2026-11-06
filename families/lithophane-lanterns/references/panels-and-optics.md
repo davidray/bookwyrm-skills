@@ -35,6 +35,20 @@ For Dave's lanterns, start from the proven recipe in the print profile (0.8 mm b
 
 Print in the intended production orientation. Flat printing is simple and stable but quantizes relief by layer height; edge/upright printing can offer smoother thickness changes but is tall, slower, and more sensitive to wobble and adhesion. Let the actual printer and desired image quality decide.
 
+A new layer height, nozzle or tone map is a process change, so it needs a coupon before any production panel. When the coupon can't be printed first (an autonomous run), ship it with the release, and say that the panels should not be printed until the coupon has been printed, lit and accepted.
+
+## Detail limits
+
+How much detail a flat-printed lithophane holds is set in XY, by the extrusion line and by light scattering inside 0.8–2 mm of PLA. Layer height does not set it. The working limits below come from stress test 3 (Christmas village, 2026-11-06). They were not printed, so replace them with coupon results when those exist.
+
+- **Line width is the floor.** A 0.4 mm nozzle draws lines about 0.42 mm wide. Lines, edges and gaps narrower than about two line widths (0.8–1 mm) won't read when lit. Faces less than about 5 mm tall lose their features. Hatching and engraving lines 1–2 source pixels wide merge into midtone.
+- **Thinner layers add tone levels, not sharpness.** Over 0.8–2.0 mm, 0.10 mm layers give 12 levels and 0.08 mm gives 16, but each panel takes 4–5 h. Use 0.08 mm for smooth gradients (sky, glow), not for fine lines.
+- **Grid and source resolution.** A height-field grid of about half the line width (0.2 mm on a 0.4 mm nozzle) is enough. A finer one only adds triangles: a 0.15 mm grid gave 2 M triangles and 18 MB per panel. About 3 source px/mm is enough, so a 512 px tile across a 173 mm field already matches the nozzle.
+- **Dither only at or above the line width.** Floyd–Steinberg dither on single 0.15 mm cells made the slicer report "floating regions" on every panel, because the cells are narrower than one line. Dither on cells at least one line width wide, or don't dither.
+- **Treat slicer warnings on panels as failed checks.** A "floating regions" or "thin wall" warning on a lithophane means part of the relief can't be drawn. Fix the cause, then re-slice.
+- **Tone-map constants need calibration.** A Beer–Lambert map needs PLA's attenuation `k`. It was guessed at 1.6 /mm and never measured. Calibrate it from a printed step wedge photographed under the real LED before relying on it.
+- **Prefer bold forms in the art** (see the art pipeline's panel briefs). Large near-white fields, such as snow scenes, leave little tonal room on a 0.8 mm floor and read low-contrast.
+
 ## Evaluate the physical panel
 
 Inspect under the intended LED, spacing, diffuser, and ambient-light conditions. Record:
@@ -47,6 +61,8 @@ Inspect under the intended LED, spacing, diffuser, and ambient-light conditions.
 - whether the thickest regions waste print time or block too much light.
 
 Tune image curve, thickness range, spacing, or diffusion from this result. A rendered glow preview is useful for composition, not optical qualification.
+
+When a backlit simulation is measured (sharpness, tonal spread, black level, brightness by panel), report the losses beside the recipe's claims in the README and in the message to the user. In test 3 the reviewer measured about 85% sharpness loss, but the release and the message to the user mentioned only the extra tone levels. Once a coupon has been printed and photographed, fit the simulation's blur and attenuation to the photo.
 
 ## Integrated two-colour lithophane skins
 

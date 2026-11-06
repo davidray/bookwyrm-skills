@@ -73,4 +73,9 @@ The README covers: what the lantern is; what the user approved and when; a per-p
 
 Before locking, check that every script takes its paths as arguments, that every 3MF re-imports with the expected bounds and shell count, and that no placeholder or reserve geometry is in a print file. A later change is a new `v<N+1>` folder; never edit a locked version in place.
 
-In an autonomous run, open the locking PR as soon as the candidate is complete so the user can review it, say in the README and PR that the version was not user-approved, and leave it unmerged until the user's verdict.
+In an autonomous run, open the locking PR as soon as the candidate is complete so the user can review it, say in the README and PR that the version was not user-approved, and leave it unmerged until the user's verdict. Put these at the top of the README, the PR and the message to the user:
+- any reviewer FAIL that is still unresolved;
+- any departure from a standard architecture or series interface;
+- every measured loss the reviewer reported, such as simulated sharpness or tonal loss on panels, or detail lost in engineering.
+
+Assign the PR to the user. A review request fails when the user is the PR author, so don't retry it.
