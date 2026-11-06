@@ -31,6 +31,7 @@ A watertight decorative mesh can still be useless as a lantern because it has no
 
 ### Working with Meshy meshes
 
+- Raw Meshy output is in arbitrary units (about 1 to 2 units tall). Before any review or fit, scale it uniformly to the part's real size from the blockout, set it Z-up with its base on z = 0, and record the scale factor.
 - Pull the full-resolution source for each region you need instead of one decimated copy of the whole model (a trunk went from 11k to 252k triangles).
 - When geometry cannot separate two materials (flame from rock, leaf from bark), segment by colour: a retexture of the same model, or the mean texture colour of each UV chart.
 - Meshy meshes are often open, hollow skins with internal shells. Make them solid by voxel close, fill, and an inset core unioned with the skin, or by generalized winding numbers (libigl) on open or boolean-damaged meshes, then marching cubes. Avoid mesh smoothing plus decimation, which leaves needles and holes; smooth the voxel field instead. Canopies and domes need a solid core under the surface.
@@ -43,7 +44,7 @@ A watertight decorative mesh can still be useless as a lantern because it has no
 
 ## Review views
 
-Keep cameras stable across revisions. Use matched framing when comparing to concept art, and put the approved concept or part art on the same sheet as the model. For a part, use a three-up: approved art, textured model, bare geometry. Show the raw generated model before any fitting, and give lids and roofs top and underside views. Provide neutral production-only views so shallow geometry cannot hide behind paint or texture. Add grazing-light or orthographic closeups for relief that is difficult to read.
+Keep cameras stable across revisions. Use matched framing when comparing to concept art, and put the approved concept or part art on the same sheet as the model. For a part, use a three-up: approved art, textured model, bare geometry. Show the raw generated model before any fitting, and give lids and roofs top and underside views. Provide neutral production-only views so shallow geometry cannot hide behind paint or texture. Add grazing-light or orthographic closeups for relief that is difficult to read. When comparing meshes (two generations, or an A/B test of inputs), render real meshes in Blender or a slicer: a neutral clay material at true scale, the same cameras for every candidate, front, side and top orthographic views for shape and footprint, and grazing-light close-ups of the finest detail areas. A point-cloud or thumbnail preview made a clear improvement look like a tie. Measure footprint depth and width, not only height.
 
 Functional evidence should show:
 
