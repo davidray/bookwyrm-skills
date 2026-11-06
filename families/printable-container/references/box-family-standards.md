@@ -12,6 +12,7 @@ Defaults for any new Middle-earth travel case. Reuse them unless the brief says 
 | Case envelope | 240 x 200 mm, base to seam 110.8 mm, lid 26.12 mm, 4 mm walls, 12 mm corner radius. Carved relief grows the footprint (Mirkwood base 260 x 221 mm); check the bed size | Printed |
 | Lid | V2.1 r2: one-piece outer lid body plus removable light tray. The outer body STL is stored face-down | Printed |
 | Lid top | Flat, for now (David, 2026-11-05). Carve the sides, not the top: Mirkwood's carved top frame printed flat and looked poor | Printed on Shire and Mirkwood |
+| Core shells | Start every new case from clean cores, not a stripped carved case: Shire production-base-r2 shell with four teardrop foot sockets (1.5 deep), and the V2.1 r2 lid body flipped top-up and cut flat at 26.05 mm. Stripping Mirkwood's carving left pinched edges | Used for Moria |
 | Lithophane pane | 204 x 154 mm, square corners, 200 x 150 visible, 0.8 to 2.0 mm thick | Printed |
 | Lid connectors | Set B pair needs 11.84 mm between holder mounting faces; the base holder face is 8.92 mm below the seam, so the lid holder sits 2.92 mm above it (tray r3) | Tray r3 printed in Shire v1.0; flush closure on the connector side not yet confirmed |
 | Feet | Separate printed stumps, glued, keyed by an asymmetric tab with a 0.2 mm gap, or a straight cylinder peg (6.0 mm peg, 6.5 mm hole) | Printed |

@@ -7,7 +7,8 @@ Read this before decorating a shell or lid, or adding feet, handles or other orn
 - Aim for epic, classical carved relief, not storybook or cartoon. David rejected the first Shire mockup as "too cartoonish" and liked the carved-panel r2.
 - Prompt generators with "intricate realistic classical wood carving, deep bas-relief, not cartoon".
 - Carve upright walls, not faces printed facing up. Relief on a lid top comes out flat at normal layer heights: Mirkwood's carved top frame printed poorly and David chose a flat top like Shire. Lid tops stay flat for now; print a coupon first if a top must carry relief.
-- Build a depth hierarchy: focal forms (trunks, plaques, doors) up to about 10 mm proud; webs, branches and texture 1.5 to 3 mm. Sharp-edged relief takes a dark wash and drybrush well from a one-colour print.
+- Build a depth hierarchy: focal forms (trunks, plaques, doors) up to about 10 mm proud; webs, branches and texture 1.5 to 3 mm.
+- Relief depth is limited by the bed: every millimetre proud adds two to the footprint. The 240 x 200 core with 5.6 mm relief is 251.2 mm wide, leaving 2.4 mm per side on the X2D's 256 mm bed, so check before going deeper. Sharp-edged relief takes a dark wash and drybrush well from a one-colour print.
 
 ## Pipeline that works
 
@@ -16,6 +17,15 @@ Read this before decorating a shell or lid, or adding feet, handles or other orn
 3. Wrap the height map onto the real shell wall faces and corners. Mask protected zones first: seam, pull notches, service openings, magnet pockets, connector ports.
 4. Apply a 45 degree overhang filter so walls print upright without supports. Expect mushroom caps and similar to become cones or brackets.
 5. Union into one closed solid and audit the exported file.
+
+### Authored height maps
+
+For architecture, line art and lettering (doors, emblems, masonry, plaques), draw the height map directly instead of generating it: masonry blocks with faceted noise, bands and mouldings as profiles, line art as supersampled masks raised with a rounded section. Meshy blurs exact widths and spellings. The Shire hillside and Moria Doors were built this way (`projects/moria-travel-case/scripts/moria_relief.py`).
+
+- Give raised lines a half-round section, not a flat top with a vertical edge; it reads as carved and takes a drybrush.
+- Turned forms (columns, pillars, balusters, finials) are a lathe profile pressed into the wall: h = base + k·sqrt(R(z)² − x²), with k about 0.6. Moria's flat-strip pillars only came alive as plinth, tori, a fluted shaft with entasis, astragal, echinus, abacus and volutes (r5).
+- Detail needs resolution end to end. Draw a focal panel at 0.1 mm per pixel (0.2 is fine for plain walls) and keep enough triangles after simplification (Moria front: 1.4M, not 400k), or the extra detail never reaches the mesh.
+- Keep the heightfield off the core surface: clamp heights to at least 0.06 mm, cut openings only outside the core face, and start from clean core shells. Coplanar faces left touching (non-manifold) edges on Moria.
 
 Meshy limits: text-to-3D ornaments come back as minis on round bases, so cut ornaments from carved panels instead. A lid top fed through image-to-3D becomes a diorama. Unseen sides come back blank, so give it views of every side.
 

@@ -38,6 +38,8 @@ Before the blockout, show the user a concept image: their own reference, or gene
 
 Get an explicit approval, revision request, or deferral of the image itself, not of a description. A plain "approved" covers the most recent image and its visible properties only. It never approves dimensions, hidden construction, or pictured mechanisms such as magnets, hinges or latches; those stay proposals until designed and tested. Re-ask if the concept, interior or function changes materially.
 
+When several approved images disagree (door position, corner treatment, feet), record which image governs each property before modelling.
+
 Create or update a checkpoint containing the active source, accepted decisions, protected geometry and interfaces, open risks, validation performed, physical feedback, superseded artifacts, and next step.
 
 ## Work from protected function outward
@@ -46,7 +48,7 @@ Create or update a checkpoint containing the active source, accepted decisions, 
 2. Establish a dependency map: contents and clearances → structural shell → lid/closure/hinge → internal modules → decoration/electronics → interface tests → production parts.
 3. Make a complete, inexpensive blockout. Reserve major focal forms, openings, motion, assembly paths, service access, structure, wiring, and supports before detail.
 4. Develop the design as editable systems: shell, mechanisms, inserts, decoration, sculpture, lighting/electronics, and release geometry. Preserve accepted sources and change locally.
-5. Choose methods by form: dimension-controlled solids for functional geometry; generated or sculpted meshes converted to height maps for organic relief; exact CSG for anything that mates. Blender, interactive or headless `bpy`, holds the authoritative source model; do not use OpenSCAD or another parametric CAD tool for the container. Scripted primitives and bevel curves cannot produce carved relief; six Mirkwood blockout revisions proved it. Pick a method that can reach the target look before iterating on it.
+5. Choose methods by form: dimension-controlled solids for functional geometry; generated or sculpted meshes converted to height maps for organic relief (bark, roots, figures); authored height maps for architecture, line art and lettering, where exact widths and placement matter (Shire hillside, Moria Doors); exact CSG for anything that mates. Blender, interactive or headless `bpy`, holds the authoritative source model; do not use OpenSCAD or another parametric CAD tool for the container. Scripted primitives and bevel curves cannot produce carved relief; six Mirkwood blockout revisions proved it. Pick a method that can reach the target look before iterating on it.
 6. Engineer solid material volumes at final scale. Let the slicer create infill; create voids only when they serve a deliberate function.
 7. Build decoration into the real shell and lid rather than adding parts. Carve walls, not upward-facing tops; lid tops stay flat for now. Every added piece (a glued bezel, a skin) needs a reason the user accepts. Decide print orientation before carving a face: a face printed against the bed comes out flat.
 
@@ -58,7 +60,7 @@ Record actual dimensions and outcomes. A successful test locks only the tested i
 
 ## Review with the user's eye
 
-The user's reaction to a matched render is the faithfulness verdict. Put the concept and the current model, rendered from the same view, side by side in one image. An audit score never overrides that look: Mirkwood blockout r6 passed an AI audit at 85/100 while its renders were plainly far from the concept.
+The user's reaction to a matched render is the faithfulness verdict. Put the concept and the current model, rendered from the same view, side by side in one image, and make a new one for every visible revision before it replaces the last. An audit score never overrides that look: Mirkwood blockout r6 passed an AI audit at 85/100 while its renders were plainly far from the concept.
 
 Keep review proportional. `scripts/` holds optional checkers from the earlier gated process (scorecards, production-relief records, delivery-gate state); use them only when a project asks for that rigor. Run the short self-checks in [reviews](references/reviews.md) before long prints and before handing over a print folder. Use an independent reviewer only for a new box architecture, a safety-relevant change, or when the user asks. Hashes, manifests and scorecards do not improve geometry; record only what changes decisions.
 
@@ -71,9 +73,21 @@ State plainly what has been checked: rendered, checked digitally (mesh and slice
 Audit the exported files rather than relying only on the source scene: units, scale, orientation, dimensions, manifoldness, components, and unintended intersections or gaps. Inspect the sliced plate for supports and thin features when it matters.
 
 - One numbered print folder holds every part needed to build the object, including unchanged inherited parts (light tray, lithophane, inserts). Each file name carries part number, revision, quantity and print orientation, for example `05-stump-foot-r3-print-x4-roots-down.stl`. Superseded files move to `superseded/`.
+- Keep one authoritative print folder. Mark any other copy (a cloud staging folder, an old mount) as not authoritative, or remove it.
+- Bump a part's revision for every geometry change once its file has been shown or handed over.
+- Supports a part needs go into its 3MF (painted or as a modifier), or into a numbered PRINT-AND-TEST step with a picture. "Paint supports under the ledge" in prose alone gets missed.
 - Render the exported files in the assembled pose before release, and check that magnet pockets, seams and pull bays face their mating parts.
 - Test a print-in-place mechanism on its own before the full part, and check its clearance through the whole motion.
 - Include a PRINT-AND-TEST.md with print order, orientation, supports, hardware, assembly steps, and what is still untested. For a multi-part build, add the pictures that make assembly unambiguous: an exploded view, a sectional stack, numbered steps, front and up markers, and magnet polarity.
+
+## When the user delegates decisions
+
+If the user hands over their own calls ("make all the decisions", an unattended test):
+
+- Keep a decision log. Mark every call made in the user's place PROXY, with the reason, so the user can overrule each one.
+- Some verdicts stay the user's: whether the result looks right against the concept, any compromise to the focal design, and any release or lock. Deliver at prototype status and ask for those.
+- Record every skipped test as a guess, with what would prove it wrong, and still put the coupon in the print folder.
+- Before handing over, have an independent skeptic (a separate agent given the files, not your conclusions) look for over-claims. In the Moria test the builder graded itself generously until challenged; the skeptic caught a blurred inscription and stale files.
 
 ## Release and lock
 
