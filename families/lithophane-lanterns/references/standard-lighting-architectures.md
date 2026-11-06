@@ -13,6 +13,7 @@ The controller board is not fixed and may change between builds, so the lantern 
 - The base provides a cavity limit for any hardware set, one standard port window at the service face, and screw tabs or inserts for a removable plate. Record these numbers in a `hardware-interface.json` beside the print scripts.
 - Each hardware set gets its own plate: a floor plate that closes the cavity, with an upright bulkhead behind the port window carrying that board's USB-C and switch cutouts, plus its standoffs. Generate it from a small spec (`hardware_plate.py spec.json out.stl` in Bag End v1) and ship a blank plate in every release.
 - The LEDs stay on the divider or LED post, so changing boards never moves the lights relative to the panels.
+- Every plate, the blank included, carries the lid tie-down anchor cup on the lantern's axis, and no board, standoff or wire may enter the 24 mm tie keep-out column (see engineering, lid tie-down). `hardware_plate.py` should add the cup and refuse anything inside the keep-out.
 - Patterns in use: Bag End (3 mm floor plate, 2.4 mm bulkhead behind a 15 × 26 mm port window, three M3 screws into 2.5 mm pilots); Lonely Mountain (floor plate on four M3 heat-set inserts in 4.2 mm holes); Dragon (216 mm disc in a 3.6 mm recess, four M3 at r 102, 64 × 26 mm back port panel). None is physically tested yet.
 
 The board and power details below are the reference hardware set the plate and cavity must accommodate, not fixed mounts.
@@ -38,7 +39,7 @@ The board and power details below are the reference hardware set the plate and c
 - Use an opaque, removable divider built as a hollow central post with four radial light-blocking blades. Together, the post and blades create four face-oriented optical chambers, one per lithophane.
 - Orient the divider so each of the central post's four flat faces points toward the center of one lithophane. Each lithophane sits between two adjacent radial blades; the blades form the chamber sidewalls and prevent light intended for one lithophane from spilling directly behind its neighbors.
 - Run each blade outward toward the opaque corner/frame line between adjacent lithophanes. Its outer edge must meet or overlap the lantern's light-blocking frame region rather than terminate in the illuminated image field.
-- Run the divider continuously between keyed base and roof seats. Preserve the hollow center as a protected vertical wiring/service passage, including usable entry and exit openings.
+- Run the divider continuously between keyed base and roof seats. Preserve the hollow center as a protected vertical wiring/service passage, including usable entry and exit openings. The lid tie-down wire shares this bore, so keep a free 10 mm passage beside the LED harness. Leave at least 0.5 mm of vertical clearance at one seat so the tie tension doesn't load the divider.
 - The divider must not block panel installation, panel removal, roof removal, or controller service.
 - Provide one vertical recessed or positively located LED-strip channel on each of the four central post faces.
 - Mount one vertical addressable-LED strip in each channel, aimed outward toward the corresponding lithophane: four strips of equal length, `4 × N` pixels total. Keep the LEDs and channel edges clear of the two adjacent divider blades so the full lithophane field receives light.
@@ -138,6 +139,7 @@ It imports from split lighting, unchanged: the controller and power baseline, th
 - **Pixel count.** Per strip, `N = floor((H_lit − 2 × m) / p)`, where `H_lit` is the height of the lit band that face sees. Use pixel order to suit the effect (Dragon runs top to bottom because the flame only descends).
 - **Distance.** Record the LED-to-skin distance range across the lit region (Dragon: 42–59 mm). Hotspots are the risk at short throws.
 - **Base.** A locating fence on the deck just inside the shell's opening holds the shell and blocks light at the seam. The base bay holds the hardware set on its plate.
+- **Tie-down.** The shell is the lid: its insert boss (or captive-nut pocket when an iron can't reach) sits on the axis above the LED post, and the wire runs down the post bore to the plate's anchor cup.
 - **Printing.** A shell with a large opening stands on a thin rim; add a brim and keep supports out of the hollow.
 
 Verify for each lit-shell lantern: brightness through the skin at the actual distance, hotspots, light leaks at seams, and the post and plate fit.

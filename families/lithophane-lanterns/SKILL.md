@@ -57,7 +57,7 @@ Block out these systems together:
 
 Model clearance and motion reserves as named, visible non-production objects. Do not decorate over them or silently shrink them. A scale change is a redesign whenever it changes the protected hardware envelope, minimum printable features, panel thickness range, light spacing, or service access. Never uniformly scale a finished reference mesh and call the result engineered.
 
-Record how panels go in and how the roof or lid comes off at blockout, and show it in the review. Default to positive roof location (pegs or a keyed lip); gravity-only seating needs the user's explicit acceptance.
+Record how panels go in and how the roof or lid comes off at blockout, and show it in the review. Default to positive roof location (pegs or a keyed lip); gravity-only seating needs the user's explicit acceptance. For Dave's lanterns, add the central lid tie-down: an M4 eye bolt in a heat-set insert in the lid, a wire down the post bore, and an M4 bolt, washer and nut through the hardware plate. Reserve its axis column at blockout (see [engineering](references/engineering.md), lid tie-down).
 
 ## Decorate part by part, and let the art win
 
