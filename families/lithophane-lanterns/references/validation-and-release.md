@@ -53,3 +53,20 @@ Include:
 - version identity and superseded-file warning.
 
 Do not release stale candidate STLs after a later visual, hardware, scale, or interface revision.
+
+## Locked versions
+
+When the user approves a version for printing, lock it by pull request in this repository (the lantern-art folder on the user's Mac is not a git repository):
+
+```text
+lanterns/<lantern>/v<N>/
+  README.md
+  print/    one 3MF per part, named <lantern>-v<N>_<part>.3mf (blank hardware plate included)
+  source/   every script that generates the parts and panels, in run order
+  art/      the approved concept and panel art
+  review/   the sheets the user approved
+```
+
+The README covers: what the lantern is; what the user approved and when; a per-part table (file, part, size, orientation, supports, material); the panel face map; lighting and hardware (strip, pixels per face, WLED limit, plate); the source pipeline in run order, with tool versions; where large source meshes live and their generation task IDs; and known open items, including what has not been printed.
+
+Before locking, check that every script takes its paths as arguments, that every 3MF re-imports with the expected bounds and shell count, and that no placeholder or reserve geometry is in a print file. A later change is a new `v<N+1>` folder; never edit a locked version in place.

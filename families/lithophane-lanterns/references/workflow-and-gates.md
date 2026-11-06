@@ -8,6 +8,8 @@ Reconcile the lantern's use, scale, panel count and story, hardware, finish, and
 
 Ask for approval of named visible properties such as silhouette, composition, roof language, supports, panel prominence, and illuminated mood. Concept approval authorizes blockout only; it does not validate hidden construction, dimensions, panel performance, mechanics, safety, or printability.
 
+Keep the approved concept's look intact. If you think a visible feature is a printing risk, list it separately as your proposal, with the evidence, and let the user decide. Do not record it as an approved "production change". (Dragon: "wings folded" was the agent's idea, written in as if approved; the user has printed many open wings without trouble.)
+
 ## 2. Functional blockout
 
 Build around the real hardware and panel system, not around the outside silhouette alone. Reserve:
@@ -19,13 +21,25 @@ Build around the real hardware and panel system, not around the outside silhouet
 - roof/base removal and positive location;
 - print segmentation and assembly order.
 
-Show assembled, cutaway, exploded, and access states. Record a small geometry-facts artifact with overall bounds, hardware reserve, panel field and thickness assumptions, clearances, service architecture, and known exclusions.
+Show assembled, cutaway, exploded, and access states, and say in words how panels go in and how the roof or lid comes off. Record a small geometry-facts artifact with overall bounds, hardware reserve, panel field and thickness assumptions, clearances, service architecture, and known exclusions.
 
 Obtain visual/functional blockout review before expensive detail. A material change to protected hardware, scale, panel architecture, or service direction reopens this gate.
 
-## 3. Decorative integration
+## 3. Decorative integration, part by part
 
-Preserve the accepted blockout interfaces while developing style. Compare neutral production geometry against the approved concept. If the lantern will be hand-painted, convert governed color boundaries into printable and reachable raised, recessed, grooved, or separate geometry. Presentation materials cannot stand in for absent production detail.
+Do not decorate the whole lantern at once. Procedural whole-lantern decor and AI meshes fitted straight onto the whole blockout both fell well short of the concept on every lantern tried. Work part by part:
+
+1. **Split the decoration into a few parts** (for example: plinth, corner column, panel surround, cornice and roof; or plinth plus four trees). Repeated parts are designed once and placed several times. Part boundaries should make sense as print or assembly segments where possible, but the visual split comes first.
+2. **Write a part brief** for each: what it owns visually, which protected interfaces it must respect, and the key protected dimensions (for example "upper step at least 90% of the lower step's width"). Check the art against the blockout before turning it into 3D; plinth art twice came back too narrow to carry the body.
+3. **Make concept art for each part alone** and get each approved. Brief it in the approved concept's style, alone and centred on a plain mid-grey backdrop, three-quarter view from slightly above, whole part in frame, no text. For a single-colour hand-painted print, all detail must be carved relief and nothing finer than about 1.5 mm.
+4. **Model each part separately** from its approved art (image-to-3D from the part art works well). Review it with a three-up sheet: approved art, textured model, bare geometry. The bare view matters because texture can fake detail the print will not have. Also show the raw model before any fitting. A part passes when it is faithful to, or better than, its art.
+5. **Variants.** Approve one design, then make sibling art by image-to-image from it (same style, camera, and backdrop; change only the dressing), then model each.
+6. **Fit each part to its place** without deforming it (see modeling and evidence). Show a part on a ghost of its neighbours when it cannot be judged alone (a quarter canopy).
+7. **Assemble** only after every part has passed, then compare matched views with the overall concept.
+
+The art is the priority. When a faithful part breaks the blockout envelope, change the structure or ask; do not distort the part. Expect natural forms to break the box (a canopy wider than the lantern, roots over the plinth) and ask about overhang early. A cosmetic protected interface may change when the art needs it (a panel mask following a branch arch); record it so panel prep follows.
+
+If the lantern will be hand-painted, convert governed color boundaries into printable and reachable raised, recessed, grooved, or separate geometry. Presentation materials cannot stand in for absent production detail. Check the printability of thin AI-generated detail (leaves, web strands, hanging moss) per part, before assembly.
 
 Obtain a final matched-view approval before print engineering when visual faithfulness is a governing requirement. A focused approval of one component does not approve the whole lantern.
 
@@ -55,3 +69,11 @@ Refresh affected evidence after any material change to:
 - retention, joints, segmentation, material, or print process.
 
 Do not carry a prior score, pass, or approval across changed geometry unless its governed evidence is demonstrably unchanged.
+
+## Review comments
+
+Users often review by pinning comments on review sheets. Render a close-up of the pinned spot, state how you read the comment, and make the smallest change that fits that reading. If the reading is a guess, say so in the reply. (Lonely Mountain: a pin read as "widen the block sideways" produced a stretch the user undid entirely; the intent was a lid that overlaps the frame.)
+
+## Checkpoint
+
+Keep a current-state block at the top of the project checkpoint: gate, evidence level, active source and print files, open decisions, and next step. Rewrite it every session. Keep dated history below it. Do not copy series-wide facts (strip, plate, tolerances) into each checkpoint where they go stale; reference this skill or one series note instead.
