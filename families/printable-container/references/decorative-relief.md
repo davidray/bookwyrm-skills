@@ -11,7 +11,7 @@ Read this before decorating a shell or lid, or adding feet, handles or other orn
 
 ## Pipeline that works
 
-1. Generate carving with Meshy: image-to-3D from a true-proportion concept for a whole box, or text-to-3D "bas-relief carved panel" for one scene. Track credits and ask before large spends.
+1. Generate carving with Meshy: image-to-3D from a true-proportion concept for a whole box, or text-to-3D "bas-relief carved panel" for one scene. Write the source image prompt for crisp carving and leave depth limits and paint-ease wording out of it; see [image-to-3D input](image-to-3d.md). Track credits and ask before large spends.
 2. Raycast the mesh into a depth map (0.2 mm per pixel), subtract the local background, then compress the range (log plus Poisson, or k·tanh(R/s), for example 12·tanh(R/13) for bold focal relief).
 3. Wrap the height map onto the real shell wall faces and corners. Mask protected zones first: seam, pull notches, service openings, magnet pockets, connector ports.
 4. Apply a 45 degree overhang filter so walls print upright without supports. Expect mushroom caps and similar to become cones or brackets.

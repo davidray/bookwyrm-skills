@@ -22,7 +22,7 @@ Read this before designing a hinge, a rotating lid or any print-in-place mechani
 
 ## Sculpted figures
 
-- Generate the figure with Meshy image-to-3D from a padded crop of the whole figure; padding stops it flat-cutting the edges. Procedural, part-by-part sculpting looked cartoonish and was dropped.
+- Generate the figure with Meshy from a resin-sculpt turnaround sheet (front, left, back, right at one scale) through multi-image-to-3D; see [image-to-3D input](image-to-3d.md). With a single image, use a padded crop of the whole figure; padding stops it flat-cutting the edges. Procedural, part-by-part sculpting looked cartoonish and was dropped.
 - Remove fragile or unwanted detail rather than thicken it. David removed the sculpted hair (fake hair is glued on after printing) and the teeth. An SDF opening (Mesh to SDF Grid, offset inward then outward by the same radius, Grid to Mesh) followed by masked Laplacian smoothing does this cleanly.
 - The figure grows out of its base. Don't clip rocks or terrain flat; Gollum's back runs down into the rock.
 - Size the mechanism to the generated mesh rather than shrinking the figure (the sphere went from 60 to 66 mm to match Meshy's ball). Leave about 0.5 mm between the figure and a moving part it touches, more where it bridges over it.

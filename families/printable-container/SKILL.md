@@ -13,6 +13,7 @@ References:
 - [decorative relief](references/decorative-relief.md): carved exteriors, feet, handles, mating features.
 - [lithophanes](references/lithophanes.md): lit panes, scene images, inscriptions and fonts.
 - [engineering and validation](references/engineering-and-validation.md): joints, stack-ups, energy safety, orientation, exports.
+- [image-to-3D input](references/image-to-3d.md): prompts, multi-view sheets, scaling and judging for Meshy figures, ornaments and carving.
 - [moving parts and figures](references/moving-parts-and-figures.md): hinges, print-in-place mechanisms, sculpted figures, filament saving.
 - [lighting and electronics](references/lighting-and-electronics.md): LED scenes on WLED, controller boards.
 - [box-family standards](references/box-family-standards.md): house dimensions, hardware and defaults.
