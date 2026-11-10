@@ -63,6 +63,7 @@ When the user approves a version for printing, lock it by pull request in this r
 ```text
 lanterns/<lantern>/v<N>/
   README.md
+  piece.json  the README's facts for the library (bookwyrm-rpg services/library/docs/piece-json.md)
   print/    one 3MF per part, named <lantern>-v<N>_<part>.3mf (blank hardware plate included)
   source/   every script that generates the parts and panels, in run order
   art/      the approved concept and panel art
@@ -71,7 +72,7 @@ lanterns/<lantern>/v<N>/
 
 The README covers: what the lantern is; what the user approved and when; a per-part table (file, part, size, orientation, supports, material); the panel face map; lighting and hardware (strip, pixels per face, WLED limit, plate); the source pipeline in run order, with tool versions; where large source meshes live and their generation task IDs; and known open items, including what has not been printed.
 
-Before locking, check every claim in the README (shell counts, supports, coverage, sizes) against the facts files and slice results it summarises. A README once said every part was a single shell while the body's facts listed 5. Also check that every script takes its paths as arguments, that every 3MF re-imports with the expected bounds and shell count, and that no placeholder or reserve geometry is in a print file. A later change is a new `v<N+1>` folder; never edit a locked version in place.
+Before locking, check every claim in the README (shell counts, supports, coverage, sizes) against the facts files and slice results it summarises. A README once said every part was a single shell while the body's facts listed 5. Also check that every script takes its paths as arguments, that every 3MF re-imports with the expected bounds and shell count, and that no placeholder or reserve geometry is in a print file. Write `piece.json` with the README: every print file is named by a component, Middle-earth and Zelda lanterns are `"ip"` `middle-earth` or `zelda` with licence `personal-use-only`, and `status` is the claim level the README states. `python tools/check_piece_json.py lanterns/` must be clean. A later change is a new `v<N+1>` folder; never edit a locked version in place.
 
 In an autonomous run, open the locking PR as soon as the candidate is complete so the user can review it, say in the README and PR that the version was not user-approved, and leave it unmerged until the user's verdict. Put these at the top of the README, the PR and the message to the user:
 - any reviewer FAIL that is still unresolved;
