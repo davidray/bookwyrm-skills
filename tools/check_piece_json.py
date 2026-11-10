@@ -8,7 +8,9 @@ pre-commit hook. Each PATH is a piece.json or a folder searched for them (.git s
 It checks what a repo can check on its own: the required fields and closed values, that
 every component file exists beside the piece.json, and that every print file there is
 named by a component. --metadata-only skips the two file checks, for repos whose print
-files live outside git (a release asset, or the Mac). The library's import_piece applies
+files live outside git (a release asset, or the Mac). A version that holds only its changed
+parts names each unchanged one in an earlier sibling version folder ("../v1/print/roof.3mf");
+import_piece copies it in at its path there ("print/roof.3mf"). The library's import_piece applies
 the full piece schema on top; run it with dry_run to see that verdict.
 
 The lists below are the library's own (bookwyrm-rpg services/library, piece_schema.py and
@@ -116,6 +118,21 @@ def problems_for(path: Path, metadata_only: bool = False) -> tuple[list[str], tu
         problems.append("components: expected a list")
         components = []
     named = {c.get("file") for c in components if isinstance(c, dict)}
+    imported = {}  # revision path -> component file
+    for file in sorted(f for f in named if isinstance(f, str)):
+        parts = file.split("/")
+        earlier = parts[0] == ".." and len(parts) > 2 and VERSION_RE.match(parts[1])
+        if ".." not in parts:
+            stored = file
+        elif earlier and ".." not in parts[2:]:
+            stored = "/".join(parts[2:])
+        else:
+            problems.append(f"components: {file!r} may only reach up into ../<version>/<path>")
+            continue
+        if stored in imported:
+            twin = imported[stored]
+            problems.append(f"components: {file!r} and {twin!r} both import as {stored!r}")
+        imported[stored] = file
     if not metadata_only:
         folder = path.parent
         for i, component in enumerate(components):
