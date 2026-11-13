@@ -38,7 +38,7 @@ In a series of lanterns, keep the shared interfaces consistent: panel slot and r
 
 For Dave's lantern projects, record one of these standard lighting architectures before fixing the internal structure: **split lighting**, **lit shell**, **puck light**, or **tea light**. Do not silently combine their assumptions.
 
-- When **split lighting** is selected, read and apply [standard lighting architectures](references/standard-lighting-architectures.md). The named choice imports the established controller and power system, swappable hardware plate, four-chamber divider, and four-strip lighting topology as one baseline system.
+- When **split lighting** is selected, read and apply [standard lighting architectures](references/standard-lighting-architectures.md). The named choice imports the established controller and power system, swappable hardware plate, four-chamber split divider (printed core post plus four flat laser-cut or printed blades, never one piece), and four-strip lighting topology as one baseline system.
 - When **lit shell** is selected (an opaque hollow sculpture with lithophane regions printed into its wall, lit from a central LED post), read and apply its section of the same reference. It shares the split-lighting controller, power, and hardware plate but has no divider.
 - For **puck light** or **tea light**, model the actual selected light and its service envelope. Do not inherit the split-lighting PCB, battery, divider, or strip topology unless the user explicitly requests a hybrid.
 
