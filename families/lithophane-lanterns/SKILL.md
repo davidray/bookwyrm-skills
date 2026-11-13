@@ -22,7 +22,7 @@ Record before committing to architecture:
 
 Use a battery-powered or otherwise low-voltage LED source. Exclude open flame. Do not infer hardware size, switch access, heat behavior, tolerances, hidden construction, or optical performance from concept art or a product label. If the physical light is available, measured dimensions outrank nominal packaging dimensions.
 
-Read [workflow and gates](references/workflow-and-gates.md) for a new build or a material redesign. Read [engineering](references/engineering.md) before fixing dimensions, interfaces, segmentation, or orientation.
+Read [workflow and gates](references/workflow-and-gates.md) for a new build or a material redesign. Read [engineering](references/engineering.md) before fixing dimensions, interfaces, segmentation, or orientation. Flat structural parts (divider blades, controller and floor plates, diffusers, flat lid decks) are laser-cut acrylic by default, with a printed fallback; see its laser-cut acrylic section.
 
 For Dave's lantern projects, read [Dave's lantern print profile](references/dave-print-profile.md) before selecting the build envelope, exterior feature sizes, segmentation, material, nozzle, compatibility target, lithophane recipe, or fit clearances. It holds physically proven settings; reuse them instead of proposing new coupons for the same interfaces. Keep project-specific proportions, visual approvals, hardware, and exceptions in the project checkpoint.
 
