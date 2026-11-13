@@ -104,6 +104,32 @@ Decide which parts are intended to be single connected solids and which are deli
 
 Choose segmentation from build volume, support burden, panel installation, service, painting, and repair. Ensure the assembly order is possible without trapping panels, hardware, or fasteners. Keep fragile optical panels separate from high-support structural prints where practical.
 
+## Laser-cut acrylic parts (series standard)
+
+David set this on 2026-11-13: flat structural parts are laser-cut from acrylic where that fits, instead of printed. Cut parts are fast, flat and exact, and easy to recut when hardware changes.
+
+Cut these where the lantern has them:
+
+- **Divider blades.** 3 mm opaque black acrylic; see the split divider standard in [standard lighting architectures](standard-lighting-architectures.md#split-divider-construction-standard).
+- **Swappable controller plate.** The floor plate, with that board's standoff holes, wire pass-throughs and the tie-down anchor hole cut per hardware set. Use screw-on nylon standoffs instead of printed ones. The upright bulkhead with USB-C and switch cutouts can be a second cut plate on two small brackets, or stay printed if it has to be shaped; say which.
+- **Floor and service plates**, including the tie-down anchor plate. The M4 bolt carries the lid tension through this plate: use 3 mm acrylic at least, a washer at least 12 mm across on the acrylic, and screw holes at least 2 × the hole diameter from any edge. Acrylic cracks from overtightened screws, so specify pan-head screws with washers, never countersunk.
+- **Diffusers.** Thin frosted white acrylic (start at 2 mm) behind each lithophane to even out LED hot spots. A diffuser costs brightness and changes the LED-to-panel optics, so it needs the one-chamber light coupon before release, and it must fit the panel channel or its own slot without trapping the lithophane. Not yet tried on any lantern.
+- **Flat lid inner decks**, where a lid has a flat deck under its decor.
+
+Keep printed: lithophanes, decor, divider core posts, and any part that is curved, shaped, or carries locating pins, tabs or sockets.
+
+**Material.** Cast acrylic (cuts cleaner than extruded). Opaque black for anything that must block light; frosted white only for diffusers. Clear acrylic only where it is meant to be seen through.
+
+**Design rules.**
+- Cast sheet varies about ±0.2 mm. Size slots, channels and seats that take a cut part for the thickest sheet, and say how to firm up a loose fit.
+- Laser kerf is about 0.1–0.2 mm. Draw outlines at nominal size and note the kerf assumption; adjust after the first cut.
+- Fit the sheet on a 12 × 12 in (305 × 305 mm) cutter bed until David names his cutter or service. A larger part needs a split or a cutting service.
+- Every cut part also gets a printed fallback 3MF (flat, no supports) of the same outline, dark PLA where the acrylic would be black.
+
+**Release.** Each lantern's print sheet lists which parts are cut and which are printed. Ship one SVG and one DXF per sheet thickness and colour, in mm, with cut lines as red hairlines and engraving (if any) in another colour, nested on one sheet. Generate them from the same script and numbers as the printed parts they fit. Record each cut part's material, thickness, colour and outline in the lantern's facts JSON.
+
+Locked lanterns keep their printed plates unless David asks for a change.
+
 ## Scaling
 
 Scale the architecture selectively. Keep real hardware, required clearances, printable wall/relief features, and usable access at viable absolute dimensions. Recompose the exterior around them. When a larger light replaces a smaller one, expect footprint, base, and proportion changes; do not hide the change behind a uniform scale or stale visual approval.

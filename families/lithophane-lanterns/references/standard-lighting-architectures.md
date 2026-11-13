@@ -36,7 +36,7 @@ The board and power details below are the reference hardware set the plate and c
 
 ### Divider and light baseline
 
-- Use an opaque, removable divider built as a hollow central post with four radial light-blocking blades. Together, the post and blades create four face-oriented optical chambers, one per lithophane.
+- Use an opaque, removable divider built as a hollow central post with four radial light-blocking blades, made as separate parts (see [split divider construction](#split-divider-construction-standard)). Together, the post and blades create four face-oriented optical chambers, one per lithophane.
 - Orient the divider so each of the central post's four flat faces points toward the center of one lithophane. Each lithophane sits between two adjacent radial blades; the blades form the chamber sidewalls and prevent light intended for one lithophane from spilling directly behind its neighbors.
 - Run each blade outward toward the opaque corner/frame line between adjacent lithophanes. Its outer edge must meet or overlap the lantern's light-blocking frame region rather than terminate in the illuminated image field.
 - Run the divider continuously between keyed base and roof seats. Preserve the hollow center as a protected vertical wiring/service passage, including usable entry and exit openings. The lid tie-down wire shares this bore, so keep a free 10 mm passage beside the LED harness. Leave at least 0.5 mm of vertical clearance at one seat so the tie tension doesn't load the divider.
@@ -49,14 +49,33 @@ The board and power details below are the reference hardware set the plate and c
 - Daisy-chain `DIN→DOUT` around the post across the four strips as one `4 × N`-pixel serial data chain connected to the controller's single light output. In this definition, “wired in serial” refers to the addressable data order; preserve a correctly sized, serviceable 5 V/GND distribution path rather than placing the strip power rails electrically in series.
 - Reference firmware/load configuration: WLED with an 850 mA current limit and the LED count set to `4 × N`. The limit, not the pixel count, bounds the load: more pixels at the same limit spread the same current over a taller field. Re-check current, voltage drop, wiring, connector capacity, battery runtime, and heat before raising the limit, and confirm the voltage drop along the chain for the derived `N`.
 
-### Divider details in use
+### Split divider construction (standard)
 
-These worked through blockout and print engineering on Lonely Mountain and Bag End and are the starting point for a new divider:
+David set this as the standard for every new split-lit lantern on 2026-11-13, from Mirkwood divider v2. It replaces the one-piece printed divider. A one-piece divider (post and blades printed together) took very long to print and often fell off its supports. Do not design one for a new lantern; record it as a project-specific departure if a lantern ever needs it. Locked lanterns that already have a one-piece divider keep it unless David asks for a retrofit.
 
-- Hollow 24 mm square post with a 14 mm wire bore, seated about 3 mm into keyed base and roof sockets.
-- Four 2.4 mm blades, with tips 0.5 mm clear of the frame's inner corners. The user accepted the light-leak risk at that gap (2026-11-05).
-- Three-wire exits 10 × 3.6 mm at both ends of each strip.
-- LED-to-panel distance of about 54–61 mm is within the range of the user's working lanterns; it is not a risk that needs a test.
+The divider is two kinds of part:
+
+1. **Printed core post.** A hollow square post carrying the LEDs and the wiring.
+   - Square section (Mirkwood: 28 mm) with a 14 mm wire bore. The bore is still shared with the lid tie-down wire, so keep the free 10 mm passage beside the harness.
+   - A small boss at each corner with a vertical slot open at the top for one blade (Mirkwood: 7.4 mm boss standing 3 mm proud, slot 3.4 mm wide and 8 mm deep). Close the slot at the bottom with a floor that sets the blade height.
+   - One LED-strip channel on each face (Mirkwood: 10.6 × 0.8 mm for the standard strip) and three-wire exits into the bore at both strip ends (10 × 3.6 mm).
+   - A spigot that drops into the base or plinth socket, with a shoulder that sits on the deck (Mirkwood: 24 mm spigot, 2.7 mm deep). Keep the ≥ 0.5 mm clearance under the lid or roof boss so tie tension never loads the post.
+   - Print it upright and upside down (top face on the bed), with no supports and a brim. Design it so that orientation needs none: slots open toward the bed, no overhangs on the spigot. Opaque or dark PLA.
+2. **Four flat blades.** Plain rectangles that slide straight down into the corner slots from above.
+   - First choice: laser-cut from **3 mm opaque black cast acrylic**. White, clear or translucent acrylic glows and leaks light between chambers, so never use it.
+   - Printed fallback: the same blade as a 3 mm flat plate in black or dark PLA, printed flat with no supports.
+   - Size them per lantern. Length runs from the slot root to 0.5 mm short of the frame's inner corner. Height runs from the slot floor (about 0.5 mm above the deck) to just under the top caps, so the blade covers the whole lithophane field as the governing rules below require. Mirkwood: 67.0 × 254.9 mm.
+   - Ship the laser file as SVG and DXF in mm, cut lines as red hairlines, nested on one sheet that fits a 12 × 12 in (305 × 305 mm) cutter bed; ship a 3MF of the printed fallback beside it. If a blade is too long for the bed, say how to turn it (Mirkwood: 45° on the A1).
+
+**Fit.** Make the slot 0.4 mm wider than the nominal sheet (3.4 mm for 3 mm). Cast acrylic varies about 2.8–3.2 mm, so this gives a slight slip fit; tape on the blade root firms up a loose one. Clash-check the assembled post and blades against the decor, roof and frame, and keep the LED-to-panel distance in the proven 54–61 mm range.
+
+**Assembly order.** With the lid off, seat the post in its socket, slide each blade down into its slot, then stick the strips in the face channels and feed their leads through the wire exits into the bore.
+
+**Release.** Generate the post, the blade outline (SVG, DXF) and the printed-blade 3MF from one script so the slot width and blade size come from the same numbers. Record post section, slot width and depth, slot floor height, and blade length and height in the lantern's facts JSON.
+
+**Not yet proven.** As of 2026-11-13 no split divider has been printed or cut. Until one has, the release must ask for one test before the full set: print the post and fit one blade (cut or printed) into one slot, checking slip fit and that the blade stands vertical. Update this section with the result.
+
+Earlier one-piece dividers (Lonely Mountain, Bag End) used a 24 mm post, 14 mm bore, about 3 mm seats, and 2.4 mm blades with tips 0.5 mm clear of the frame's inner corners. David accepted the light-leak risk at that 0.5 mm gap (2026-11-05), and it carries over to the split blades.
 
 ### Governing divider-to-frame relationship
 
@@ -114,20 +133,20 @@ The installed view shows one lithophane facing each central post face. Adjacent 
 
 ![Isolated split-lighting divider](images/split-lighting-divider-isolated.jpg)
 
-The isolated view shows the hollow central wire passage, four vertical strip channels on the post, and the radial baffle blades. Preserve this topology when adapting the divider height and span to a new lantern.
+The isolated view shows the hollow central wire passage, four vertical strip channels on the post, and the radial baffle blades. Preserve this topology when adapting the divider height and span to a new lantern. The photos show an older one-piece divider; build new ones split, as above.
 
 ### Variables that remain lantern-specific
 
 The name locks the system topology and established hardware envelopes, but not every geometric or optical dimension. Determine and verify for each lantern:
 
-- numerical divider height derived from the base-to-roof seat distance, blade span and thickness, central-post section, strip-channel fit, interlock, and base/roof key geometry;
+- numerical divider height derived from the base-to-roof seat distance, blade length and height, central-post section, slot fit, strip-channel fit, and base/roof key geometry;
 - perimeter light sealing, reflectivity, diffuser use, and seam leakage;
 - pixel count per strip `N` derived from the field height and measured pitch, and the resulting strip length and channel length;
 - LED-to-lithophane spacing, panel thickness range, color balance, and hotspot control;
 - final harness lengths, power injection, connector selections, wire gauge, and service routing;
 - enclosure fit, antenna performance, powered temperature, and runtime.
 
-Use a divider/key/light-seal coupon, one representative chamber optical coupon, and a controller-carrier fit check before release claims.
+Use a divider/key/light-seal coupon (for the split divider: the post plus one blade in one slot), one representative chamber optical coupon, and a controller-carrier fit check before release claims.
 
 ## Lit shell
 

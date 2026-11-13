@@ -18,6 +18,8 @@ The X2D official areas recorded on 2026-11-02 are:
 - auxiliary/right nozzle: 235.5 × 256 × 256 mm;
 - two-nozzle intersection: 235.5 × 256 × 256 mm.
 
+Laser cutting: flat structural parts are cut from acrylic by default (see [engineering](engineering.md#laser-cut-acrylic-parts-series-standard)). Cutter not yet named; assume a 12 × 12 in (305 × 305 mm) bed.
+
 ## Material and finish preference
 
 - Default opaque exterior material: Bambu Matte PLA, White.
