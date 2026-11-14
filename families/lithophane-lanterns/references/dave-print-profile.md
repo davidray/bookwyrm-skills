@@ -35,6 +35,7 @@ These were printed and verified on earlier projects (davidray/shire-travel-case 
 | Lithophane relief | 0.8 mm bright to 2.0 mm dark; 2.4 mm and thicker read too dark | Shire travel case |
 | Lithophane print | White PLA (not Matte), 100% infill, 0.10 mm layers, flat with the back down; 0.4 mm nozzle on the A1 or X2D | Shire travel case, gift lanterns |
 | Flat border or rails | 3.2 mm thick | Gift lanterns |
+| Lithophane facing | Textured (relief) side outside toward the viewer, flat side toward the light | Christmas village mini print, David, 2026-11-14 |
 | Pane seat | 0.3 mm clearance per side, 0.2 mm above the pane (3.8 mm slot for a 3.2 mm panel) | Shire cassette, in service |
 | Free sliding fit | 0.5 mm per side | Shire cassette |
 | Tongue and groove | 0.30 mm lateral per side, 0.20 mm vertical relief | Shire seam test r3 |

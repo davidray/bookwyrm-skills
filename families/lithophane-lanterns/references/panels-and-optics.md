@@ -14,7 +14,7 @@ Prep that has worked on Dave's panels:
 - For a subject that must glow but is a dark colour in the art (a red dragon), a channel-weighted grey mix such as 0.75R + 0.2G + 0.05B so it prints thin and bright.
 - Never crop panel art from an image that shows a lit lithophane, frame, or hand. Its tones already contain fake relief and glow and print muddy. Regenerate it as flat art (see the art pipeline's panel briefs).
 - Generated art often paints its own arch, disc, or grey surround. Mask that away so the panel's own mask sits on or inside it, and keep focal content out of zones the frame covers.
-- When panels sit behind the relief-faces-LEDs convention, mirror the image in the relief so it reads correctly from outside.
+- **Put the textured (relief) side outside, facing the viewer, and the flat side toward the light.** On David's first print with both choices visible (the one-piece Christmas village mini, 2026-11-14), the panels looked best with the texture outside. With the relief outside, the image reads the right way round without mirroring. If a panel ever has to face its relief toward the light, mirror the image so it still reads correctly from outside.
 
 Check the story in the art, not only the tones: a scene can be wrong in content (Bilbo outside his own hall) even when it reads well.
 
