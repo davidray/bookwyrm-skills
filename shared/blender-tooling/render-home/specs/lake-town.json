@@ -1,0 +1,118 @@
+{
+ "name": "Lake-town",
+ "slug": "lake-town",
+ "dir": "/home/user/bookwyrm-lanterns/lanterns/lake-town/v1/print",
+ "height": 357,
+ "width": 285,
+ "parts": [
+  {
+   "file": "lake-town-v1_A_pier-base.3mf",
+   "center": [
+    0.06999999999999318,
+    0.060000000000002274,
+    0.0
+   ]
+  },
+  {
+   "file": "lake-town-v1_B_timber-body.3mf",
+   "center": [
+    0.05000000000000426,
+    0.0899999999999963,
+    62.26
+   ]
+  },
+  {
+   "file": "lake-town-v1_C_roof.3mf",
+   "center": [
+    0.10999999999999943,
+    0.14000000000000057,
+    235.99
+   ]
+  },
+  {
+   "file": "lake-town-v1_D_light-divider.3mf",
+   "center": [
+    0.0,
+    0.0,
+    59.31
+   ]
+  },
+  {
+   "file": "lake-town-v1_P1_laketown_front.3mf",
+   "mat": "litho",
+   "rot": [
+    [
+     "x",
+     90
+    ]
+   ],
+   "center": [
+    0,
+    73.6,
+    73.36
+   ],
+   "post_rotz": 0
+  },
+  {
+   "file": "lake-town-v1_P2_barrels_right.3mf",
+   "mat": "litho",
+   "rot": [
+    [
+     "x",
+     90
+    ]
+   ],
+   "center": [
+    0,
+    73.6,
+    73.36
+   ],
+   "post_rotz": -90
+  },
+  {
+   "file": "lake-town-v1_P3_bard_back.3mf",
+   "mat": "litho",
+   "rot": [
+    [
+     "x",
+     90
+    ]
+   ],
+   "center": [
+    0,
+    73.6,
+    73.36
+   ],
+   "post_rotz": 180
+  },
+  {
+   "file": "lake-town-v1_P4_smaug_left.3mf",
+   "mat": "litho",
+   "rot": [
+    [
+     "x",
+     90
+    ]
+   ],
+   "center": [
+    0,
+    73.6,
+    73.36
+   ],
+   "post_rotz": 90
+  }
+ ],
+ "leds": {
+  "angles": [
+   90,
+   0,
+   270,
+   180
+  ],
+  "r": 14,
+  "z0": 80,
+  "z1": 239.7,
+  "n": 5,
+  "power": 0.4
+ }
+}

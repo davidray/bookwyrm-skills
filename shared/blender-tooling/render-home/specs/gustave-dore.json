@@ -1,0 +1,266 @@
+{
+ "name": "Gustave Dor\u00e9",
+ "slug": "gustave-dore",
+ "dir": "/home/user/bookwyrm-lanterns/lanterns/gustave-dore/",
+ "height": 419,
+ "width": 380,
+ "parts": [
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/gustave-dore/v1.3/print/gustave-dore-v1.3_A_plinth_s1.3mf",
+   "wedge": [
+    [
+     166,
+     0
+    ],
+    [
+     106,
+     0
+    ]
+   ],
+   "zmin": 0
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/gustave-dore/v1.3/print/gustave-dore-v1.3_A_plinth_s2.3mf",
+   "wedge": [
+    [
+     286,
+     0
+    ],
+    [
+     226,
+     0
+    ]
+   ],
+   "zmin": 0
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/gustave-dore/v1.3/print/gustave-dore-v1.3_A_plinth_s3.3mf",
+   "wedge": [
+    [
+     46,
+     0
+    ],
+    [
+     346,
+     0
+    ]
+   ],
+   "zmin": 0
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/gustave-dore/v1.5/print/gustave-dore-v1.5_B_body_sixth.3mf",
+   "rot": [
+    [
+     "y",
+     90
+    ],
+    [
+     "z",
+     30
+    ]
+   ],
+   "wedge": [
+    [
+     90,
+     0
+    ],
+    [
+     30,
+     103.93
+    ]
+   ],
+   "zmin": 81.85,
+   "copies_rotz": [
+    60,
+    120,
+    180,
+    240,
+    300
+   ]
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/gustave-dore/v1.3/print/gustave-dore-v1.3_C_crown.3mf",
+   "center": [
+    0,
+    0,
+    266.55
+   ]
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/gustave-dore/v1/print/gustave-dore-v1_D_divider.3mf",
+   "center": [
+    0,
+    0,
+    78.85
+   ]
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/gustave-dore/v1/print/gustave-dore-v1_P1_dark_wood.3mf",
+   "mat": "litho",
+   "rot": [
+    [
+     "x",
+     90
+    ]
+   ],
+   "center": [
+    0,
+    102.03,
+    96.05
+   ],
+   "post_rotz": 0
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/gustave-dore/v1/print/gustave-dore-v1_P2_charon.3mf",
+   "mat": "litho",
+   "rot": [
+    [
+     "x",
+     90
+    ]
+   ],
+   "center": [
+    0,
+    102.03,
+    96.05
+   ],
+   "post_rotz": -60
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/gustave-dore/v1/print/gustave-dore-v1_P3_boat_of_souls.3mf",
+   "mat": "litho",
+   "rot": [
+    [
+     "x",
+     90
+    ]
+   ],
+   "center": [
+    0,
+    102.03,
+    96.05
+   ],
+   "post_rotz": -120
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/gustave-dore/v1/print/gustave-dore-v1_P4_celestial_rose.3mf",
+   "mat": "litho",
+   "rot": [
+    [
+     "x",
+     90
+    ]
+   ],
+   "center": [
+    0,
+    102.03,
+    96.05
+   ],
+   "post_rotz": -180
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/gustave-dore/v1/print/gustave-dore-v1_P5_rebel_angels.3mf",
+   "mat": "litho",
+   "rot": [
+    [
+     "x",
+     90
+    ]
+   ],
+   "center": [
+    0,
+    102.03,
+    96.05
+   ],
+   "post_rotz": -240
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/gustave-dore/v1/print/gustave-dore-v1_P6_burning_lake.3mf",
+   "mat": "litho",
+   "rot": [
+    [
+     "x",
+     90
+    ]
+   ],
+   "center": [
+    0,
+    102.03,
+    96.05
+   ],
+   "post_rotz": -300
+  }
+ ],
+ "frames": [
+  {
+   "w": 111,
+   "h": 213,
+   "t": 4,
+   "open": [
+    -46.8,
+    46.8,
+    14.05,
+    213
+   ],
+   "apothem_in": 99.93,
+   "z0": 81.85,
+   "angles": [
+    30,
+    90,
+    150,
+    210,
+    270,
+    330
+   ]
+  },
+  {
+   "w": 111,
+   "h": 213,
+   "t": 3,
+   "open": [
+    -43.4,
+    43.4,
+    17.05,
+    213
+   ],
+   "apothem_in": 96.93,
+   "z0": 81.85,
+   "angles": [
+    30,
+    90,
+    150,
+    210,
+    270,
+    330
+   ]
+  }
+ ],
+ "leds": {
+  "angles": [
+   30,
+   90,
+   150,
+   210,
+   270,
+   330
+  ],
+  "r": 41,
+  "z0": 99.85,
+  "z1": 261.85,
+  "n": 4,
+  "power": 0.4,
+  "extra": [
+   {
+    "xy": [
+     23,
+     0
+    ],
+    "z0": 326.85,
+    "z1": 330.85,
+    "n": 1,
+    "power": 0.15
+   }
+  ]
+ },
+ "extra_leds": []
+}

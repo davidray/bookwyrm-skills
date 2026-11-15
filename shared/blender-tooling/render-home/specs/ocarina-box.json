@@ -1,0 +1,195 @@
+{
+ "name": "Ocarina Box",
+ "slug": "ocarina-box",
+ "dir": "/home/user/bookwyrm-lanterns/lanterns/ocarina-box/v1/print",
+ "height": 492,
+ "width": 250,
+ "parts": [
+  {
+   "file": "ocarina-box-v1_A_plinth.3mf",
+   "center": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "file": "ocarina-box-v1_B_body.3mf",
+   "center": [
+    0.0,
+    0.0,
+    48.7
+   ]
+  },
+  {
+   "file": "ocarina-box-v1_C_roof.3mf",
+   "center": [
+    0.0,
+    0.0,
+    298.3
+   ]
+  },
+  {
+   "file": "ocarina-box-v1_S_sword.3mf",
+   "center": [
+    0.0,
+    0.0,
+    350.0
+   ]
+  },
+  {
+   "file": "ocarina-box-v1_D_led-tower.3mf",
+   "center": [
+    0.0,
+    0.0,
+    45.7
+   ]
+  },
+  {
+   "file": "ocarina-box-v1_P1_deku_tree.3mf",
+   "mat": "litho",
+   "rot": [
+    [
+     "x",
+     90
+    ]
+   ],
+   "center": [
+    0,
+    91.6,
+    82.4
+   ],
+   "post_rotz": -180
+  },
+  {
+   "file": "ocarina-box-v1_P2_lon_lon_ranch.3mf",
+   "mat": "litho",
+   "rot": [
+    [
+     "x",
+     90
+    ]
+   ],
+   "center": [
+    0,
+    91.6,
+    82.4
+   ],
+   "post_rotz": -135
+  },
+  {
+   "file": "ocarina-box-v1_P3_death_mountain.3mf",
+   "mat": "litho",
+   "rot": [
+    [
+     "x",
+     90
+    ]
+   ],
+   "center": [
+    0,
+    91.6,
+    82.4
+   ],
+   "post_rotz": -90
+  },
+  {
+   "file": "ocarina-box-v1_P4_zoras_domain.3mf",
+   "mat": "litho",
+   "rot": [
+    [
+     "x",
+     90
+    ]
+   ],
+   "center": [
+    0,
+    91.6,
+    82.4
+   ],
+   "post_rotz": -45
+  },
+  {
+   "file": "ocarina-box-v1_P5_gerudo_desert.3mf",
+   "mat": "litho",
+   "rot": [
+    [
+     "x",
+     90
+    ]
+   ],
+   "center": [
+    0,
+    91.6,
+    82.4
+   ],
+   "post_rotz": 0
+  },
+  {
+   "file": "ocarina-box-v1_P6_lake_hylia.3mf",
+   "mat": "litho",
+   "rot": [
+    [
+     "x",
+     90
+    ]
+   ],
+   "center": [
+    0,
+    91.6,
+    82.4
+   ],
+   "post_rotz": 45
+  },
+  {
+   "file": "ocarina-box-v1_P7_temple_of_time.3mf",
+   "mat": "litho",
+   "rot": [
+    [
+     "x",
+     90
+    ]
+   ],
+   "center": [
+    0,
+    91.6,
+    82.4
+   ],
+   "post_rotz": 90
+  },
+  {
+   "file": "ocarina-box-v1_P8_hyrule_castle.3mf",
+   "mat": "litho",
+   "rot": [
+    [
+     "x",
+     90
+    ]
+   ],
+   "center": [
+    0,
+    91.6,
+    82.4
+   ],
+   "post_rotz": 135
+  }
+ ],
+ "rotz": -20,
+ "leds": {
+  "angles": [
+   -90,
+   -45,
+   0,
+   45,
+   90,
+   135,
+   180,
+   225
+  ],
+  "r": 32,
+  "z0": 88.8,
+  "z1": 248.6,
+  "n": 4,
+  "power": 0.3
+ }
+}
