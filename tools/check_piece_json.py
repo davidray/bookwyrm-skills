@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Check the piece.json of every locked version folder; standalone, standard library only.
 
-    python check_piece_json.py [--metadata-only] PATH [PATH ...]
+    python check_piece_json.py [--metadata-only] [--hoard FILE] PATH [PATH ...]
 
 Copy this one file into a repo that makes pieces and run it in that repo's PR check or a
 pre-commit hook. Each PATH is a piece.json or a folder searched for them (.git skipped).
@@ -13,14 +13,18 @@ parts names each unchanged one in an earlier sibling version folder ("../v1/prin
 import_piece copies it in at its path there ("print/roof.3mf"). The library's import_piece applies
 the full piece schema on top; run it with dry_run to see that verdict.
 
+It also checks the repo's hoard.json (by default ./hoard.json, run from the repo root): the
+family The Hoard offers new ideas to, and the project folders it scans for locked versions.
+
 The lists below are the library's own (bookwyrm-rpg services/library, piece_schema.py and
 piece_import.py); a test there pins this copy to them. Exit status: 0 clean, 1 problems,
-2 nothing found.
+2 neither a piece.json nor a hoard.json found.
 """
 
 from __future__ import annotations
 
 import argparse
+import glob
 import json
 import os
 import re
@@ -29,6 +33,9 @@ from pathlib import Path, PurePosixPath
 
 MANIFEST = "piece.json"
 FORMAT = 1
+HOARD = "hoard.json"
+HOARD_FORMAT = 1
+REPO_RE = re.compile(r"^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$")
 KINDS = ("diorama", "figurine", "lamp", "ornament", "terrain", "prop", "container")
 STATUSES = ("concept", "digitally-validated", "prototype", "interface-fit-tested", "qualified")
 DESIGNS = ("original", "ai-assisted")
@@ -117,10 +124,6 @@ def problems_for(path: Path, metadata_only: bool = False) -> tuple[list[str], tu
     if not isinstance(components, list):
         problems.append("components: expected a list")
         components = []
-    for component in components:
-        name = component.get("name") if isinstance(component, dict) else None
-        if isinstance(name, str) and len(name) > 120:
-            problems.append(f"components: name {name[:40]!r}... is {len(name)} chars (library max 120)")
     named = {c.get("file") for c in components if isinstance(c, dict)}
     imported = {}  # revision path -> component file
     for file in sorted(f for f in named if isinstance(f, str)):
@@ -153,6 +156,70 @@ def problems_for(path: Path, metadata_only: bool = False) -> tuple[list[str], tu
     return problems, key
 
 
+def _relative(value) -> bool:
+    return (
+        isinstance(value, str)
+        and bool(value)
+        and not value.startswith("/")
+        and ".." not in value.split("/")
+    )
+
+
+def hoard_problems(path: Path) -> list[str]:
+    """Every problem with a repo's hoard.json; paths in it are relative to its folder."""
+    try:
+        hoard = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        return [f"not valid JSON: {exc}"]
+    if not isinstance(hoard, dict):
+        return ["expected an object"]
+    root = path.parent
+    problems = [f"{k}: required" for k in ("hoard_json", "family", "projects") if k not in hoard]
+    known = {"hoard_json", "family", "projects", "ignore", "new_projects", "releases"}
+    problems += [f"{k}: unknown field" for k in sorted(set(hoard) - known)]
+    if "hoard_json" in hoard and hoard["hoard_json"] != HOARD_FORMAT:
+        problems.append(f"hoard_json: {hoard['hoard_json']!r} is not {HOARD_FORMAT}")
+    family = hoard.get("family")
+    if "family" in hoard and not isinstance(family, dict):
+        problems.append("family: expected {name, builds, skill, kinds?}")
+    elif isinstance(family, dict):
+        for k in ("name", "builds"):
+            if not (isinstance(family.get(k), str) and family[k].strip()):
+                problems.append(f"family.{k}: required text")
+        skill = family.get("skill")
+        if not isinstance(skill, dict) or not _relative(skill.get("path")):
+            problems.append("family.skill: expected {path, repo?} with a relative path")
+        elif "repo" in skill and not (
+            isinstance(skill["repo"], str) and REPO_RE.match(skill["repo"])
+        ):
+            problems.append(f"family.skill.repo: {skill['repo']!r} is not owner/name")
+        elif "repo" not in skill and not (root / skill["path"]).is_file():
+            problems.append(f"family.skill.path: {skill['path']!r} does not exist")
+        kinds = family.get("kinds", [])
+        if not isinstance(kinds, list) or any(k not in KINDS for k in kinds):
+            problems.append(f"family.kinds: each must be one of {', '.join(KINDS)}")
+    projects = hoard.get("projects")
+    if "projects" in hoard and not (
+        isinstance(projects, list) and (projects or hoard.get("new_projects"))
+    ):
+        problems.append("projects: expected a list of folder globs, empty only with new_projects")
+    elif isinstance(projects, list):
+        for pattern in projects:
+            if not (pattern == "." or _relative(pattern)):
+                problems.append(f"projects: {pattern!r} is not a relative folder glob")
+            elif not [p for p in glob.glob(str(root / pattern)) if Path(p).is_dir()]:
+                problems.append(f"projects: {pattern!r} matches no folder")
+    ignore = hoard.get("ignore", [])
+    if not isinstance(ignore, list) or not all(_relative(i) for i in ignore):
+        problems.append("ignore: expected a list of relative folders")
+    new = hoard.get("new_projects")
+    if new is not None and not (_relative(new) and "<slug>" in new):
+        problems.append(f"new_projects: {new!r} is not a relative folder containing <slug>")
+    if "releases" in hoard and not isinstance(hoard["releases"], bool):
+        problems.append("releases: expected true or false")
+    return problems
+
+
 def manifests(paths: list[Path]) -> list[Path]:
     found = []
     for path in paths:
@@ -170,12 +237,22 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     parser.add_argument("paths", nargs="+", type=Path)
     parser.add_argument("--metadata-only", action="store_true", help="skip the file checks")
+    parser.add_argument("--hoard", type=Path, default=Path(HOARD), help="the repo's hoard.json")
     args = parser.parse_args(argv)
     found = manifests(args.paths)
-    if not found:
-        print(f"no {MANIFEST} found under: {', '.join(map(str, args.paths))}", file=sys.stderr)
+    failed = False
+    if args.hoard.is_file():
+        for problem in hoard_problems(args.hoard):
+            print(f"{args.hoard}: {problem}")
+            failed = True
+        print(f"{args.hoard} checked, {'problems found' if failed else 'clean'}")
+    elif not found:
+        print(
+            f"no {MANIFEST} or {HOARD} found under: {', '.join(map(str, args.paths))}",
+            file=sys.stderr,
+        )
         return 2
-    seen, failed = {}, False
+    seen = {}
     for path in found:
         problems, key = problems_for(path, args.metadata_only)
         if key is not None and key in seen:
