@@ -59,6 +59,8 @@ Model clearance and motion reserves as named, visible non-production objects. Do
 
 Record how panels go in and how the roof or lid comes off at blockout, and show it in the review. Default to positive roof location (pegs or a keyed lip); gravity-only seating needs the user's explicit acceptance. For Dave's lanterns, add the central lid tie-down: an M4 eye bolt in a heat-set insert in the lid, a wire down the post bore, and an M4 bolt, washer and nut through the hardware plate. Reserve its axis column at blockout (see [engineering](references/engineering.md), lid tie-down).
 
+Wherever two printed faces are glued, align them with printed male/female tabs or plugs, never loose dowels or filament pins unless an exception applies (hinges and pivots, joints that are not glued, walls too thin for a socket). Plan them when you choose the segmentation; see [engineering](references/engineering.md), glued joints.
+
 ## Decorate part by part, and let the art win
 
 Whole-lantern decoration has fallen well short of the concept every time it was tried. After the overall concept and the functional blockout are approved, split the decoration into a few parts, make and approve concept art for each part alone, model each part separately until it is faithful to (or better than) its art, and only then assemble and compare with the overall concept. Read [workflow and gates](references/workflow-and-gates.md) gate 3 for the procedure.
