@@ -1,0 +1,614 @@
+{
+ "name": "Christmas Village",
+ "slug": "christmas-village",
+ "dir": "/home/user/bookwyrm-lanterns/lanterns/christmas-village/",
+ "height": 559,
+ "width": 318,
+ "parts": [
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/christmas-village/v1/print/christmas-village_A_base_q1.3mf",
+   "center": [
+    79.4,
+    79.2,
+    0
+   ]
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/christmas-village/v1/print/christmas-village_A_base_q2.3mf",
+   "center": [
+    -79.4,
+    79.2,
+    0
+   ]
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/christmas-village/v1/print/christmas-village_A_base_q3.3mf",
+   "center": [
+    -78.9,
+    -79.15,
+    0
+   ]
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/christmas-village/v1/print/christmas-village_A_base_q4.3mf",
+   "center": [
+    79.25,
+    -79.2,
+    0
+   ]
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/christmas-village/v2/print/christmas-village_B_body.3mf",
+   "offset": [
+    0,
+    0,
+    37.0
+   ]
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/christmas-village/v3/print/christmas-village_C_roof.3mf",
+   "offset": [
+    0,
+    0,
+    311.6
+   ]
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/christmas-village/v1/print/christmas-village_D_divider.3mf",
+   "center": [
+    0,
+    0,
+    34.0
+   ]
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/christmas-village/v2/print/christmas-village_I_vane.3mf",
+   "center": [
+    0,
+    0,
+    511.6
+   ]
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/christmas-village/v3/print/christmas-village_E_eave_1.3mf",
+   "matrix": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     48.3
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     122.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     334.95000000000005
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/christmas-village/v3/print/christmas-village_E_eave_2.3mf",
+   "matrix": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     -118.7
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     122.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     334.95000000000005
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/christmas-village/v3/print/christmas-village_E_eave_3.3mf",
+   "matrix": [
+    [
+     6.123233995736766e-17,
+     -1.0,
+     0.0,
+     -122.0
+    ],
+    [
+     1.0,
+     6.123233995736766e-17,
+     0.0,
+     48.300000000000004
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     334.95000000000005
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/christmas-village/v3/print/christmas-village_E_eave_4.3mf",
+   "matrix": [
+    [
+     6.123233995736766e-17,
+     -1.0,
+     0.0,
+     -122.00000000000001
+    ],
+    [
+     1.0,
+     6.123233995736766e-17,
+     0.0,
+     -118.69999999999999
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     334.95000000000005
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/christmas-village/v3/print/christmas-village_E_eave_5.3mf",
+   "matrix": [
+    [
+     -1.0,
+     -1.2246467991473532e-16,
+     0.0,
+     -48.30000000000001
+    ],
+    [
+     1.2246467991473532e-16,
+     -1.0,
+     0.0,
+     -122.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     334.95000000000005
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/christmas-village/v3/print/christmas-village_E_eave_6.3mf",
+   "matrix": [
+    [
+     -1.0,
+     -1.2246467991473532e-16,
+     0.0,
+     118.69999999999999
+    ],
+    [
+     1.2246467991473532e-16,
+     -1.0,
+     0.0,
+     -122.00000000000001
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     334.95000000000005
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/christmas-village/v3/print/christmas-village_E_eave_7.3mf",
+   "matrix": [
+    [
+     -1.8369701987210297e-16,
+     1.0,
+     0.0,
+     121.99999999999999
+    ],
+    [
+     -1.0,
+     -1.8369701987210297e-16,
+     0.0,
+     -48.30000000000002
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     334.95000000000005
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/christmas-village/v3/print/christmas-village_E_eave_8.3mf",
+   "matrix": [
+    [
+     -1.8369701987210297e-16,
+     1.0,
+     0.0,
+     122.00000000000003
+    ],
+    [
+     -1.0,
+     -1.8369701987210297e-16,
+     0.0,
+     118.69999999999997
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     334.95000000000005
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/christmas-village/v3/print/christmas-village_E_rake_a.3mf",
+   "matrix": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     -22.450000000000003
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     121.9
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0,
+     375.77198300000003
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/christmas-village/v3/print/christmas-village_E_rake_a.3mf",
+   "matrix": [
+    [
+     6.123233995736766e-17,
+     0.0,
+     -1.0,
+     -121.9
+    ],
+    [
+     1.0,
+     0.0,
+     6.123233995736766e-17,
+     -22.44999999999999
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0,
+     375.77198300000003
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/christmas-village/v3/print/christmas-village_E_rake_a.3mf",
+   "matrix": [
+    [
+     -1.0,
+     0.0,
+     -1.2246467991473532e-16,
+     22.44999999999999
+    ],
+    [
+     1.2246467991473532e-16,
+     0.0,
+     -1.0,
+     -121.90000000000002
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0,
+     375.77198300000003
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/christmas-village/v3/print/christmas-village_E_rake_a.3mf",
+   "matrix": [
+    [
+     -1.8369701987210297e-16,
+     0.0,
+     1.0,
+     121.9
+    ],
+    [
+     -1.0,
+     0.0,
+     -1.8369701987210297e-16,
+     22.449999999999974
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0,
+     375.77198300000003
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/christmas-village/v3/print/christmas-village_E_rake_b.3mf",
+   "matrix": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     25.97
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     121.9
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0,
+     367.815688
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/christmas-village/v3/print/christmas-village_E_rake_b.3mf",
+   "matrix": [
+    [
+     6.123233995736766e-17,
+     0.0,
+     -1.0,
+     -121.9
+    ],
+    [
+     1.0,
+     0.0,
+     6.123233995736766e-17,
+     25.970000000000006
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0,
+     367.815688
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/christmas-village/v3/print/christmas-village_E_rake_b.3mf",
+   "matrix": [
+    [
+     -1.0,
+     0.0,
+     -1.2246467991473532e-16,
+     -25.970000000000013
+    ],
+    [
+     1.2246467991473532e-16,
+     0.0,
+     -1.0,
+     -121.9
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0,
+     367.815688
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/christmas-village/v3/print/christmas-village_E_rake_b.3mf",
+   "matrix": [
+    [
+     -1.8369701987210297e-16,
+     0.0,
+     1.0,
+     121.89999999999999
+    ],
+    [
+     -1.0,
+     0.0,
+     -1.8369701987210297e-16,
+     -25.97000000000002
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0,
+     367.815688
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/christmas-village/v1/print/christmas-village_P1_street_front.3mf",
+   "mat": "litho",
+   "rot": [
+    [
+     "x",
+     90
+    ]
+   ],
+   "center": [
+    0,
+    103,
+    168.29999999999998
+   ],
+   "post_rotz": 0
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/christmas-village/v1/print/christmas-village_P2_market_right.3mf",
+   "mat": "litho",
+   "rot": [
+    [
+     "x",
+     90
+    ]
+   ],
+   "center": [
+    0,
+    103,
+    168.29999999999998
+   ],
+   "post_rotz": -90
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/christmas-village/v1/print/christmas-village_P3_pond_back.3mf",
+   "mat": "litho",
+   "rot": [
+    [
+     "x",
+     90
+    ]
+   ],
+   "center": [
+    0,
+    103,
+    168.29999999999998
+   ],
+   "post_rotz": 180
+  },
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/christmas-village/v1/print/christmas-village_P4_sleigh_left.3mf",
+   "mat": "litho",
+   "rot": [
+    [
+     "x",
+     90
+    ]
+   ],
+   "center": [
+    0,
+    103,
+    168.29999999999998
+   ],
+   "post_rotz": 90
+  }
+ ],
+ "leds": {
+  "angles": [
+   90,
+   0,
+   270,
+   180
+  ],
+  "r": 14,
+  "z0": 43,
+  "z1": 279,
+  "n": 6,
+  "power": 0.6
+ }
+}
