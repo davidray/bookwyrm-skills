@@ -49,6 +49,7 @@ How much detail a flat-printed lithophane holds is set in XY, by the extrusion l
 - **Count islands, and treat slicer warnings on panels as failed checks.** For each layer, count the regions narrower than one line or with no extrudable layer below them, and aim for close to zero. A "floating regions" or "thin wall" warning on a lithophane means part of the relief can't be drawn. Fix the cause, then re-slice. Christmas village v2 still warned on all four panels, while its coupon and a smooth control ramp sliced clean.
 - **A smaller nozzle buys detail with time.** A 0.2 mm nozzle halves the line width but triples the print time: 12.5–14.3 h per panel on the A1, against 4–5 h at 0.4 mm. Its 0.60–2.36 mm relief is outside the proven band and needs its own coupon.
 - **Tone-map constants need calibration.** A Beer–Lambert map needs PLA's attenuation `k`. It was guessed at 1.6 /mm and never measured. Calibrate it from a printed step wedge photographed under the real LED before relying on it.
+- **Crop small windows to the focal subject.** At about 58 × 37 mm (the Christmas village mini), busy full-size scenes read as mush in a simulated backlight. Crop each panel to its main subject so the main shapes are at least about 1/10 of the window width, and check the simulated backlight at final size.
 - **Prefer bold forms in the art** (see the art pipeline's panel briefs). Large near-white fields, such as snow scenes, leave little tonal room on a 0.8 mm floor and read low-contrast.
 
 ## Evaluate the physical panel
