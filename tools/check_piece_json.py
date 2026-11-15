@@ -117,6 +117,10 @@ def problems_for(path: Path, metadata_only: bool = False) -> tuple[list[str], tu
     if not isinstance(components, list):
         problems.append("components: expected a list")
         components = []
+    for component in components:
+        name = component.get("name") if isinstance(component, dict) else None
+        if isinstance(name, str) and len(name) > 120:
+            problems.append(f"components: name {name[:40]!r}... is {len(name)} chars (library max 120)")
     named = {c.get("file") for c in components if isinstance(c, dict)}
     imported = {}  # revision path -> component file
     for file in sorted(f for f in named if isinstance(f, str)):
