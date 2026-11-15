@@ -16,6 +16,7 @@ Defaults for any new Middle-earth travel case. Reuse them unless the brief says 
 | Lithophane pane | 204 x 154 mm, square corners, 200 x 150 visible, 0.8 to 2.0 mm thick | Printed |
 | Lid connectors | Set B pair needs 11.84 mm between holder mounting faces; the base holder face is 8.92 mm below the seam, so the lid holder sits 2.92 mm above it (tray r3) | Tray r3 printed in Shire v1.0; flush closure on the connector side not yet confirmed |
 | Feet | Separate printed stumps, glued, keyed by an asymmetric tab with a 0.2 mm gap, or a straight cylinder peg (6.0 mm peg, 6.5 mm hole) | Printed |
+| Glued joints | Printed male/female tabs or plugs, never loose dowels or filament pins (David, 2026-11-15). Tabs 0.2 mm all round, socket 0.2–0.5 mm deeper than the tab, keyed one way. Exceptions: hinges, pivots, joints that are not glued. See [engineering and validation](engineering-and-validation.md#glued-joints-printed-malefemale-tabs) | Teardrop foot tab printed |
 | Fonts | Luminari for carved text, Trattatello for lithophane text; override per box | Printed |
 
 ## Interiors
