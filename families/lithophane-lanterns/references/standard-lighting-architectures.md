@@ -171,3 +171,9 @@ Verify for each lit-shell lantern: brightness through the skin at the actual dis
 ## Tea light
 
 **Tea light** is a separate standard architecture name for an LED tea light only; open flame remains excluded. Use the actual light's measured diameter, height, flame/lens envelope, switch access, battery door, and removal path. Do not import the split-lighting PCB, battery, X divider, or strip topology unless the user explicitly requests a hybrid. Add a locked tea-light baseline here only after the user approves a specific reusable setup.
+
+### Locked tea-light baseline (David, 2026-11-15)
+
+- **Nominal light:** a standard LED tea light, about 38 mm across. That is the size the Christmas village mini was designed around (2026-11-13). It was not measured with calipers, so treat it as nominal.
+- **Design for a range, never an exact fit.** David's rule: never design something with tolerances so tight that the light has to be exactly right. Reserve a light envelope of 48 mm across and 55 mm tall, including the flame. Nothing may intrude into it. Give the body an open bottom so it sets down over the light on the table: no pocket, clip or press fit around the light. The light sits loose, and the switch stays reachable by lifting the lantern.
+- If a design ever has to hold the tea light (a cup or a ring), make it at least 5 mm larger in diameter than the 38 mm nominal and give it a chamfered lead-in. Say in the README which range of lights it takes.
