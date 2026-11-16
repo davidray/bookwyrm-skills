@@ -1,0 +1,117 @@
+{
+ "name": "Lonely Mountain",
+ "dir": "/home/user/bookwyrm-lanterns/lanterns/lonely-mountain/v1/print",
+ "height": 399,
+ "width": 232,
+ "parts": [
+  {
+   "file": "lonely-mountain-v1_A_plinth.3mf",
+   "center": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "file": "lonely-mountain-v1_B_body.3mf",
+   "center": [
+    0,
+    0,
+    70
+   ]
+  },
+  {
+   "file": "lonely-mountain-v1_C_roof.3mf",
+   "center": [
+    0.05,
+    0.25,
+    244.6
+   ]
+  },
+  {
+   "file": "lonely-mountain-v1_D_divider.3mf",
+   "center": [
+    0,
+    0,
+    67
+   ]
+  },
+  {
+   "file": "lonely-mountain-v1_P1_dragon_front.3mf",
+   "mat": "litho",
+   "rot": [
+    [
+     "x",
+     90
+    ]
+   ],
+   "center": [
+    0,
+    78,
+    78
+   ]
+  },
+  {
+   "file": "lonely-mountain-v1_P2_durins-day_right.3mf",
+   "mat": "litho",
+   "rot": [
+    [
+     "x",
+     90
+    ]
+   ],
+   "center": [
+    0,
+    78,
+    78
+   ],
+   "post_rotz": -90
+  },
+  {
+   "file": "lonely-mountain-v1_P3_throne_back.3mf",
+   "mat": "litho",
+   "rot": [
+    [
+     "x",
+     90
+    ]
+   ],
+   "center": [
+    0,
+    78,
+    78
+   ],
+   "post_rotz": 180
+  },
+  {
+   "file": "lonely-mountain-v1_P4_eagles_left.3mf",
+   "mat": "litho",
+   "rot": [
+    [
+     "x",
+     90
+    ]
+   ],
+   "center": [
+    0,
+    78,
+    78
+   ],
+   "post_rotz": 90
+  }
+ ],
+ "leds": {
+  "angles": [
+   90,
+   0,
+   270,
+   180
+  ],
+  "r": 16,
+  "z0": 84.6,
+  "z1": 244.4,
+  "n": 5,
+  "power": 0.4
+ },
+ "slug": "lonely-mountain"
+}

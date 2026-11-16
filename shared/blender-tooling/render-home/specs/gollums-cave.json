@@ -1,0 +1,71 @@
+{
+ "name": "Gollum's Cave",
+ "slug": "gollums-cave",
+ "dir": "/home/user/bookwyrm-lanterns/lanterns/gollums-cave/v1/print",
+ "height": 291,
+ "width": 320,
+ "parts": [
+  {
+   "file": "gollums-cave-v1_A_lake-base.3mf",
+   "center": [
+    10.269999999999996,
+    41.975,
+    0.18
+   ]
+  },
+  {
+   "file": "gollums-cave-v1_B_body-with-skins.3mf",
+   "mats": [
+    "white",
+    "tube"
+   ],
+   "offset": [
+    -140.7,
+    -127.1,
+    48.3
+   ],
+   "tube": {
+    "ap": 55.2,
+    "z0": 48.3,
+    "z1": 223.4
+   }
+  },
+  {
+   "file": "gollums-cave-v1_C_roof.3mf",
+   "center": [
+    0.06999999999999318,
+    0.20999999999999375,
+    119.35
+   ]
+  },
+  {
+   "file": "gollums-cave-v1_D_light-divider.3mf",
+   "center": [
+    0.0,
+    0.0,
+    45.16
+   ]
+  },
+  {
+   "file": "gollums-cave-v1_G_gollum-boat.3mf",
+   "center": [
+    -95.93,
+    150.435,
+    17.1
+   ]
+  }
+ ],
+ "leds": {
+  "angles": [
+   90,
+   0,
+   270,
+   180
+  ],
+  "r": 14,
+  "z0": 82.9,
+  "z1": 214.8,
+  "n": 4,
+  "power": 0.3
+ }
+}
