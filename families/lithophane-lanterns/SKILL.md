@@ -59,7 +59,7 @@ Fit purchased parts (lights, batteries, switches) with generous clearance, so a 
 
 Record how panels go in and how the roof or lid comes off at blockout, and show it in the review. Default to positive roof location (pegs or a keyed lip); gravity-only seating needs the user's explicit acceptance. For Dave's lanterns, add the central lid tie-down: an M4 eye bolt in a heat-set insert in the lid, a wire down the post bore, and an M4 bolt, washer and nut through the hardware plate. Reserve its axis column at blockout (see [engineering](references/engineering.md), lid tie-down).
 
-Never use dowels (David, 2026-11-16). Wherever two printed faces are glued, align them with printed alignment tabs: a male tab 4.0 mm in diameter and 4.0 mm tall on one face, a female socket 4.2 mm in diameter and 4.2 mm deep in the other. Joints that are not glued, hinges and pivots need no tab. Plan them when you choose the segmentation; see [engineering](references/engineering.md), glued joints.
+Never use dowels (David, 2026-11-16). Wherever two printed faces are glued, align them with printed alignment tabs: a male tab 4.0 mm in diameter and 4.0 mm tall on one face, a female socket 4.2 mm in diameter and 4.2 mm deep in the other. Joints that are not glued, hinges and pivots need no tab. Plan them when you choose the segmentation; see [glued joints](../../shared/joints-and-assembly/glued-joints.md) and the lantern exceptions in [engineering](references/engineering.md).
 
 ## Decorate part by part, and let the art win
 

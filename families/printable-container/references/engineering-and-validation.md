@@ -69,31 +69,12 @@ An electrical configuration read-back or illuminated render does not verify temp
 
 ## Glued joints: printed male/female tabs
 
-David set this on 2026-11-15: wherever two printed faces are glued together, align them with a male tab or plug printed on one face and a matching female socket printed in the other. Never use dowels, filament pins or pin holes for a joint (David, 2026-11-16: "we don't do dowels, we do alignment tabs"). Loose pins are extra parts to cut, count and lose, small holes print undersize, and a printed pair locates the joint in one move. The family's glued feet already work this way (teardrop tab into a teardrop socket).
+Every glued joint uses printed alignment tabs, never dowels or filament pins: see [glued joints](../../../shared/joints-and-assembly/glued-joints.md) for the standard 4.0/4.2 mm tab, the starting sizes, keying and print orientation. The family's glued feet are the printed example: a teardrop tab (tip toward the corner) on each foot, its socket in the shell, a 1.3 mm tab in a 1.5 mm socket with 0.2 mm all round. Keep mating features exact after any relief smoothing (see [decorative relief](decorative-relief.md)).
 
-**Shape.** Use plain straight cylinders or prisms, built as exact CSG after any remesh or smoothing (see [decorative relief](decorative-relief.md), mating features stay exact). Put a 0.3–0.5 mm chamfer on the male's tip as a lead-in and leave its sides straight. Generate the pair in the same script that makes the parts, and record each feature's position and size in the checkpoint or facts file.
-
-**Standard alignment tab (David, 2026-11-16).** Male: 4.0 mm diameter, 4.0 mm tall. Female: 4.2 mm diameter, 4.2 mm deep. Use this pair for every joint a round tab can carry; the starting sizes below are for non-round tabs (the teardrop feet) and larger plugs.
-
-**Starting sizes.**
-- Clearance for a glued alignment fit: 0.2 mm all round for tabs (the teardrop foot tab, printed and fitted) and about 0.1 mm per side for round plugs (Doré lantern v1.4: 5.0 mm plugs in 5.2 mm sockets, not yet printed). These are tighter than a lift-off or drop-in fit on purpose; drop-in panels need 0.3 mm per edge because they must come out.
-- Depth: make the socket 0.2–0.5 mm deeper than the male stands proud (feet: a 1.3 mm tab in a 1.5 mm socket), so glue has somewhere to go and the faces close fully.
-- Size of other tabs and plugs: at least 4 mm across, standing out no more than about 1.5 × its width, with at least 1.5 mm of wall around the socket. Check the floor or wall thickness behind every socket, and that none breaks through a carved or visible face.
-- A size not yet printed in this family gets a two-piece coupon of the pair before the long print.
-
-**Keying.** A glued joint should go together only one way. Use one non-round tab (the teardrop, tip toward the corner) or two features placed asymmetrically; one round plug can rotate. When identical parts repeat (four feet), put the tab on the part and the socket in the shell so every copy is the same and still fits only the right way round.
-
-**Print orientation.** Put the male on the part where it prints well: on a face printed top-up, or sideways on a part lying flat. A long thin peg printed upright snaps at a layer line, so keep it stubby or make it a wider tab. Never put a male on a face that prints against the bed; put the socket there.
-
-**Cuts made in the slicer.** When David splits a part for the bed in Bambu Studio himself, suggest the cut tool's plug connector (a printed male/female pair) rather than its dowel connector.
-
-**Exceptions.** Say which one applies, and why, in the box's README.
-- The joint is not glued: lift-off and magnetic lids, light trays, drop-in and basement panels, Gridfinity bins, screws and inserts, anything taken apart for service.
+Box exceptions (say which applies, and why, in the box's README):
+- Not glued: lift-off and magnetic lids, light trays, drop-in and basement panels, Gridfinity bins, screws and inserts, anything taken apart for service.
 - Moving joints: hinges, pivots and axles (the treasure chest's 1.75 mm filament hinge pin is a fine axle). See [moving parts and figures](moving-parts-and-figures.md).
-- The wall is too thin to hold a socket without breaking through. Add a boss or lug behind the seam to carry the pair, or use a tongue and groove along the edge. Never a dowel or pin.
-- A shaped seat that already locates the part (the Gollum box's sphere socket, a cradle) is the female half; it needs no extra tab.
-
-Locked releases keep the joints they were released with. Apply this to new boxes and new versions only.
+- A shaped seat that already locates the part (the Gollum box's sphere socket, a cradle).
 
 ## Interface experiments
 

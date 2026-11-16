@@ -13,6 +13,7 @@ families/             one construction skill per kind of product
   generated-scene-diorama/  multi-piece dioramas generated from one concept under a credit budget
 shared/               method shared by more than one family
   print-profile/print-profile.md   printers, build volumes, materials, proven print and fit settings
+  joints-and-assembly/glued-joints.md   the tab rule: printed alignment tabs, never dowels
   blender-tooling/render-home/   home-library lantern renders
 tools/check_piece_json.py        checks piece.json in version folders still locked in a family repo
 ```
