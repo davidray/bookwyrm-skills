@@ -24,7 +24,7 @@ Use a battery-powered or otherwise low-voltage LED source. Exclude open flame. D
 
 Read [workflow and gates](references/workflow-and-gates.md) for a new build or a material redesign. Read [engineering](references/engineering.md) before fixing dimensions, interfaces, segmentation, or orientation. Flat structural parts (divider blades, controller and floor plates, diffusers, flat lid decks) are laser-cut acrylic by default, with a printed fallback; see its laser-cut acrylic section.
 
-For Dave's lantern projects, read [Dave's lantern print profile](references/dave-print-profile.md) before selecting the build envelope, exterior feature sizes, segmentation, material, nozzle, compatibility target, lithophane recipe, or fit clearances. It holds physically proven settings; reuse them instead of proposing new coupons for the same interfaces. Keep project-specific proportions, visual approvals, hardware, and exceptions in the project checkpoint.
+For Dave's lantern projects, read [Dave's print profile](../../shared/print-profile/print-profile.md) before selecting the build envelope, exterior feature sizes, segmentation, material, nozzle, compatibility target, lithophane recipe, or fit clearances. It holds physically proven settings; reuse them instead of proposing new coupons for the same interfaces. Keep project-specific proportions, visual approvals, hardware, and exceptions in the project checkpoint.
 
 When the user hands every decision to you, follow the autonomous-run rules in [workflow and gates](references/workflow-and-gates.md): keep every gate and use an independent reviewer in place of the user's approvals.
 
@@ -96,7 +96,7 @@ Read [modeling and evidence](references/modeling-and-evidence.md) when building 
 
 ## Retire uncertainty with small physical tests
 
-First check the proven settings in the print profile: lithophane relief, panel print settings, pane seats, sliding fits, tongue and groove, and wire exits are already physically proven for Dave's lanterns, so do not propose new coupons for those interfaces. For a genuinely new interface, use the cheapest representative coupon before a long print. Common coupons include:
+First check the proven settings in the [print profile](../../shared/print-profile/print-profile.md): lithophane relief, panel print settings, pane seats, sliding fits, tongue and groove, and wire exits are already physically proven for Dave's lanterns, so do not propose new coupons for those interfaces. For a genuinely new interface, use the cheapest representative coupon before a long print. Common coupons include:
 
 - the actual light-source opening or carrier interface;
 - panel channel, ledge, latch, or roof-capture cross-section;

@@ -33,7 +33,7 @@ Run two automated checks before review: a pairwise clash check between every blo
 
 Also check:
 
-- **LED-to-panel distance** is inside the proven range in the print profile. If it isn't, change the geometry (strip offset, post section, panel plane) or plan a light coupon. Two runs in a row accepted out-of-range distances with no coupon (41 mm, then 91 mm).
+- **LED-to-panel distance** is inside the proven range in the [print profile](../../../shared/print-profile/print-profile.md). If it isn't, change the geometry (strip offset, post section, panel plane) or plan a light coupon. Two runs in a row accepted out-of-range distances with no coupon (41 mm, then 91 mm).
 - **Every part fits the usable bed** of its printer, not the nominal one. Plan splits and joints here, not at slicing.
 
 Show assembled, cutaway, exploded, and access states, and say in words how panels go in and how the roof or lid comes off. Record a small geometry-facts artifact with overall bounds, hardware reserve, panel field and thickness assumptions, clearances, service architecture, and known exclusions.

@@ -1,6 +1,6 @@
-# Dave's lantern print profile
+# Dave's print profile
 
-Use this profile for Dave's lithophane-lantern projects unless a project explicitly overrides it. Treat it as a persistent equipment/material preference, not as proof that a particular part fits, slices, prints, or performs optically.
+Use this profile for every one of Dave's builds (lanterns, boxes, dioramas) unless a family standard or a project explicitly overrides it. Family standards, such as the box family's in `families/printable-container/references/box-family-standards.md`, add defaults for their own kind of product on top of it. Treat it as a persistent equipment/material preference, not as proof that a particular part fits, slices, prints, or performs optically.
 
 ## User-supplied fleet
 
@@ -20,7 +20,7 @@ The X2D official areas recorded on 2026-11-02 are:
 - auxiliary/right nozzle: 235.5 × 256 × 256 mm;
 - two-nozzle intersection: 235.5 × 256 × 256 mm.
 
-Laser cutting: flat structural parts are cut from acrylic by default (see [engineering](engineering.md#laser-cut-acrylic-parts-series-standard)). Cutter not yet named; assume a 12 × 12 in (305 × 305 mm) bed.
+Laser cutting: flat structural lantern parts are cut from acrylic by default (see the lanterns family's [engineering](../../families/lithophane-lanterns/references/engineering.md#laser-cut-acrylic-parts-series-standard)). Cutter not yet named; assume a 12 × 12 in (305 × 305 mm) bed.
 
 ## Material and finish preference
 
@@ -58,11 +58,11 @@ Two-colour prints (an opaque body with integrated white lithophane) use the X2D 
 - A 0.4 mm detail or lithophane variant may be supplied separately for the A1 or X2D, but keep it distinct from the 0.6 mm-compatible shared exterior set and validate it independently.
 - Beyond the proven settings above, unknown layer height, line width, shrink/fit compensation, seam behavior, overhang performance, paint allowance, and slicer settings remain project inputs. Retire them with representative coupons instead of inventing universal tolerances.
 - Freestanding decorative detail such as open dragon wings has printed without difficulty for the user. Do not thicken, fold, or anchor it on assumption; change it only if a slice or print fails.
-- A whole lantern may exceed the common build envelope only through an explicit segmentation and assembly plan; never uniformly scale protected panel, lighting, or service geometry merely to fit a bed.
+- A whole product (lantern, case, diorama) may exceed the common build envelope only through an explicit segmentation and assembly plan; never uniformly scale protected panel, lighting, or service geometry merely to fit a bed.
 
 ## Scope boundary
 
-This profile stores printers, nozzles, material preference, proven print and fit settings, and cross-fleet implications only. Project-specific visual approvals, dimensions, proportions, hardware, light sources, panel art, mechanisms, and compromises stay in each project's checkpoint and must not become defaults for other lanterns.
+This profile stores printers, nozzles, material preference, proven print and fit settings, and cross-fleet implications only. Project-specific visual approvals, dimensions, proportions, hardware, light sources, panel art, mechanisms, and compromises stay in each project's checkpoint and must not become defaults for other projects. Family-wide defaults belong in that family's standards.
 
 ## Official sources checked 2026-11-02
 

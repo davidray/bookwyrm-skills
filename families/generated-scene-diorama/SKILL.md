@@ -13,7 +13,7 @@ Use this skill when most pieces will be generated (image to 3D) and the budget d
 
 - **Brief:** the theme, the style, and every element the scene must contain.
 - **Budget:** Meshy credits, plus any dollar cap.
-- **Printer:** the exact model and its build volume. Also the nozzle, which sets the finest detail: a 0.6 mm nozzle gives about 1.2 mm features, and resin figure faces need 0.4 to 0.6 mm. Ask if you don't know it.
+- **Printer:** the exact model and its build volume. Also the nozzle, which sets the finest detail: a 0.6 mm nozzle gives about 1.2 mm features, and resin figure faces need 0.4 to 0.6 mm. The fleet and its build volumes are in `shared/print-profile/print-profile.md`; ask which one if you don't know.
 - **Scale policy:** for example forced perspective, with buildings at 120 to 235 mm and adults at about 38 mm.
 - **Slug:** one per product, kebab case, and never reused. Check it against The Hoard first: `christmas-village` already belonged to a lantern, so the village became `victorian-christmas-village`.
 

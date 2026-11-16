@@ -1,6 +1,6 @@
 # Box-family standards
 
-Defaults for any new Middle-earth travel case. Reuse them unless the brief says otherwise. They are precedents for this box family, not universal printer tolerances.
+Defaults for any new Middle-earth travel case. Reuse them unless the brief says otherwise. They are precedents for this box family, not universal printer tolerances. The printer fleet, materials and proven lithophane and fit settings are in [Dave's print profile](../../../shared/print-profile/print-profile.md).
 
 | Item | Standard | Status |
 | --- | --- | --- |

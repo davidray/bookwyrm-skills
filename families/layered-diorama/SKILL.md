@@ -25,7 +25,7 @@ This is a revisitable sequence. Use simple reserves for later elements early so 
 
 ### Establish printer constraints before committing to scale
 
-Ask early which printer the user intends to use, unless the active brief already establishes it. Get the exact model and intended process/configuration, not just a brand or “resin/FDM.” Ask about desired finished dimensions where unknown. For example: “Which printer and setup will you use, and do you have a preferred finished size? I’ll size the components to fit while keeping them whole wherever practical.” Do not assume a printer from an abandoned attempt remains the target.
+Ask early which printer the user intends to use, unless the active brief already establishes it. Get the exact model and intended process/configuration, not just a brand or “resin/FDM.” Ask about desired finished dimensions where unknown. For example: “Which printer and setup will you use, and do you have a preferred finished size? I’ll size the components to fit while keeping them whole wherever practical.” Do not assume a printer from an abandoned attempt remains the target. The user's printers, build volumes and proven settings are in [Dave's print profile](../../shared/print-profile/print-profile.md); confirm which one this scene is for.
 
 Verify usable X/Y/Z build dimensions from current manufacturer documentation and the selected slicer/machine profile. Record the source, configuration, and any applicable restricted areas. Account for orientation and the space required by supports, brim/raft, or other process necessities; advertised volume and model-only fit are preliminary checks. Avoid inventing a universal clearance margin.
 
