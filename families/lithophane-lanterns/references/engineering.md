@@ -106,14 +106,16 @@ Choose segmentation from build volume, support burden, panel installation, servi
 
 ## Glued joints: printed male/female tabs (series standard)
 
-David set this on 2026-11-15: wherever two printed faces are glued together, align them with a male tab or plug printed on one face and a matching female socket printed in the other. Do not use loose dowels, filament pins or pin holes for a glued joint unless one of the exceptions below applies. Loose pins are extra parts to cut, count and lose, small holes print undersize, and a printed pair locates the joint in one move. Doré v1.4 replaced the 36 filament pins of v1.2 with 12 printed plugs; Christmas Village v1's base quarters still use filament pins.
+David set this on 2026-11-15: wherever two printed faces are glued together, align them with a male tab or plug printed on one face and a matching female socket printed in the other. Never use dowels, filament pins or pin holes for a joint (David, 2026-11-16: "we don't do dowels, we do alignment tabs"). Loose pins are extra parts to cut, count and lose, small holes print undersize, and a printed pair locates the joint in one move. Doré v1.4 replaced the 36 filament pins of v1.2 with 12 printed plugs; Christmas Village v1's base quarters still use filament pins.
 
 **Shape.** Use plain straight cylinders or prisms, built as exact CSG after any remesh, smoothing or decimation (smoothing rounds and flares them). Put a 0.3–0.5 mm chamfer on the male's tip as a lead-in and leave its sides straight. Generate the pair in the same script that makes the cut, and record each feature's position and size in the part's facts JSON.
+
+**Standard alignment tab (David, 2026-11-16).** Male: 4.0 mm diameter, 4.0 mm tall. Female: 4.2 mm diameter, 4.2 mm deep. Use this pair for every joint a round tab can carry; the starting sizes below are for non-round tabs and larger plugs.
 
 **Starting sizes.** None of these sizes has been printed on a lantern yet, so the first part that uses a new size gets a two-piece coupon of the pair before the long print.
 - Clearance for a glued alignment fit: 0.1 mm per side for round plugs (Doré v1.4: 5.0 mm plugs in 5.2 mm sockets) and 0.2 mm all round for tabs (the boxes' teardrop foot tab, printed and fitted). These are tighter than a lift-off fit on purpose; the roof pegs (6.0 in 6.6) and base locator tabs (0.3 per side) are dry joints that must come apart.
 - Depth: make the socket 0.2–0.5 mm deeper than the male stands proud (Doré: 6.0 mm proud in 6.5 mm; boxes: a 1.3 mm tab in a 1.5 mm socket), so glue has somewhere to go and the faces close fully.
-- Size: at least 5 mm across, standing out no more than about 1.5 × its width, with at least 1.5 mm of wall around the socket. Check that no socket breaks through a decorated or visible face.
+- Size of other tabs and plugs: at least 4 mm across, standing out no more than about 1.5 × its width, with at least 1.5 mm of wall around the socket. Check that no socket breaks through a decorated or visible face.
 
 **Keying.** A glued joint should go together only one way. Use two features per joint (one round plug can rotate) placed asymmetrically, or one non-round tab (a teardrop or a D shape). When identical parts repeat around the lantern, put the males on one cut face and the sockets on the other, so every copy is the same and still fits only the right way round (Doré v1.4 sixths). Where a part is the same both ways and the image or decor must face out, add an asymmetric feature so it can't be flipped.
 
@@ -125,7 +127,7 @@ David set this on 2026-11-15: wherever two printed faces are glued together, ali
 - The joint is not glued: lift-off roofs and lids (pegs in loose holes), dry-stacked bodies on base locator tabs, panels in slots, magnets, screws and heat-set inserts, and anything taken apart for service.
 - Moving joints: hinges, pivots and axles. A filament or metal pin is a fine axle.
 - A part meant to lift off, or left dry on purpose (Ocarina box sword pin).
-- The wall is too thin to hold a socket without breaking through. Add a lug or boss behind the seam to carry the pair, or use a tongue and groove along the edge; use a pin only when neither fits.
+- The wall is too thin to hold a socket without breaking through. Add a lug or boss behind the seam to carry the pair, or use a tongue and groove along the edge. Never a dowel or pin.
 - A shaped seat that already locates the part (a post socket, a cradle) is the female half; it needs no extra tab.
 
 Locked versions keep the joints they were locked with. Apply this to new lanterns and new versions only.
