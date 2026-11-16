@@ -7,7 +7,7 @@ Read this before making a lit pane, a scene image for one, or a carved or lit in
 - Never build a pane from art seen at an angle. Flattening the concept's lid art stretched Bilbo about 1.6x vertically and made him man-sized. Generate the scene flat, at the pane's aspect, and check figure proportions (a hobbit is short, stout and barefoot) before converting.
 - Generate at the visible area's aspect: 200 x 150 mm is 4:3 (1360 x 1024 px); with a 26 mm inscription strip it is 200 x 124 mm, about 1.61:1 (1408 x 872 px). Minimum is 5 px per mm.
 - Local image models drift to illustration. Qwen-Image-Edit in ComfyUI gave ink-cartoon, then charcoal, then "film still" results over three rounds, never photoreal. After two rounds that miss, escalate: the user's own image, or a stronger model through Meshy (such as nano-banana-pro, 9 credits per image) with the credit cost stated first. David's own photoreal image was the one that worked.
-- nano-banana-pro through Meshy rejects 3:2; generate at 16:9 and crop.
+- nano-banana-pro rejects 3:2; generate at 16:9 and crop.
 - Use an old layout only as a rough guide; feeding it as a strong reference pulls the style back to cartoon.
 
 ## Converting to a pane
