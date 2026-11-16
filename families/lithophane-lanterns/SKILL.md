@@ -77,7 +77,7 @@ Use actual image-derived relief for production panels. Textures, emission, and i
 
 Treat base thickness, relief range, image resolution, tonal curve, border, panel orientation, and light spacing as process-dependent parameters, not universal constants. Preserve important faces and silhouettes through crop and tonal preparation; avoid relying on tiny low-contrast details that disappear in transmitted light. Sharpness is limited by the extrusion line and by light scattering, not by layer height: detail narrower than about two line widths won't read (see the detail limits in panels and optics).
 
-Read [lithophane panels and optics](references/panels-and-optics.md) whenever creating, replacing, resizing, or diagnosing panels.
+Read [lithophane panels and optics](../../shared/lithophanes/lithophanes.md) whenever creating, replacing, resizing, or diagnosing panels.
 
 ## Keep evidence boundaries explicit
 

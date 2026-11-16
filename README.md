@@ -14,6 +14,7 @@ families/             one construction skill per kind of product
 shared/               method shared by more than one family
   print-profile/print-profile.md   printers, build volumes, materials, proven print and fit settings
   joints-and-assembly/glued-joints.md   the tab rule: printed alignment tabs, never dowels
+  lithophanes/lithophanes.md   lit image panels: source images, relief, recipe, detail limits, tests
   blender-tooling/render-home/   home-library lantern renders
 tools/check_piece_json.py        checks piece.json in version folders still locked in a family repo
 ```

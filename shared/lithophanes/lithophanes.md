@@ -1,5 +1,14 @@
 # Lithophane panels and optics
 
+How to make a lit image panel for any family: a lantern's panels, a box's lid pane, a diorama's backlit window. The family skills say where the panel sits and how it is lit; this says how to make the image read.
+
+## Source images for a scene panel
+
+- Never build a panel from art seen at an angle. Flattening a box concept's lid art stretched Bilbo about 1.6× vertically and made him man-sized. Generate the scene flat, at the panel's aspect, and check figure proportions (a hobbit is short, stout and barefoot) before converting.
+- Generate at the visible area's aspect, at 5 px per mm or more (a 200 × 150 mm pane is 4:3, 1360 × 1024 px). Crop rather than stretch to make room for text.
+- Prefer a bright, foggy background behind dark figures, and avoid large areas of pure black. Brighten dark images heavily (lift shadows, not just exposure): a dark image prints as a featureless slab.
+- Which image model to use, and what drift to expect, is in the family's concept or art-pipeline notes.
+
 ## Prepare the image for transmitted light
 
 Start from the intended visible crop and final aspect ratio. The visible crop is the final window opening after the frame is fitted, which can be smaller than the panel field; re-crop when the opening changes and keep focal content inside it. Protect recognizable faces, silhouettes, gestures, and narrative focal points. Simplify or remove low-value background detail that will become noise at print scale.
@@ -8,11 +17,11 @@ Convert and tune in grayscale while monitoring the histogram. Preserve separatio
 
 Record source image identity, crop, rotation, mirroring, grayscale/contrast operations, and face mapping. Verify that text, handedness, and narrative direction have not been mirrored.
 
-Prep that has worked on Dave's panels:
+Prep that has worked on Dave's panels (lanterns and boxes):
 
 - A 1% autocontrast inside the visible field (0.5/99.5% for very dark images, plus a black-point lift so near-black areas still transmit some light).
 - For a subject that must glow but is a dark colour in the art (a red dragon), a channel-weighted grey mix such as 0.75R + 0.2G + 0.05B so it prints thin and bright.
-- Never crop panel art from an image that shows a lit lithophane, frame, or hand. Its tones already contain fake relief and glow and print muddy. Regenerate it as flat art (see the art pipeline's panel briefs).
+- Never crop panel art from an image that shows a lit lithophane, frame, or hand. Its tones already contain fake relief and glow and print muddy. Regenerate it as flat art (see the lanterns art pipeline's panel briefs).
 - Generated art often paints its own arch, disc, or grey surround. Mask that away so the panel's own mask sits on or inside it, and keep focal content out of zones the frame covers.
 - **Put the textured (relief) side outside, facing the viewer, and the flat side toward the light.** On David's first print with both choices visible (the one-piece Christmas village mini, 2026-11-14), the panels looked best with the texture outside. With the relief outside, the image reads the right way round without mirroring. This is a hard rule, not a preference: David, 2026-11-15, "The flat back should never face out on lithophanes. They don't look good that way." Never design a panel, window or skin with the flat face outside. Check the slot or seat for the relief side outward, and check that renders show the relief outside.
 
@@ -31,7 +40,7 @@ Use enough mesh resolution for the image at final size without creating gratuito
 
 ## Choose parameters by process
 
-For Dave's lanterns, start from the proven recipe in the [print profile](../../../shared/print-profile/print-profile.md) (0.8 mm bright to 2.0 mm dark, white PLA, 100% infill, 0.10 mm layers, flat back down, 3.2 mm border) and skip a new tonal coupon unless the material, light distance, or process changes. Otherwise, do not copy a thickness recipe blindly between panel sizes, printers, materials, nozzles, layer heights, or light sources. Establish a starting base thickness and relief range appropriate to the process, then print a compact tonal coupon. The coupon should include gradients, faces or other representative detail, thin bright regions, thick dark regions, and the actual border/channel cross-section when practical.
+For Dave's builds, start from the proven recipe in the [print profile](../print-profile/print-profile.md) (0.8 mm bright to 2.0 mm dark, white PLA, 100% infill, 0.10 mm layers, flat back down, 3.2 mm border) and skip a new tonal coupon unless the material, light distance, or process changes. Otherwise, do not copy a thickness recipe blindly between panel sizes, printers, materials, nozzles, layer heights, or light sources. Establish a starting base thickness and relief range appropriate to the process, then print a compact tonal coupon. The coupon should include gradients, faces or other representative detail, thin bright regions, thick dark regions, and the actual border/channel cross-section when practical.
 
 Print in the intended production orientation. Flat printing is simple and stable but quantizes relief by layer height; edge/upright printing can offer smoother thickness changes but is tall, slower, and more sensitive to wobble and adhesion. Let the actual printer and desired image quality decide.
 
@@ -45,12 +54,20 @@ How much detail a flat-printed lithophane holds is set in XY, by the extrusion l
 - **Thinner layers add tone levels, not sharpness.** Over 0.8–2.0 mm, 0.10 mm layers give 12 levels and 0.08 mm gives 16, but each panel takes 4–5 h. Use 0.08 mm for smooth gradients (sky, glow), not for fine lines.
 - **Grid and source resolution.** A height-field grid of about half the line width (0.2 mm on a 0.4 mm nozzle) is enough. A finer one only adds triangles: a 0.15 mm grid gave 2 M triangles and 18 MB per panel. About 3 source px/mm is enough, so a 512 px tile across a 173 mm field already matches the nozzle.
 - **Smooth the thickness to the nozzle before quantising.** Most unprintable specks come from image detail finer than one line, not from the dither. Run a median filter over the continuous thickness map, about two line widths across (0.45 mm on a 0.2 mm nozzle). Then round or dither to layers. On a 30 mm crop of a Christmas village panel, this cut the islands with no extrudable layer below them from 1116 to 85. Plain rounding with no filter left 1068.
-- **Dither only at or above the line width.** Floyd–Steinberg dither on single 0.15 mm cells made the slicer report "floating regions" on every panel, because the cells are narrower than one line. Use clustered (Bayer 4×4) dots at least one line width across (0.3 mm on a 0.2 mm nozzle), or don't dither. The filter and the dither are in `lanterns/christmas-village/v1/source/panels/litho.py`.
+- **Dither only at or above the line width.** Floyd–Steinberg dither on single 0.15 mm cells made the slicer report "floating regions" on every panel, because the cells are narrower than one line. Use clustered (Bayer 4×4) dots at least one line width across (0.3 mm on a 0.2 mm nozzle), or don't dither. The filter and the dither are in bookwyrm-lanterns `lanterns/christmas-village/v1/source/panels/litho.py`.
 - **Count islands, and treat slicer warnings on panels as failed checks.** For each layer, count the regions narrower than one line or with no extrudable layer below them, and aim for close to zero. A "floating regions" or "thin wall" warning on a lithophane means part of the relief can't be drawn. Fix the cause, then re-slice. Christmas village v2 still warned on all four panels, while its coupon and a smooth control ramp sliced clean.
 - **A smaller nozzle buys detail with time.** A 0.2 mm nozzle halves the line width but triples the print time: 12.5–14.3 h per panel on the A1, against 4–5 h at 0.4 mm. Its 0.60–2.36 mm relief is outside the proven band and needs its own coupon.
 - **Tone-map constants need calibration.** A Beer–Lambert map needs PLA's attenuation `k`. It was guessed at 1.6 /mm and never measured. Calibrate it from a printed step wedge photographed under the real LED before relying on it.
 - **Crop small windows to the focal subject.** At about 58 × 37 mm (the Christmas village mini), busy full-size scenes read as mush in a simulated backlight. Crop each panel to its main subject so the main shapes are at least about 1/10 of the window width, and check the simulated backlight at final size.
-- **Prefer bold forms in the art** (see the art pipeline's panel briefs). Large near-white fields, such as snow scenes, leave little tonal room on a 0.8 mm floor and read low-contrast.
+- **Prefer bold forms in the art** (see the lanterns art pipeline's panel briefs). Large near-white fields, such as snow scenes, leave little tonal room on a 0.8 mm floor and read low-contrast.
+
+## Test before the full panel
+
+- Print a 100 × 100 mm test crop with the focal figure, the thinnest lines and part of any inscription before the full panel. With David's own image on the Mirkwood case it passed first time, and the full pane matched.
+- Print flat, relief side up, 100% infill, white filament, and mount relief side out, or any text reads backwards.
+- Record the print settings with the result; wrong infill once invalidated a thickness test.
+- The simulated backlit preview is a guide only; say so when showing it.
+- Lithophane inscriptions need thick strokes (Trattatello worked on the Mirkwood pane).
 
 ## Evaluate the physical panel
 
@@ -79,4 +96,4 @@ A lithophane region can be printed into an opaque wall instead of as a separate 
 
 ## Multi-panel consistency
 
-Name panels by face and viewing direction. Include a face map in the release. Generate the set in one style (one shared style line in every prompt, all four in the same pass) and regenerate any panel whose medium differs. Normalize the set so one panel does not dominate because its source image was brighter or its relief range differed. Confirm installed orientation in an assembled test; a correct isolated panel can still be reversed or mirrored in the lantern.
+Name panels by face and viewing direction. Include a face map in the release README. Generate the set in one style (one shared style line in every prompt, all four in the same pass) and regenerate any panel whose medium differs. Normalize the set so one panel does not dominate because its source image was brighter or its relief range differed. Confirm installed orientation in an assembled test; a correct isolated panel can still be reversed or mirrored in the lantern.
