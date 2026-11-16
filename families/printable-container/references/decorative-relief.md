@@ -12,7 +12,7 @@ Read this before decorating a shell or lid, or adding feet, handles or other orn
 
 ## Pipeline that works
 
-1. Generate carving with Meshy: image-to-3D from a true-proportion concept for a whole box, or text-to-3D "bas-relief carved panel" for one scene. Write the source image prompt for crisp carving and leave depth limits and paint-ease wording out of it; see [image-to-3D input](image-to-3d.md). Track credits and ask before large spends.
+1. Generate carving with the 3D generator: image-to-3D from a true-proportion concept for a whole box, or text-to-3D "bas-relief carved panel" for one scene. Write the source image prompt for crisp carving and leave depth limits and paint-ease wording out of it; see [image-to-3D input](image-to-3d.md). Track credits and ask before large spends.
 2. Raycast the mesh into a depth map (0.2 mm per pixel), subtract the local background, then compress the range (log plus Poisson, or k·tanh(R/s), for example 12·tanh(R/13) for bold focal relief).
 3. Wrap the height map onto the real shell wall faces and corners. Mask protected zones first: seam, pull notches, service openings, magnet pockets, connector ports.
 4. Apply a 45 degree overhang filter so walls print upright without supports. Expect mushroom caps and similar to become cones or brackets.
@@ -27,7 +27,7 @@ For architecture, line art and lettering (doors, emblems, masonry, plaques), dra
 - Detail needs resolution end to end. Draw a focal panel at 0.1 mm per pixel (0.2 is fine for plain walls) and keep enough triangles after simplification (Moria front: 1.4M, not 400k), or the extra detail never reaches the mesh.
 - Keep the heightfield off the core surface: clamp heights to at least 0.06 mm, cut openings only outside the core face, and start from clean core shells. Coplanar faces left touching (non-manifold) edges on Moria.
 
-Meshy limits: text-to-3D ornaments come back as minis on round bases, so cut ornaments from carved panels instead. A lid top fed through image-to-3D becomes a diorama. Unseen sides come back blank, so give it views of every side.
+Generator limits (Meshy): text-to-3D ornaments come back as minis on round bases, so cut ornaments from carved panels instead. A lid top fed through image-to-3D becomes a diorama. Unseen sides come back blank, so give it views of every side.
 
 Headless Blender (`pip download bpy`) runs Cycles renders in a cloud container; Workbench and EEVEE need a display and do not.
 
