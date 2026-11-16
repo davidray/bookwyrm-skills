@@ -1,13 +1,13 @@
-"""Scale a raw Meshy GLB to print size: Z-up, feet on the plate, optional flat-bottom cut and round base, STL out.
+"""Scale a raw 3D-generator GLB to print size: Z-up, feet on the plate, optional flat-bottom cut and round base, STL out.
 
-Meshy's raw output is in arbitrary units (figures come in about 1.9 units tall). This script fixes scale and
+Raw generator output is in arbitrary units (figures come in about 1.9 units tall). This script fixes scale and
 placement only; it does not repair or thicken anything.
 
 usage (headless bpy, e.g. `pip install bpy`):
-  python meshy_to_print.py IN.glb OUT.stl --height 32 [--cut 0.4] [--base-d 25 --base-h 3]
-  --height  target height in mm of the figure (plus Meshy's own base), after the cut; an added base adds base-h - 0.3
+  python glb_to_print.py IN.glb OUT.stl --height 32 [--cut 0.4] [--base-d 25 --base-h 3]
+  --height  target height in mm of the figure (plus the generator's own base), after the cut; an added base adds base-h - 0.3
   --cut     mm to slice off the bottom so it sits flat on the plate (0 to skip), default 0.4
-  --base-d  diameter of a plain cylinder base to union under the figure, mm (0 = none; keep Meshy's own base)
+  --base-d  diameter of a plain cylinder base to union under the figure, mm (0 = none; keep the generator's own base)
   --base-h  base height in mm, default 3
 """
 import argparse, sys
@@ -35,7 +35,7 @@ bpy.ops.object.parent_clear(type='CLEAR_KEEP_TRANSFORM')
 bpy.ops.object.transform_apply(location=True, rotation=True, scale=True)
 
 bm = bmesh.new(); bm.from_mesh(ob.data)
-bmesh.ops.remove_doubles(bm, verts=bm.verts, dist=1e-6)   # Meshy splits the mesh along UV islands
+bmesh.ops.remove_doubles(bm, verts=bm.verts, dist=1e-6)   # generators can split the mesh along UV islands
 zs = [v.co.z for v in bm.verts]; raw_h = max(zs) - min(zs)
 xs = [v.co.x for v in bm.verts]; ys = [v.co.y for v in bm.verts]
 cx, cy, z0 = (min(xs) + max(xs)) / 2, (min(ys) + max(ys)) / 2, min(zs)

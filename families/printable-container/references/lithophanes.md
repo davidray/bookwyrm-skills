@@ -7,7 +7,7 @@ Lit panels follow the shared [lithophane panels and optics](../../../shared/lith
 ## Pane and image
 
 - The standard pane is 204 x 154 mm with 200 x 150 visible (4:3, 1360 x 1024 px). With a 26 mm inscription strip the image is 200 x 124 mm, about 1.61:1 (1408 x 872 px).
-- Local image models drift to illustration. Qwen-Image-Edit in ComfyUI gave ink-cartoon, then charcoal, then "film still" results over three rounds, never photoreal. After two rounds that miss, escalate: the user's own image, or a stronger model through Meshy (such as nano-banana-pro, 9 credits per image) with the credit cost stated first. David's own photoreal image was the one that worked.
+- Local image models drift to illustration. Qwen-Image-Edit in ComfyUI gave ink-cartoon, then charcoal, then "film still" results over three rounds, never photoreal. After two rounds that miss, escalate: the user's own image, or a stronger hosted image model (such as nano-banana-pro) with the cost stated first. David's own photoreal image was the one that worked.
 - nano-banana-pro rejects 3:2; generate at 16:9 and crop.
 - Use an old layout only as a rough guide; feeding it as a strong reference pulls the style back to cartoon.
 
