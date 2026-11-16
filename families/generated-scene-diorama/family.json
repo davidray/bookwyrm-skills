@@ -1,0 +1,20 @@
+{
+  "family_json": 1,
+  "slug": "generated-scene-diorama",
+  "name": "Generated scene dioramas",
+  "builds": "Multi-piece scene dioramas (villages, islands, markets) generated from one approved concept image under a Meshy credit budget",
+  "skill": "SKILL.md",
+  "kinds": [
+    "diorama"
+  ],
+  "versions": "v<N>",
+  "repos": [
+    {
+      "repo": "davidray/bookwyrm-dioramas",
+      "projects": [
+        "projects/*"
+      ],
+      "new_projects": "projects/<slug>/"
+    }
+  ]
+}

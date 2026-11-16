@@ -17,23 +17,23 @@
   "artifacts": {
     "concepts": [
       {
-        "path": "skills/printable-container/tests/fixtures/faithfulness-scorecards/concept.png",
+        "path": "families/printable-container/tests/fixtures/faithfulness-scorecards/concept.png",
         "sha256": "4c6c8391b0534cf97de6c46ace2685717a2da6ea07296306bb72c377f1c9fa59"
       }
     ],
     "source": {
-      "path": "skills/printable-container/tests/fixtures/faithfulness-scorecards/source.blend",
+      "path": "families/printable-container/tests/fixtures/faithfulness-scorecards/source.blend",
       "sha256": "57370927eb4c1c6f459e23b72a6eb14850dbf88ef09085d49c9aab6fbde616a0"
     },
     "renders": [
       {
         "id": "decorative-closed-render",
-        "path": "skills/printable-container/tests/fixtures/faithfulness-scorecards/decorative-closed.png",
+        "path": "families/printable-container/tests/fixtures/faithfulness-scorecards/decorative-closed.png",
         "sha256": "52ff9fea6b73ab6abd6c22c719afbab9cd9043b65bf6a6be1a07fde8f9d34b5d"
       },
       {
         "id": "decorative-open-render",
-        "path": "skills/printable-container/tests/fixtures/faithfulness-scorecards/decorative-open.png",
+        "path": "families/printable-container/tests/fixtures/faithfulness-scorecards/decorative-open.png",
         "sha256": "5c1b73101d1baed7f3f43dc40d71218858f90fc88881bb6adc010ed81a2b6747"
       }
     ]
@@ -43,20 +43,20 @@
     {
       "id": "decorative-closed-comparison",
       "approved_view_id": "closed-hero",
-      "path": "skills/printable-container/tests/fixtures/faithfulness-scorecards/decorative-closed-comparison.pgm",
+      "path": "families/printable-container/tests/fixtures/faithfulness-scorecards/decorative-closed-comparison.pgm",
       "sha256": "9708d3c7006c4bc81bc5da170ed793bd6638da091deff5d27acc43d403549ee0"
     },
     {
       "id": "decorative-open-comparison",
       "approved_view_id": "open-interior",
-      "path": "skills/printable-container/tests/fixtures/faithfulness-scorecards/decorative-open-comparison.pgm",
+      "path": "families/printable-container/tests/fixtures/faithfulness-scorecards/decorative-open-comparison.pgm",
       "sha256": "b4bc85b1fe66b6abed368184aae9e15b60cb140a53d642a410f40ac6a966eb2f"
     }
   ],
   "matched_views": [
     {
       "id": "decorative-closed-match",
-      "concept_path": "skills/printable-container/tests/fixtures/faithfulness-scorecards/concept.png",
+      "concept_path": "families/printable-container/tests/fixtures/faithfulness-scorecards/concept.png",
       "render_id": "decorative-closed-render",
       "comparison_artifact_id": "decorative-closed-comparison",
       "view": "closed three-quarter",
@@ -65,7 +65,7 @@
     },
     {
       "id": "decorative-open-match",
-      "concept_path": "skills/printable-container/tests/fixtures/faithfulness-scorecards/concept.png",
+      "concept_path": "families/printable-container/tests/fixtures/faithfulness-scorecards/concept.png",
       "render_id": "decorative-open-render",
       "comparison_artifact_id": "decorative-open-comparison",
       "view": "open three-quarter",
@@ -143,7 +143,7 @@
   "final_visual_review": {
     "revision": "comparison-packet-v1",
     "packet": {
-      "path": "skills/printable-container/tests/fixtures/faithfulness-scorecards/final-visual-review-packet.pgm",
+      "path": "families/printable-container/tests/fixtures/faithfulness-scorecards/final-visual-review-packet.pgm",
       "sha256": "f89f8cc2cad68097795694ce5a8e590d7c669bc30eea2e165948cdbbc60281b0"
     },
     "comparison_artifact_ids": ["decorative-closed-comparison", "decorative-open-comparison"],

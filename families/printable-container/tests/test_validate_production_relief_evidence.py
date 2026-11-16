@@ -14,8 +14,8 @@ from typing import Any, Callable
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
-SCRIPT = PROJECT_ROOT / "skills/printable-container/scripts/validate_production_relief_evidence.py"
-FIXTURE_RELATIVE = Path("skills/printable-container/tests/fixtures/production-relief")
+SCRIPT = PROJECT_ROOT / "families/printable-container/scripts/validate_production_relief_evidence.py"
+FIXTURE_RELATIVE = Path("families/printable-container/tests/fixtures/production-relief")
 FIXTURES = PROJECT_ROOT / FIXTURE_RELATIVE
 
 SPEC = importlib.util.spec_from_file_location("production_relief_validator", SCRIPT)

@@ -1,13 +1,13 @@
 ---
 name: "generated-scene-diorama"
-description: "Build a multi-piece printable scene diorama (village, island, market) from one approved concept image, with Meshy-generated pieces under a credit budget, then lock it for The Hoard."
+description: "Build a multi-piece printable scene diorama (village, island, market) from one approved concept image, with Meshy-generated pieces under a credit budget, then save it to The Hoard."
 ---
 
 # Generated scene diorama
 
 This skill turns a brief and a credit budget into a prototype print set of separate pieces, each printed in one colour and painted by hand, on a tiled base. The only human gate is choosing the concept. It was distilled from two runs: the Victorian Christmas village (1000 credits, about 2.5 hours) and the Isle of Berk (899 credits). The run logs and the full spec are in `/mnt/project-files/christmas-village/observer/` (LOG.md and SPEC-draft.md).
 
-Use this skill when most pieces will be generated (image to 3D) and the budget drives the decomposition. Use `layered-diorama` (bookwyrm-dioramas) for a hand-modelled scene built bottom-up. Both lock into the same repo at the end.
+Use this skill when most pieces will be generated (image to 3D) and the budget drives the decomposition. Use `layered-diorama` (bookwyrm-dioramas) for a hand-modelled scene built bottom-up. Both save to The Hoard through the `workshop` skill.
 
 ## Inputs to settle first
 
@@ -51,15 +51,14 @@ Levels: L0 is the scene, L1 an element, L2 a part, L3 a sub-part. **Hard cap at 
     - Every part closed and fitting the bed.
     - `parts.json` with the size, face count and print count of each part.
     - PRINT-AND-TEST.md with the claim level and known gaps.
-13. **Lock for The Hoard.** When the user approves a version, follow the `publish-to-the-hoard` skill. Lock `projects/<slug>/v<N>/` in davidray/bookwyrm-dioramas with a `piece.json`:
+13. **Save for The Hoard.** When the user approves a version, follow the `workshop` skill: save it as a draft change set for `<slug>`, with the generating scripts committed under `projects/<slug>/` in davidray/bookwyrm-dioramas. Its `piece.json`:
     - `kind: diorama`.
-    - `status: digitally-validated` until something is printed.
     - `rights.design: ai-assisted`.
     - `ip: none`, or the third-party world (for example `how-to-train-your-dragon`) with `personal-use-only`.
     - One component per print file.
     - The matched-view render as the first image.
 
-    Run the checker, open the lock pull request, and give the user the Git LFS commands to push the meshes from the Mac. Never import into the library from the build thread. The Hoard imports after the merge when the user clicks Import.
+    Version and status are the user's at promotion; tell them the status the evidence supports (`digitally-validated` until something is printed). Never promote it yourself.
 
 ## Stopping rule (per node)
 

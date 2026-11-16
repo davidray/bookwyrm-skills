@@ -95,4 +95,4 @@ If the user hands over their own calls ("make all the decisions", an unattended 
 
 ## Release and lock
 
-When the user says to cut a version or lock it, build a `release-vX.Y/` folder as described in [project records](references/project-records.md): part table with physical status per part, `LOCK.md`, checksums, and a pull request on a branch. A locked release never changes; any geometry change starts the next version.
+When the user says to cut a version or lock it, save it as a draft through the workshop skill (`workshop/SKILL.md` in this repo), laid out as described in [project records](references/project-records.md): part table with physical status per part and the mesh audit. The user promotes it as `vX.Y`. A promoted revision never changes; any geometry change is a new draft.

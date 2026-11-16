@@ -7,7 +7,7 @@
     "modes": ["single-color-hand-painted"]
   },
   "source_artifact": {
-    "path": "skills/printable-container/tests/fixtures/production-relief/source.blend",
+    "path": "families/printable-container/tests/fixtures/production-relief/source.blend",
     "sha256": "ef341e4634e57d9c170aab927d9aa75c56ecbbb56aba34fffe15ccafd32f4e87"
   },
   "governed_properties": [
@@ -37,13 +37,13 @@
       "export_included": true,
       "included_object_ids": ["star-relief-object"],
       "export_artifact": {
-        "path": "skills/printable-container/tests/fixtures/production-relief/lid-production.stl",
+        "path": "families/printable-container/tests/fixtures/production-relief/lid-production.stl",
         "sha256": "6a7ee039bb54790431e9fd8dcc78719dacddcdae9bf699098b76f2b123dc1f23"
       },
       "round_trip": {
         "verified": true,
         "artifact": {
-          "path": "skills/printable-container/tests/fixtures/production-relief/lid-round-trip.stl",
+          "path": "families/printable-container/tests/fixtures/production-relief/lid-round-trip.stl",
           "sha256": "3e4a17d9dbc3c35c1becb649892629e46bcf6ac30b87fecb44db9389fbe9a5a9"
         },
         "inspection": "Raised star, recessed outline, and paint boundaries remain present after round-trip import."
@@ -53,7 +53,7 @@
   "neutral_production_renders": [
     {
       "id": "neutral-lid",
-      "path": "skills/printable-container/tests/fixtures/production-relief/neutral-production.pgm",
+      "path": "families/printable-container/tests/fixtures/production-relief/neutral-production.pgm",
       "sha256": "ca9ee2790812149cf39d91aaaab688d064f1380dba942d70d223b56f90f7bb5d",
       "neutral_single_color": true,
       "production_only": true,
@@ -70,7 +70,7 @@
     },
     {
       "id": "neutral-lid-detail",
-      "path": "skills/printable-container/tests/fixtures/production-relief/neutral-production-detail.pgm",
+      "path": "families/printable-container/tests/fixtures/production-relief/neutral-production-detail.pgm",
       "sha256": "a102b84350372d6c06f6b644c176a926fb23d7e8b4f7e6bfe6c6c33943d7f8a8",
       "neutral_single_color": true,
       "production_only": true,
@@ -87,7 +87,7 @@
     }
   ],
   "neutral_evidence_packet": {
-    "path": "skills/printable-container/tests/fixtures/production-relief/neutral-evidence-packet.txt",
+    "path": "families/printable-container/tests/fixtures/production-relief/neutral-evidence-packet.txt",
     "sha256": "8f2e582d783b1c93b91bf2da0bd749bcef4377212752dde5f41950c66d0b9e43"
   },
   "legibility_preflight": {
@@ -106,7 +106,7 @@
     "affected_render_ids": [],
     "affected_property_ids": [],
     "artifact": {
-      "path": "skills/printable-container/tests/fixtures/production-relief/legibility-preflight.txt",
+      "path": "families/printable-container/tests/fixtures/production-relief/legibility-preflight.txt",
       "sha256": "6128168935709782eee3591a5d6fdfbe97626f58583952f325e2f50550ba3286"
     }
   },
@@ -117,7 +117,7 @@
   "finish_plans": [
     {
       "id": "painted-preview",
-      "path": "skills/printable-container/tests/fixtures/production-relief/painted-finish-plan.pgm",
+      "path": "families/printable-container/tests/fixtures/production-relief/painted-finish-plan.pgm",
       "sha256": "63c2e09735a58113e32000634815475e71822bfd7f9f1d57bb38129a3b140353",
       "evidence_role": "finish-plan",
       "property_ids": ["paint-palette"],

@@ -163,7 +163,7 @@ Promote a lesson into SKILL.md when it changes future decisions across relevant 
 
 ## Draft handoff — updated 2026-09-23
 
-Maintained draft: `../SKILL.md`, in `davidray/bookwyrm-dioramas` under `skills/layered-diorama`; not installed automatically. The log contains 25 lessons. Generic mounting, fabrication/lighting, payload guidance, and working records support the main pipeline.
+Maintained draft: `../SKILL.md`, now in `davidray/bookwyrm-skills` under `families/layered-diorama` (earlier in `davidray/bookwyrm-dioramas` under `skills/layered-diorama`); not installed automatically. The log contains 25 lessons. Generic mounting, fabrication/lighting, payload guidance, and working records support the main pipeline.
 
 Latest update incorporates continued Dale/Moria assembly, fit coupons, mesh repairs, solid-volume construction, cape failure, export/native-slicer disagreements, user-repaired artifact authority, and wired/optical testing. Reviewed active checkpoint sections and the source documents cited in `fabrication-and-lighting.md`. No meshes, renders, physical tests, or slicer checks were rerun; project scenes and outputs are unchanged. Only documentation belongs in this repository.
 

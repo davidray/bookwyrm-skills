@@ -11,9 +11,9 @@ from typing import Any
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
-SCRIPT = PROJECT_ROOT / "skills/printable-container/scripts/delivery_gate_state.py"
-FLOW_SCRIPT = PROJECT_ROOT / "skills/printable-container/scripts/exercise_delivery_gate_flow.py"
-FLOW_FIXTURE = PROJECT_ROOT / "skills/printable-container/tests/fixtures/delivery-gates"
+SCRIPT = PROJECT_ROOT / "families/printable-container/scripts/delivery_gate_state.py"
+FLOW_SCRIPT = PROJECT_ROOT / "families/printable-container/scripts/exercise_delivery_gate_flow.py"
+FLOW_FIXTURE = PROJECT_ROOT / "families/printable-container/tests/fixtures/delivery-gates"
 SPEC = importlib.util.spec_from_file_location("delivery_gate_state", SCRIPT)
 assert SPEC and SPEC.loader
 GATES = importlib.util.module_from_spec(SPEC)

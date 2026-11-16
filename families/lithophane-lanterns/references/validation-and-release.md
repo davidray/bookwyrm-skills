@@ -58,27 +58,26 @@ Include:
 
 Do not release stale candidate STLs after a later visual, hardware, scale, or interface revision.
 
-## Locked versions
+## Release versions
 
-When the user approves a version for printing, lock it by pull request in this repository (the lantern-art folder on the user's Mac is not a git repository):
+A version reaches The Hoard as a draft change set (see the workshop skill), which the user promotes. The lantern-art folder on the user's Mac is not a git repository, and new meshes no longer go in bookwyrm-lanterns.
 
 ```text
-lanterns/<lantern>/v<N>/
+inbox/<lantern>/<change set>/
   README.md
-  piece.json  the README's facts for the library (bookwyrm-rpg services/library/docs/piece-json.md)
-  print/    one 3MF per part, named <lantern>-v<N>_<part>.3mf (blank hardware plate included)
-  source/   every script that generates the parts and panels, in run order
+  piece.json  the README's facts for the library (version and status are set at promotion)
+  print/    one 3MF per part, named <lantern>_<part>.3mf (blank hardware plate included)
   art/      the approved concept and panel art
   review/   the sheets the user approved
 ```
 
-The README covers: what the lantern is; what the user approved and when; a per-part table (file, part, size, orientation, supports, material); the panel face map; lighting and hardware (strip, pixels per face, WLED limit, plate); the source pipeline in run order, with tool versions; where large source meshes live and their generation task IDs; and known open items, including what has not been printed.
+Every script that generates the parts and panels, in run order, is committed under `lanterns/<lantern>/` in bookwyrm-lanterns, and `piece.json` `source.commit` names that commit.
 
-Before locking, check every claim in the README (shell counts, supports, coverage, sizes) against the facts files and slice results it summarises. A README once said every part was a single shell while the body's facts listed 5. Also check that every script takes its paths as arguments, that every 3MF re-imports with the expected bounds and shell count, and that no placeholder or reserve geometry is in a print file. Write `piece.json` with the README: every print file is named by a component, Middle-earth and Zelda lanterns are `"ip"` `middle-earth` or `zelda` with licence `personal-use-only`, and `status` is the claim level the README states. `python tools/check_piece_json.py lanterns/` must be clean. A later change is a new `v<N+1>` folder; never edit a locked version in place.
+The README covers: what the lantern is; what the user approved and when; a per-part table (file, part, size, orientation, supports, material); the panel face map; lighting and hardware (strip, pixels per face, WLED limit, plate); the source pipeline in run order, with tool versions and the source commit; where large source meshes live and their generation task IDs; and known open items, including what has not been printed.
 
-In an autonomous run, open the locking PR as soon as the candidate is complete so the user can review it, say in the README and PR that the version was not user-approved, and leave it unmerged until the user's verdict. Put these at the top of the README, the PR and the message to the user:
+Before saving, check every claim in the README (shell counts, supports, coverage, sizes) against the facts files and slice results it summarises. A README once said every part was a single shell while the body's facts listed 5. Also check that every script takes its paths as arguments, that every 3MF re-imports with the expected bounds and shell count, and that no placeholder or reserve geometry is in a print file. Write `piece.json` with the README: every print file is named by a component, and Middle-earth and Zelda lanterns are `"ip"` `middle-earth` or `zelda` with licence `personal-use-only`. Tell the user the claim level the README states, to use as the status at promotion. A later change is a new draft; a promoted revision is never edited.
+
+In an autonomous run, save the candidate as a draft as soon as it is complete so the user can review it in The Hoard, say in the README and the draft's note that it was not user-approved, and never promote it. Put these at the top of the README and the message to the user:
 - any reviewer FAIL that is still unresolved;
 - any departure from a standard architecture or series interface;
 - every measured loss the reviewer reported, such as simulated sharpness or tonal loss on panels, or detail lost in engineering.
-
-Assign the PR to the user. A review request fails when the user is the PR author, so don't retry it.

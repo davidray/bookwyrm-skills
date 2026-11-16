@@ -13,8 +13,8 @@ from typing import Any, Callable
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
-SCRIPT = PROJECT_ROOT / "skills/printable-container/scripts/validate_faithfulness_scorecard.py"
-FIXTURE_RELATIVE = Path("skills/printable-container/tests/fixtures/faithfulness-scorecards")
+SCRIPT = PROJECT_ROOT / "families/printable-container/scripts/validate_faithfulness_scorecard.py"
+FIXTURE_RELATIVE = Path("families/printable-container/tests/fixtures/faithfulness-scorecards")
 FIXTURES = PROJECT_ROOT / FIXTURE_RELATIVE
 
 SPEC = importlib.util.spec_from_file_location("faithfulness_validator", SCRIPT)
