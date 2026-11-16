@@ -32,7 +32,7 @@ A watertight decorative mesh can still be useless as a lantern because it has no
 
 ### Working with generated meshes
 
-- Raw generator output is in arbitrary units (Meshy's is about 1 to 2 units tall). Before any review or fit, scale it uniformly to the part's real size from the blockout, set it Z-up with its base on z = 0, and record the scale factor.
+- Raw generator output is in arbitrary units (about 1 to 2 units tall so far). Before any review or fit, scale it uniformly to the part's real size from the blockout, set it Z-up with its base on z = 0, and record the scale factor.
 - Pull the full-resolution source for each region you need instead of one decimated copy of the whole model (a trunk went from 11k to 252k triangles).
 - When geometry cannot separate two materials (flame from rock, leaf from bark), segment by colour: a retexture of the same model, or the mean texture colour of each UV chart.
 - Generated meshes are often open, hollow skins with internal shells. Make them solid by voxel close, fill, and an inset core unioned with the skin, or by generalized winding numbers (libigl) on open or boolean-damaged meshes, then marching cubes. Avoid mesh smoothing plus decimation, which leaves needles and holes; smooth the voxel field instead. Canopies and domes need a solid core under the surface. Voxel size, smoothing and decimation all round off fine tips and thin edges. Compare close-ups of the finest features before and after, and use a smaller voxel for parts with points.
