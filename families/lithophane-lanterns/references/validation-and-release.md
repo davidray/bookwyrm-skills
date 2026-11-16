@@ -1,49 +1,15 @@
 # Validation and release
 
-## Evidence ladder
+The evidence ladder, the statuses, digital and slicer checks, physical tests and evidence freshness are shared by every family: read [evidence and claims](../../../shared/evidence-and-claims/evidence-and-claims.md). This file adds what a lantern release needs.
 
-State the highest level actually reached:
+Lantern-specific checks:
 
-1. visual review;
-2. source-model dimensional and geometry audit;
-3. exported-mesh and round-trip audit;
-4. slicer, support, and layer review;
-5. representative physical coupon;
-6. full component fit and optical test;
-7. complete assembly and intended-use test;
-8. qualified assembled release.
-
-Evidence at one level does not imply the next.
-
-## Digital checks
-
-For each exported part, verify units, scale, bounds, orientation, triangle/face health, manifoldness as appropriate, normals/winding, positive volume, disconnected components, unintended gaps or intersections, and round-trip import. Check that presentation-only objects and service reserves are absent.
-
-Audit round-trips with the indexing the slicer reads. Merging vertices by position can re-join a boolean library's deliberately split pinch points and report a sound body as many shells (Lake-town: 96 shells from a watertight manifold3d result); write 3MFs from the solver's own indexing and audit that. Watch for inside-out output (negative volume) from marching cubes and zero-volume slivers from booleans.
-
-When parts are combined into one print, check that the result is exactly one body with no closed voids inside. Parts that are glued into grooves at full size end up separate, floating bodies after a union unless they are swelled by about the groove clearance so they fuse. The Christmas village mini had 12 floating icicle strips and 26 hidden voids in its roof. When a hollow is filled, compare the new outer surface with the original, and reject any new flat plane. In the mini, a fill box taller than the roof poked through the hips, and plain clay renders hid it. Take every number a README claims (wall thickness, size, volume) from the check files rather than retyping it. The mini's README said walls were at least 1.2 mm where its own check had measured 0.9 mm.
-
-Slice every production part with the intended machine and profile. Inspect first layers, thin walls, small features, bridges, overhangs, supports, seams, panel relief reproduction, total plate fit, and whether support removal can damage visible or optical surfaces. A successful slicer return code alone is not a review. Look for floating islands and parts that start above the bed; a zero-clash assembly can still contain a part that cannot print (Lake-town: divider blades started 3 mm above the bed). Project supports from the G-code onto the part to see where they touch carved or visible surfaces. "On build plate only" cannot keep supports out of a cavity that is open to the bed, because the cavity floor is the bed. Before slicing, check the mesh for faces inside such a cavity that point down more steeply than 45° (normal z < −0.71). In the mini, tree supports grew up the cavity to the window-pocket ledges. See [tooling](tooling.md) for slicing from the command line.
-
-## Physical tests
-
-Record each coupon as a named interface under named conditions. Useful acceptance language is concrete: slides without force, remains retained under inversion, switch is reachable, no visible hotspot at normal viewing distance, or panel remains legible. Avoid turning “snug” or “pass” into claims about untested retention, optics, heat, or the full assembly.
-
-After component coupons, perform an assembled check of panel installation, hardware installation, service access, roof/base retention, all-face illumination, stability, and intended handling. If this is not done, release as a prototype with the limitations stated.
-
-## Claim levels
-
-- **Visual concept:** appearance only.
-- **Digitally validated candidate:** current exports and slices were checked; no physical-fit claim.
-- **Prototype release:** printable files supplied for evaluation with unresolved physical behavior stated.
-- **Interface-fit-tested release:** named critical interfaces passed representative tests under recorded conditions; whole-lantern behavior may remain unqualified.
-- **Qualified assembled release:** the complete assembly and intended-use acceptance criteria passed, including critical mechanical, optical, service, and safety-relevant interfaces.
-
-Do not use “print-ready” without a qualifier because readers interpret it as stronger than digital validation.
+- In the slicer, inspect panel relief reproduction as well as the usual list, and see [tooling](tooling.md) for slicing from the command line.
+- After component coupons, the assembled check covers panel installation, roof and base retention and all-face illumination.
 
 ## Release package
 
-Include:
+Include everything the shared list asks for, plus:
 
 - authoritative editable source and exact production exports;
 - face-labeled lithophane files and installation map;
