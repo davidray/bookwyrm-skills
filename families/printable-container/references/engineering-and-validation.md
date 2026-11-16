@@ -50,7 +50,7 @@ Print orientation is part of the design. Consider bed contact, bridging, overhan
 
 ## Energy, lighting, and electronics safety
 
-For LED scenes, WLED and circuit-board lessons, see [lighting and electronics](lighting-and-electronics.md).
+For LED scenes, WLED and circuit-board lessons, see [lighting and electronics](../../../shared/lighting-and-electronics/lighting-and-electronics.md).
 
 Classify the intended source before designing around it: unpowered, low-voltage battery/LED, externally powered low-voltage, mains-powered, heat-producing lamp, or open flame. Ordinary printed-plastic lanterns should default to LED-only. Hold mains, open-flame, high-energy battery, or other safety-critical designs unless appropriate domain requirements and evidence are provided.
 

@@ -1,6 +1,6 @@
 # Standard lighting architectures
 
-Use these names consistently in Dave's lantern projects. Record the selected architecture in the project checkpoint before functional blockout.
+Use these names consistently in Dave's lantern projects. Record the selected architecture in the project checkpoint before functional blockout. General lighting method shared with the other families (WLED scenes and presets, boards, light-path tests) is in [lighting and electronics](../../../shared/lighting-and-electronics/lighting-and-electronics.md).
 
 ## Split lighting
 
