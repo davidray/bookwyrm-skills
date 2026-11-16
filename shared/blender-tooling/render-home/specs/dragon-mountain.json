@@ -1,0 +1,48 @@
+{
+ "name": "Dragon Mountain",
+ "slug": "dragon-mountain",
+ "dir": "/home/user/bookwyrm-lanterns/lanterns/dragon-mountain/v2/print",
+ "height": 290,
+ "width": 200,
+ "parts": [
+  {
+   "file": "dragon-mountain-v2_mountain-dragon-flame_two-colour.3mf",
+   "mats": [
+    "black",
+    "skin1.6"
+   ],
+   "offset": [
+    0,
+    0,
+    52
+   ]
+  },
+  {
+   "file": "dragon-mountain-v2_plinth.3mf",
+   "mat": "black",
+   "offset": [
+    0,
+    0,
+    20.8
+   ]
+  }
+ ],
+ "stl_parts": [
+  {
+   "file": "/home/user/bookwyrm-lanterns/lanterns/dragon-mountain/v2/print/dragon-mountain-v2_led-post.stl",
+   "mat": "white"
+  }
+ ],
+ "leds": {
+  "angles": [
+   90,
+   180,
+   0
+  ],
+  "r": 12.6,
+  "z0": 60,
+  "z1": 158,
+  "n": 5,
+  "power": 1.6
+ }
+}

@@ -1,0 +1,156 @@
+{
+  "schema_version": 2,
+  "milestone": "decorative-integration",
+  "audit_scope": "full",
+  "verdict": "PASS",
+  "audited_at": "2026-10-26T13:00:00Z",
+  "auditor": {"id": "independent-auditor"},
+  "builder": {"id": "model-builder"},
+  "audit_provenance": {
+    "run_id": "audit-run-decorative-1",
+    "builder_run_id": "builder-run-1",
+    "review_mode": "fresh-independent",
+    "input_excluded": ["builder-conclusions", "prior-verdicts", "target-threshold", "desired-outcome"],
+    "scores_recorded_before_threshold_check": true
+  },
+  "release_claim": "prototype",
+  "artifacts": {
+    "concepts": [
+      {
+        "path": "families/printable-container/tests/fixtures/faithfulness-scorecards/concept.png",
+        "sha256": "4c6c8391b0534cf97de6c46ace2685717a2da6ea07296306bb72c377f1c9fa59"
+      }
+    ],
+    "source": {
+      "path": "families/printable-container/tests/fixtures/faithfulness-scorecards/source.blend",
+      "sha256": "57370927eb4c1c6f459e23b72a6eb14850dbf88ef09085d49c9aab6fbde616a0"
+    },
+    "renders": [
+      {
+        "id": "decorative-closed-render",
+        "path": "families/printable-container/tests/fixtures/faithfulness-scorecards/decorative-closed.png",
+        "sha256": "52ff9fea6b73ab6abd6c22c719afbab9cd9043b65bf6a6be1a07fde8f9d34b5d"
+      },
+      {
+        "id": "decorative-open-render",
+        "path": "families/printable-container/tests/fixtures/faithfulness-scorecards/decorative-open.png",
+        "sha256": "5c1b73101d1baed7f3f43dc40d71218858f90fc88881bb6adc010ed81a2b6747"
+      }
+    ]
+  },
+  "approved_views": ["closed-hero", "open-interior"],
+  "comparison_artifacts": [
+    {
+      "id": "decorative-closed-comparison",
+      "approved_view_id": "closed-hero",
+      "path": "families/printable-container/tests/fixtures/faithfulness-scorecards/decorative-closed-comparison.pgm",
+      "sha256": "9708d3c7006c4bc81bc5da170ed793bd6638da091deff5d27acc43d403549ee0"
+    },
+    {
+      "id": "decorative-open-comparison",
+      "approved_view_id": "open-interior",
+      "path": "families/printable-container/tests/fixtures/faithfulness-scorecards/decorative-open-comparison.pgm",
+      "sha256": "b4bc85b1fe66b6abed368184aae9e15b60cb140a53d642a410f40ac6a966eb2f"
+    }
+  ],
+  "matched_views": [
+    {
+      "id": "decorative-closed-match",
+      "concept_path": "families/printable-container/tests/fixtures/faithfulness-scorecards/concept.png",
+      "render_id": "decorative-closed-render",
+      "comparison_artifact_id": "decorative-closed-comparison",
+      "view": "closed three-quarter",
+      "method": "matched camera, silhouette, and motif comparison",
+      "covers": ["closed-hero"]
+    },
+    {
+      "id": "decorative-open-match",
+      "concept_path": "families/printable-container/tests/fixtures/faithfulness-scorecards/concept.png",
+      "render_id": "decorative-open-render",
+      "comparison_artifact_id": "decorative-open-comparison",
+      "view": "open three-quarter",
+      "method": "matched camera, layout, and hierarchy comparison",
+      "covers": ["open-interior"]
+    }
+  ],
+  "approved_properties": [
+    {"id": "decorative-silhouette-property", "description": "Approved silhouette and scale relationships", "criterion_ids": ["decorative-silhouette"]},
+    {"id": "focal-identity-property", "description": "Approved focal identity and story", "criterion_ids": ["decorative-focal-identity"]},
+    {"id": "motif-property", "description": "Approved characteristic motifs", "criterion_ids": ["decorative-motifs"]},
+    {"id": "hierarchy-property", "description": "Approved hierarchy and sightlines", "criterion_ids": ["decorative-hierarchy"]},
+    {"id": "surface-property", "description": "Approved surface and light intent", "criterion_ids": ["decorative-surface-intent"]},
+    {"id": "compromise-property", "description": "Approved constraint and compromise treatment", "criterion_ids": ["decorative-compromises"]}
+  ],
+  "property_assessments": [
+    {"property_id": "decorative-silhouette-property", "classification": "exact", "criterion_ids": ["decorative-silhouette"], "matched_view_ids": ["decorative-closed-match"], "comparison_artifact_ids": ["decorative-closed-comparison"], "rationale": "The approved silhouette is preserved near-literally."},
+    {"property_id": "focal-identity-property", "classification": "exact", "criterion_ids": ["decorative-focal-identity"], "matched_view_ids": ["decorative-closed-match", "decorative-open-match"], "comparison_artifact_ids": ["decorative-closed-comparison", "decorative-open-comparison"], "rationale": "The focal identity and story are preserved near-literally."},
+    {"property_id": "motif-property", "classification": "exact", "criterion_ids": ["decorative-motifs"], "matched_view_ids": ["decorative-closed-match", "decorative-open-match"], "comparison_artifact_ids": ["decorative-closed-comparison", "decorative-open-comparison"], "rationale": "Characteristic motifs are preserved near-literally."},
+    {"property_id": "hierarchy-property", "classification": "minor", "criterion_ids": ["decorative-hierarchy"], "matched_view_ids": ["decorative-closed-match", "decorative-open-match"], "comparison_artifact_ids": ["decorative-closed-comparison", "decorative-open-comparison"], "rationale": "The hierarchy is clearly faithful with localized spacing differences."},
+    {"property_id": "surface-property", "classification": "minor", "criterion_ids": ["decorative-surface-intent"], "matched_view_ids": ["decorative-closed-match"], "comparison_artifact_ids": ["decorative-closed-comparison"], "rationale": "Surface intent is clear with a localized finish difference."},
+    {"property_id": "compromise-property", "classification": "exact", "criterion_ids": ["decorative-compromises"], "matched_view_ids": ["decorative-closed-match", "decorative-open-match"], "comparison_artifact_ids": ["decorative-closed-comparison", "decorative-open-comparison"], "rationale": "Approved compromises are represented exactly."}
+  ],
+  "criteria": [
+    {
+      "id": "decorative-silhouette",
+      "weight": 25,
+      "score": 5,
+      "evidence_view_ids": ["decorative-closed-match"],
+      "rationale": "The integrated design preserves the approved silhouette and scale relationships."
+    },
+    {
+      "id": "decorative-focal-identity",
+      "weight": 25,
+      "score": 5,
+      "evidence_view_ids": ["decorative-closed-match", "decorative-open-match"],
+      "rationale": "The focal identity and story remain clear in both intended states."
+    },
+    {
+      "id": "decorative-motifs",
+      "weight": 20,
+      "score": 5,
+      "evidence_view_ids": ["decorative-closed-match", "decorative-open-match"],
+      "rationale": "Characteristic motifs and major decorative forms match the concept."
+    },
+    {
+      "id": "decorative-hierarchy",
+      "weight": 15,
+      "score": 4,
+      "evidence_view_ids": ["decorative-closed-match", "decorative-open-match"],
+      "rationale": "Visual hierarchy, negative space, and sightlines remain faithful."
+    },
+    {
+      "id": "decorative-surface-intent",
+      "weight": 5,
+      "score": 4,
+      "evidence_view_ids": ["decorative-closed-match"],
+      "rationale": "Surface, color, and lighting intent remain recognizable."
+    },
+    {
+      "id": "decorative-compromises",
+      "weight": 10,
+      "score": 5,
+      "evidence_view_ids": ["decorative-closed-match", "decorative-open-match"],
+      "rationale": "Approved constraints and the compromise register are represented without drift."
+    }
+  ],
+  "claimed_total": 96,
+  "blocking_findings": [],
+  "compromises": [],
+  "visual_acceptance_criteria": [
+    {"id": "AC-VISUAL-1", "status": "satisfied"},
+    {"id": "AC-VISUAL-2", "status": "satisfied"}
+  ],
+  "final_visual_review": {
+    "revision": "comparison-packet-v1",
+    "packet": {
+      "path": "families/printable-container/tests/fixtures/faithfulness-scorecards/final-visual-review-packet.pgm",
+      "sha256": "f89f8cc2cad68097795694ce5a8e590d7c669bc30eea2e165948cdbbc60281b0"
+    },
+    "comparison_artifact_ids": ["decorative-closed-comparison", "decorative-open-comparison"],
+    "decision": "approved",
+    "exact_response": "Approved comparison-packet-v1 for the visible properties shown.",
+    "decided_at": "2026-10-26T14:00:00Z",
+    "source": "user-message",
+    "recorded_by": "orchestrator"
+  }
+}

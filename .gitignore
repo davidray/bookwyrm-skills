@@ -1,0 +1,13 @@
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Meshes, Blender files and print files belong in the store, not here.
+*.stl
+*.3mf
+*.obj
+*.glb
+*.blend
+*.blend1
+*.step
+!families/printable-container/tests/fixtures/**

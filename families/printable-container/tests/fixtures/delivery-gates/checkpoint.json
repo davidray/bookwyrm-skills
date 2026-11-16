@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "delivery_status": "delivering",
+  "gates": [
+    {
+      "id": "final-visual-review",
+      "kind": "final-matched-view-approval",
+      "order": 20,
+      "non_delegable": true,
+      "state": "pending",
+      "packet": {
+        "id": "fixture-matched-view-packet",
+        "revision": "v1",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "decision_requested": "Approve the final matched-view packet or request revisions.",
+      "compromises": [
+        "brass remains a printed finish"
+      ],
+      "authorized_after": [
+        "release-packaging"
+      ],
+      "resume_point": "completion-ledger",
+      "prohibited_downstream": [
+        "release-package",
+        "cold-delivery-audit",
+        "hero-spec-verify"
+      ]
+    }
+  ],
+  "decision_history": [],
+  "superseded_packets": [],
+  "closing_work": [
+    "completion-ledger",
+    "cold-delivery-audit",
+    "hero-spec-verify"
+  ]
+}

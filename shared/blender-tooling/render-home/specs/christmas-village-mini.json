@@ -1,0 +1,28 @@
+{
+ "name": "Mini Christmas Village",
+ "slug": "christmas-village-mini",
+ "dir": "/home/user/bookwyrm-lanterns/lanterns/christmas-village-mini/v1/print",
+ "height": 186,
+ "width": 106,
+ "parts": [
+  {
+   "file": "christmas-village-mini.3mf",
+   "mat": "white_trans",
+   "center": [
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "leds": {
+  "angles": [
+   0
+  ],
+  "r": 0,
+  "z0": 15,
+  "z1": 45,
+  "n": 2,
+  "power": 0.15
+ }
+}

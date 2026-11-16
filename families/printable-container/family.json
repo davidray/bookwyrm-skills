@@ -1,0 +1,32 @@
+{
+  "family_json": 1,
+  "slug": "printable-container",
+  "name": "Containers",
+  "builds": "Decorative printable boxes, chests, cases, enclosures, lithophane frames and figural containers, including their hinges, magnets, lighting and controller boards",
+  "skill": "SKILL.md",
+  "kinds": [
+    "container",
+    "lamp",
+    "diorama"
+  ],
+  "versions": "v<N>.<M>; unprinted digital previews are v0.<M>",
+  "repos": [
+    {
+      "repo": "davidray/bookwyrm-boxes",
+      "projects": [
+        "projects/*"
+      ],
+      "ignore": [
+        "projects/shared-interior",
+        "projects/treasure-chest-jewelry-boxes"
+      ],
+      "new_projects": "projects/<slug>/"
+    },
+    {
+      "repo": "davidray/woodland-dragon-chest",
+      "projects": [
+        "."
+      ]
+    }
+  ]
+}

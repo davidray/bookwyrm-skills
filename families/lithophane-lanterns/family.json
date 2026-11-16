@@ -1,0 +1,30 @@
+{
+  "family_json": 1,
+  "slug": "lithophane-lanterns",
+  "name": "Lithophane lanterns",
+  "builds": "LED lithophane lanterns: lit image panels in a decorated printed body, with a battery or low-voltage LED light",
+  "skill": "SKILL.md",
+  "kinds": [
+    "lamp"
+  ],
+  "versions": "v<N>, or v<N>.<M> for a smaller change",
+  "repos": [
+    {
+      "repo": "davidray/bookwyrm-lanterns",
+      "projects": [
+        "lanterns/*"
+      ],
+      "new_projects": "lanterns/<slug>/"
+    },
+    {
+      "repo": "davidray/the-gift-story-lanterns",
+      "projects": [
+        "centerpiece",
+        "tea-light",
+        "stable-centerpiece",
+        "bethlehem-centerpiece",
+        "grotto-centerpiece"
+      ]
+    }
+  ]
+}

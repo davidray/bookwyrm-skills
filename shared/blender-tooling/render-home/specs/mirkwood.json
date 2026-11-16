@@ -1,0 +1,126 @@
+{
+ "name": "Mirkwood",
+ "slug": "mirkwood",
+ "dir": "/home/user/bookwyrm-lanterns/lanterns/mirkwood/v1/print",
+ "height": 374,
+ "width": 360,
+ "parts": [
+  {
+   "file": "mirkwood-v1_A_plinth.3mf",
+   "ref": "/mnt/project-files/mirkwood/print-v1/A_plinth_print_v1.stl"
+  },
+  {
+   "file": "mirkwood-v1_B_trees_front-left.3mf",
+   "ref": "/mnt/project-files/mirkwood/print-v1/canopy-v4/stl/B_trees_front_left_v2.stl"
+  },
+  {
+   "file": "mirkwood-v1_C_lid_front-left_tie-boss.3mf",
+   "ref": "/mnt/project-files/mirkwood/print-v1/canopy-v4/stl/C_lid_front_left_v2.stl"
+  },
+  {
+   "file": "mirkwood-v1_B_trees_front-right.3mf",
+   "ref": "/mnt/project-files/mirkwood/print-v1/canopy-v4/stl/B_trees_front_right_v2.stl"
+  },
+  {
+   "file": "mirkwood-v1_C_lid_front-right.3mf",
+   "ref": "/mnt/project-files/mirkwood/print-v1/canopy-v4/stl/C_lid_front_right_v2.stl"
+  },
+  {
+   "file": "mirkwood-v1_B_trees_back-right.3mf",
+   "ref": "/mnt/project-files/mirkwood/print-v1/canopy-v4/stl/B_trees_back_right_v2.stl"
+  },
+  {
+   "file": "mirkwood-v1_C_lid_back-right.3mf",
+   "ref": "/mnt/project-files/mirkwood/print-v1/canopy-v4/stl/C_lid_back_right_v2.stl"
+  },
+  {
+   "file": "mirkwood-v1_B_trees_back-left.3mf",
+   "ref": "/mnt/project-files/mirkwood/print-v1/canopy-v4/stl/B_trees_back_left_v2.stl"
+  },
+  {
+   "file": "mirkwood-v1_C_lid_back-left.3mf",
+   "ref": "/mnt/project-files/mirkwood/print-v1/canopy-v4/stl/C_lid_back_left_v2.stl"
+  },
+  {
+   "file": "mirkwood-v1_D_divider.3mf",
+   "ref": "/mnt/project-files/mirkwood/print-v1/divider/D_divider_v1.stl"
+  },
+  {
+   "file": "mirkwood-v1_P1_feast-lights_front.3mf",
+   "mat": "litho",
+   "rot": [
+    [
+     "x",
+     90
+    ]
+   ],
+   "center": [
+    0,
+    71,
+    45.1
+   ],
+   "post_rotz": 0
+  },
+  {
+   "file": "mirkwood-v1_P2_spiders_right.3mf",
+   "mat": "litho",
+   "rot": [
+    [
+     "x",
+     90
+    ]
+   ],
+   "center": [
+    0,
+    71,
+    45.1
+   ],
+   "post_rotz": -90
+  },
+  {
+   "file": "mirkwood-v1_P3_elvenking-halls_back.3mf",
+   "mat": "litho",
+   "rot": [
+    [
+     "x",
+     90
+    ]
+   ],
+   "center": [
+    0,
+    71,
+    45.1
+   ],
+   "post_rotz": 180
+  },
+  {
+   "file": "mirkwood-v1_P4_barrel-escape_left.3mf",
+   "mat": "litho",
+   "rot": [
+    [
+     "x",
+     90
+    ]
+   ],
+   "center": [
+    0,
+    71,
+    45.1
+   ],
+   "post_rotz": 90
+  }
+ ],
+ "leds": {
+  "angles": [
+   90,
+   0,
+   270,
+   180
+  ],
+  "r": 15,
+  "z0": 50,
+  "z1": 288,
+  "n": 5,
+  "power": 0.45
+ }
+}

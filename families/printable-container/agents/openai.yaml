@@ -1,0 +1,4 @@
+interface:
+  display_name: "Printable Container"
+  short_description: "Build decorative containers into printable STLs"
+  default_prompt: "Use $printable-container to develop this decorative container concept into validated, printable STL files."
