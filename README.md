@@ -12,6 +12,7 @@ families/             one construction skill per kind of product
   layered-diorama/          hand-modelled scene dioramas built in layers
   generated-scene-diorama/  multi-piece dioramas generated from one concept under a credit budget
 shared/               method shared by more than one family
+  print-profile/print-profile.md   printers, build volumes, materials, proven print and fit settings
   blender-tooling/render-home/   home-library lantern renders
 tools/check_piece_json.py        checks piece.json in version folders still locked in a family repo
 ```
