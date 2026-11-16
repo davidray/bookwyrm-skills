@@ -30,7 +30,7 @@ When the user hands every decision to you, follow the autonomous-run rules in [w
 
 For tool setup (headless Blender in a container, slicing from the command line), read [tooling](references/tooling.md).
 
-For Dave's lantern projects, read [Dave's art pipeline](references/dave-art-pipeline.md) before generating concept, part, or panel art or any AI mesh, and before spending generation credits.
+For Dave's lantern projects, read [Dave's art pipeline](../../shared/concept-and-faithfulness/art-pipeline.md) and [image to 3D](../../shared/image-to-3d/image-to-3d.md) before generating concept, part, or panel art or any AI mesh, and before spending generation credits.
 
 In a series of lanterns, keep the shared interfaces consistent: panel slot and retention, divider or LED post, strip, hardware plate, and tolerances. Overall size is a target the approved art may break; say so when it does rather than distorting the art to match a sibling.
 
@@ -88,7 +88,7 @@ In Blender or another source model, separate at minimum:
 - functional/service reserves and motion paths;
 - presentation-only artwork, materials, glow, and staging.
 
-Use editable source geometry and repeatable generators where they improve reliability. Code is for structural and parametric geometry only. Never hand-build detailed or decorative parts in code, including stairs, decks, railings and brackets; generate them with the 3D generator (the `3d-generator` skill names the current engine, how to call it and its prices) (David, 2026-11-14). An approved AI-generated part mesh is authoritative for visible form: keep it as the exterior and cut or add the function into it (hollowing, slots, seats, bays, lid pockets, hidden internals). It is not functional lantern architecture until those openings, load paths, panel seats, service paths, segmentation, and printable topology are deliberately added and verified, but the visible surface stays as the art made it.
+Use editable source geometry and repeatable generators where they improve reliability. Code is for structural and parametric geometry only. Never hand-build detailed or decorative parts in code, including stairs, decks, railings and brackets; generate them with the 3D generator ([image to 3D](../../shared/image-to-3d/image-to-3d.md) names the engines, how to call them and their prices) (David, 2026-11-14). An approved AI-generated part mesh is authoritative for visible form: keep it as the exterior and cut or add the function into it (hollowing, slots, seats, bays, lid pockets, hidden internals). It is not functional lantern architecture until those openings, load paths, panel seats, service paths, segmentation, and printable topology are deliberately added and verified, but the visible surface stays as the art made it.
 
 Produce neutral production-only views as well as attractive lit views. A useful review packet normally includes a matched three-quarter view, front/elevation view, neutral geometry view, cutaway, exploded/service view, underside access view, and isolated panel previews. Put the approved concept or part art beside the model on every sheet. Show reserves only in functional views, with a clear legend.
 

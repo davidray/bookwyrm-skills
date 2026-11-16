@@ -4,7 +4,7 @@ Keep review light and aimed at catching real faults. The user's reaction to a ma
 
 ## Faithfulness
 
-Show the concept and the current model, rendered from the same view, side by side in one image. Use neutral materials for at least one view, because dramatic lighting hides form errors. Note any visible departure from the concept and why, using the compromise register in [concept and faithfulness](concept-and-faithfulness.md) only when the departure is a real trade-off the user should decide.
+Show the concept and the current model, rendered from the same view, side by side in one image. Use neutral materials for at least one view, because dramatic lighting hides form errors. Note any visible departure from the concept and why, using the compromise register in [concept and faithfulness](../../../shared/concept-and-faithfulness/concept-and-faithfulness.md) only when the departure is a real trade-off the user should decide.
 
 ## Before a long print
 
