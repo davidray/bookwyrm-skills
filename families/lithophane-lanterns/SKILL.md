@@ -59,7 +59,7 @@ Fit purchased parts (lights, batteries, switches) with generous clearance, so a 
 
 Record how panels go in and how the roof or lid comes off at blockout, and show it in the review. Default to positive roof location (pegs or a keyed lip); gravity-only seating needs the user's explicit acceptance. For Dave's lanterns, add the central lid tie-down: an M4 eye bolt in a heat-set insert in the lid, a wire down the post bore, and an M4 bolt, washer and nut through the hardware plate. Reserve its axis column at blockout (see [engineering](references/engineering.md), lid tie-down).
 
-Wherever two printed faces are glued, align them with printed male/female tabs or plugs, never loose dowels or filament pins unless an exception applies (hinges and pivots, joints that are not glued, walls too thin for a socket). Plan them when you choose the segmentation; see [engineering](references/engineering.md), glued joints.
+Never use dowels (David, 2026-11-16). Wherever two printed faces are glued, align them with printed alignment tabs: a male tab 4.0 mm in diameter and 4.0 mm tall on one face, a female socket 4.2 mm in diameter and 4.2 mm deep in the other. Joints that are not glued, hinges and pivots need no tab. Plan them when you choose the segmentation; see [engineering](references/engineering.md), glued joints.
 
 ## Decorate part by part, and let the art win
 
@@ -88,7 +88,7 @@ In Blender or another source model, separate at minimum:
 - functional/service reserves and motion paths;
 - presentation-only artwork, materials, glow, and staging.
 
-Use editable source geometry and repeatable generators where they improve reliability. An approved AI-generated part mesh is authoritative for visible form: keep it as the exterior and cut or add the function into it (hollowing, slots, seats, bays, lid pockets, hidden internals). It is not functional lantern architecture until those openings, load paths, panel seats, service paths, segmentation, and printable topology are deliberately added and verified, but the visible surface stays as the art made it.
+Use editable source geometry and repeatable generators where they improve reliability. Code is for structural and parametric geometry only. Never hand-build detailed or decorative parts in code, including stairs, decks, railings and brackets; generate them with Tripo, through the Tripo API (David, 2026-11-14). An approved AI-generated part mesh is authoritative for visible form: keep it as the exterior and cut or add the function into it (hollowing, slots, seats, bays, lid pockets, hidden internals). It is not functional lantern architecture until those openings, load paths, panel seats, service paths, segmentation, and printable topology are deliberately added and verified, but the visible surface stays as the art made it.
 
 Produce neutral production-only views as well as attractive lit views. A useful review packet normally includes a matched three-quarter view, front/elevation view, neutral geometry view, cutaway, exploded/service view, underside access view, and isolated panel previews. Put the approved concept or part art beside the model on every sheet. Show reserves only in functional views, with a clear legend.
 

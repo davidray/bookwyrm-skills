@@ -10,6 +10,8 @@ Use this profile for Dave's lithophane-lantern projects unless a project explici
 | Bambu Lab A1 | 0.4 mm | 256 × 256 × 256 mm | Smallest ordinary single-nozzle build envelope in the fleet. |
 | Bambu Lab X2D | 0.4 mm | 256 × 256 × 260 mm using the main/left nozzle | When both nozzles or the auxiliary/right nozzle are required, use the smaller applicable official print area instead of the main-nozzle envelope. |
 
+**Taller builds.** David's printer handles builds taller than 256 mm (H2D-class; the Christmas village church is 263 mm). Don't cap a part's height at 256 mm; ask which printer it is for when a part needs the extra height.
+
 **Usable A2L footprint.** On 2026-11-06, Bambu Studio 02.09.01.70 accepted a 290 × 290 mm box on the A2L but refused 300 × 300 mm and a 317 × 159 mm half, with or without a brim. Design A2L parts to fit 290 × 290 mm until a larger size is shown to slice. Plan any split at blockout.
 
 The X2D official areas recorded on 2026-11-02 are:
