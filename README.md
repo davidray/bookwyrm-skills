@@ -19,6 +19,7 @@ shared/               method shared by more than one family
   concept-and-faithfulness/   reference authority, faithfulness review, compromise register, art pipeline
   image-to-3d/image-to-3d.md   engines and prices, sculpt input images, four-view sheets, hidden mass
   evidence-and-claims/evidence-and-claims.md   the evidence ladder, statuses, export and slicer checks, physical tests
+  design-playbook/design-playbook.md   lessons from the Shire and Mirkwood cases and a ten-gate default workflow
   blender-tooling/render-home/   home-library lantern renders
 tools/check_piece_json.py        checks piece.json in version folders still locked in a family repo
 ```
@@ -40,6 +41,7 @@ The family skills were copied in with their git history (blame still works):
 | Here | From |
 |---|---|
 | `families/lithophane-lanterns/` | bookwyrm-lanterns `SKILL.md`, `agents/`, `references/` |
+| `shared/design-playbook/` | bookwyrm-boxes `shared/3D-DESIGN-PLAYBOOK.md` |
 | `shared/blender-tooling/render-home/` | bookwyrm-lanterns `tools/render-home/` |
 | `families/printable-container/` | bookwyrm-boxes `skills/printable-container/` |
 | `families/layered-diorama/` | bookwyrm-dioramas `skills/layered-diorama/` |

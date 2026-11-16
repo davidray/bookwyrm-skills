@@ -123,7 +123,7 @@ A 5 × 2 mm magnet pocket that works behind a 0.8 mm roof against a steel miniat
 
 ### 1. The method capped the quality
 
-Six scripted Mirkwood blockouts laid bevel curves and primitives on a plain box and never looked carved, even though an AI audit passed revision 6 at 85/100. One Meshy pass, wrapped onto the real shell as a height map, matched the concept.
+Six scripted Mirkwood blockouts laid bevel curves and primitives on a plain box and never looked carved, even though an AI audit passed revision 6 at 85/100. One 3D-generator pass, wrapped onto the real shell as a height map, matched the concept.
 
 **Process change:** pick a method that can reach the target look before iterating on it. Judge progress by a side-by-side render the user looks at, not by audit scores.
 
