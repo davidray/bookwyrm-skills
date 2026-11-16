@@ -26,7 +26,7 @@ A mini is its own piece. Give it its own library slug, `<slug>-mini`, and its ow
    - Panels are separate, so the body can be any colour of PLA. Only the panels need white PLA.
 6. **Make the panels as separate prints.**
    - Use the proven flat recipe: white PLA (not Matte), 100 % infill, 0.10 mm layers, printed flat with the back down. Relief runs 0.8 mm bright to 2.0 mm dark, inside a flat border that matches the lip.
-   - **Glue the textured side outside**, toward the viewer, with the flat back on the lip toward the light (see [panels and optics](panels-and-optics.md)). The r3 print had its texture inside, and David judged texture outside looks better.
+   - **Glue the textured side outside**, toward the viewer, with the flat back on the lip toward the light (see [panels and optics](../../../shared/lithophanes/lithophanes.md)). The r3 print had its texture inside, and David judged texture outside looks better.
    - Printing flat avoids the upright-relief overhangs that integrated panels have.
    - Panels can be reprinted or swapped without reprinting the body.
 7. **Re-crop the panels to their focal subjects.** Full-size scenes read as mush at about 58 × 37 mm. Crop each panel so its main shapes are at least about 1/10 of the window width, then check a simulated tea-light backlight. This is the step that needs judgement.
