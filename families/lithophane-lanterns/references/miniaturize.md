@@ -11,7 +11,7 @@ A mini is its own piece. Give it its own library slug, `<slug>-mini`, and its ow
 
 ## Steps
 
-1. **Pick the scale.** Use the largest of 1/2, 1/3 or 1/4 that leaves a tea-light opening of at least about 45 mm and windows at least about 45 mm wide, and fits the bed in one part. At 1/3 the Christmas village gave a 66 mm opening and 58 mm windows. Say which scale you chose and why.
+1. **Scale: 1/3 by default** (David, 2026-11-15). Check that the cavity clears the locked tea-light envelope (48 mm across, 55 mm tall; see [standard lighting architectures](standard-lighting-architectures.md)), that the windows are at least about 45 mm wide, and that the body fits the bed in one part. At 1/3 the Christmas village gave a 66 mm opening and 58 mm windows. Use a different scale only if 1/3 fails one of these checks or David asks, and say why.
 2. **Load the exterior in the world frame.** Use only the exterior parts: no divider, plate, panels or hardware. Today this is a per-lantern loader (`load_full.py` in the mini). It becomes generic once each lantern's assemble script writes out its part transforms.
 3. **Fill solid, then scale.**
    - Fill the hollows with a core that follows the outside surface: ray-cast a heightfield down from above and keep it about 2 mm (full size) under the roof. Never fill with a box or other primitive that can stand proud of the exterior. In r1 and r2 the core box poked four flat planes through the roof hips, and only David caught them.
@@ -48,6 +48,6 @@ A mini is its own piece. Give it its own library slug, `<slug>-mini`, and its ow
 
 ## Not yet proven
 
-- No tea-light baseline is locked yet (see [standard lighting architectures](standard-lighting-architectures.md)). The open bottom fits any tea light up to about 60 mm across.
+- The tea-light size is nominal (38 mm, not measured). The baseline envelope covers the uncertainty, so the light never needs to fit exactly.
 - The glued-in seat (about a 2 mm lip, recess as deep as the border) has not been printed yet, and neither has a glue choice.
 - Non-square bodies (octagonal, arched windows, lit shells) and lanterns that are already small.
