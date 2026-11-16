@@ -79,13 +79,7 @@ Sources: `moria_layered/balrog_regeneration_r1/print_exports_r1/README.md`, `mor
 
 ## Test lighting as hardware, access, and optics
 
-Establish the selected hardware and verified dimensions before cutting production pockets. Keep unverified controller/connector envelopes labeled as reserves. Distinguish uncut route guides from real openings and list which exported scene revision includes them.
-
-Design installation and removal for the wired part: board orientation, solder pads, leads, connectors, bend space, slack, retention, and service cover. Passing a nominal bare-board path or wire centerline does not establish that the soldered assembly can be installed. Keep functional cavities and routes accessible in the intended order, and check that new cuts avoid tested mounts.
-
-Check source visibility and optical delivery separately. Hiding an LED behind a bend can conceal it while reducing light reaching the target. Render glow, clear bores, and blocked sightline rays do not establish brightness or diffusion.
-
-Before repeating a holder or committing a large illuminated part, make representative short/long or bent-path tests with the actual LED, intended interior material/color, and removable diffuser samples. Hold drive settings and ambient light constant; change one optical variable at a time. If delivery is poor, reconsider emitter position or light guides rather than assuming greater brightness will fix it. Keep new fit and optics results pending until measured or reported.
+Follow the shared [lighting and electronics](../../../shared/lighting-and-electronics/lighting-and-electronics.md) method: measured hardware before pockets, installable wired assemblies, visibility and delivery checked separately, and one-variable light-path tests with the real LED. List which exported scene revision includes each real opening.
 
 **Dale evidence:** The gate holder's local printed fit passed. Building wells borrowed its pocket size but introduced new carriers, cap seats, and long/bent light paths. A two-house short/long test was prepared; actual wired access and brightness are still pending. No final house holder population or optical success is established by that kit.
 

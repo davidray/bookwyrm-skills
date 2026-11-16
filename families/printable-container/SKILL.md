@@ -15,7 +15,7 @@ References:
 - [engineering and validation](references/engineering-and-validation.md): joints, stack-ups, energy safety, orientation, exports.
 - [image-to-3D input](references/image-to-3d.md): prompts, multi-view sheets, scaling and judging for generated figures, ornaments and carving.
 - [moving parts and figures](references/moving-parts-and-figures.md): hinges, print-in-place mechanisms, sculpted figures, filament saving.
-- [lighting and electronics](references/lighting-and-electronics.md): LED scenes on WLED, controller boards.
+- [lighting and electronics](../../shared/lighting-and-electronics/lighting-and-electronics.md) (shared): LED scenes on WLED, controller boards, lighting tests.
 - [box-family standards](references/box-family-standards.md): house dimensions, hardware and defaults.
 - [reviews](references/reviews.md): review checklists and when to use an independent reviewer.
 - [project records](references/project-records.md): checkpoint, test and release records, and the release-and-lock layout.
