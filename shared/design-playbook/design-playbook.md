@@ -310,4 +310,4 @@ Future fit feedback should capture this compact set:
 
 The exact magnet pockets, connector datum, seam clearances, optical depths, storage dimensions, artwork range, and case envelope remain project-specific. They are valuable precedents, not universal printer tolerances. Future projects should reuse the method—measure, coupon, record, and scope—not blindly copy the numbers.
 
-The reusable numbers for this box family (magnets, Gridfinity, pane, case, connectors, fonts) are kept in `skills/printable-container/references/box-family-standards.md`.
+The reusable numbers for this box family (magnets, Gridfinity, pane, case, connectors, fonts) are kept in [box family standards](../../families/printable-container/references/box-family-standards.md).
