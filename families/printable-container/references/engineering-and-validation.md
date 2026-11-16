@@ -105,42 +105,6 @@ Before decorating or re-exporting an inherited part, confirm which way its file 
 
 Several threads can drive the same Blender app. Before generating or saving, check which file is open and whether it has unsaved changes (`bpy.data.is_dirty`). Keep each project's objects in its own file, and never save or close a file another job opened.
 
-## Evidence and validation
+## Evidence and release
 
-Keep these distinct:
-
-- **Visual:** appearance and concept fidelity.
-- **Dimensional:** measured envelopes, protected space, contacts, clearances, and motion.
-- **Topology:** finite coordinates, winding, manifoldness, degeneracy, components, and intersections.
-- **Manufacturing:** minimum walls/features, load paths, segmentation, orientation, supports, and complete layer preview.
-- **Physical:** printed fit, strength, stability, assembly, service, lighting, and use.
-- **Release:** authoritative deliverables, instructions, provenance, and accurate claims.
-
-For exported STLs, check as relevant:
-
-- millimetre units and intended scale;
-- expected bounds and print orientation;
-- finite coordinates, positive face areas, consistent winding, and positive volume;
-- zero unintended boundary, overused, or non-manifold edges;
-- expected connected components;
-- no unintended duplicate triangles, intersections, gaps, or tiny fragments;
-- round-trip import matching the export;
-- equality or documented change relative to protected source geometry.
-
-When the user reports a print result, ask for the printer, filament and main slicer settings if they weren't given, so the release can record them. For physical print evidence, record the printer, nozzle, material, scale, layer height, walls, top and bottom layers, infill, supports, and orientation. When a condition was wrong, invalidate only the conclusions that depend on it.
-
-Then inspect the selected slicer's actual layer and support result. Record machine, nozzle/process, material profile, layer settings, orientation, supports, warnings, and whether the review was CLI-only or visually inspected. A warning-free slice is not a physical test.
-
-## Release threshold
-
-Do not use the ambiguous standalone label “print-ready.” Describe evidence as `SKILL.md` does, and do not use “fit-tested” or equivalent wording more broadly than the evidence. A multi-part functional design without a complete physical assembly test remains a prototype, or fit-tested only for the named interfaces that passed. A release should identify:
-
-- authoritative source and version;
-- printable files, quantity, units, and orientation;
-- printer/process and material assumptions;
-- hardware and assembly order;
-- validated interfaces and exact test conditions;
-- remaining untested behavior and safety constraints;
-- accepted compromises;
-- checksums or a reproducible package when appropriate.
-
+The evidence lanes, export checks, slicer review, physical-test records, statuses and what every release states are shared: read [evidence and claims](../../../shared/evidence-and-claims/evidence-and-claims.md). A box release also lists its accepted compromises from the [compromise register](../../../shared/concept-and-faithfulness/concept-and-faithfulness.md#compromise-register) and its interfaces' exact test conditions.

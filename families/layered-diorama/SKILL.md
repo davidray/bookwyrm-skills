@@ -119,14 +119,7 @@ For physical testing, repair, export, and illumination, read [fabrication and li
 
 Verify the delivered file and its native slicer interpretation separately from source topology. Preserve the identity of user-repaired files; do not claim a local pre-repair export is their repaired copy. Recenter and recheck the complete support/raft envelope after support generation. Use representative wired-hardware and optical tests before repeating lighting across the scene; a clear passage or illustrative glow is not a brightness test.
 
-Keep these claims distinct:
-
-- Visual review: silhouette, anatomy, placement, and story read correctly.
-- Geometry checks: finite coordinates, topology, orientation, components, intersections, and measured contacts, stating exactly what was checked.
-- Manufacturing review: minimum features/walls, strength, joints, print orientation, supports, process-specific needs, and complete layer preview.
-- Physical evidence: printed coupons/parts, fit, assembly, stability, and any lighting test.
-
-A closed mesh, one connected component, successful STL export, or model-only build-volume fit does not establish the later claims. Sampled distances are not exact global clearance bounds. Use representative test pieces for uncertain joints or thin features before committing a large assembly. Record outcomes; do not assume this draft's source projects have completed that stage.
+Keep visual, geometry, manufacturing and physical claims distinct, as set out in the shared [evidence and claims](../../shared/evidence-and-claims/evidence-and-claims.md). Use representative test pieces for uncertain joints or thin features before committing a large assembly. Record outcomes; do not assume this draft's source projects have completed that stage.
 
 ## Review, continuity, and learning
 

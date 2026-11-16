@@ -60,6 +60,4 @@ Color functional reserves distinctly and label them as non-production. Do not le
 
 ## Evidence freshness
 
-Bind important review packets to the current source and export identities, using hashes when the workflow warrants it. Geometry edits invalidate evidence that depicts or measures the old geometry. Evidence-only rerenders may preserve the geometry identity but should still be versioned and declared as such.
-
-An attractive lit render and a neutral geometry packet answer different questions; retain both. A user visual approval applies only to the identified revision and visible properties presented.
+See [evidence and claims](../../../shared/evidence-and-claims/evidence-and-claims.md#evidence-freshness): bind review packets to the current geometry, and keep the lit render and the neutral geometry packet both.
