@@ -26,7 +26,7 @@ Read this before designing a hinge, a rotating lid or any print-in-place mechani
 - Remove fragile or unwanted detail rather than thicken it. David removed the sculpted hair (fake hair is glued on after printing) and the teeth. An SDF opening (Mesh to SDF Grid, offset inward then outward by the same radius, Grid to Mesh) followed by masked Laplacian smoothing does this cleanly.
 - The figure grows out of its base. Don't clip rocks or terrain flat; Gollum's back runs down into the rock.
 - Size the mechanism to the generated mesh rather than shrinking the figure (the sphere went from 60 to 66 mm to match the generated ball). Leave about 0.5 mm between the figure and a moving part it touches, more where it bridges over it.
-- Large meshes: merge doubles first (Meshy imports are split into UV islands; Tripo output may differ; note what you find in [image to 3D](../../../shared/image-to-3d/image-to-3d.md)), decimate to about 2 M triangles, fix non-manifold edges, and use Blender's Manifold boolean solver for the final joins. Bond a fused part through a deliberate contact patch, not incidental touching.
+- Large meshes: merge doubles first (generator imports can be split along UV islands; [image to 3D](../../../shared/image-to-3d/image-to-3d.md) lists each engine's quirks), decimate to about 2 M triangles, fix non-manifold edges, and use Blender's Manifold boolean solver for the final joins. Bond a fused part through a deliberate contact patch, not incidental touching.
 - Generated eyes come back as smooth balls; plan to paint the iris.
 - Track credits and state the cost before large spends.
 

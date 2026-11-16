@@ -20,14 +20,14 @@ Read this before decorating a shell or lid, or adding feet, handles or other orn
 
 ### Authored height maps
 
-For architecture, line art and lettering (doors, emblems, masonry, plaques), draw the height map directly instead of generating it: masonry blocks with faceted noise, bands and mouldings as profiles, line art as supersampled masks raised with a rounded section. Meshy blurs exact widths and spellings. The Shire hillside and Moria Doors were built this way (`projects/moria-travel-case/scripts/moria_relief.py`).
+For architecture, line art and lettering (doors, emblems, masonry, plaques), draw the height map directly instead of generating it: masonry blocks with faceted noise, bands and mouldings as profiles, line art as supersampled masks raised with a rounded section. The 3D generator blurs exact widths and spellings. The Shire hillside and Moria Doors were built this way (`projects/moria-travel-case/scripts/moria_relief.py`).
 
 - Give raised lines a half-round section, not a flat top with a vertical edge; it reads as carved and takes a drybrush.
 - Turned forms (columns, pillars, balusters, finials) are a lathe profile pressed into the wall: h = base + k·sqrt(R(z)² − x²), with k about 0.6. Moria's flat-strip pillars only came alive as plinth, tori, a fluted shaft with entasis, astragal, echinus, abacus and volutes (r5).
 - Detail needs resolution end to end. Draw a focal panel at 0.1 mm per pixel (0.2 is fine for plain walls) and keep enough triangles after simplification (Moria front: 1.4M, not 400k), or the extra detail never reaches the mesh.
 - Keep the heightfield off the core surface: clamp heights to at least 0.06 mm, cut openings only outside the core face, and start from clean core shells. Coplanar faces left touching (non-manifold) edges on Moria.
 
-Generator limits (Meshy): text-to-3D ornaments come back as minis on round bases, so cut ornaments from carved panels instead. A lid top fed through image-to-3D becomes a diorama. Unseen sides come back blank, so give it views of every side.
+Generator limits: text-to-3D ornaments come back as minis on round bases, so cut ornaments from carved panels instead. A lid top fed through image-to-3D becomes a diorama. Unseen sides come back blank, so give it views of every side.
 
 Headless Blender (`pip download bpy`) runs Cycles renders in a cloud container; Workbench and EEVEE need a display and do not.
 

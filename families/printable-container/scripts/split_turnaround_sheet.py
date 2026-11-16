@@ -1,11 +1,11 @@
 """Split a 4-view turnaround sheet (row or 2x2 grid) into square views that all keep the sheet's pixel scale.
 usage: split_turnaround_sheet.py sheet.png outprefix [--norm-base]   (needs numpy, pillow, scipy)
-Writes outprefix_v0..v3.png in reading order (front first for Meshy multi-image-to-3D).
+Writes outprefix_v0..v3.png in reading order (front first for multi-image-to-3D).
 --norm-base rescales each view so its round base has the median width. Use it only when the views are
 visibly drawn at different sizes; a horizon line or a leg over the base edge throws the measurement off.
 Check the printed view heights: they should agree within a few percent, otherwise regenerate the sheet.
 Every view is pasted unscaled onto one common canvas size, ground-aligned, then all are resized by the same
-factor, so relative scale between views is preserved (Meshy multi-image needs matched scale)."""
+factor, so relative scale between views is preserved (multi-image-to-3D needs matched scale)."""
 import sys, numpy as np
 from PIL import Image
 from scipy import ndimage

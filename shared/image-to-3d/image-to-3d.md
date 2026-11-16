@@ -14,7 +14,7 @@ Check current prices before a batch; these were right on 2026-11-16.
 
 ## The input image decides the detail
 
-- The generator copies the detail drawn in the picture. Soft input gives soft output. Higher-resolution or upscaled inputs, the 2k mode and polycount settings barely changed the result; Meshy already returns 1 to 4 M faces.
+- The generator copies the detail drawn in the picture. Soft input gives soft output. Higher-resolution or upscaled inputs, the 2k mode and polycount settings barely changed the result; the generator already returns 1 to 4 M faces.
 - So spend effort on the input image, not on generator settings. Ask for untextured geometry when only the shape matters; that also costs less.
 
 ## Show the part alone
@@ -57,7 +57,7 @@ Handle printability after generation, where it is measurable: height-map compres
 
 ## Scale before printing
 
-Raw generator output is in arbitrary units (Meshy's standing figures came in about 1.9 units tall, other subjects 1.2 to 1.8). Before any fit or print check, run the boxes' [`meshy_to_print.py`](../../families/printable-container/scripts/meshy_to_print.py): Z-up, feet on the plate, scale to the target height (for example 32 mm tabletop, or the box's figure height), optional flat-bottom cut and round base, STL out. Raw meshes are often not watertight; repair as in [moving parts and figures](../../families/printable-container/references/moving-parts-and-figures.md) before booleans.
+Raw generator output is in arbitrary units (standing figures have come in about 1.9 units tall, other subjects 1.2 to 1.8). Before any fit or print check, run the boxes' [`glb_to_print.py`](../../families/printable-container/scripts/glb_to_print.py): Z-up, feet on the plate, scale to the target height (for example 32 mm tabletop, or the box's figure height), optional flat-bottom cut and round base, STL out. Raw meshes are often not watertight; repair as in [moving parts and figures](../../families/printable-container/references/moving-parts-and-figures.md) before booleans.
 
 ## Judge with real renders
 
@@ -70,4 +70,4 @@ Image-to-3D invents every side the input doesn't show. Gollum's Cave roof corner
 
 ## Cost
 
-A two-arm test on three subjects cost about 180 Meshy credits. Track spend in a ledger beside the outputs and state the cost before large spends. For budget splits across concepts, art, meshes and reserve, see the [art pipeline](../concept-and-faithfulness/art-pipeline.md#spending) and the generated-scene-diorama skill.
+A two-arm test on three subjects cost about 180 credits. Track spend in a ledger beside the outputs and state the cost before large spends. For budget splits across concepts, art, meshes and reserve, see the [art pipeline](../concept-and-faithfulness/art-pipeline.md#spending) and the generated-scene-diorama skill.
