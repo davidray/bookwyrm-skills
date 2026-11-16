@@ -38,19 +38,23 @@ Before the blockout, show the user a concept image: their own reference, or gene
 
 Get an explicit approval, revision request, or deferral of the image itself, not of a description. A plain "approved" covers the most recent image and its visible properties only. It never approves dimensions, hidden construction, or pictured mechanisms such as magnets, hinges or latches; those stay proposals until designed and tested. Re-ask if the concept, interior or function changes materially.
 
+For a sculpted container (a tree, a figure, a creature), get the whole model approved as one sculpt before splitting it into print parts. The Party Tree box sculpted its trunk, crown and hill separately and fitted them in code; they never read as one tree, and it was shut down on 2026-11-16.
+
 When several approved images disagree (door position, corner treatment, feet), record which image governs each property before modelling.
 
 Create or update a checkpoint containing the active source, accepted decisions, protected geometry and interfaces, open risks, validation performed, physical feedback, superseded artifacts, and next step.
 
 ## Work from protected function outward
 
+Fit purchased parts (tea lights, magnets, batteries, boards) with generous clearance, and never design a tolerance so tight that a part must be exactly right to fit (David, 2026-11-16).
+
 1. Define the finished usable interior and the envelopes of contents, lining, hands, tools, connectors, cables, hinges, and moving parts.
 2. Establish a dependency map: contents and clearances → structural shell → lid/closure/hinge → internal modules → decoration/electronics → interface tests → production parts.
 3. Make a complete, inexpensive blockout. Reserve major focal forms, openings, motion, assembly paths, service access, structure, wiring, and supports before detail.
 4. Develop the design as editable systems: shell, mechanisms, inserts, decoration, sculpture, lighting/electronics, and release geometry. Preserve accepted sources and change locally.
-5. Choose methods by form: dimension-controlled solids for functional geometry; generated or sculpted meshes converted to height maps for organic relief (bark, roots, figures); authored height maps for architecture, line art and lettering, where exact widths and placement matter (Shire hillside, Moria Doors); exact CSG for anything that mates. Blender, interactive or headless `bpy`, holds the authoritative source model; do not use OpenSCAD or another parametric CAD tool for the container. Scripted primitives and bevel curves cannot produce carved relief; six Mirkwood blockout revisions proved it. Pick a method that can reach the target look before iterating on it.
+5. Choose methods by form: dimension-controlled solids for functional geometry; generated or sculpted meshes converted to height maps for organic relief (bark, roots, figures); authored height maps for architecture, line art and lettering, where exact widths and placement matter (Shire hillside, Moria Doors); exact CSG for anything that mates. Blender, interactive or headless `bpy`, holds the authoritative source model; do not use OpenSCAD or another parametric CAD tool for the container. Scripted primitives and bevel curves cannot produce carved relief; six Mirkwood blockout revisions proved it. Pick a method that can reach the target look before iterating on it. Never hand-build detailed or decorative 3D parts in code (figures, stairs, decks, railings, brackets); generate them with Tripo, through the Tripo API. Code is for structural and parametric geometry only (David, 2026-11-14).
 6. Engineer solid material volumes at final scale. Let the slicer create infill; create voids only when they serve a deliberate function.
-7. Build decoration into the real shell and lid rather than adding parts. Carve walls, not upward-facing tops; lid tops stay flat for now. Every added piece (a glued bezel, a skin) needs a reason the user accepts. Where two printed faces are glued, align them with printed male/female tabs, not loose dowels or filament pins (exceptions: hinges, pivots, joints that are not glued); see [engineering and validation](references/engineering-and-validation.md), glued joints. Decide print orientation before carving a face: a face printed against the bed comes out flat.
+7. Build decoration into the real shell and lid rather than adding parts. Carve walls, not upward-facing tops; lid tops stay flat for now. Every added piece (a glued bezel, a skin) needs a reason the user accepts. Never use dowels (David, 2026-11-16). Where two printed faces are glued, align them with printed alignment tabs: male 4.0 mm in diameter and 4.0 mm tall, female 4.2 mm in diameter and 4.2 mm deep (hinges, pivots and joints that are not glued need none); see [engineering and validation](references/engineering-and-validation.md), glued joints. Decide print orientation before carving a face: a face printed against the bed comes out flat.
 
 ## Retire uncertainty cheaply
 
