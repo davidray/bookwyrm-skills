@@ -16,6 +16,8 @@ shared/               method shared by more than one family
   joints-and-assembly/glued-joints.md   the tab rule: printed alignment tabs, never dowels
   lithophanes/lithophanes.md   lit image panels: source images, relief, recipe, detail limits, tests
   lighting-and-electronics/lighting-and-electronics.md   WLED scenes, boards, light-path tests
+  concept-and-faithfulness/   reference authority, faithfulness review, compromise register, art pipeline
+  image-to-3d/image-to-3d.md   engines and prices, sculpt input images, four-view sheets, hidden mass
   blender-tooling/render-home/   home-library lantern renders
 tools/check_piece_json.py        checks piece.json in version folders still locked in a family repo
 ```
