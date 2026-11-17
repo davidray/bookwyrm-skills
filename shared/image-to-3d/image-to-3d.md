@@ -1,15 +1,16 @@
 # Image to 3D
 
-Read this before sending any image to the 3D generator in any family: a lantern's decor part, a box's figure or carved panel, a diorama's building. The rules come from David's tests (Meshy 7.1, tabletop scale, 0.12 mm layers), the boxes' A/B run of 2026-11-06 (bookwyrm-boxes `shared/experiments/meshy-input-ab-r1/`) and the lanterns' A/B run (plinth, Lake-town roof, Mirkwood tree; `/mnt/project-files/meshy-input-ab/results.md`). This file replaces the `3d-generator` skill that earlier notes referred to; that skill never existed.
+Read this before sending any image to the 3D generator in any family: a lantern's decor part, a box's figure or carved panel, a diorama's building. The rules come from David's tests (made with Meshy 7.1, tabletop scale, 0.12 mm layers; they are about the input image, so they hold for Tripo too), the boxes' A/B run of 2026-11-06 (bookwyrm-boxes `shared/experiments/meshy-input-ab-r1/`) and the lanterns' A/B run (plinth, Lake-town roof, Mirkwood tree; `/mnt/project-files/meshy-input-ab/results.md`). This file replaces the `3d-generator` skill that earlier notes referred to; that skill never existed.
 
 ## Engines and prices
 
 Check current prices before a batch; these were right on 2026-11-16.
 
-- **Meshy 7.1** is the default for everything: 20 credits a mesh-only image-to-3D or multi-image-to-3D call (about $0.40); an image (nano-banana-pro and the other image models it routes) costs about 9 credits. So one part costs about 29: new art plus new 3D.
-- **Tripo** is optional, only when asked for by name: about $0.40 a detailed-geometry call, $0.20 for the standard one.
+- **Tripo** is the default 3D generator for every build (David, 2026-11-17): about $0.40 a detailed-geometry call, $0.20 for the standard one. Start with standard; use detailed for a hero part or when standard loses the detail the image shows.
+- **Meshy 7.1** only when David asks for it by name: 20 credits a mesh-only image-to-3D or multi-image-to-3D call (about $0.40).
+- **Images** (nano-banana-pro and the other image models Meshy routes) still cost about 9 Meshy credits each. So one part costs an image plus one Tripo call.
 - Keys are read at run time from the environment and are never written to a file, log, checkpoint or repository.
-- **How a build calls them:** on the Mac, through a small helper run inside Blender over the Blender MCP, with one ledger per project that refuses a call when committed spend plus the estimate would pass the cap (the generated-scene-diorama `bk.py` helper and `meshy_ledger.json` are the model). Miniatures go through Builder's reconstruct tools instead, which have their own approvals.
+- **How a build calls them:** on the Mac, over the Blender MCP. One image: `generate_3d(image=<absolute path>, provider="tripo")`, never `provider="auto"` (it can pick another engine). A multi-view sheet or anything the tool doesn't offer: a small helper run inside Blender that calls Tripo's API with `TRIPO_API_KEY`. Either way, keep one ledger per project that refuses a call when committed spend plus the estimate would pass the cap (the generated-scene-diorama `bk.py` helper and its ledger are the model; give a Tripo call its dollar estimate). Miniatures go through Builder's reconstruct tools instead, which have their own approvals.
 - Ask before each spend with the estimate, read the live balance before the first one, and record task IDs and credits in the ledger and checkpoint.
 
 ## The input image decides the detail

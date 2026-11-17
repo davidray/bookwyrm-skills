@@ -1,6 +1,6 @@
 ---
 name: "generated-scene-diorama"
-description: "Build a multi-piece printable scene diorama (village, island, market) from one approved concept image, with Meshy-generated pieces under a credit budget, then save it to The Hoard."
+description: "Build a multi-piece printable scene diorama (village, island, market) from one approved concept image, with generated pieces (Tripo by default) under a budget, then save it to The Hoard."
 ---
 
 # Generated scene diorama
@@ -12,14 +12,14 @@ Use this skill when most pieces will be generated (image to 3D) and the budget d
 ## Inputs to settle first
 
 - **Brief:** the theme, the style, and every element the scene must contain.
-- **Budget:** Meshy credits, plus any dollar cap.
+- **Budget:** a dollar cap for the 3D calls (Tripo by default) plus Meshy credits for the images.
 - **Printer:** the exact model and its build volume. Also the nozzle, which sets the finest detail: a 0.6 mm nozzle gives about 1.2 mm features, and resin figure faces need 0.4 to 0.6 mm. The fleet and its build volumes are in `shared/print-profile/print-profile.md`; ask which one if you don't know.
 - **Scale policy:** for example forced perspective, with buildings at 120 to 235 mm and adults at about 38 mm.
 - **Slug:** one per product, kebab case, and never reused. Check it against The Hoard first: `christmas-village` already belonged to a lantern, so the village became `victorian-christmas-village`.
 
 ## Tools
 
-- **Paid calls:** Meshy, run through a helper script inside Blender on the Mac via the Blender MCP. Use one helper and one ledger per scene, for example `~/code/bookwyrm-rpg-lantern-art/<scene>-diorama/` with `bk.py` and `meshy_ledger.json`, copied from `berk-diorama/`. The helper refuses a call when `committed + estimate > cap`. The human-readable LEDGER.md is generated from the machine ledger and never kept by hand. An image costs 9 credits and image-to-3D costs 20, so one leaf costs 29.
+- **Paid calls:** 3D from Tripo by default (Meshy only when David asks by name) and images from Meshy's image models, run on the Mac via the Blender MCP ([image to 3D](../../shared/image-to-3d/image-to-3d.md#engines-and-prices) says how and what each costs). Use one helper and one ledger per scene, for example `~/code/bookwyrm-rpg-lantern-art/<scene>-diorama/` with `bk.py` and its ledger, copied from `berk-diorama/` (that copy calls Meshy for 3D; switch its 3D call to Tripo). The helper refuses a call when `committed + estimate > cap`. The human-readable LEDGER.md is generated from the machine ledger and never kept by hand. An image costs 9 credits; a Tripo call about $0.20 standard or $0.40 detailed. The runs below used Meshy (20 credits a mesh, 29 a leaf), so rescale their numbers.
 - **Free work:** headless `bpy` in the cloud container (`pip install bpy`) handles blockout, clay renders, procedural ground and props, assembly and print export. Reference scripts are in `/mnt/project-files/berk/tools/`: render_clay, make_ground, make_props, assemble, export_print and make_sheep.
 - **Moving files:** device commits refuse files over about 25 MB. Send big meshes in 24 MB chunks, rejoin them with `cat`, and check sha256. Project files cap at 10 GB, so clear superseded assembly and print folders once the user agrees.
 - **Optional fan-out:** `/mnt/project-files/christmas-village/observer/scene-pieces.workflow.js` runs stages 5 to 9 (decide, generate, render and review, retry) as a Claude workflow. Run it only when the user opts into workflows. A dry run cost 0 credits but about 1.6M tokens for 6 elements.
