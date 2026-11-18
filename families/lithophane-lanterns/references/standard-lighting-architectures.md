@@ -1,6 +1,6 @@
 # Standard lighting architectures
 
-Use these names consistently in Dave's lantern projects. Record the selected architecture in the project checkpoint before functional blockout. General lighting method shared with the other families (WLED scenes and presets, boards, light-path tests) is in [lighting and electronics](../../../shared/lighting-and-electronics/lighting-and-electronics.md).
+Use these names consistently in every lantern project. Record the selected architecture in the project checkpoint before functional blockout. General lighting method shared with the other families (WLED scenes and presets, boards, light-path tests) is in [lighting and electronics](../../../shared/lighting-and-electronics/lighting-and-electronics.md).
 
 ## Split lighting
 
@@ -32,7 +32,7 @@ The board and power details below are the reference hardware set the plate and c
 - XIAO battery pads remain unused. Add the required Schottky isolation diode between external `+5V_SYS` and the XIAO 5V/VBUS input before fabrication.
 - The retained M1 architecture has physically operated the lights while USB-C charging in another lantern. Repeat staged powered and thermal testing in each final enclosure.
 - External adhesive antenna: 38 × 19 × 3 mm; reserve at least 40 × 21 × 4 mm on a flat nonmetallic surface. Use a gentle, serviceable U.FL lead route and keep the antenna away from the battery, M1, large metal parts, and ground planes where practical.
-- Power switch: optional. Reserve space at the service face for one; when the user asks for it, use an SS12D00-type slide switch on the battery positive line before M1 (see engineering, service face).
+- Power switch: optional. Reserve space at the service face for one; when David asks for it, use an SS12D00-type slide switch on the battery positive line before M1 (see engineering, service face).
 
 ### Divider and light baseline
 
@@ -42,7 +42,7 @@ The board and power details below are the reference hardware set the plate and c
 - Run the divider continuously between keyed base and roof seats. Preserve the hollow center as a protected vertical wiring/service passage, including usable entry and exit openings. The lid tie-down wire shares this bore, so keep a free 10 mm passage beside the LED harness. Leave at least 0.5 mm of vertical clearance at one seat so the tie tension doesn't load the divider.
 - The divider must not block panel installation, panel removal, roof removal, or controller service.
 - Provide one vertical recessed or positively located LED-strip channel on each of the four central post faces.
-- Keep the LED-to-lithophane distance inside the proven range in the [print profile](../../../shared/print-profile/print-profile.md) (about 54–61 mm in the user's working lanterns). Set it with the post section, strip offset and panel plane at blockout. A distance outside that range needs a one-chamber light coupon before release, not just a note.
+- Keep the LED-to-lithophane distance inside the proven range in the [print profile](../../../shared/print-profile/print-profile.md) (about 54–61 mm in David's working lanterns). Set it with the post section, strip offset and panel plane at blockout. A distance outside that range needs a one-chamber light coupon before release, not just a note.
 - Mount one vertical addressable-LED strip in each channel, aimed outward toward the corresponding lithophane: four strips of equal length, `4 × N` pixels total. Keep the LEDs and channel edges clear of the two adjacent divider blades so the full lithophane field receives light.
 - Standard strip: BTF-LIGHTING WS2812B, 5 V, 144 LEDs/m (pitch about 6.94 mm), Amazon ASIN B01CDTE9UC. Measure the purchased strip's width, thickness and pixel pitch before fixing the channel; record any other strip as a project-specific departure.
 - Derive the pixel count per strip from the lantern, not a fixed number: `N = floor((H_field − 2 × m) / p)`, where `H_field` is the exposed lithophane image height, `m` is an end margin (start at 2 mm) and `p` is the measured pitch. Center each strip vertically on its panel's field, and use the same `N` on all four faces. Example: a 165 mm field at 144/m gives `N = 23` (about 160 mm), so 92 pixels total.
@@ -125,7 +125,7 @@ Simplified vertical section:
 
 ### Physical divider reference
 
-These user-supplied photos define the intended spatial relationship. Treat them as form and assembly evidence, not dimensioned drawings.
+These David-supplied photos define the intended spatial relationship. Treat them as form and assembly evidence, not dimensioned drawings.
 
 ![Divider installed among four lithophanes](images/split-lighting-divider-installed.jpg)
 
@@ -166,11 +166,11 @@ Verify for each lit-shell lantern: brightness through the skin at the actual dis
 
 ## Puck light
 
-**Puck light** is a separate standard architecture name. Use the actual selected low-voltage puck's measured envelope, switch, charging or battery access, removal path, and optical spacing. Do not import the split-lighting PCB, battery, X divider, or strip topology unless the user explicitly requests a hybrid. Add a locked puck baseline here only after the user approves a specific reusable setup.
+**Puck light** is a separate standard architecture name. Use the actual selected low-voltage puck's measured envelope, switch, charging or battery access, removal path, and optical spacing. Do not import the split-lighting PCB, battery, X divider, or strip topology unless David explicitly requests a hybrid. Add a locked puck baseline here only after David approves a specific reusable setup.
 
 ## Tea light
 
-**Tea light** is a separate standard architecture name for an LED tea light only; open flame remains excluded. Use the actual light's measured diameter, height, flame/lens envelope, switch access, battery door, and removal path. Do not import the split-lighting PCB, battery, X divider, or strip topology unless the user explicitly requests a hybrid. Add a locked tea-light baseline here only after the user approves a specific reusable setup.
+**Tea light** is a separate standard architecture name for an LED tea light only; open flame remains excluded. Use the actual light's measured diameter, height, flame/lens envelope, switch access, battery door, and removal path. Do not import the split-lighting PCB, battery, X divider, or strip topology unless David explicitly requests a hybrid. Add a locked tea-light baseline here only after David approves a specific reusable setup.
 
 ### Locked tea-light baseline (David, 2026-11-15)
 

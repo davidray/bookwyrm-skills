@@ -1,16 +1,17 @@
 # Image to 3D
 
-Read this before sending any image to the 3D generator in any family: a lantern's decor part, a box's figure or carved panel, a diorama's building. The rules come from David's tests (made with Meshy 7.1, tabletop scale, 0.12 mm layers; they are about the input image, so they hold for Tripo too), the boxes' A/B run of 2026-11-06 (bookwyrm-boxes `shared/experiments/meshy-input-ab-r1/`) and the lanterns' A/B run (plinth, Lake-town roof, Mirkwood tree; `/mnt/project-files/meshy-input-ab/results.md`). This file replaces the `3d-generator` skill that earlier notes referred to; that skill never existed.
+Read this before sending any image to the 3D generator in any family: a lantern's decor part, a box's figure or carved panel, a diorama's building. The rules come from David's tests (made with Meshy 7.1, tabletop scale, 0.12 mm layers; they are about the input image, so they hold for Tripo too), the boxes' A/B run of 2026-11-06 (bookwyrm-boxes `shared/experiments/meshy-input-ab-r1/`) and the lanterns' A/B run (plinth, Lake-town roof, Mirkwood tree). This file replaces the `3d-generator` skill that earlier notes referred to; that skill never existed.
 
 ## Engines and prices
 
 Check current prices before a batch; these were right on 2026-11-16.
 
-- **Tripo** is the default 3D generator for every build (David, 2026-11-17): about $0.40 a detailed-geometry call, $0.20 for the standard one. Start with standard; use detailed for a hero part or when standard loses the detail the image shows.
+- **Tripo** is the default 3D generator for every build (David, 2026-11-17): 40 Tripo credits (about $0.40) a detailed-geometry call, 20 (about $0.20) a standard one. Use detailed by default; standard is for cheap drafts.
 - **Meshy 7.1** only when David asks for it by name: 20 credits a mesh-only image-to-3D or multi-image-to-3D call (about $0.40).
 - **Images** (nano-banana-pro and the other image models Meshy routes) still cost about 9 Meshy credits each. So one part costs an image plus one Tripo call.
-- Keys are read at run time from the environment and are never written to a file, log, checkpoint or repository.
-- **How a build calls them:** on the Mac, over the Blender MCP. One image: `generate_3d(image=<absolute path>, provider="tripo")`, never `provider="auto"` (it can pick another engine). A multi-view sheet or anything the tool doesn't offer: a small helper run inside Blender that calls Tripo's API with `TRIPO_API_KEY`. Either way, keep one ledger per project that refuses a call when committed spend plus the estimate would pass the cap (the generated-scene-diorama `bk.py` helper and its ledger are the model; give a Tripo call its dollar estimate). Miniatures go through Builder's reconstruct tools instead, which have their own approvals.
+- Keys are read at run time and never written to a file, log, checkpoint or repository.
+- **How a build calls Tripo:** directly, through a small helper in the project's working folder on the Mac (for example `~/code/bookwyrm-rpg-lantern-art/monet-hex-lantern/tpm.py`), run inside Blender with the Blender MCP's `execute_code`. Copy the latest one into a new project rather than writing your own. It posts `image_to_model` to Tripo's `v2/openapi/task` with model `v3.1-20260211`, `texture: false`, `pbr: false` and `geometry_quality: "detailed"`, then polls and downloads the mesh. It reads `TRIPO_API_KEY` from the primary bookwyrm-rpg checkout's `services/builder/.env` and hands it to curl on stdin, so the key never appears in a command line or a file. A `CAP` constant at the top of the helper holds the credits David approved; the helper records each call in `tripo_ledger.json` before submitting it, and refuses a call when committed credits plus the estimate would pass `CAP`.
+- **Not these:** the Blender MCP's `generate_3d` tool, and Builder's reconstruct tools, which are for miniatures only. A `run_tripo.py`, if you find one, isn't the standard helper.
 - Ask before each spend with the estimate, read the live balance before the first one, and record task IDs and credits in the ledger and checkpoint.
 
 ## The input image decides the detail
@@ -42,9 +43,9 @@ Words added for printability, painting ease or older generators erase the detail
 - "soft studio light", "soft light", "clay-grey matte ... concept render" (soft light and clay renders read as soft geometry)
 - "nothing thinner than a pencil / matchstick", "nothing finer than 1.5 mm"
 
-These were in the boxes' own prompts: Mirkwood concept r3 (bookwyrm-boxes `projects/mirkwood-travel-case/concept-r3-prompt.md`: "bold, simple forms that are easy to paint", "relief stays within about 6 mm", negative "thin spindly strands", "soft studio light") and the Moria concepts ("soft light", "smoothed rock"). They are fine for a concept image the user only looks at; rewrite them before the image goes to 3D.
+These were in the boxes' own prompts: Mirkwood concept r3 (bookwyrm-boxes `projects/mirkwood-travel-case/concept-r3-prompt.md`: "bold, simple forms that are easy to paint", "relief stays within about 6 mm", negative "thin spindly strands", "soft studio light") and the Moria concepts ("soft light", "smoothed rock"). They are fine for a concept image David only looks at; rewrite them before the image goes to 3D.
 
-Handle printability after generation, where it is measurable: height-map compression and the 45 degree overhang filter for relief ([decorative relief](../../families/printable-container/references/decorative-relief.md)), SDF opening to remove fragile hair or strands, and 3D closing or thickening of thin stems ([moving parts and figures](../../families/printable-container/references/moving-parts-and-figures.md)). Check thin parts (swords, spider legs, fingers) at print scale and tell the user which are fragile.
+Handle printability after generation, where it is measurable: height-map compression and the 45 degree overhang filter for relief ([decorative relief](../../families/printable-container/references/decorative-relief.md)), SDF opening to remove fragile hair or strands, and 3D closing or thickening of thin stems ([moving parts and figures](../../families/printable-container/references/moving-parts-and-figures.md)). Check thin parts (swords, spider legs, fingers) at print scale and tell David which are fragile.
 
 ## Multi-view sheet for shape
 

@@ -17,7 +17,7 @@ Convert and tune in grayscale while monitoring the histogram. Preserve separatio
 
 Record source image identity, crop, rotation, mirroring, grayscale/contrast operations, and face mapping. Verify that text, handedness, and narrative direction have not been mirrored.
 
-Prep that has worked on Dave's panels (lanterns and boxes):
+Prep that has worked on David's panels (lanterns and boxes):
 
 - A 1% autocontrast inside the visible field (0.5/99.5% for very dark images, plus a black-point lift so near-black areas still transmit some light).
 - For a subject that must glow but is a dark colour in the art (a red dragon), a channel-weighted grey mix such as 0.75R + 0.2G + 0.05B so it prints thin and bright.
@@ -40,7 +40,7 @@ Use enough mesh resolution for the image at final size without creating gratuito
 
 ## Choose parameters by process
 
-For Dave's builds, start from the proven recipe in the [print profile](../print-profile/print-profile.md) (0.8 mm bright to 2.0 mm dark, white PLA, 100% infill, 0.10 mm layers, flat back down, 3.2 mm border) and skip a new tonal coupon unless the material, light distance, or process changes. Otherwise, do not copy a thickness recipe blindly between panel sizes, printers, materials, nozzles, layer heights, or light sources. Establish a starting base thickness and relief range appropriate to the process, then print a compact tonal coupon. The coupon should include gradients, faces or other representative detail, thin bright regions, thick dark regions, and the actual border/channel cross-section when practical.
+Start from the proven recipe in the [print profile](../print-profile/print-profile.md) (0.8 mm bright to 2.0 mm dark, white PLA, 100% infill, 0.10 mm layers, flat back down, 3.2 mm border) and skip a new tonal coupon unless the material, light distance, or process changes. Otherwise, do not copy a thickness recipe blindly between panel sizes, printers, materials, nozzles, layer heights, or light sources. Establish a starting base thickness and relief range appropriate to the process, then print a compact tonal coupon. The coupon should include gradients, faces or other representative detail, thin bright regions, thick dark regions, and the actual border/channel cross-section when practical.
 
 Print in the intended production orientation. Flat printing is simple and stable but quantizes relief by layer height; edge/upright printing can offer smoother thickness changes but is tall, slower, and more sensitive to wobble and adhesion. Let the actual printer and desired image quality decide.
 
@@ -82,7 +82,7 @@ Inspect under the intended LED, spacing, diffuser, and ambient-light conditions.
 
 Tune image curve, thickness range, spacing, or diffusion from this result. A rendered glow preview is useful for composition, not optical qualification.
 
-When a backlit simulation is measured (sharpness, tonal spread, black level, brightness by panel), report the losses beside the recipe's claims in the README and in the message to the user. In test 3 the reviewer measured about 85% sharpness loss, but the release and the message to the user mentioned only the extra tone levels. Once a coupon has been printed and photographed, fit the simulation's blur and attenuation to the photo.
+When a backlit simulation is measured (sharpness, tonal spread, black level, brightness by panel), report the losses beside the recipe's claims in the README and in the message to David. In test 3 the reviewer measured about 85% sharpness loss, but the release and the message to David mentioned only the extra tone levels. Once a coupon has been printed and photographed, fit the simulation's blur and attenuation to the photo.
 
 ## Integrated two-colour lithophane skins
 

@@ -33,4 +33,4 @@ Read this before designing a hinge, a rotating lid or any print-in-place mechani
 ## Material and print time
 
 - Don't hollow a model to save filament on FDM. The slicer already prints walls plus sparse infill; a hollow model adds a second set of walls and an unsupported roof, and often uses more plastic.
-- To save filament, use Lightning infill at 5 to 8% and 2 walls, with normal settings over the height range of hinges and mechanisms. Give a filament estimate in the guide and tell the user to trust the slicer's figure.
+- To save filament, use Lightning infill at 5 to 8% and 2 walls, with normal settings over the height range of hinges and mechanisms. Give a filament estimate in the guide and tell David to trust the slicer's figure.

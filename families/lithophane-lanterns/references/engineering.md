@@ -25,15 +25,15 @@ Use a representative channel coupon before locking all faces. Long panels need a
 
 Common service patterns include roof-captured vertical panels, removable frames, side-loading channels, or separately fastened panels. Choose by actual assembly and replacement needs.
 
-**Series default for Dave's square lanterns:** flat 3.2 mm panel plates drop into 3.8 mm slots from the top, rest on the slot floor, and are captured by the roof (0.2 mm above the panel). The relief faces out toward the viewer and the flat back faces the LEDs, so the image is not mirrored (see [panels and optics](../../../shared/lithophanes/lithophanes.md)). Service order: lift the roof, lift the panel. The lanterns locked before 2026-11-15 were built the old way, flat back out with a mirrored image; David has since ruled that out.
+**Series default for square lanterns:** flat 3.2 mm panel plates drop into 3.8 mm slots from the top, rest on the slot floor, and are captured by the roof (0.2 mm above the panel). The relief faces out toward the viewer and the flat back faces the LEDs, so the image is not mirrored (see [panels and optics](../../../shared/lithophanes/lithophanes.md)). Service order: lift the roof, lift the panel. The lanterns locked before 2026-11-15 were built the old way, flat back out with a mirrored image; David has since ruled that out.
 
-A removable roof needs positive location by default: locating pegs into the body (Bag End: four 6 × 5 mm pegs in 6.6 × 6.5 mm holes) or a keyed lip. Gravity-only seating needs the user's explicit acceptance. A decorative roof may sit over the body like a lid, with a pocket the body top nests into, as long as it still lifts straight off. The pegs locate the roof; the lid tie-down below holds the stack together.
+A removable roof needs positive location by default: locating pegs into the body (Bag End: four 6 × 5 mm pegs in 6.6 × 6.5 mm holes) or a keyed lip. Gravity-only seating needs David's explicit acceptance. A decorative roof may sit over the body like a lid, with a pocket the body top nests into, as long as it still lifts straight off. The pegs locate the roof; the lid tie-down below holds the stack together.
 
 The body needs the same on the base: every stacked joint is positively located, never gravity-only. When the body has an open bay at the bottom, use locator tabs on the base deck that stand just inside the bay's walls, one at the middle of each side. Keep them clear of the divider blades and below the panel grooves. Give them the proven 0.3 mm per-side clearance and a 1 mm lead-in chamfer on the outer top edge. (Lonely Mountain: the first print had nothing locating the body on the base, and David flagged it. Print v2 adds four tabs, each 30 × 3.5 × 4 mm with the outer face 0.3 mm inside the 132 mm bay; the fit is not yet printed. The same tab also prints loose, to glue onto a base that is already printed.) Check every base-to-body and body-to-roof joint for location at blockout, together with the roof.
 
 ## Lid tie-down (series standard)
 
-Every one of Dave's lanterns has a central tie-down (David, 2026-11-06). An M4 eye bolt in the lid and a wire to the base clamp lid, body and base together, so the lantern can be carried as one piece and still comes apart for service. This standard does not replace the roof pegs or keyed lip. It is not a hanging point, and the eye stays inside.
+Every lantern has a central tie-down (David, 2026-11-06). An M4 eye bolt in the lid and a wire to the base clamp lid, body and base together, so the lantern can be carried as one piece and still comes apart for service. This standard does not replace the roof pegs or keyed lip. It is not a hanging point, and the eye stays inside.
 
 The tie runs straight down the lantern's vertical axis:
 
@@ -90,7 +90,7 @@ The tie runs straight down the lantern's vertical axis:
 
 ## Service face, door, and switch
 
-Put the hardware plate's port window behind a service face. A decorative door can cover it (Bag End: a 38 mm green door held by four 6 × 3 mm magnets, with a full-window clearance pocket in its back). When the user wants a power switch, an SS12D00-type slide switch on the battery positive line before the charger/boost board, operated through a slot behind the door, is the recorded pattern. Without a switch request, keep a switch reserve at the service face.
+Put the hardware plate's port window behind a service face. A decorative door can cover it (Bag End: a 38 mm green door held by four 6 × 3 mm magnets, with a full-window clearance pocket in its back). When David wants a power switch, an SS12D00-type slide switch on the battery positive line before the charger/boost board, operated through a slot behind the door, is the recorded pattern. Without a switch request, keep a switch reserve at the service face.
 
 ## Light path
 

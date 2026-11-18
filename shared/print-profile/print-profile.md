@@ -1,6 +1,6 @@
-# Dave's print profile
+# Print profile
 
-Use this profile for every one of Dave's builds (lanterns, boxes, dioramas) unless a family standard or a project explicitly overrides it. Family standards, such as the box family's in `families/printable-container/references/box-family-standards.md`, add defaults for their own kind of product on top of it. Treat it as a persistent equipment/material preference, not as proof that a particular part fits, slices, prints, or performs optically.
+Use this profile for every one of David's builds (lanterns, boxes, dioramas) unless a family standard or a project explicitly overrides it. Family standards, such as the box family's in `families/printable-container/references/box-family-standards.md`, add defaults for their own kind of product on top of it. Treat it as a persistent equipment/material preference, not as proof that a particular part fits, slices, prints, or performs optically.
 
 ## User-supplied fleet
 
@@ -42,11 +42,11 @@ These were printed and verified on earlier projects (davidray/shire-travel-case 
 | Free sliding fit | 0.5 mm per side | Shire cassette |
 | Tongue and groove | 0.30 mm lateral per side, 0.20 mm vertical relief | Shire seam test r3 |
 | Three-wire exit | 10 × 3.6 mm | Shire tray |
-| LED-to-lithophane distance | 15–25 mm proven; about 54–61 mm used in the user's working lanterns | Shire; user, 2026-11-05 |
+| LED-to-lithophane distance | 15–25 mm proven; about 54–61 mm used in David's working lanterns | Shire; user, 2026-11-05 |
 
 ## Exterior process preset (provisional, not yet proven)
 
-The profile has no proven exterior settings yet. Until the user supplies theirs, slice structure parts with Bambu's stock "0.30mm Standard @BBL A2L 0.6" process, Bambu Matte PLA, and tree supports, and say in the release that slice times, supports, and filament use come from this stock preset. For A1 or X2D parts, use the matching stock 0.4 mm process: A2L presets don't load on them. Where tree supports leave overhangs uncovered (window heads, bay ceilings), switch that part to normal supports and check the projection again. Replace this section with the user's own settings (layer height, walls, infill, support style) when known.
+The profile has no proven exterior settings yet. Until David supplies theirs, slice structure parts with Bambu's stock "0.30mm Standard @BBL A2L 0.6" process, Bambu Matte PLA, and tree supports, and say in the release that slice times, supports, and filament use come from this stock preset. For A1 or X2D parts, use the matching stock 0.4 mm process: A2L presets don't load on them. Where tree supports leave overhangs uncovered (window heads, bay ceilings), switch that part to normal supports and check the projection again. Replace this section with David's own settings (layer height, walls, infill, support style) when known.
 
 Two-colour prints (an opaque body with integrated white lithophane) use the X2D with both nozzles and its 235.5 × 256 × 256 mm two-nozzle area. The opaque colour is ordinary PLA, not Matte.
 
@@ -57,7 +57,7 @@ Two-colour prints (an opaque body with integrated white lithophane) use the X2D 
 - For exterior parts shared across the fleet, size freestanding details, relief, slots, joints, wall transitions, and support-removal access conservatively for the 0.6 mm A2L nozzle. Do not assume that geometry proven only with a 0.4 mm nozzle will survive the 0.6 mm profile.
 - A 0.4 mm detail or lithophane variant may be supplied separately for the A1 or X2D, but keep it distinct from the 0.6 mm-compatible shared exterior set and validate it independently.
 - Beyond the proven settings above, unknown layer height, line width, shrink/fit compensation, seam behavior, overhang performance, paint allowance, and slicer settings remain project inputs. Retire them with representative coupons instead of inventing universal tolerances.
-- Freestanding decorative detail such as open dragon wings has printed without difficulty for the user. Do not thicken, fold, or anchor it on assumption; change it only if a slice or print fails.
+- Freestanding decorative detail such as open dragon wings has printed without difficulty for David. Do not thicken, fold, or anchor it on assumption; change it only if a slice or print fails.
 - A whole product (lantern, case, diorama) may exceed the common build envelope only through an explicit segmentation and assembly plan; never uniformly scale protected panel, lighting, or service geometry merely to fit a bed.
 
 ## Scope boundary

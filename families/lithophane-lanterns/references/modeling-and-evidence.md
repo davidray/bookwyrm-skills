@@ -11,18 +11,18 @@ Use explicit collections or equivalent layers for:
 
 Name objects by role and face. Store important dimensions and assumptions in scene properties or a sidecar geometry-facts file. Save the authoritative editable source before transforms used only for exploded views.
 
-When scripts generate or revise the model, keep dimensions centralized and outputs versioned. Pass input and output paths as arguments; do not hard-code machine-specific paths such as `/mnt/project-files/...` in generators that will be locked into a release. Do not overwrite a user-approved source; branch or version the changed system.
+When scripts generate or revise the model, keep dimensions centralized and outputs versioned. Pass input and output paths as arguments; do not hard-code machine-specific paths such as `/mnt/project-files/...` in generators that will be locked into a release. Do not overwrite a David-approved source; branch or version the changed system.
 
 ## Generated and imported meshes
 
 Treat an AI-generated or downloaded mesh as untrusted geometry. First inspect bounds, units, triangle count, normals, non-manifold edges, disconnected parts, degeneracy, and whether apparently open bays are actually capped by membranes.
 
-A watertight decorative mesh can still be useless as a lantern because it has no real openings, wall plan, panel seats, service path, or printable segmentation. Once the user has approved a part's mesh, though, keep it as the visible exterior and add the function into it: hollow it, cut slots, seats, bays and lid pockets, and add hidden internals. Do not separate what the art joins (Dragon: cutting the dragon off its mountain caused holes and split limbs; keeping one hollowed piece worked). Record which surfaces are preserved, cut, or added.
+A watertight decorative mesh can still be useless as a lantern because it has no real openings, wall plan, panel seats, service path, or printable segmentation. Once David has approved a part's mesh, though, keep it as the visible exterior and add the function into it: hollow it, cut slots, seats, bays and lid pockets, and add hidden internals. Do not separate what the art joins (Dragon: cutting the dragon off its mountain caused holes and split limbs; keeping one hollowed piece worked). Record which surfaces are preserved, cut, or added.
 
 ### Fitting a part without deforming it
 
 - **Scale uniformly.** Never stretch carved or organic detail along one axis: stretched roots became plates and a stretched diamond boss read as broken. Earlier non-uniform fits (a 1.15× plan-only plinth stretch, compressed frame bands) predate this rule and are not precedents.
-- **Change length by modules or bands.** Repeat a repeating module (a column's diamond panel, 3 to 5 per face) or remove plain horizontal bands from the middle of stone rows so each stone keeps its own edges. Inserting a straight band is allowed only where the profile is genuinely constant along the axis (a plain shaft section of a turned post), measured by sections; record the band's position and length, and show the result close up so the user can see no plain stretched section reads (Lake-town: a 37 mm band at the posts' flat baluster section).
+- **Change length by modules or bands.** Repeat a repeating module (a column's diamond panel, 3 to 5 per face) or remove plain horizontal bands from the middle of stone rows so each stone keeps its own edges. Inserting a straight band is allowed only where the profile is genuinely constant along the axis (a plain shaft section of a turned post), measured by sections; record the band's position and length, and show the result close up so David can see no plain stretched section reads (Lake-town: a 37 mm band at the posts' flat baluster section).
 - **Cover a neighbour with a pocket.** When a part must sit over another (a roof over the body like a lid), scale it uniformly and cut a pocket so the neighbour nests inside.
 - **Sink and subtract at contacts.** Where decor meets another part, sink it into the neighbour and boolean-subtract the neighbour. That gives exact glue faces without changing the decor's shape.
 - **Move rigidly, don't fill.** To close a gap, move the art onto its neighbour (in rigid slices along a path if it must follow a surface) rather than growing filler geometry.

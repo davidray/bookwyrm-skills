@@ -1,16 +1,16 @@
 # Preventing and recovering from oversized requests
 
-Added 2026-09-22 after the user identified prompt size as an explicit lesson from the second Dale attempt. Use this guidance throughout image-heavy modeling, and consult the recovery steps if a size error interrupts work.
+Added 2026-09-22 after David identified prompt size as an explicit lesson from the second Dale attempt. Use this guidance throughout image-heavy modeling, and consult the recovery steps if a size error interrupts work.
 
 ## What the incident establishes
 
-The user reported this exact error in the task **Fix oversized session error** (conversation `6ab1caa1-86b8-83e8-b0a9-0bdf76fdbd9a`):
+David reported this exact error in the task **Fix oversized session error** (conversation `6ab1caa1-86b8-83e8-b0a9-0bdf76fdbd9a`):
 
 ```text
 {"error":"decompressed request body exceeds 67108864 bytes"}
 ```
 
-67,108,864 bytes equals 64 MiB. This message identifies a decompressed request-body size rejection in that incident. It does not identify a token limit, a maximum project/mesh size, or a universal limit for every app/model. The user's follow-up in **Draft diorama pipeline skill** associates the incident with the second Dale attempt.
+67,108,864 bytes equals 64 MiB. This message identifies a decompressed request-body size rejection in that incident. It does not identify a token limit, a maximum project/mesh size, or a universal limit for every app/model. David's follow-up in **Draft diorama pipeline skill** associates the incident with the second Dale attempt.
 
 Accumulated images and verbose tool results are plausible contributors, but no captured request breakdown establishes their individual shares. Do not present the old troubleshooting response's guesses about the client, network, or particular tools as a verified diagnosis.
 
@@ -32,7 +32,7 @@ There is no proven safe number of turns or images. Repeated size failures, overs
 1. Record the exact error and the failed operation if available. Stop repeating the unchanged failing request or adding large attachments to it.
 2. Preserve local work and determine which operations actually completed. Read file/audit/job status where tools remain available. A request error does not prove a render or reconstruction failed; avoid launching duplicate jobs.
 3. Write or refresh the checkpoint if the current session can still act. If it cannot, use the last on-disk checkpoint plus actual saved artifacts; do not make recovery depend on getting the broken conversation to generate a summary.
-4. Use a supported compaction mechanism only if available and functional; do not promise it repairs the byte-size failure. If continuation still fails, prepare a small restart message for a fresh task in the same workspace. Create that task only when the user explicitly asks. Prefer a fresh task with this handoff over copying the full transcript or assuming a history-carrying fork will reduce the payload.
+4. Use a supported compaction mechanism only if available and functional; do not promise it repairs the byte-size failure. If continuation still fails, prepare a small restart message for a fresh task in the same workspace. Create that task only when David explicitly asks. Prefer a fresh task with this handoff over copying the full transcript or assuming a history-carrying fork will reduce the payload.
 5. In the fresh session, load workspace instructions and the current checkpoint, verify the named editable file, and inspect only the relevant compact review. Carry forward reference authority and accepted decisions for the active attempt only; consult its carryover/exclusion record before retrieving older work. Retrieve older evidence selectively only if something is missing.
 6. If a fresh minimal session also fails, retain the exact error, app/version, time, affected task identifier, and minimal reproduction for support. Do not assert that old conversation growth explains that broader failure.
 
