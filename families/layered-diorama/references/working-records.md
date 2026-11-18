@@ -140,35 +140,6 @@ Reproduction: scripts/environment; running jobs if any
 
 Do not copy a historical document's “current-session” wording into a new checkpoint as if the checks just ran.
 
-## Payload incident record
+## New lesson
 
-For an oversized-request failure, record the exact error, failed operation, last successful checkpoint, and whether any local jobs continued. Include observable image dimensions/file sizes or output sizes; do not guess total request size. Record recovery attempted and whether a minimal restart succeeded. Follow [payload management](payload-management.md) and its small restart-message format.
-
-## New lesson entry
-
-```text
-ID / title / date:
-Attempt and artifact:
-Observation or user correction:
-Consequence for this build:
-Practice to change next time:
-Evidence path and exact scope:
-Status: observed failure / observed improvement / established constraint /
-        working hypothesis / physically demonstrated
-Limitations or counterexamples:
-Next evidence needed:
-```
-
-Promote a lesson into SKILL.md when it changes future decisions across relevant projects. Keep exact poses, preferred fire styles, hardware choices, and repair parameters with their source project. If a later result changes the lesson, explain the change and keep the evidence trail.
-
-## Draft handoff — updated 2026-09-23
-
-Maintained draft: `../SKILL.md`, now in `davidray/bookwyrm-skills` under `families/layered-diorama` (earlier in `davidray/bookwyrm-dioramas` under `skills/layered-diorama`); not installed automatically. The log contains 25 lessons. Generic mounting, fabrication/lighting, payload guidance, and working records support the main pipeline.
-
-Latest update incorporates continued Dale/Moria assembly, fit coupons, mesh repairs, solid-volume construction, cape failure, export/native-slicer disagreements, user-repaired artifact authority, and wired/optical testing. Reviewed active checkpoint sections and the source documents cited in `fabrication-and-lighting.md`. No meshes, renders, physical tests, or slicer checks were rerun; project scenes and outputs are unchanged. Only documentation belongs in this repository.
-
-The evidence now includes user-reported local physical passes, not complete diorama qualification. Some old source sections still describe superseded states; this skill's dated summaries and source identifiers are historical evidence, not replacements for active project checkpoints. Future updates should generalize methods while preserving case-specific scope and uncertainty.
-
-Validation: bundled skill validator, repository-link checks, lesson numbering, local provenance-path checks, and diff whitespace review passed for this update. These validate documentation structure, not behavioral performance or any model's manufacturing fitness.
-
-Next: collect actual full-part, carrier/receiver, wired-access, and optics results. Revise only the affected lesson or procedure; protect previously tested interfaces and distinguish missing user-repaired artifacts from locally available exports.
+When evidence changes how the next build should go, write it as a rule in `SKILL.md`: what was observed, what to do differently, the evidence and its limits. Keep exact poses, styles, hardware and repair parameters in the project's own records.

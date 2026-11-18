@@ -2,22 +2,19 @@
 
 Use this in every family when generating concept art, part art, panel art, or AI meshes. It records tools and habits, not product design; recheck tool availability and prices before relying on them. It grew out of the lanterns, so its examples are mostly lanterns.
 
-## Tools (as of 2026-11-05)
+## Tools
 
-- 3D meshes come from the 3D generator; [image to 3D](../image-to-3d/image-to-3d.md) names the engines, how a build calls them and their prices. Image models used for art and 3D input: nano-banana-pro (image-to-image, text-to-image) and gpt-image-2.5-flare. Read keys at run time; never write them to a file, log, checkpoint, or the repository.
-- The OpenAI image route through bookwyrm-rpg had run out of credits on 2026-11-04; check before using it.
+- 3D meshes come from the 3D generator; [image to 3D](../image-to-3d/image-to-3d.md) (`shared/image-to-3d/image-to-3d.md`) names the engines, how a build calls them and their prices. Image models used for art and 3D input: nano-banana-pro (image-to-image, text-to-image) and gpt-image-2.5-flare. Read keys at run time; never write them to a file, log, checkpoint, or the repository.
+- Check the OpenAI balance before using the OpenAI image route through bookwyrm-rpg; it has run out before.
 - Working files for lanterns live on the Mac in `~/code/bookwyrm-rpg-lantern-art/<lantern>/`. Copy what reviews need into the project folder; large meshes stay on the Mac and are referenced by path and task ID. Anything David should see goes to The Hoard as a draft (see the workshop skill).
 - Blender scenes edited on the Mac are not saved automatically. Export approved work to files (GLB or STL) before moving on, and say when a scene is unsaved.
 
 ## Spending
 
-- Ask before each spend, with the estimated cost, and cap it. A device-side permission check may require David's approval in the same thread.
-- Record task IDs, credits spent, and the balance in the checkpoint.
-- Per-call prices are in [image to 3D](../image-to-3d/image-to-3d.md#engines-and-prices). The split below uses rough Meshy-era numbers (about 9 per image, 20 per mesh); rescale it to the current engine's prices.
-- Read the live balance before the first spend; checkpoint balances go stale.
-- With a fixed budget, plan the split before spending. For a 200-credit lantern with three decor parts and four panels: concepts about 20, part art about 60 (two rounds), image-to-3D about 60, panel art about 40, reserve about 20. Stop and re-plan when the reserve can no longer cover one part retry (new art plus new 3D, about 29).
-- Scale the split with the part count. Add about 20 for art and 20 for 3D for each decor part beyond three. If that leaves no reserve, cut or merge parts first, and never cut the reserve. Tests 2 and 3 both started with a reserve of 14 or less.
-- Make panel art as one 2×2 grid image by default (9 credits, and the set comes out in one style). Four separate images cost 36 and give more pixels than the printer can draw (see the detail limits in [lithophanes](../lithophanes/lithophanes.md#detail-limits)). Buy them only when one grid tile gives fewer than about 3 px per mm of panel field.
+- Ask before each spend with the estimated cost, and work under a cap. A device-side permission check may need David's approval in the same thread.
+- Prices and how each engine is called are in [image to 3D](../image-to-3d/image-to-3d.md#engines-and-prices) (`shared/image-to-3d/image-to-3d.md`). Read the live balance before the first spend; checkpoint balances go stale. Record task IDs and credits spent in the ledger and checkpoint.
+- With a fixed budget, plan the split before spending: for a lantern with three decor parts and four panels, roughly 10% concepts, 30% part art (two rounds), 30% image to 3D, 20% panel art and 10% reserve. Add art and 3D for each extra decor part. If that leaves no reserve, cut or merge parts first; never cut the reserve. Stop and re-plan when the reserve can't cover one part retry (new art plus new 3D).
+- Make panel art as one 2×2 grid image by default: one image instead of four, and the set comes out in one style. Four separate images give more pixels than the printer can draw (see [detail limits](../lithophanes/lithophanes.md#detail-limits), `shared/lithophanes/lithophanes.md`). Buy them only when one grid tile gives fewer than about 3 px per mm of panel field.
 
 ## What works
 
@@ -31,7 +28,7 @@ Use this in every family when generating concept art, part art, panel art, or AI
 
 ## The 3D input image and invented hidden mass
 
-See [image to 3D](../image-to-3d/image-to-3d.md): draw the input as a sculpt, use a four-view sheet when shape matters, scale before judging, and check the sides the art doesn't show.
+See [image to 3D](../image-to-3d/image-to-3d.md) (`shared/image-to-3d/image-to-3d.md`): draw the input as a sculpt, use a four-view sheet when shape matters, scale before judging, and check the sides the art doesn't show.
 
 ## Review habits David relies on
 

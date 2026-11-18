@@ -20,7 +20,7 @@ The X2D official areas recorded on 2026-11-02 are:
 - auxiliary/right nozzle: 235.5 × 256 × 256 mm;
 - two-nozzle intersection: 235.5 × 256 × 256 mm.
 
-Laser cutting: flat structural lantern parts are cut from acrylic by default (see the lanterns family's [engineering](../../families/lithophane-lanterns/references/engineering.md#laser-cut-acrylic-parts-series-standard)). Cutter not yet named; assume a 12 × 12 in (305 × 305 mm) bed.
+Laser cutting: flat structural lantern parts are cut from acrylic by default (see the lanterns family's [engineering](../../families/lithophane-lanterns/references/engineering.md#laser-cut-acrylic-parts-series-standard) (`families/lithophane-lanterns/references/engineering.md`)). Cutter not yet named; assume a 12 × 12 in (305 × 305 mm) bed.
 
 ## Material and finish preference
 

@@ -1,6 +1,6 @@
 # Validation and release
 
-The evidence ladder, the statuses, digital and slicer checks, physical tests and evidence freshness are shared by every family: read [evidence and claims](../../../shared/evidence-and-claims/evidence-and-claims.md). This file adds what a lantern release needs.
+The evidence ladder, the statuses, digital and slicer checks, physical tests and evidence freshness are shared by every family: read [evidence and claims](../../../shared/evidence-and-claims/evidence-and-claims.md) (`shared/evidence-and-claims/evidence-and-claims.md`). This file adds what a lantern release needs.
 
 Lantern-specific checks:
 

@@ -1,6 +1,6 @@
 # Shaped mounting seats and assembly clearance
 
-Use when mounting any character, prop, building, scenic element, or other object to a support such as terrain, a base, a wall, or another object. Preserve the accepted object and derive the mating support from its contact geometry. Smaug is a worked example, not the required subject or anatomy. Choose retention for the actual object and intended use; this workflow does not require adhesive or establish structural adequacy by itself.
+Use when mounting any character, prop, building, scenic element, or other object to a support such as terrain, a base, a wall, or another object. Preserve the accepted object and derive the mating support from its contact geometry. Smaug is a worked example. Choose retention for the actual object and intended use; this workflow does not require adhesive or establish structural adequacy by itself.
 
 ## Start from the accepted assembly and selected mount approach
 
@@ -8,7 +8,7 @@ Identify the mounted object, receiving support, fixed placement/scale, permitted
 
 Keep source files intact. Save a revision with editable construction tools and a baseline for geometry/transform comparisons. Inspect the support mesh before modifying it so existing defects are distinguishable from new ones. A visually accepted support may still be unsuitable for manufacturing.
 
-For David's current FDM workflow, model parts as solid material volumes and let the slicer control infill. Keep intentional functional voids such as sockets, LED chambers, wire routes, and tunnels. Historical hollow-shell examples below do not authorize hollowing a new part or restoring a superseded manufacturing choice. For other processes, establish the appropriate construction from the active brief.
+For David's FDM work, model parts as solid and let the slicer set infill, keeping deliberate voids (sockets, LED chambers, wire routes, tunnels).
 
 ## Build and refine the seats incrementally
 
@@ -25,48 +25,10 @@ Before considering assembly feasible, test the whole rigid object against every 
 
 ## Worked example: Smaug
 
-The initial adhesive-seat experiment adapted nearby rock around fixed feet. Capped outer-foot copies formed the negative seats; later envelopes relieved toe gaps and opened a local approach. These are instances of the general contact, relief, and passage steps above. The separate pin-sleeve prototype was not incorporated, and old pin guides were hidden.
-
-## What the Smaug studies actually established
-
-The following records the early foot-seat experiments as collected on September 22, 2026. It is a historical snapshot, not the current project checkpoint or default settings for another object. No geometry or physical tests were rerun for this documentation update. Later user instructions report acceptance of the foot slots and further assembly/fit work; consult the active project checkpoint for that subsequent evidence.
-
-| Revision | Method and recorded result | Remaining limitation |
-| --- | --- | --- |
-| `foot_seats_r1` | Smooth rock expansions reached approximately 4.804 mm near the near foot and 2.194 mm near the far foot. Capped exterior-foot cutters used a provisional 0.10 mm offset. Local seams were repaired; 409 protected object signatures matched. | Small contact areas; no load, adhesive, insertion, or production qualification. |
-| `foot_seats_r2` | A shared distal-toe envelope with a 0.65 mm offset removed stone between the far toes; five detached chips were removed. Upper/rear seat and near-foot seat were retained; 419 protected signatures matched. | Final-pose clearance still did not provide a usable entry. |
-| `foot_seats_r3` | A straight approach began 40 mm toward the village/front and 1.5 mm above the final position. An endpoint hull with a 0.50 mm vertex margin opened the passage. Actual outer foot below z98.8 mm had zero triangle intersections at 41 tested poses, with approximately 0.498 mm minimum sampled clearance. 420 protected signatures matched. | Only that local foot region was tested. At this stage, whole-dragon insertion and structural suitability were unqualified, and visual review was pending. |
-
-Smaug's geometry and final placement remained unchanged. Recorded terrain samples outside the edited regions showed zero measured deviation; that is sampled evidence, not a global exact-surface proof. The r3 mountain remained one connected component but had 105 boundary and 407 overused edges, so it was not a production-ready mesh.
-
-## Keep the pin prototype separate
-
-The earlier `assembly_r1` study used two parallel pin axes, contoured rock sleeves, separate bored body inserts, nominal 4 mm dowels, provisional 4.4 mm bores, and 4.2/4.4/4.6 mm hole coupons. Those values remained under test. The approved dragon surface was retained exactly; inserts were hidden and separate, and body apertures were deferred. Pins crossing the uncut reference shell were layout guides, not completed joints.
-
-Full-body Boolean integration produced edge defects and was rejected. The useful lesson is to prototype inserts and fit separately, preserve the accepted exterior, and integrate only after manufacturing construction is established. This historical thin-shell failure is not a reason to keep the object hollow; the September 23 user instruction explicitly supersedes that construction for FDM. Do not resume rejected fused geometry or switch from adhesive seats back to pins without direction. Neither prototype establishes a complete mount. For any new glued joint, use printed male/female tabs rather than this dowel scheme (David, 2026-11-15; see [fabrication and lighting](fabrication-and-lighting.md), glued joints).
-
-## Later assembly and physical-fit evidence — September 23 update
-
-Dale progressed beyond the early foot-only study. Removable rear support and cap sections retained the approved assembled contact shapes while permitting a stored compound rigid object motion; the mouth flame fits afterward. A small kit using the actual receiver, full support/cap, and a cropped wing region passed David's local physical fit test. Preserve those tested interfaces; this result does not prove full-object installation, adhesive loading, or a successful full print.
-
-Moria provides a second example: removable paving carriers preserve figure geometry, but carrier-only checks missed surrounding bridge and landing contacts. Later receiver/paving relief resolved the checked path while keeping the figures fixed. Passed resin foot/carrier samples do not qualify the distinct FDM carrier/bridge connection; those receiver tests are pending.
-
-See [fabrication and lighting](fabrication-and-lighting.md) for the generalized staged-assembly and actual-interface testing procedure, evidence paths, and export limitations. Keep functional support separation distinct from cutting the mounted object solely for build-plate fit.
+On Dale, nearby rock was built out to Smaug's fixed feet, and capped copies of the outer feet, offset 0.10 mm, cut the seats. A 0.65 mm envelope then cleared stone between the far toes, and an endpoint hull opened a straight entry 40 mm in from the front and 1.5 mm up; the foot had no collisions at 41 sampled poses. Smaug never moved. Only the local foot region was tested that way; a removable rear support and cap later made whole-body installation possible, and a small receiver and wing kit passed a physical fit. An early pin-and-sleeve prototype and a full-body Boolean merge were rejected; new glued joints use printed tabs (see [fabrication and lighting](fabrication-and-lighting.md#glued-joints)).
 
 ## Review and qualification record
 
 Record the fixed object and receiving-support baselines, permitted support changes, mount method, cutter source and limits, allowance definition, retained contact regions, assembly approach, protected-object checks, new versus pre-existing defects, and precise collision-test scope. Use one compact comparison showing before/after, an exposed seat, and enough of the assembly to judge visibility.
 
 Keep visual acceptance, local fit, whole-assembly access, and load and retention performance separate. Before production, resolve wall thickness and topology, evaluate contact area and load path, test fit and the chosen retention method with the actual materials, and check the complete assembly sequence. Do not enlarge contacts or add other supports merely because a preliminary seat exists; stay within the requested design scope and present unresolved support needs.
-
-## Local evidence
-
-These paths are relative to the original Dioramas workspace and are not repository dependencies:
-
-- `v3_layered/CHECKPOINT.md`: active choice, protected design, recorded checks, and limitations at collection time.
-- `v3_layered/foot_seats_r1/README.md` and `v3_layered/scripts/build_foot_seats_r1.py`: solid foot cutters, local rock expansion, subtraction, and preservation checks.
-- `v3_layered/foot_seats_r2/README.md` and `v3_layered/scripts/trim_far_foot_seat_r2.py`: toe-envelope relief.
-- `v3_layered/foot_seats_r3/README.md` and `v3_layered/scripts/open_far_foot_entry_r3.py`: swept entry envelope and sampled path checks.
-- `v3_layered/assembly_r1/README.md`: separate pin prototype and rejected full-body Boolean integration.
-
-Only this distilled documentation belongs in the skill repository. Scene files, cutters, numerical arrays, renders, and project-specific scripts remain with the source project. Read its current checkpoint before resuming modeling; the historical values here are not an alternative active-state record.

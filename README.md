@@ -19,7 +19,7 @@ shared/               method shared by more than one family
   concept-and-faithfulness/   reference authority, faithfulness review, compromise register, art pipeline
   image-to-3d/image-to-3d.md   engines and prices, sculpt input images, four-view sheets, hidden mass
   evidence-and-claims/evidence-and-claims.md   the evidence ladder, statuses, export and slicer checks, physical tests
-  design-playbook/design-playbook.md   lessons from the Shire and Mirkwood cases and a ten-gate default workflow
+  design-playbook/design-playbook.md   twenty design rules from the Shire and Mirkwood travel cases
   blender-tooling/render-home/   home-library lantern renders
 tools/check_piece_json.py        checks piece.json in version folders still locked in a family repo
 ```
@@ -31,6 +31,8 @@ Each family folder holds its `SKILL.md`, its `references/`, any scripts and test
 1. Attach this repo to the build project, beside the family repo (bookwyrm-lanterns, bookwyrm-boxes, ...).
 2. Follow the family's construction skill for the build itself, and `workshop` for saving it: files go to The Hoard as draft change sets, and David promotes them.
 3. Keep generator scripts, parameters, notes and the checkpoint in the family repo. Meshes, Blender files, renders and print files go to the store, not to git.
+
+On David's Mac the clone is `~/code/bookwyrm-skills`, and `~/.claude/skills/` links to `workshop` and each family folder. A link to `shared/` or another family is written relative to the repo, and every such link also names its path from the repo root (for example `shared/image-to-3d/image-to-3d.md`), so open it from the clone rather than through `~/.claude/skills/`. Fetch before a build: a clone behind `origin/main` gives stale rules.
 
 Paths in a skill such as `lanterns/<slug>/...` or `projects/<slug>/...` mean that folder in the family's repo (see its `family.json`).
 

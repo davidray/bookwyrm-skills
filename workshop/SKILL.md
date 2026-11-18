@@ -5,6 +5,8 @@ description: Save a 3D-printable build (lantern, box, chest, diorama or any phys
 
 # Workshop
 
+Paths such as `shared/...` and `families/...` are from the root of the bookwyrm-skills repo (`~/code/bookwyrm-skills` on David's Mac). Open them from there: a `../` link resolves wrongly when this skill is opened through a link in `~/.claude/skills/`.
+
 The Hoard is David's catalogue of everything he builds. It runs on his Mac over one store, the library at `~/bookwyrm/dungeons-and-dragons/library`, which is backed up to R2 every night. Every product is an item there with numbered revisions. Two pointers say where it stands:
 
 - **current**: the promoted revision that the catalogue, downloads and listings show;
@@ -105,7 +107,7 @@ A draft becomes the current revision only when David promotes it: with **Promote
 At promotion:
 
 - **version** follows the family's numbering (see its `family.json`). Versions compare as numbers, so `v1.10` is newer than `v1.9`.
-- **status** is the highest claim the evidence supports (see [evidence and claims](../shared/evidence-and-claims/evidence-and-claims.md#status-in-the-hoard)): `concept`, `digitally-validated`, `prototype` (printed), `interface-fit-tested`, `qualified`. A render or a slice is never more than `digitally-validated`.
+- **status** is the highest claim the evidence supports (see [evidence and claims](../shared/evidence-and-claims/evidence-and-claims.md#status-in-the-hoard) (`shared/evidence-and-claims/evidence-and-claims.md`)): `concept`, `digitally-validated`, `prototype` (printed), `interface-fit-tested`, `qualified`. A render or a slice is never more than `digitally-validated`.
 
 A change to any mesh, size, clearance, pocket or assembly position is a new draft. Images, listings and the final cut are edited on the current revision in The Hoard and need no draft.
 

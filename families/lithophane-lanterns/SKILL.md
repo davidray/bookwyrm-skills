@@ -5,6 +5,8 @@ description: Design, model, test, and package 3D-printable LED lithophane (litho
 
 # Lithophane lanterns
 
+Paths such as `shared/...` and `families/...` are from the root of the bookwyrm-skills repo (`~/code/bookwyrm-skills` on David's Mac). Open them from there: a `../` link resolves wrongly when this skill is opened through a link in `~/.claude/skills/`.
+
 Create an illuminated object whose exterior, panels, light path, assembly, and print process work as one product. A convincing render is only visual evidence; a lithophane lantern succeeds when the printed panels read under the actual light, fit and remain retained, and the light can be installed, switched, and removed.
 
 This skill covers the whole lantern lifecycle, from brief and concept through part-by-part decoration, print engineering, and locked release.
@@ -24,13 +26,13 @@ Use a battery-powered or otherwise low-voltage LED source. Exclude open flame. D
 
 Read [workflow and gates](references/workflow-and-gates.md) for a new build or a material redesign. Read [engineering](references/engineering.md) before fixing dimensions, interfaces, segmentation, or orientation. Flat structural parts (divider blades, controller and floor plates, diffusers, flat lid decks) are laser-cut acrylic by default, with a printed fallback; see its laser-cut acrylic section.
 
-Read the [print profile](../../shared/print-profile/print-profile.md) before selecting the build envelope, exterior feature sizes, segmentation, material, nozzle, compatibility target, lithophane recipe, or fit clearances. It holds physically proven settings; reuse them instead of proposing new coupons for the same interfaces. Keep project-specific proportions, visual approvals, hardware, and exceptions in the project checkpoint.
+Read the [print profile](../../shared/print-profile/print-profile.md) (`shared/print-profile/print-profile.md`) before selecting the build envelope, exterior feature sizes, segmentation, material, nozzle, compatibility target, lithophane recipe, or fit clearances. It holds physically proven settings; reuse them instead of proposing new coupons for the same interfaces. Keep project-specific proportions, visual approvals, hardware, and exceptions in the project checkpoint.
 
 When David hands every decision to you, follow the autonomous-run rules in [workflow and gates](references/workflow-and-gates.md): keep every gate and use an independent reviewer in place of David's approvals.
 
 For tool setup (headless Blender in a container, slicing from the command line), read [tooling](references/tooling.md).
 
-Read the [art pipeline](../../shared/concept-and-faithfulness/art-pipeline.md) and [image to 3D](../../shared/image-to-3d/image-to-3d.md) before generating concept, part, or panel art or any AI mesh, and before spending generation credits.
+Read the [art pipeline](../../shared/concept-and-faithfulness/art-pipeline.md) (`shared/concept-and-faithfulness/art-pipeline.md`) and [image to 3D](../../shared/image-to-3d/image-to-3d.md) (`shared/image-to-3d/image-to-3d.md`) before generating concept, part, or panel art or any AI mesh, and before spending generation credits.
 
 In a series of lanterns, keep the shared interfaces consistent: panel slot and retention, divider or LED post, strip, hardware plate, and tolerances. Overall size is a target the approved art may break; say so when it does rather than distorting the art to match a sibling.
 
@@ -59,7 +61,7 @@ Fit purchased parts (lights, batteries, switches) with generous clearance, so a 
 
 Record how panels go in and how the roof or lid comes off at blockout, and show it in the review. Default to positive roof location (pegs or a keyed lip); gravity-only seating needs David's explicit acceptance. Add the central lid tie-down: an M4 eye bolt in a heat-set insert in the lid, a wire down the post bore, and an M4 bolt, washer and nut through the hardware plate. Reserve its axis column at blockout (see [engineering](references/engineering.md), lid tie-down).
 
-Never use dowels (David, 2026-11-16). Wherever two printed faces are glued, align them with printed alignment tabs: a male tab 4.0 mm in diameter and 4.0 mm tall on one face, a female socket 4.2 mm in diameter and 4.2 mm deep in the other. Joints that are not glued, hinges and pivots need no tab. Plan them when you choose the segmentation; see [glued joints](../../shared/joints-and-assembly/glued-joints.md) and the lantern exceptions in [engineering](references/engineering.md).
+Never use dowels (David, 2026-11-16). Wherever two printed faces are glued, align them with printed alignment tabs: a male tab 4.0 mm in diameter and 4.0 mm tall on one face, a female socket 4.2 mm in diameter and 4.2 mm deep in the other. Joints that are not glued, hinges and pivots need no tab. Plan them when you choose the segmentation; see [glued joints](../../shared/joints-and-assembly/glued-joints.md) (`shared/joints-and-assembly/glued-joints.md`) and the lantern exceptions in [engineering](references/engineering.md).
 
 ## Decorate part by part, and let the art win
 
@@ -77,7 +79,7 @@ Use actual image-derived relief for production panels. Textures, emission, and i
 
 Treat base thickness, relief range, image resolution, tonal curve, border, panel orientation, and light spacing as process-dependent parameters, not universal constants. Preserve important faces and silhouettes through crop and tonal preparation; avoid relying on tiny low-contrast details that disappear in transmitted light. Sharpness is limited by the extrusion line and by light scattering, not by layer height: detail narrower than about two line widths won't read (see the detail limits in panels and optics).
 
-Read [lithophane panels and optics](../../shared/lithophanes/lithophanes.md) whenever creating, replacing, resizing, or diagnosing panels.
+Read [lithophane panels and optics](../../shared/lithophanes/lithophanes.md) (`shared/lithophanes/lithophanes.md`) whenever creating, replacing, resizing, or diagnosing panels.
 
 ## Keep evidence boundaries explicit
 
@@ -88,7 +90,7 @@ In Blender or another source model, separate at minimum:
 - functional/service reserves and motion paths;
 - presentation-only artwork, materials, glow, and staging.
 
-Use editable source geometry and repeatable generators where they improve reliability. Code is for structural and parametric geometry only. Never hand-build detailed or decorative parts in code, including stairs, decks, railings and brackets; generate them with the 3D generator ([image to 3D](../../shared/image-to-3d/image-to-3d.md) names the engines, how to call them and their prices) (David, 2026-11-14). An approved AI-generated part mesh is authoritative for visible form: keep it as the exterior and cut or add the function into it (hollowing, slots, seats, bays, lid pockets, hidden internals). It is not functional lantern architecture until those openings, load paths, panel seats, service paths, segmentation, and printable topology are deliberately added and verified, but the visible surface stays as the art made it.
+Use editable source geometry and repeatable generators where they improve reliability. Code is for structural and parametric geometry only. Never hand-build detailed or decorative parts in code, including stairs, decks, railings and brackets; generate them with the 3D generator ([image to 3D](../../shared/image-to-3d/image-to-3d.md) (`shared/image-to-3d/image-to-3d.md`) names the engines, how to call them and their prices) (David, 2026-11-14). An approved AI-generated part mesh is authoritative for visible form: keep it as the exterior and cut or add the function into it (hollowing, slots, seats, bays, lid pockets, hidden internals). It is not functional lantern architecture until those openings, load paths, panel seats, service paths, segmentation, and printable topology are deliberately added and verified, but the visible surface stays as the art made it.
 
 Produce neutral production-only views as well as attractive lit views. A useful review packet normally includes a matched three-quarter view, front/elevation view, neutral geometry view, cutaway, exploded/service view, underside access view, and isolated panel previews. Put the approved concept or part art beside the model on every sheet. Show reserves only in functional views, with a clear legend.
 
@@ -96,7 +98,7 @@ Read [modeling and evidence](references/modeling-and-evidence.md) when building 
 
 ## Retire uncertainty with small physical tests
 
-First check the proven settings in the [print profile](../../shared/print-profile/print-profile.md): lithophane relief, panel print settings, pane seats, sliding fits, tongue and groove, and wire exits are already physically proven for the lanterns, so do not propose new coupons for those interfaces. For a genuinely new interface, use the cheapest representative coupon before a long print. Common coupons include:
+First check the proven settings in the [print profile](../../shared/print-profile/print-profile.md) (`shared/print-profile/print-profile.md`): lithophane relief, panel print settings, pane seats, sliding fits, tongue and groove, and wire exits are already physically proven for the lanterns, so do not propose new coupons for those interfaces. For a genuinely new interface, use the cheapest representative coupon before a long print. Common coupons include:
 
 - the actual light-source opening or carrier interface;
 - panel channel, ledge, latch, or roof-capture cross-section;
