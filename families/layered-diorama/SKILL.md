@@ -3,144 +3,91 @@ name: layered-diorama
 description: Develop 3D dioramas from concept art through element decomposition, bottom-up modeling, isolated character development, scene integration, and print engineering. Use for staged diorama builds, revisions, and capturing lessons from them.
 ---
 
-# Layered diorama — working draft
+# Layered diorama
 
 Paths such as `shared/...` and `families/...` are from the root of the bookwyrm-skills repo (`~/code/bookwyrm-skills` on David's Mac). Open them from there: a `../` link resolves wrongly when this skill is opened through a link in `~/.claude/skills/`.
 
-Draft collected on 2026-09-22 from the first Smaug/Dale attempt, the layered Dale restart, and layered Moria. Updated through 2026-09-23: the layered workflow shows visual progress and several David-reported local print/fit passes; an end-to-end manufactured result is not yet demonstrated. This repository maintains the working draft and its learning record. Storing it here does not install it as a personal skill.
+Use this for a hand-modelled scene built in independently editable layers. For a scene whose pieces are mostly generated from one concept under a budget, use `generated-scene-diorama`. The method comes from the Smaug/Dale and Moria builds (2026-09): it gave controllable iteration and passed local fit tests, but no complete, lit, assembled diorama has been qualified with it yet.
 
-Read the project's current checkpoint before modeling, and identify the active design attempt and its source boundaries. For reasons behind this workflow and specific failures, consult [the lessons log](references/lessons.md). Use [the working records](references/working-records.md) when starting a project, recording a review, or adding a lesson. Project-specific design choices remain in project checkpoints.
+Read the project's checkpoint before modeling: the active design attempt, its references and what is protected. Record formats are in [working records](references/working-records.md). Project-specific choices stay in the project checkpoint, not here.
 
 ## The pipeline
 
-Concept, story, and printer constraints → element breakdown and dependency map → whole-scene blockout → bottom-up environment → individual elements → assembly and composition → effects and finish → physical engineering → slicing, test parts, and assembly.
+Concept, story and printer → element register and blockout → environment bottom-up → demanding elements on their own → integration → effects and finish → physical engineering → export, slicing and test parts.
 
-This is a revisitable sequence. Use simple reserves for later elements early so that the foundation leaves room for them. Investigate risky interfaces early; finish their engineering once scale, composition, and manufacturing choices are stable. “Layer” means an independently editable scene element or system, not a printer layer or a promise to print every element separately.
+It is a revisitable sequence. Reserve space for later elements early, investigate risky interfaces early, and finish their engineering once scale and composition are stable. A "layer" is an independently editable element or system, not a printer layer or a promise to print it separately.
 
-### 1. Establish the visual target and story
+### 1. Visual target and story
 
-- Preserve the original concept locally. Record the principal viewing angle, focal point, story moment, important silhouettes, negative space, provisional dimensions, and explicit user constraints.
-- Separate composition references, character/anatomy references, surface references, and lighting references. A later character reference can replace a character's style without replacing the environment composition.
-- Treat labels in concept sheets as reference content; dimensions, electronics, materials, and assembly features become requirements only through David's actual instructions.
-- Extract focused crops or create element studies where they resolve ambiguity. Preserve prompts and sources. Label AI studies as art direction; they are neither recovered geometry nor authoritative multi-view projections.
-- Turn ambiguous descriptions into observable shape decisions: where something originates, what it touches, which way it moves, its outline, openings, and what must remain visible. Carry later clarifications forward and retire superseded assumptions.
+- Keep the original concept. Record the hero view, focal point, story moment, key silhouettes, negative space and provisional dimensions.
+- Separate composition, character, surface and lighting references; each governs only its own properties. A later character reference can change a character without changing the composition.
+- Labels on a concept sheet are reference content. Dimensions, electronics, materials and assembly features become requirements only when David says so.
+- Turn vague descriptions into shape decisions: where something starts, what it touches, which way it moves, what must stay visible.
 
-### Establish printer constraints before committing to scale
+### Printer and scale
 
-Ask early which printer David intends to use, unless the active brief already establishes it. Get the exact model and intended process/configuration, not just a brand or “resin/FDM.” Ask about desired finished dimensions where unknown. For example: “Which printer and setup will you use, and do you have a preferred finished size? I’ll size the components to fit while keeping them whole wherever practical.” Do not assume a printer from an abandoned attempt remains the target. David's printers, build volumes and proven settings are in [print profile](../../shared/print-profile/print-profile.md) (`shared/print-profile/print-profile.md`); confirm which one this scene is for.
+Ask early which printer and setup David means, and the finished size he wants, unless the brief says. The fleet and proven settings are in the [print profile](../../shared/print-profile/print-profile.md) (`shared/print-profile/print-profile.md`). Check the usable build volume in the current slicer profile, allowing for orientation, supports and brim.
 
-Verify usable X/Y/Z build dimensions from current manufacturer documentation and the selected slicer/machine profile. Record the source, configuration, and any applicable restricted areas. Account for orientation and the space required by supports, brim/raft, or other process necessities; advertised volume and model-only fit are preliminary checks. Avoid inventing a universal clearance margin.
+David prefers whole parts to parts split for the plate. Choose a scene scale at which the limiting components fit whole in a sensible orientation. If that conflicts with size, detail or strength, show the trade-off before cutting: reorient or scale the scene first, and propose a split, with its location and assembly, only when those fail. Never shrink one element out of proportion to make it fit. If the printer is unknown, keep the scale marked provisional and settle it before scale-dependent detail.
 
-David's default preference is to avoid splitting individual parts merely to fit the build plate. Use that preference when establishing the initial overall scale: check the limiting components in plausible print orientations and choose a coherent scene scale that lets them fit whole where practical. Separate scene elements do not need to become one fused print. Do not independently shrink a character or building and break established proportions just to make it fit.
+### 2. Decompose and block out
 
-If whole-part fit conflicts with the requested size, detail, strength, or a feasible print orientation, present the concrete tradeoff before changing an established scale or cutting parts. Consider practical reorientation and a smaller overall scale first; propose a split only when those options are unsuitable, with its location and assembly implications. Honor an explicit preference for larger size or modular construction. If the printer is unknown, continue concept work at a clearly provisional scale and resolve it before scale-dependent detailing. Recheck fit after changes to poses, wings, effects, or dimensions, and confirm the full supported arrangement in the slicer before printing.
+Make an element register: role in the story, governing reference, what it sits on, dependencies, reserved envelope, method, interfaces and status. Typical groups: plinth, terrain or backdrop, architecture, characters, effects, hardware.
 
-### When a local revision stops converging
+Block out the whole scene cheaply with every important volume, fixed units and axes, and repeatable cameras. Reserve feet, wing spans, tail sweeps, flame routes, crossings and likely mounts. Review the composition before refining anything; an attractive part can still be wrong for the scene. Label placeholders so they never become final by inertia.
 
-If the same area has needed multiple corrections without resolving the mismatch, David repeats the same concern, or successive revisions merely trade one guess for another, request a focused screenshot/crop of the concept art before another speculative pass. Two unsuccessful passes are a useful signal, not a mandatory wait; ask sooner when the intended shape or spatial relationship is unclear. Ordinary productive refinement does not need an extra interruption.
+### 3. Environment bottom-up
 
-Explain the specific uncertainty and ask for the smallest useful region, retaining enough neighboring context to show contact, direction, and scale. For example: “We have revised this flame twice, but I am still uncertain where it meets the ground. Could you share a screenshot of that part of the concept art, including the nearby wall, and point out the relationship to match?” Use a channel that accepts image attachments, not a text-only question tool.
+Build the plinth and terrain, then what stands on them (buildings, paths, bridges, landings), fitted to the real surfaces. Resolve silhouette, large masses, proportion and open space first, then medium forms, then selective detail. More detail never fixes the wrong structure: spikes plus noise are not geology, and roof tiles don't fix a badly placed village. Keep named collections and editable sources, and delay scene-wide fusion.
 
-If the relevant crop is already supplied, inspect it rather than asking again. If the full reference is available locally and the region is clear, use a focused crop and ask only about the unresolved interpretation. Do not substitute a new AI-generated study for David's intended evidence. While awaiting essential clarification, continue independent work and leave the disputed area stable.
+### 4. Demanding elements on their own
 
-Save the crop as a new reference without overwriting the original, record its source and the property it clarifies, and translate David's response into concrete modeling constraints. Compare the next actual-model detail against that crop, then check the whole scene for side effects. The crop's authority is local to that feature; it does not silently replace the overall composition or other accepted choices.
+Choose a method per element. Procedural modeling suits terrain, masonry and layout. For recognisable organic subjects, try reference-driven sculpting or image to 3D early (see [image to 3D](../../shared/image-to-3d/image-to-3d.md), `shared/image-to-3d/image-to-3d.md`) rather than piling detail on a procedural form that lacks likeness.
 
-### Keep design attempts separate
+Focused reference → isolated model → multi-angle review → cleanup → fit to the scene → integration review.
 
-At a restart, establish whether David is replacing the whole design or only a named element. Record the active attempt, current references, allowed starting files, explicitly retained choices, and excluded attempts/components in the checkpoint. Use existing user instructions to establish this scope; ask only if a consequential carryover remains ambiguous.
+- Settle anatomy, gesture and equipment before texture. Check limb count, left and right, wing roots, hands, grips and load-bearing contacts in real views from several angles: overlapping silhouettes once made a knee look like a fist. Put important accessories (a sword, a whip) in the reference brief rather than retrofitting them.
+- Judge geometry in neutral material renders. Colour, glow and dramatic light can't prove a shape.
+- Keep the raw reconstruction and its input unchanged, and record the tool, settings and scale. Check the local tools before declaring generation blocked.
+- Judge cleanup by kept silhouette and detail as well as topology. Don't chase one-component counts by deleting accessories or merging every near contact.
+- If iterations keep polishing the wrong style or structure, change that element's reference or method and leave the rest of the scene alone.
 
-For the restarted scope, inherited design choices from an abandoned attempt are excluded unless David has retained or re-adopted them. Availability on disk, a familiar filename, an old approval, or a historical summary is not sufficient authority. Trace each retained design choice to the current brief/reference or an explicit carryover decision. Preserve unaffected layers when David requested only an element restart.
+### 5. Integrate one change at a time
 
-Reusable technical lessons can cross attempts: camera-comparison methods, compact review generation, audits, or a suitable repair technique. Reusing code requires checking for embedded old design defaults, geometry imports, poses, dimensions, materials, cameras, and source paths. Reuse the method only after those assumptions are removed or justified for the active attempt. Do not load an abandoned scene as the new baseline simply because it is convenient.
+Make one reviewable change per iteration, state what it should change, protect everything else, and compare with the baseline before the next. Coupled edits that serve one outcome (move a hand and keep its grip) count as one change.
 
-Before rendering a restarted build or handing it off, check the source paths and design decisions against this record. Flag unsupported carryovers and correct them before further detailing. Mark old notes as historical in the active checkpoint; preserve files unless deletion is requested. A fresh task continuing the same attempt retains its accepted decisions; a design restart resets only the stated scope. Neither a fresh conversation nor shared project storage decides design lineage by itself.
+When a request bundles several independent design decisions, say so briefly, name them and propose an order, and start on the first. Keep the rest queued and work through them without making David resubmit; ask for review only when the next change depends on an open visual decision. Honour an explicit request for a combined pass.
 
-### 2. Decompose before detailed modeling
+When the same area has needed two corrections without converging, or David repeats a concern, ask for a crop of that part of the concept with enough surroundings to show contact and direction, in a channel that takes images. Inspect a crop he already sent before asking again. Save it as a new reference, translate it into concrete constraints, and check the next model against it. It governs that feature only.
 
-Make an element register: purpose in the story, reference, parent/support surface, dependencies, bounding reserve, intended construction method, interfaces, and current status. Typical groups are plinth, terrain/backdrop, architecture, characters/creatures, effects, and hardware.
+Keep shape changes separate from placement. Fit feet to the actual surface and check clearance between characters and scenery. Before a local edit, name the protected objects and verify them afterwards. Compare with the same cameras and neutral lighting, plus one diagnostic angle for hidden contacts.
 
-Create a cheap whole-scene blockout with all important volumes. Establish units, axes, scale, and repeatable cameras. Reserve figure feet, wing spans, tail sweep, flame routes, bridge crossings, sightlines, and likely mounts. Show actual environment geometry both with and without clearly labeled placeholders when useful.
+Approval is scoped to what was reviewed: image direction, sculpture, placement, effects and engineering each have their own status. Never infer approval from silence, and don't invent a stop at every stage.
 
-Review the large composition before refining it. An attractive isolated component can still be wrong for the scene. Do not let placeholder geometry become the final sculpture by inertia.
+### Attempts and restarts
 
-### 3. Build the environment from the bottom up
+At a restart, find out whether David is replacing the whole design or one element, and record the active attempt, its references, allowed starting files, retained choices and excluded attempts. Within the restarted scope, nothing from an abandoned attempt carries over unless David kept it; a file on disk or an old approval is not authority. Technical methods can carry over once their embedded dimensions, poses and paths are checked. Before review, check source paths against this record.
 
-Develop the plinth and terrain/backdrop, then dependent structures such as buildings, paths, bridges, and landings. Fit new work to the established surfaces using actual scene coordinates and contact measurements.
+### 6. Effects and finish
 
-Resolve silhouette, large masses, proportions, hierarchy, and open spaces first. Then add medium forms, followed by selective surface detail. Broad cliffs need distinct masses and recesses; repeated spikes plus noise do not substitute for geology. Settlements need varied placement and landmarks before roof tiles and window ornament.
+Route effects from the story and real contact surfaces (origin, path, impact, aftermath) before adding turbulence. Keep them separately editable. Protect negative space and silhouettes, and add damage selectively, away from seating surfaces. Show a neutral form view beside each lit presentation view; render light is illustrative until real hardware is tested.
 
-Use named collections and separate source masses/recipes. Preserve the existing baseline and write revisions separately. Delay irreversible scene-wide fusion; retain editable sources even when a local union is useful.
+### 7. Physical engineering
 
-### 4. Develop demanding elements independently
+Plan mounting, access and any segmentation while composing. Once the design is stable, engineer thickness, load paths, joints, tolerances, supports, access and assembly order for the real printer, scale, material and hardware, and revisit the look if that changes visible geometry.
 
-Choose a method per element. Procedural modeling is useful for controlled terrain, masonry, paths, layout, and localized edits. For recognizable organic subjects, evaluate reference-driven sculpting or image-to-3D early if procedural forms are missing likeness or anatomy.
+- **Mounts:** for any mounted character or object, follow [shaped mounting seats](references/mounting-points.md). Keep the accepted object and adapt its support.
+- **Solid volumes:** for David's FDM work, model parts as solid and let the slicer set infill, keeping deliberate voids (sockets, light chambers, wire routes, tunnels).
+- **Glued joints:** printed male/female tabs, never dowels or filament pins, per [glued joints](../../shared/joints-and-assembly/glued-joints.md) (`shared/joints-and-assembly/glued-joints.md`). Diorama exceptions are in [fabrication and lighting](references/fabrication-and-lighting.md#glued-joints).
+- **Testing, repair, export and lighting:** follow [fabrication and lighting](references/fabrication-and-lighting.md).
+- **Claims:** keep visual, geometric, manufacturing and physical claims apart, as in [evidence and claims](../../shared/evidence-and-claims/evidence-and-claims.md) (`shared/evidence-and-claims/evidence-and-claims.md`).
 
-Use this sub-pipeline where appropriate:
+## Review and records
 
-Focused reference/study → isolated model or reconstruction → multi-angle form review → surface cleanup → scene-scale fitting → integration review.
+- **Small review payloads:** keep originals, full renders, logs and audits on disk. Review one compressed contact sheet per iteration (about 1,200 to 1,600 px, under 500 KB) and load a detail crop only for a specific question. Never print base64 images, mesh arrays or full scene dumps; filter tool output to paths, counts and short summaries. A long image-heavy session once failed with a 64 MiB request-size error; if that happens, stop retrying, save state, and continue from the checkpoint in a fresh task when David asks.
+- **Checkpoint:** after each meaningful change, update the active file, reference authority, accepted decisions, protected scope, checks run now (not old ones), open issues and the next step. Archive superseded stages with pointers instead of keeping several "current" sections. A print underway is not a pass.
+- **Lessons:** when evidence changes how the next build should go, add it as a rule here, in terms of roles and decisions, and keep named characters and dimensions as examples. Generalise only as far as the evidence goes.
 
-- Establish anatomy, gesture, equipment, and major folds before fine texture. Isolate actual connected surfaces and inspect multiple angles before assigning a contact or grip; overlapping silhouette can make a knee or neighboring surface look like a hand. Include required accessory grips in the reference/reconstruction brief when later retrofitting repeatedly fails. Check limb count, left/right identity, wing attachments, palms/thumbs, grips, and load-bearing contacts in actual views.
-- Compare neutral material renders as well as the intended presentation. Color, glowing effects, and dramatic lights cannot establish that geometry is right.
-- Keep the raw reconstruction and input image unchanged. Record generation tool, environment, input preparation, settings, scale, and outputs. Check installed local capabilities before assuming missing cloud/MCP access blocks generation.
-- Judge cleanup by retained silhouette and detail as well as topology. Apply and measure changes at a known processing scale, then reassess thickness at final scale. Classify separate components by meaning; do not remove an accessory merely to get one component.
-- If iterations keep polishing the wrong style or structure, revisit the reference and method for that element. Preserve useful surrounding layers. A praised intermediate improvement does not permanently approve its style.
+## Saving a version
 
-### 5. Integrate without undoing established work
-
-During tweaking, prefer one independently reviewable change per iteration, especially when it requires interpretation or design judgment. State the intended change, preserve unrelated properties, and compare its result with the baseline before proceeding to the next change. Avoid adding unsolicited improvements to the same pass. One change can require several coupled edits—for example, moving a hand and maintaining its grip on the staff—when they serve the same outcome.
-
-Give brief, constructive feedback before editing when a refinement prompt bundles enough independent or ambiguous design decisions that focus or review clarity is likely to suffer. Judge complexity, coupling, and uncertainty rather than enforcing a fixed number of changes. Name the separate tweaks, explain why splitting them would help, and recommend the first one and an order for the rest. For example: “This combines three separate design decisions: wing pose, flame shape, and village layout. I recommend tackling the wing pose first, then the flame, then the village, so each result gets a focused comparison. I’ll keep all three in the queue.”
-
-Make this useful guidance, not a reprimand or a requirement to rewrite the prompt. If the order is clear, proceed with the first authorized change and keep the rest recorded. Ask which to prioritize only when the choice materially affects the result and cannot be inferred. Skip this feedback for straightforward coordinated edits or productive multi-step build requests; honor David's explicit preference for a combined pass.
-
-If David requests several changes together, retain the full request and work through a short ordered queue, validating each change separately. Continue authorized independent changes without forcing David to resubmit them or approve every step. When the next change depends on an unresolved visual decision, request review of that concrete result before dependent work. Honor an explicit request for a combined pass, and describe the combined scope clearly.
-
-Separate shape changes from placement changes. Record transform, scale, contact surfaces, and attachment intent. Fit feet to the actual sloped surface, inspect character-to-character and environment clearance, and preserve the upper pose where only a local stance adjustment is needed.
-
-For a local edit, identify protected objects and properties before changing anything. Verify the saved/reopened result against that baseline using appropriate geometry, connectivity, transform, visibility, material, and camera checks. Report the scope: a transform-only edit need not claim a fresh topology audit.
-
-Use the same cameras and neutral lighting for comparisons. If framing must widen, render both versions at the new framing. Include a diagnostic angle for hidden contacts or anatomy; the hero view alone is insufficient.
-
-User acceptance is scoped to the reviewed artifact and property: image direction, sculpture, placement, effects, and engineering have separate statuses. Continue within existing authorization; do not invent an approval stop at every stage. Ask for review when an unresolved design choice materially affects dependent work, and never infer acceptance from silence.
-
-### 6. Add effects, wear, and presentation in service of the scene
-
-Route effects from the story and actual contact surfaces. Check origin, path, impact, aftermath, depth, and architectural visibility before adding turbulence or texture. Keep effects separately editable.
-
-Preserve negative space and readable silhouettes. Add damage selectively, avoiding essential seating/support surfaces unless intentionally redesigning them. Maintain a neutral form view alongside a presentation-lighting view of the same geometry. Describe render lighting as illustrative until physical hardware and materials have been engineered.
-
-### 7. Qualify the physical design separately
-
-Plan mounting, access, material changes, and any necessary segmentation while composing, using the established printer envelope and preference for whole parts. Once the design is stable, use the actual printer/process, final scale, materials, and any requested hardware to engineer thickness, structural load paths, joints, tolerances, supports, access, and assembly order. Revisit appearance if those requirements change visible geometry.
-
-For any mounted character or object, read [shaped mounting seats and assembly clearance](references/mounting-points.md). Preserve the accepted object, adapt its receiving support locally, and subtract a solid copy of the exterior contact region with adjustable mating allowance. Refine unwanted interlocking and the insertion passage separately. Check the whole object's path across all contacts, including any staged assembly or service removal. Terrain, feet, and toes are case examples; apply the same reasoning to props, architecture, bases, walls, and other interfaces. Preserve editable tools and protected geometry; local fit does not establish a complete load-bearing mount.
-
-For David's current FDM workflow, construct solid material volumes and leave infill to the slicer, while retaining intentional functional voids such as sockets, lighting chambers, wire routes, and tunnels. Historical thin-shell cleanup or reinforcement studies do not override that rule. Preserve accepted exteriors and tested interfaces when changing internal construction; establish process-specific requirements separately for other manufacturing methods.
-
-For physical testing, repair, export, and illumination, read [fabrication and lighting](references/fabrication-and-lighting.md). Separate functional assembly/service parts from plate-size cuts. Test actual mating pairs, record the interface and process, and protect physically passed geometry. Where two printed faces are glued, align them with printed male/female tabs, not loose dowels or filament pins (exceptions: shaped mounting seats, hinges and pivots, joints that are not glued). Do not transfer a local fit result to another interface or material without evidence.
-
-Verify the delivered file and its native slicer interpretation separately from source topology. Preserve the identity of user-repaired files; do not claim a local pre-repair export is their repaired copy. Recenter and recheck the complete support/raft envelope after support generation. Use representative wired-hardware and optical tests before repeating lighting across the scene; a clear passage or illustrative glow is not a brightness test.
-
-Keep visual, geometry, manufacturing and physical claims distinct, as set out in the shared [evidence and claims](../../shared/evidence-and-claims/evidence-and-claims.md) (`shared/evidence-and-claims/evidence-and-claims.md`). Use representative test pieces for uncertain joints or thin features before committing a large assembly. Record outcomes; do not assume this draft's source projects have completed that stage.
-
-## Review, continuity, and learning
-
-### Keep review payloads small and make recovery possible
-
-Keep originals, full-resolution renders, detailed logs, and mesh audits on disk. Inspect one compressed contact sheet per iteration, preferably 1,200–1,600 pixels on its longest edge and under 500 KB when practical. Load a detail crop only for a specific unresolved question; avoid repeatedly loading unchanged references. These are review targets, not service-limit guarantees.
-
-Filter large tool results before emitting them: paths, selected measurements, counts, and concise audit/error summaries. Never print base64 images, mesh arrays, full scene dumps, or entire historical task transcripts. Read the checkpoint and relevant excerpts instead of reloading the whole project history.
-
-For prevention details and a size-error recovery procedure, read [payload management](references/payload-management.md). If an oversized request blocks progress, stop unchanged retries, preserve local state and job status, and prepare a small handoff. A fresh task should read the checkpoint and selected assets rather than inherit the full transcript; create it only on David's explicit request. Do not assume context compaction fixes a request-body byte limit.
-
-### Preserve decisions and collect lessons
-
-Keep the active checkpoint concise and archive superseded stages, leaving explicit pointers to evidence and replaced exports. Distinguish active print jobs from successful results. After a meaningful change, update the checkpoint with the active editable file, reference authority, accepted decisions, candidate status, changed/protected scope, validation and its limits, unresolved issues, and next step. Distinguish checks run now from historical checks. Preserve rejected work only as history where appropriate; respect explicit deletions and never quietly reintroduce rejected baselines.
-
-When adding or revising guidance, write the reusable method in terms of roles, constraints, and decisions; keep named characters, anatomy, materials, dimensions, and project-specific choices in clearly labeled worked examples. Generalize the principle only as far as its evidence supports, and distinguish a transferable method from a physically proven result.
-
-Add a lesson when evidence changes how the next attempt should proceed. Record observation → consequence → changed practice → evidence → remaining uncertainty. Keep case-specific preferences in the lessons log or project checkpoint; promote them into general instructions only when the broader rule is justified.
-
-## Locking a version
-
-When David approves a diorama version for printing or as a preview, save it as a draft through the workshop skill (`workshop/SKILL.md` in this repo), with the generating scripts and notes committed under `projects/<slug>/` in bookwyrm-dioramas. David promotes it as `v<N>`. At the end of a session that changed a diorama's meshes without saving a draft, say so in one line.
+When David approves a version for printing or as a preview, save it as a draft through the workshop skill (`workshop/SKILL.md`), with the generating scripts and notes committed under `projects/<slug>/` in bookwyrm-dioramas. David promotes it as `v<N>`. At the end of a session that changed a diorama's meshes without saving a draft, say so in one line.
