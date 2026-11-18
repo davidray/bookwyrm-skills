@@ -19,6 +19,7 @@ References:
 - [moving parts and figures](references/moving-parts-and-figures.md): hinges, print-in-place mechanisms, sculpted figures, filament saving.
 - [lighting and electronics](../../shared/lighting-and-electronics/lighting-and-electronics.md) (`shared/lighting-and-electronics/lighting-and-electronics.md`) (shared): LED scenes on WLED, controller boards, lighting tests.
 - [box-family standards](references/box-family-standards.md): house dimensions, hardware and defaults.
+- [design rules](../../shared/design-playbook/design-playbook.md) (`shared/design-playbook/design-playbook.md`) (shared): twenty rules from the travel cases; read before a new box.
 - [reviews](references/reviews.md): review checklists and when to use an independent reviewer.
 - [project records](references/project-records.md): checkpoint, test and release records, and the release-and-lock layout.
 
