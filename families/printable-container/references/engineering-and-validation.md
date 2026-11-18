@@ -50,7 +50,7 @@ Print orientation is part of the design. Consider bed contact, bridging, overhan
 
 ## Energy, lighting, and electronics safety
 
-For LED scenes, WLED and circuit-board lessons, see [lighting and electronics](../../../shared/lighting-and-electronics/lighting-and-electronics.md).
+For LED scenes, WLED and circuit-board lessons, see [lighting and electronics](../../../shared/lighting-and-electronics/lighting-and-electronics.md) (`shared/lighting-and-electronics/lighting-and-electronics.md`).
 
 Classify the intended source before designing around it: unpowered, low-voltage battery/LED, externally powered low-voltage, mains-powered, heat-producing lamp, or open flame. Ordinary printed-plastic lanterns should default to LED-only. Hold mains, open-flame, high-energy battery, or other safety-critical designs unless appropriate domain requirements and evidence are provided.
 
@@ -69,7 +69,7 @@ An electrical configuration read-back or illuminated render does not verify temp
 
 ## Glued joints: printed male/female tabs
 
-Every glued joint uses printed alignment tabs, never dowels or filament pins: see [glued joints](../../../shared/joints-and-assembly/glued-joints.md) for the standard 4.0/4.2 mm tab, the starting sizes, keying and print orientation. The family's glued feet are the printed example: a teardrop tab (tip toward the corner) on each foot, its socket in the shell, a 1.3 mm tab in a 1.5 mm socket with 0.2 mm all round. Keep mating features exact after any relief smoothing (see [decorative relief](decorative-relief.md)).
+Every glued joint uses printed alignment tabs, never dowels or filament pins: see [glued joints](../../../shared/joints-and-assembly/glued-joints.md) (`shared/joints-and-assembly/glued-joints.md`) for the standard 4.0/4.2 mm tab, the starting sizes, keying and print orientation. The family's glued feet are the printed example: a teardrop tab (tip toward the corner) on each foot, its socket in the shell, a 1.3 mm tab in a 1.5 mm socket with 0.2 mm all round. Keep mating features exact after any relief smoothing (see [decorative relief](decorative-relief.md)).
 
 Box exceptions (say which applies, and why, in the box's README):
 - Not glued: lift-off and magnetic lids, light trays, drop-in and basement panels, Gridfinity bins, screws and inserts, anything taken apart for service.
@@ -107,4 +107,4 @@ Several threads can drive the same Blender app. Before generating or saving, che
 
 ## Evidence and release
 
-The evidence lanes, export checks, slicer review, physical-test records, statuses and what every release states are shared: read [evidence and claims](../../../shared/evidence-and-claims/evidence-and-claims.md). A box release also lists its accepted compromises from the [compromise register](../../../shared/concept-and-faithfulness/concept-and-faithfulness.md#compromise-register) and its interfaces' exact test conditions.
+The evidence lanes, export checks, slicer review, physical-test records, statuses and what every release states are shared: read [evidence and claims](../../../shared/evidence-and-claims/evidence-and-claims.md) (`shared/evidence-and-claims/evidence-and-claims.md`). A box release also lists its accepted compromises from the [compromise register](../../../shared/concept-and-faithfulness/concept-and-faithfulness.md#compromise-register) (`shared/concept-and-faithfulness/concept-and-faithfulness.md`) and its interfaces' exact test conditions.

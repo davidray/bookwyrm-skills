@@ -2,7 +2,7 @@
 
 Read this before making a lit pane, a scene image for one, or a carved or lit inscription.
 
-Lit panels follow the shared [lithophane panels and optics](../../../shared/lithophanes/lithophanes.md): source images, relief, the proven recipe, detail limits and the test crop. Box specifics:
+Lit panels follow the shared [lithophane panels and optics](../../../shared/lithophanes/lithophanes.md) (`shared/lithophanes/lithophanes.md`): source images, relief, the proven recipe, detail limits and the test crop. Box specifics:
 
 ## Pane and image
 

@@ -30,7 +30,7 @@ Sources: `v3_layered/CHECKPOINT.md`, `v3_layered/gate_led_r2/README.md`, `v3_lay
 
 ## Glued joints: printed male/female tabs
 
-Every glued joint uses printed alignment tabs, never dowels or filament pins: see [glued joints](../../../shared/joints-and-assembly/glued-joints.md) for the standard 4.0/4.2 mm tab, the starting sizes, keying and print orientation. This supersedes the dowel scheme of the early Smaug `assembly_r1` study (see [mounting points](mounting-points.md)) for any new glued joint. The sizes come from sibling families, not from a diorama print, so the first diorama joint that uses one gets a two-piece coupon cut from the real mating geometry.
+Every glued joint uses printed alignment tabs, never dowels or filament pins: see [glued joints](../../../shared/joints-and-assembly/glued-joints.md) (`shared/joints-and-assembly/glued-joints.md`) for the standard 4.0/4.2 mm tab, the starting sizes, keying and print orientation. This supersedes the dowel scheme of the early Smaug `assembly_r1` study (see [mounting points](mounting-points.md)) for any new glued joint. The sizes come from sibling families, not from a diorama print, so the first diorama joint that uses one gets a two-piece coupon cut from the real mating geometry.
 
 Diorama exceptions (say which applies, and why, in the working record):
 - A shaped mounting seat that already locates the object (feet in an adhesive seat, a cradle) is the female half.
@@ -79,7 +79,7 @@ Sources: `moria_layered/balrog_regeneration_r1/print_exports_r1/README.md`, `mor
 
 ## Test lighting as hardware, access, and optics
 
-Follow the shared [lighting and electronics](../../../shared/lighting-and-electronics/lighting-and-electronics.md) method: measured hardware before pockets, installable wired assemblies, visibility and delivery checked separately, and one-variable light-path tests with the real LED. List which exported scene revision includes each real opening.
+Follow the shared [lighting and electronics](../../../shared/lighting-and-electronics/lighting-and-electronics.md) (`shared/lighting-and-electronics/lighting-and-electronics.md`) method: measured hardware before pockets, installable wired assemblies, visibility and delivery checked separately, and one-variable light-path tests with the real LED. List which exported scene revision includes each real opening.
 
 **Dale evidence:** The gate holder's local printed fit passed. Building wells borrowed its pocket size but introduced new carriers, cap seats, and long/bent light paths. A two-house short/long test was prepared; actual wired access and brightness are still pending. No final house holder population or optical success is established by that kit.
 

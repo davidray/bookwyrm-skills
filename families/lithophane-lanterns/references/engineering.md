@@ -25,7 +25,7 @@ Use a representative channel coupon before locking all faces. Long panels need a
 
 Common service patterns include roof-captured vertical panels, removable frames, side-loading channels, or separately fastened panels. Choose by actual assembly and replacement needs.
 
-**Series default for square lanterns:** flat 3.2 mm panel plates drop into 3.8 mm slots from the top, rest on the slot floor, and are captured by the roof (0.2 mm above the panel). The relief faces out toward the viewer and the flat back faces the LEDs, so the image is not mirrored (see [panels and optics](../../../shared/lithophanes/lithophanes.md)). Service order: lift the roof, lift the panel. The lanterns locked before 2026-11-15 were built the old way, flat back out with a mirrored image; David has since ruled that out.
+**Series default for square lanterns:** flat 3.2 mm panel plates drop into 3.8 mm slots from the top, rest on the slot floor, and are captured by the roof (0.2 mm above the panel). The relief faces out toward the viewer and the flat back faces the LEDs, so the image is not mirrored (see [panels and optics](../../../shared/lithophanes/lithophanes.md) (`shared/lithophanes/lithophanes.md`)). Service order: lift the roof, lift the panel. The lanterns locked before 2026-11-15 were built the old way, flat back out with a mirrored image; David has since ruled that out.
 
 A removable roof needs positive location by default: locating pegs into the body (Bag End: four 6 × 5 mm pegs in 6.6 × 6.5 mm holes) or a keyed lip. Gravity-only seating needs David's explicit acceptance. A decorative roof may sit over the body like a lid, with a pocket the body top nests into, as long as it still lifts straight off. The pegs locate the roof; the lid tie-down below holds the stack together.
 
@@ -106,7 +106,7 @@ Choose segmentation from build volume, support burden, panel installation, servi
 
 ## Glued joints: printed male/female tabs (series standard)
 
-Every glued joint uses printed alignment tabs, never dowels or filament pins: see [glued joints](../../../shared/joints-and-assembly/glued-joints.md) for the standard 4.0/4.2 mm tab, the starting sizes, keying and print orientation. Christmas Village v1's base quarters still use filament pins; Doré v1.4 is the worked example of the rule.
+Every glued joint uses printed alignment tabs, never dowels or filament pins: see [glued joints](../../../shared/joints-and-assembly/glued-joints.md) (`shared/joints-and-assembly/glued-joints.md`) for the standard 4.0/4.2 mm tab, the starting sizes, keying and print orientation. Christmas Village v1's base quarters still use filament pins; Doré v1.4 is the worked example of the rule.
 
 None of the non-standard sizes has been printed on a lantern yet, so the first lantern part that uses one gets a two-piece coupon first.
 

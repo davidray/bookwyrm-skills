@@ -5,6 +5,8 @@ description: Develop 3D dioramas from concept art through element decomposition,
 
 # Layered diorama — working draft
 
+Paths such as `shared/...` and `families/...` are from the root of the bookwyrm-skills repo (`~/code/bookwyrm-skills` on David's Mac). Open them from there: a `../` link resolves wrongly when this skill is opened through a link in `~/.claude/skills/`.
+
 Draft collected on 2026-09-22 from the first Smaug/Dale attempt, the layered Dale restart, and layered Moria. Updated through 2026-09-23: the layered workflow shows visual progress and several David-reported local print/fit passes; an end-to-end manufactured result is not yet demonstrated. This repository maintains the working draft and its learning record. Storing it here does not install it as a personal skill.
 
 Read the project's current checkpoint before modeling, and identify the active design attempt and its source boundaries. For reasons behind this workflow and specific failures, consult [the lessons log](references/lessons.md). Use [the working records](references/working-records.md) when starting a project, recording a review, or adding a lesson. Project-specific design choices remain in project checkpoints.
@@ -25,7 +27,7 @@ This is a revisitable sequence. Use simple reserves for later elements early so 
 
 ### Establish printer constraints before committing to scale
 
-Ask early which printer David intends to use, unless the active brief already establishes it. Get the exact model and intended process/configuration, not just a brand or “resin/FDM.” Ask about desired finished dimensions where unknown. For example: “Which printer and setup will you use, and do you have a preferred finished size? I’ll size the components to fit while keeping them whole wherever practical.” Do not assume a printer from an abandoned attempt remains the target. David's printers, build volumes and proven settings are in [print profile](../../shared/print-profile/print-profile.md); confirm which one this scene is for.
+Ask early which printer David intends to use, unless the active brief already establishes it. Get the exact model and intended process/configuration, not just a brand or “resin/FDM.” Ask about desired finished dimensions where unknown. For example: “Which printer and setup will you use, and do you have a preferred finished size? I’ll size the components to fit while keeping them whole wherever practical.” Do not assume a printer from an abandoned attempt remains the target. David's printers, build volumes and proven settings are in [print profile](../../shared/print-profile/print-profile.md) (`shared/print-profile/print-profile.md`); confirm which one this scene is for.
 
 Verify usable X/Y/Z build dimensions from current manufacturer documentation and the selected slicer/machine profile. Record the source, configuration, and any applicable restricted areas. Account for orientation and the space required by supports, brim/raft, or other process necessities; advertised volume and model-only fit are preliminary checks. Avoid inventing a universal clearance margin.
 
@@ -119,7 +121,7 @@ For physical testing, repair, export, and illumination, read [fabrication and li
 
 Verify the delivered file and its native slicer interpretation separately from source topology. Preserve the identity of user-repaired files; do not claim a local pre-repair export is their repaired copy. Recenter and recheck the complete support/raft envelope after support generation. Use representative wired-hardware and optical tests before repeating lighting across the scene; a clear passage or illustrative glow is not a brightness test.
 
-Keep visual, geometry, manufacturing and physical claims distinct, as set out in the shared [evidence and claims](../../shared/evidence-and-claims/evidence-and-claims.md). Use representative test pieces for uncertain joints or thin features before committing a large assembly. Record outcomes; do not assume this draft's source projects have completed that stage.
+Keep visual, geometry, manufacturing and physical claims distinct, as set out in the shared [evidence and claims](../../shared/evidence-and-claims/evidence-and-claims.md) (`shared/evidence-and-claims/evidence-and-claims.md`). Use representative test pieces for uncertain joints or thin features before committing a large assembly. Record outcomes; do not assume this draft's source projects have completed that stage.
 
 ## Review, continuity, and learning
 

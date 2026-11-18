@@ -60,4 +60,4 @@ Color functional reserves distinctly and label them as non-production. Do not le
 
 ## Evidence freshness
 
-See [evidence and claims](../../../shared/evidence-and-claims/evidence-and-claims.md#evidence-freshness): bind review packets to the current geometry, and keep the lit render and the neutral geometry packet both.
+See [evidence and claims](../../../shared/evidence-and-claims/evidence-and-claims.md#evidence-freshness) (`shared/evidence-and-claims/evidence-and-claims.md`): bind review packets to the current geometry, and keep the lit render and the neutral geometry packet both.

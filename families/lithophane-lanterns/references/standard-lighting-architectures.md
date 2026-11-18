@@ -1,6 +1,6 @@
 # Standard lighting architectures
 
-Use these names consistently in every lantern project. Record the selected architecture in the project checkpoint before functional blockout. General lighting method shared with the other families (WLED scenes and presets, boards, light-path tests) is in [lighting and electronics](../../../shared/lighting-and-electronics/lighting-and-electronics.md).
+Use these names consistently in every lantern project. Record the selected architecture in the project checkpoint before functional blockout. General lighting method shared with the other families (WLED scenes and presets, boards, light-path tests) is in [lighting and electronics](../../../shared/lighting-and-electronics/lighting-and-electronics.md) (`shared/lighting-and-electronics/lighting-and-electronics.md`).
 
 ## Split lighting
 
@@ -42,7 +42,7 @@ The board and power details below are the reference hardware set the plate and c
 - Run the divider continuously between keyed base and roof seats. Preserve the hollow center as a protected vertical wiring/service passage, including usable entry and exit openings. The lid tie-down wire shares this bore, so keep a free 10 mm passage beside the LED harness. Leave at least 0.5 mm of vertical clearance at one seat so the tie tension doesn't load the divider.
 - The divider must not block panel installation, panel removal, roof removal, or controller service.
 - Provide one vertical recessed or positively located LED-strip channel on each of the four central post faces.
-- Keep the LED-to-lithophane distance inside the proven range in the [print profile](../../../shared/print-profile/print-profile.md) (about 54–61 mm in David's working lanterns). Set it with the post section, strip offset and panel plane at blockout. A distance outside that range needs a one-chamber light coupon before release, not just a note.
+- Keep the LED-to-lithophane distance inside the proven range in the [print profile](../../../shared/print-profile/print-profile.md) (`shared/print-profile/print-profile.md`) (about 54–61 mm in David's working lanterns). Set it with the post section, strip offset and panel plane at blockout. A distance outside that range needs a one-chamber light coupon before release, not just a note.
 - Mount one vertical addressable-LED strip in each channel, aimed outward toward the corresponding lithophane: four strips of equal length, `4 × N` pixels total. Keep the LEDs and channel edges clear of the two adjacent divider blades so the full lithophane field receives light.
 - Standard strip: BTF-LIGHTING WS2812B, 5 V, 144 LEDs/m (pitch about 6.94 mm), Amazon ASIN B01CDTE9UC. Measure the purchased strip's width, thickness and pixel pitch before fixing the channel; record any other strip as a project-specific departure.
 - Derive the pixel count per strip from the lantern, not a fixed number: `N = floor((H_field − 2 × m) / p)`, where `H_field` is the exposed lithophane image height, `m` is an end margin (start at 2 mm) and `p` is the measured pitch. Center each strip vertically on its panel's field, and use the same `N` on all four faces. Example: a 165 mm field at 144/m gives `N = 23` (about 160 mm), so 92 pixels total.

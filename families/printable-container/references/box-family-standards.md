@@ -1,6 +1,6 @@
 # Box-family standards
 
-Defaults for any new Middle-earth travel case. Reuse them unless the brief says otherwise. They are precedents for this box family, not universal printer tolerances. The printer fleet, materials and proven lithophane and fit settings are in [print profile](../../../shared/print-profile/print-profile.md).
+Defaults for any new Middle-earth travel case. Reuse them unless the brief says otherwise. They are precedents for this box family, not universal printer tolerances. The printer fleet, materials and proven lithophane and fit settings are in [print profile](../../../shared/print-profile/print-profile.md) (`shared/print-profile/print-profile.md`).
 
 | Item | Standard | Status |
 | --- | --- | --- |
@@ -16,7 +16,7 @@ Defaults for any new Middle-earth travel case. Reuse them unless the brief says 
 | Lithophane pane | 204 x 154 mm, square corners, 200 x 150 visible, 0.8 to 2.0 mm thick | Printed |
 | Lid connectors | Set B pair needs 11.84 mm between holder mounting faces; the base holder face is 8.92 mm below the seam, so the lid holder sits 2.92 mm above it (tray r3) | Tray r3 printed in Shire v1.0; flush closure on the connector side not yet confirmed |
 | Feet | Separate printed stumps, glued, keyed by an asymmetric tab with a 0.2 mm gap, or a straight cylinder peg (6.0 mm peg, 6.5 mm hole) | Printed |
-| Glued joints | Printed alignment tabs, never dowels or filament pins (David, 2026-11-15, 2026-11-16). Standard round tab: male 4.0 mm diameter x 4.0 mm tall, female 4.2 mm diameter x 4.2 mm deep. Other tabs 0.2 mm all round, socket 0.2–0.5 mm deeper than the tab, keyed one way. Exceptions: hinges, pivots, joints that are not glued. See [glued joints](../../../shared/joints-and-assembly/glued-joints.md) and the box exceptions in [engineering and validation](engineering-and-validation.md#glued-joints-printed-malefemale-tabs) | Teardrop foot tab printed |
+| Glued joints | Printed alignment tabs, never dowels or filament pins (David, 2026-11-15, 2026-11-16). Standard round tab: male 4.0 mm diameter x 4.0 mm tall, female 4.2 mm diameter x 4.2 mm deep. Other tabs 0.2 mm all round, socket 0.2–0.5 mm deeper than the tab, keyed one way. Exceptions: hinges, pivots, joints that are not glued. See [glued joints](../../../shared/joints-and-assembly/glued-joints.md) (`shared/joints-and-assembly/glued-joints.md`) and the box exceptions in [engineering and validation](engineering-and-validation.md#glued-joints-printed-malefemale-tabs) | Teardrop foot tab printed |
 | Fonts | Luminari for carved text, Trattatello for lithophane text; override per box | Printed |
 
 ## Interiors
