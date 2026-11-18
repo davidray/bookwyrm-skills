@@ -68,7 +68,7 @@ Slice every production part with the intended machine and profile, and inspect t
 
 ## Physical tests
 
-Record each coupon as a named interface under named conditions: printer, nozzle, material, scale, layer height, walls, top and bottom layers, infill, supports and orientation. When the user reports a print result without these, ask for them. When a condition was wrong, invalidate only the conclusions that depend on it.
+Record each coupon as a named interface under named conditions: printer, nozzle, material, scale, layer height, walls, top and bottom layers, infill, supports and orientation. When David reports a print result without these, ask for them. When a condition was wrong, invalidate only the conclusions that depend on it.
 
 Use concrete acceptance language: slides without force, stays retained when inverted, switch is reachable, no visible hotspot at normal viewing distance, panel remains legible. Don't turn "snug" or "pass" into claims about untested retention, optics, heat or the whole assembly. Use representative test pieces for uncertain joints and thin features before committing a large print.
 

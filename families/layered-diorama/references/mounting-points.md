@@ -8,7 +8,7 @@ Identify the mounted object, receiving support, fixed placement/scale, permitted
 
 Keep source files intact. Save a revision with editable construction tools and a baseline for geometry/transform comparisons. Inspect the support mesh before modifying it so existing defects are distinguishable from new ones. A visually accepted support may still be unsuitable for manufacturing.
 
-For the user's current FDM workflow, model parts as solid material volumes and let the slicer control infill. Keep intentional functional voids such as sockets, LED chambers, wire routes, and tunnels. Historical hollow-shell examples below do not authorize hollowing a new part or restoring a superseded manufacturing choice. For other processes, establish the appropriate construction from the active brief.
+For David's current FDM workflow, model parts as solid material volumes and let the slicer control infill. Keep intentional functional voids such as sockets, LED chambers, wire routes, and tunnels. Historical hollow-shell examples below do not authorize hollowing a new part or restoring a superseded manufacturing choice. For other processes, establish the appropriate construction from the active brief.
 
 ## Build and refine the seats incrementally
 
@@ -47,7 +47,7 @@ Full-body Boolean integration produced edge defects and was rejected. The useful
 
 ## Later assembly and physical-fit evidence — September 23 update
 
-Dale progressed beyond the early foot-only study. Removable rear support and cap sections retained the approved assembled contact shapes while permitting a stored compound rigid object motion; the mouth flame fits afterward. A small kit using the actual receiver, full support/cap, and a cropped wing region passed the user's local physical fit test. Preserve those tested interfaces; this result does not prove full-object installation, adhesive loading, or a successful full print.
+Dale progressed beyond the early foot-only study. Removable rear support and cap sections retained the approved assembled contact shapes while permitting a stored compound rigid object motion; the mouth flame fits afterward. A small kit using the actual receiver, full support/cap, and a cropped wing region passed David's local physical fit test. Preserve those tested interfaces; this result does not prove full-object installation, adhesive loading, or a successful full print.
 
 Moria provides a second example: removable paving carriers preserve figure geometry, but carrier-only checks missed surrounding bridge and landing contacts. Later receiver/paving relief resolved the checked path while keeping the figures fixed. Passed resin foot/carrier samples do not qualify the distinct FDM carrier/bridge connection; those receiver tests are pending.
 

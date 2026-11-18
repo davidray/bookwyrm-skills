@@ -1,4 +1,4 @@
-# Dave's art pipeline
+# Art pipeline
 
 Use this in every family when generating concept art, part art, panel art, or AI meshes. It records tools and habits, not product design; recheck tool availability and prices before relying on them. It grew out of the lanterns, so its examples are mostly lanterns.
 
@@ -11,7 +11,7 @@ Use this in every family when generating concept art, part art, panel art, or AI
 
 ## Spending
 
-- Ask before each spend, with the estimated cost, and cap it. A device-side permission check may require the user's approval in the same thread.
+- Ask before each spend, with the estimated cost, and cap it. A device-side permission check may require David's approval in the same thread.
 - Record task IDs, credits spent, and the balance in the checkpoint.
 - Per-call prices are in [image to 3D](../image-to-3d/image-to-3d.md#engines-and-prices). The split below uses rough Meshy-era numbers (about 9 per image, 20 per mesh); rescale it to the current engine's prices.
 - Read the live balance before the first spend; checkpoint balances go stale.
@@ -33,7 +33,7 @@ Use this in every family when generating concept art, part art, panel art, or AI
 
 See [image to 3D](../image-to-3d/image-to-3d.md): draw the input as a sculpt, use a four-view sheet when shape matters, scale before judging, and check the sides the art doesn't show.
 
-## Review habits the user relies on
+## Review habits David relies on
 
 - Show the raw generated model before any fitting.
 - Put the approved art beside every model render.

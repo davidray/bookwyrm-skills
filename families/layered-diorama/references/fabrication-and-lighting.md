@@ -4,7 +4,7 @@ Collected September 23, 2026 from continued Dale and Moria work. These are reusa
 
 ## Separate parts by function and assembly needs
 
-Distinguish an assembly joint from a cut made only to fit a printer. Removable object carriers, support caps, service trays, and light inserts can preserve a whole character and the assembled appearance while making installation or maintenance possible. Honor the user's chosen responsibility for plate-size cuts; do not add arbitrary seams when they intend to handle those in the slicer.
+Distinguish an assembly joint from a cut made only to fit a printer. Removable object carriers, support caps, service trays, and light inserts can preserve a whole character and the assembled appearance while making installation or maintenance possible. Honor David's chosen responsibility for plate-size cuts; do not add arbitrary seams when they intend to handle those in the slicer.
 
 Plan assembly with every fixed component present. Record which parts move together, which supports are absent at each stage, and which fragile accessories install last. Check the assembled pose and intermediate motion, including modifiers/evaluated geometry where relevant. A carrier-only check cannot qualify clearance against the surrounding bridge, landing, or scenery. Keep numerical contact thresholds and excluded geometry explicit.
 
@@ -22,9 +22,9 @@ Record interface identity, file revision, settings actually known, hardware, and
 
 After a pass, protect the tested surfaces and dimensions during later sculpting, repair, consolidation, and export. Compare against the tested artifact, not merely the most recent scene. If a necessary change reaches that interface, identify the changed region and determine which test must be repeated. Do not silently improve a working fit.
 
-**Dale evidence:** The first gate LED pocket and slide were physically tight despite digital checks. Revised pocket/slide clearances and entry bevels passed the user's local fit test; both revised mating parts were required. The wing-support kit also passed. Early PLA fin tests accepted 1.0/1.2/1.6 mm and rejected 0.8 mm, but did not qualify a full wing or its root.
+**Dale evidence:** The first gate LED pocket and slide were physically tight despite digital checks. Revised pocket/slide clearances and entry bevels passed David's local fit test; both revised mating parts were required. The wing-support kit also passed. Early PLA fin tests accepted 1.0/1.2/1.6 mm and rejected 0.8 mm, but did not qualify a full wing or its root.
 
-**Moria evidence:** The user reported passes for the selected wire bore, root joint, foot interface, and wing sample. A two-notch coupon identified the 1.0 mm nominal bore for 0.8 mm nominal wire. These dimensions are case results, not universal clearances or proof of full-whip strength. FDM carrier-to-bridge tests remain pending.
+**Moria evidence:** David reported passes for the selected wire bore, root joint, foot interface, and wing sample. A two-notch coupon identified the 1.0 mm nominal bore for 0.8 mm nominal wire. These dimensions are case results, not universal clearances or proof of full-whip strength. FDM carrier-to-bridge tests remain pending.
 
 Sources: `v3_layered/CHECKPOINT.md`, `v3_layered/gate_led_r2/README.md`, `v3_layered/mount_fit_r1/README.md`, `moria_layered/balrog_regeneration_r1/print_exports_r1/README.md`, `moria_layered/structure_print_r1/README.md`.
 
@@ -53,11 +53,11 @@ Sources: `v3_layered/mountain_intersections_r3/README.md`, `moria_layered/struct
 
 ## Solid construction does not eliminate every thin feature
 
-Follow the active manufacturing decision, including the user's solid-volume FDM rule and intentional functional voids. Treat other processes and individual parts according to their current instructions; do not infer automatic hollowing from resin use. Moria's current figures are explicitly solid too.
+Follow the active manufacturing decision, including David's solid-volume FDM rule and intentional functional voids. Treat other processes and individual parts according to their current instructions; do not infer automatic hollowing from resin use. Moria's current figures are explicitly solid too.
 
 A filled body can still have thin projecting cloth, membranes, tips, and bridges between details. Use failure photographs to identify the physical problem. Where authorized, add support material behind the feature or bridge an internal gap while preserving the visible sculpt and tested contacts. Compare actual sections and multiple exterior views. Directional material spans are not exact minimum wall thickness, and filling an underside may become visible through openings.
 
-**Evidence:** Gandalf printed with recurring cape holes in both hollow and solid versions. The user requested a connected cape-to-robe underside fill. The candidate preserved main visible folds and sampled sole contacts, but its new physical outcome remains pending. Broad fills that obscured folds were rejected. Dale's corrected solid dragon export supersedes its hollow reinforcement export; its new one-piece result is not yet reported.
+**Evidence:** Gandalf printed with recurring cape holes in both hollow and solid versions. David requested a connected cape-to-robe underside fill. The candidate preserved main visible folds and sampled sole contacts, but its new physical outcome remains pending. Broad fills that obscured folds were rejected. Dale's corrected solid dragon export supersedes its hollow reinforcement export; its new one-piece result is not yet reported.
 
 Sources: `moria_layered/gandalf_cape_fill_r1/README.md`, `moria_layered/solid_characters_r1/README.md`, `v3_layered/dragon_solid_r1/README.md`.
 
@@ -69,11 +69,11 @@ Keep source-mesh checks, exported-file checks, native import, repair reports, la
 
 An indexed 3MF may preserve connectivity that coordinate-welded STL export changes. Verify its roundtrip rather than assuming the format fixes geometry. Distinguish geometry-only 3MF, a native slicer project, and machine output; the extension alone does not establish embedded settings, supports, or readiness.
 
-If the user repairs the model in a slicer, record that as a separate artifact. Until that exact file is received and compared, do not reissue the unrepaired local export as the repaired version or overwrite the user's result. Native repair can change tested interfaces and needs appropriate revalidation.
+If David repairs the model in a slicer, record that as a separate artifact. Until that exact file is received and compared, do not reissue the unrepaired local export as the repaired version or overwrite David's result. Native repair can change tested interfaces and needs appropriate revalidation.
 
 Recheck plate centering and the complete raft/support envelope after orientation and support generation. Label the frame for angles and whether scale is already baked in. Recheck layers, islands, contact damage, and removal access after geometry changes; an old slice does not update itself.
 
-**Evidence:** Balrog's indexed 3MF preserved geometry after STL welding exposed defects; the user subsequently reported clean native import and body fit. Gandalf's cape STL passed local topology checks but triggered SatelLite repair. The user-repaired copy is not available locally; the local STL remains pre-repair. Moria's large FDM files import as manifold while independent intersection flags remain. An earlier Gandalf import also needed centering, repeated after supports.
+**Evidence:** Balrog's indexed 3MF preserved geometry after STL welding exposed defects; David subsequently reported clean native import and body fit. Gandalf's cape STL passed local topology checks but triggered SatelLite repair. David-repaired copy is not available locally; the local STL remains pre-repair. Moria's large FDM files import as manifold while independent intersection flags remain. An earlier Gandalf import also needed centering, repeated after supports.
 
 Sources: `moria_layered/balrog_regeneration_r1/print_exports_r1/README.md`, `moria_layered/gandalf_cape_fill_r1/README.md`, `moria_layered/structure_print_r1/README.md`, `moria_layered/CHECKPOINT.md` (Gandalf print-test record), `v3_layered/dragon_solid_r1/README.md`.
 

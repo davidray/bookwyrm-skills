@@ -13,14 +13,14 @@ Record which source governs each property rather than treating every reference a
 - dimensional and functional requirements;
 - later user clarifications.
 
-A generated concept establishes visible intent, not reliable hidden geometry. Labels or pictured hardware become requirements only through the user's instructions or measurements. A later focused reference may replace one element without replacing the whole design.
+A generated concept establishes visible intent, not reliable hidden geometry. Labels or pictured hardware become requirements only through David's instructions or measurements. A later focused reference may replace one element without replacing the whole design.
 
 When sources differ or are incomplete, apply this order:
 
 1. Supplied or explicitly identified user references govern the visual properties assigned to them.
 2. Explicit user requirements govern contents and function.
-3. Generated concepts are provisional until the user approves them.
-4. Approved generated concepts govern only the visible properties the user reviewed.
+3. Generated concepts are provisional until David approves them.
+4. Approved generated concepts govern only the visible properties David reviewed.
 5. Depicted mechanics remain proposals until designed and validated.
 
 For a single-color hand-painted object, keep four review lanes apart: sculptural fidelity (the printed relief), paintability (boundaries a brush can follow), the finish plan (palette and painted look), and physical optics (the real light path, for lithophanes and lit parts). A painted render informs the finish plan only.
@@ -44,7 +44,7 @@ For recognizable organic elements, establish anatomy, gesture, attachments, and 
 
 ## Faithfulness review
 
-Compare the authoritative concept with renders of the actual current model, side by side in one image the user can judge. Use matched viewpoints or silhouette overlays when practical, plus diagnostic views for hidden contacts. Do not rely only on the most attractive presentation render.
+Compare the authoritative concept with renders of the actual current model, side by side in one image David can judge. Use matched viewpoints or silhouette overlays when practical, plus diagnostic views for hidden contacts. Do not rely only on the most attractive presentation render.
 
 Review:
 
@@ -71,7 +71,7 @@ Record every visually meaningful departure:
 | Modeled change | What differs in the current design |
 | Classification | Required compromise, chosen adaptation, accidental drift, unresolved ambiguity, or faithful as modeled |
 | Reason | Strength, process, assembly, safety, protected function, user preference, or other evidence |
-| Visible effect | What the user will notice and from which views |
+| Visible effect | What David will notice and from which views |
 | Alternatives | Credible options and their visual, functional, cost, or risk tradeoffs |
 | Recommendation | Builder's recommended choice without treating it as approval |
 | User decision | Accepted, rejected, revised, or pending |

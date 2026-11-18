@@ -1,6 +1,6 @@
 # Box-family standards
 
-Defaults for any new Middle-earth travel case. Reuse them unless the brief says otherwise. They are precedents for this box family, not universal printer tolerances. The printer fleet, materials and proven lithophane and fit settings are in [Dave's print profile](../../../shared/print-profile/print-profile.md).
+Defaults for any new Middle-earth travel case. Reuse them unless the brief says otherwise. They are precedents for this box family, not universal printer tolerances. The printer fleet, materials and proven lithophane and fit settings are in [print profile](../../../shared/print-profile/print-profile.md).
 
 | Item | Standard | Status |
 | --- | --- | --- |
@@ -23,6 +23,6 @@ Defaults for any new Middle-earth travel case. Reuse them unless the brief says 
 
 - Use standard Gridfinity so shop and online bins fit. The plate (219 x 191 mm) is longer than the lid opening (170 mm), so it goes in tilted at about 25 degrees, front edge first, under the connector shelf. Write the install steps in the guide.
 - Multi-cell bins must rest on the cell bottoms, not the plate ribs. Ours sat high until fixed; check the seat in a section.
-- When the user doesn't want to measure their gear, size bins from typical published dimensions and say so in the guide.
+- When David doesn't want to measure their gear, size bins from typical published dimensions and say so in the guide.
 - For a liner (felt, leather), supply a 1:1 cutting template as PDF (with a scale bar), SVG and a printed tracing plate.
 - Basement panels are plain, magnet-held panels under the Gridfinity plate, lifted with a magnetic key. Install all panel magnets the same way up and check the key attracts before gluing.

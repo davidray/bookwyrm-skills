@@ -49,7 +49,7 @@ The family skills were copied in with their git history (blame still works):
 | `workshop/` | bookwyrm-rpg `services/library/skills/publish-to-the-hoard/`, rewritten for drafts and change sets |
 | `tools/check_piece_json.py` | bookwyrm-rpg `services/library/tools/` |
 
-Until a family repo is switched over to this repo, its own copy of the skill is the one in use there. The plan is in bookwyrm-rpg `.hero/planning/initiatives/skills-and-store/spec.md`.
+Every family repo has switched over: its old skill folder holds only a pointer here. The design is in bookwyrm-rpg `.hero/planning/initiatives/skills-and-store/spec.md`.
 
 ## Tests
 

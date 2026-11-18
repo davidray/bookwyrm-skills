@@ -34,7 +34,7 @@ For hand-painted work, every paint transition needs a physical boundary in the p
 
 ## Get the concept art approved
 
-Before the blockout, show the user a concept image: their own reference, or generated art when the brief is words only. Do not make concept art in Blender. Reconcile the contents with the user's own nouns and quantities first (a dice tray stays a dice tray). Label generated art as a provisional interpretation and list what it invents: style, layout, closure, magnets, electronics, scale.
+Before the blockout, show David a concept image: their own reference, or generated art when the brief is words only. Do not make concept art in Blender. Reconcile the contents with David's own nouns and quantities first (a dice tray stays a dice tray). Label generated art as a provisional interpretation and list what it invents: style, layout, closure, magnets, electronics, scale.
 
 Get an explicit approval, revision request, or deferral of the image itself, not of a description. A plain "approved" covers the most recent image and its visible properties only. It never approves dimensions, hidden construction, or pictured mechanisms such as magnets, hinges or latches; those stay proposals until designed and tested. Re-ask if the concept, interior or function changes materially.
 
@@ -54,19 +54,19 @@ Fit purchased parts (tea lights, magnets, batteries, boards) with generous clear
 4. Develop the design as editable systems: shell, mechanisms, inserts, decoration, sculpture, lighting/electronics, and release geometry. Preserve accepted sources and change locally.
 5. Choose methods by form: dimension-controlled solids for functional geometry; generated or sculpted meshes converted to height maps for organic relief (bark, roots, figures); authored height maps for architecture, line art and lettering, where exact widths and placement matter (Shire hillside, Moria Doors); exact CSG for anything that mates. Blender, interactive or headless `bpy`, holds the authoritative source model; do not use OpenSCAD or another parametric CAD tool for the container. Scripted primitives and bevel curves cannot produce carved relief; six Mirkwood blockout revisions proved it. Pick a method that can reach the target look before iterating on it. Never hand-build detailed or decorative 3D parts in code (figures, stairs, decks, railings, brackets); generate them with the 3D generator ([image to 3D](../../shared/image-to-3d/image-to-3d.md) names the engines, how to call them and their prices). Code is for structural and parametric geometry only (David, 2026-11-14).
 6. Engineer solid material volumes at final scale. Let the slicer create infill; create voids only when they serve a deliberate function.
-7. Build decoration into the real shell and lid rather than adding parts. Carve walls, not upward-facing tops; lid tops stay flat for now. Every added piece (a glued bezel, a skin) needs a reason the user accepts. Never use dowels (David, 2026-11-16). Where two printed faces are glued, align them with printed alignment tabs: male 4.0 mm in diameter and 4.0 mm tall, female 4.2 mm in diameter and 4.2 mm deep (hinges, pivots and joints that are not glued need none); see [engineering and validation](references/engineering-and-validation.md), glued joints. Decide print orientation before carving a face: a face printed against the bed comes out flat.
+7. Build decoration into the real shell and lid rather than adding parts. Carve walls, not upward-facing tops; lid tops stay flat for now. Every added piece (a glued bezel, a skin) needs a reason David accepts. Never use dowels (David, 2026-11-16). Where two printed faces are glued, align them with printed alignment tabs: male 4.0 mm in diameter and 4.0 mm tall, female 4.2 mm in diameter and 4.2 mm deep (hinges, pivots and joints that are not glued need none); see [engineering and validation](references/engineering-and-validation.md), glued joints. Decide print orientation before carving a face: a face printed against the bed comes out flat.
 
 ## Retire uncertainty cheaply
 
-For every consequential unknown, ask what smallest test can answer it. Prefer representative coupons or shallow interface assemblies before full-size parts. Test such things as sliding clearance, magnet pockets, hinge motion, connector engagement, panel retention, feature thickness, optical spacing, hardware envelopes, paint allowance, and support removal using the intended material, printer, orientation, and slicer profile. When the user says a coupon is not needed for a simple feature, skip it.
+For every consequential unknown, ask what smallest test can answer it. Prefer representative coupons or shallow interface assemblies before full-size parts. Test such things as sliding clearance, magnet pockets, hinge motion, connector engagement, panel retention, feature thickness, optical spacing, hardware envelopes, paint allowance, and support removal using the intended material, printer, orientation, and slicer profile. When David says a coupon is not needed for a simple feature, skip it.
 
 Record actual dimensions and outcomes. A successful test locks only the tested interface and conditions; it does not qualify the entire assembly. Physical results outrank unsupported digital confidence.
 
-## Review with the user's eye
+## Review with David's eye
 
-The user's reaction to a matched render is the faithfulness verdict. Put the concept and the current model, rendered from the same view, side by side in one image, and make a new one for every visible revision before it replaces the last. An audit score never overrides that look: Mirkwood blockout r6 passed an AI audit at 85/100 while its renders were plainly far from the concept.
+David's reaction to a matched render is the faithfulness verdict. Put the concept and the current model, rendered from the same view, side by side in one image, and make a new one for every visible revision before it replaces the last. An audit score never overrides that look: Mirkwood blockout r6 passed an AI audit at 85/100 while its renders were plainly far from the concept.
 
-Keep review proportional. `scripts/` holds optional checkers from the earlier gated process (scorecards, production-relief records, delivery-gate state); use them only when a project asks for that rigor. Run the short self-checks in [reviews](references/reviews.md) before long prints and before handing over a print folder. Use an independent reviewer only for a new box architecture, a safety-relevant change, or when the user asks. Hashes, manifests and scorecards do not improve geometry; record only what changes decisions.
+Keep review proportional. `scripts/` holds optional checkers from the earlier gated process (scorecards, production-relief records, delivery-gate state); use them only when a project asks for that rigor. Run the short self-checks in [reviews](references/reviews.md) before long prints and before handing over a print folder. Use an independent reviewer only for a new box architecture, a safety-relevant change, or when David asks. Hashes, manifests and scorecards do not improve geometry; record only what changes decisions.
 
 ## Keep claims honest
 
@@ -84,15 +84,15 @@ Audit the exported files rather than relying only on the source scene: units, sc
 - Test a print-in-place mechanism on its own before the full part, and check its clearance through the whole motion.
 - Include a PRINT-AND-TEST.md with print order, orientation, supports, hardware, assembly steps, and what is still untested. For a multi-part build, add the pictures that make assembly unambiguous: an exploded view, a sectional stack, numbered steps, front and up markers, and magnet polarity.
 
-## When the user delegates decisions
+## When David delegates decisions
 
-If the user hands over their own calls ("make all the decisions", an unattended test):
+If David hands over their own calls ("make all the decisions", an unattended test):
 
-- Keep a decision log. Mark every call made in the user's place PROXY, with the reason, so the user can overrule each one.
-- Some verdicts stay the user's: whether the result looks right against the concept, any compromise to the focal design, and any release or lock. Deliver at prototype status and ask for those.
+- Keep a decision log. Mark every call made in David's place PROXY, with the reason, so David can overrule each one.
+- Some verdicts stay David's: whether the result looks right against the concept, any compromise to the focal design, and any release or lock. Deliver at prototype status and ask for those.
 - Record every skipped test as a guess, with what would prove it wrong, and still put the coupon in the print folder.
 - Before handing over, have an independent skeptic (a separate agent given the files, not your conclusions) look for over-claims. In the Moria test the builder graded itself generously until challenged; the skeptic caught a blurred inscription and stale files.
 
 ## Release and lock
 
-When the user says to cut a version or lock it, save it as a draft through the workshop skill (`workshop/SKILL.md` in this repo), laid out as described in [project records](references/project-records.md): part table with physical status per part and the mesh audit. The user promotes it as `vX.Y`. A promoted revision never changes; any geometry change is a new draft.
+When David says to cut a version or lock it, save it as a draft through the workshop skill (`workshop/SKILL.md` in this repo), laid out as described in [project records](references/project-records.md): part table with physical status per part and the mesh audit. David promotes it as `vX.Y`. A promoted revision never changes; any geometry change is a new draft.

@@ -24,7 +24,7 @@ Evidence now includes controllable iteration, preservation, improved visual dire
 
 **Evidence:** Accuracy review (local source: `ACCURACY_REVIEW_V2.md`), especially overall judgment and correction order. Historical print notes (local source: `PRINT_NOTES_V2.md`) record successful topology/import checks alongside untested physical printing.
 
-**Confidence:** Strong case-supported lesson. The review diagnoses V2; the user's total-failure assessment covers the first attempt more broadly.
+**Confidence:** Strong case-supported lesson. The review diagnoses V2; David's total-failure assessment covers the first attempt more broadly.
 
 ## L02 — Layering contains the cost of a wrong turn
 
@@ -58,7 +58,7 @@ Evidence now includes controllable iteration, preservation, improved visual dire
 
 ## L05 — Choose the construction method by the subject
 
-**Observation:** Repeated procedural character refinements did not satisfy the eventual realism target. Both Moria character styles were rejected. A restart used film-design references, isolated AI studies, and local image-to-3D; the user liked the new direction. Dale also moved to an accepted isolated dragon study and reconstruction.
+**Observation:** Repeated procedural character refinements did not satisfy the eventual realism target. Both Moria character styles were rejected. A restart used film-design references, isolated AI studies, and local image-to-3D; David liked the new direction. Dale also moved to an accepted isolated dragon study and reconstruction.
 
 **Changed practice:** Consider reference-driven organic modeling early. If likeness and anatomy remain fundamentally wrong, change that component's source or method instead of adding more procedural detail. Procedural control remains useful for architecture, environment, fitting, and targeted edits.
 
@@ -78,7 +78,7 @@ Evidence now includes controllable iteration, preservation, improved visual dire
 
 ## L07 — Source authority and approval have scope
 
-**Observation:** Moria's original concept still governs environment composition, while later film references govern character style. The user replaced a lit lithophane idea with an opaque, unlit backdrop. Dale's accepted dragon image is not a mesh, and accepted placement does not qualify its mounts. Intermediate praise of fire did not approve roof-rooted placement after the ground-route correction.
+**Observation:** Moria's original concept still governs environment composition, while later film references govern character style. David replaced a lit lithophane idea with an opaque, unlit backdrop. Dale's accepted dragon image is not a mesh, and accepted placement does not qualify its mounts. Intermediate praise of fire did not approve roof-rooted placement after the ground-route correction.
 
 **Changed practice:** Track which reference governs which property. Record acceptance separately for reference, shape, placement, and engineering. A new clarification supersedes an old assumption; art-sheet annotations do not automatically become requirements.
 
@@ -98,7 +98,7 @@ Evidence now includes controllable iteration, preservation, improved visual dire
 
 ## L09 — Story and spatial relationships must drive effects
 
-**Observation:** Smaug is finishing his attack, so residual fire belongs along the path behind him. Earlier studies put fire on roofs; the user clarified ground-spreading fire between houses. Later corrections broadened impact, connected it to the ground without covering the building, and replaced a gelatinous appearance with burning-gasoline direction: turbulent folds, expansion, and splash.
+**Observation:** Smaug is finishing his attack, so residual fire belongs along the path behind him. Earlier studies put fire on roofs; David clarified ground-spreading fire between houses. Later corrections broadened impact, connected it to the ground without covering the building, and replaced a gelatinous appearance with burning-gasoline direction: turbulent folds, expansion, and splash.
 
 **Changed practice:** Resolve effect origin, route, supporting surface, chronology, and occlusion before micro-shape. Use reference crops to settle uncertain depth/contact. Keep the effect independent of established architecture and character placement.
 
@@ -138,7 +138,7 @@ Evidence now includes controllable iteration, preservation, improved visual dire
 
 ## L13 — Prompt size is a workflow constraint; design for a small, restartable conversation
 
-**Observation:** The user identifies an oversized-prompt incident in the second Dale attempt. The earlier task **Fix oversized session error** records `decompressed request body exceeds 67108864 bytes`. That is an observed request-size rejection; the relative contribution of images, tool outputs, and other history was not measured. Workspace instructions subsequently require local originals, compact contact sheets, bounded output, and checkpoints.
+**Observation:** David identifies an oversized-prompt incident in the second Dale attempt. The earlier task **Fix oversized session error** records `decompressed request body exceeds 67108864 bytes`. That is an observed request-size rejection; the relative contribution of images, tool outputs, and other history was not measured. Workspace instructions subsequently require local originals, compact contact sheets, bounded output, and checkpoints.
 
 **Changed practice:** Create compact review derivatives before loading images; avoid repeated ingestion of unchanged views. Keep heavy data on disk and filter tool/history results before returning them. Maintain a checkpoint that permits continuation without the old transcript. After a failure, stop unchanged retries, verify saved work/jobs, and prepare a minimal fresh-task handoff when needed. Do not assume token compaction or a history-carrying fork solves the byte limit.
 
@@ -148,27 +148,27 @@ Evidence now includes controllable iteration, preservation, improved visual dire
 
 ## L14 — Ask for a focused concept crop when local iterations stop converging
 
-**Observation:** The user reports better results after supplying a screenshot of the exact concept-art region to model, and asks that the assistant proactively request one when an area needs repeated corrections or the work goes in circles. Dale's ground-fire, impact-base, and wall-clearance corrections provide recorded examples of localized reference use.
+**Observation:** David reports better results after supplying a screenshot of the exact concept-art region to model, and asks that the assistant proactively request one when an area needs repeated corrections or the work goes in circles. Dale's ground-fire, impact-base, and wall-clearance corrections provide recorded examples of localized reference use.
 
 **Changed practice:** Recognize repeated unresolved corrections as a reference/interpretation problem before attempting another variation. Ask for a small crop with enough context and the specific relationship to match; inspect an existing suitable crop first. Record the clarified constraint and review the next actual model against it. Continue independent work while waiting instead of further guessing at that feature.
 
 **Evidence:** User guidance in **Draft diorama pipeline skill**, 2026-09-22; Dale checkpoint (local source: `v3_layered/CHECKPOINT.md`) records the supplied ground-fire and flame-base crops and their corrections.
 
-**Confidence:** Direct user-reported improvement and requested working practice. The trigger is lack of convergence, not a universal maximum number of revisions. A crop clarifies intent but cannot supply hidden geometry or guarantee a correct reconstruction.
+**Confidence:** Direct David-reported improvement and requested working practice. The trigger is lack of convergence, not a universal maximum number of revisions. A crop clarifies intent but cannot supply hidden geometry or guarantee a correct reconstruction.
 
 ## L15 — Preserve technical learning without importing abandoned design decisions
 
-**Observation:** The user reports that design choices from the abandoned Dale attempt bled into the second attempt. This is an unwanted continuity failure. This report does not establish every affected choice or the precise mechanism that imported it.
+**Observation:** David reports that design choices from the abandoned Dale attempt bled into the second attempt. This is an unwanted continuity failure. This report does not establish every affected choice or the precise mechanism that imported it.
 
 **Changed practice:** Record an active attempt and explicit design-source boundaries. Within a restarted scope, allow only current references and retained/re-adopted choices to guide the design. Reuse technical methods after inspecting embedded assumptions; exclude abandoned geometry and design defaults unless explicitly brought forward. Check source paths and decision provenance before review and handoff. Distinguish a new conversation continuing a design from a new design attempt.
 
 **Evidence:** Direct user report and requested prevention in **Draft diorama pipeline skill**, 2026-09-22. Workspace instructions (local source: `AGENTS.md`) already exclude specific superseded/deleted sources; the new rule extends that protection to decision provenance. See the [attempt record](working-records.md) for the practical format.
 
-**Confidence:** User-confirmed failure; the prevention procedure is newly added and not yet demonstrated on another restart. Apply it to the user's stated restart scope so it does not discard valid environment work or standing requirements.
+**Confidence:** User-confirmed failure; the prevention procedure is newly added and not yet demonstrated on another restart. Apply it to David's stated restart scope so it does not discard valid environment work or standing requirements.
 
 ## L16 — Give each tweak a focused iteration
 
-**Observation:** The user reports better results when asking for one change at a time. Bundling multiple tweaks, especially those requiring interpretation or design thinking, has reduced the quality of individual changes in their experience.
+**Observation:** David reports better results when asking for one change at a time. Bundling multiple tweaks, especially those requiring interpretation or design thinking, has reduced the quality of individual changes in their experience.
 
 **Changed practice:** When a tweak prompt bundles too many independent or ambiguous design decisions, give brief feedback naming them, explain the benefit of splitting the work, and propose a first change and sequence. Use complexity and uncertainty rather than a fixed count. Organize refinement around one clear outcome and its before/after comparison. Preserve unrelated geometry, placement, materials, and lighting. Keep other requested changes in a visible queue and validate each in sequence rather than attempting all as one undifferentiated pass. Coupled edits necessary for the same outcome can stay together. Ask for review when a later change depends on an unresolved decision, without creating mandatory approval gates for every edit.
 
@@ -178,7 +178,7 @@ Evidence now includes controllable iteration, preservation, improved visual dire
 
 ## L17 — Establish printer limits early and prefer whole parts
 
-**Observation:** The user requests an early question about the intended printer so the build can be scaled to its maximum usable print size. Their preference is to avoid splitting parts solely to fit the plate wherever practical.
+**Observation:** David requests an early question about the intended printer so the build can be scaled to its maximum usable print size. Their preference is to avoid splitting parts solely to fit the plate wherever practical.
 
 **Changed practice:** Establish the exact printer/configuration, verify usable X/Y/Z dimensions and source, and assess the limiting components before committing to scene scale. Allow space for the actual print orientation and supports/adhesion structures. Prefer fitting each intended part whole through practical orientation and coherent overall scale. When this conflicts with desired size or printable detail, explain the alternatives before changing an accepted scale or introducing cuts. Keep printer assumptions tied to the active project.
 
@@ -238,7 +238,7 @@ Evidence now includes controllable iteration, preservation, improved visual dire
 
 ## L23 — A solid body can still contain fragile projecting features
 
-**Observation:** Gandalf's cape developed holes in both hollow and solid prints. The user requested a constrained fill beneath it. Dale also explicitly superseded hollow FDM construction with solid material volumes and slicer-controlled infill.
+**Observation:** Gandalf's cape developed holes in both hollow and solid prints. David requested a constrained fill beneath it. Dale also explicitly superseded hollow FDM construction with solid material volumes and slicer-controlled infill.
 
 **Changed practice:** Follow the active material-volume decision, preserve functional voids, and inspect thin projections separately. Use annotated print feedback to place supporting material without obscuring visible folds or changing tested contacts. Do not confuse directional material spans with minimum thickness or claim the issue fixed before a physical retest.
 

@@ -66,7 +66,7 @@ Paper-based image calibration provided workable plan estimates, but height and p
 
 An early lid concept misunderstood which surface became the dice tray when the complete lid was removed and inverted. That was an architectural issue, not a detail error.
 
-**Process change:** before CAD, illustrate every operating state: closed, open, removed, inverted, loaded, serviced, carried, and stored. Show which face is up and where the user's hands act.
+**Process change:** before CAD, illustrate every operating state: closed, open, removed, inverted, loaded, serviced, carried, and stored. Show which face is up and where David's hands act.
 
 ### 4. Datums were sometimes named imprecisely
 
@@ -125,7 +125,7 @@ A 5 × 2 mm magnet pocket that works behind a 0.8 mm roof against a steel miniat
 
 Six scripted Mirkwood blockouts laid bevel curves and primitives on a plain box and never looked carved, even though an AI audit passed revision 6 at 85/100. One 3D-generator pass, wrapped onto the real shell as a height map, matched the concept.
 
-**Process change:** pick a method that can reach the target look before iterating on it. Judge progress by a side-by-side render the user looks at, not by audit scores.
+**Process change:** pick a method that can reach the target look before iterating on it. Judge progress by a side-by-side render David looks at, not by audit scores.
 
 ### 2. Concept art carried the wrong proportions
 
@@ -155,7 +155,7 @@ A remesh rounded the Shire foot pegs and flared their sides, and they failed the
 
 Flattening lid art painted at an angle stretched Bilbo 1.6x. The local image model drifted to cartoon over three rounds. David's own photoreal image, brightened heavily, gave a test crop and full pane that both looked great.
 
-**Process change:** generate the scene flat at the pane's aspect, escalate to a stronger model or the user's image after two misses, and brighten for backlight.
+**Process change:** generate the scene flat at the pane's aspect, escalate to a stronger model or David's image after two misses, and brighten for backlight.
 
 ### 7. Inherited parts hid faults
 
@@ -241,7 +241,7 @@ David asked several times where the lithophane and the light tray were, because 
 
 ### Gate 8 — Assembly communication
 
-- Create the assembly picture before the user starts the full print.
+- Create the assembly picture before David starts the full print.
 - Include a parts list, quantities, hardware, magnet polarity, liners, adhesives, and tool access.
 - Show how each module is removed and serviced.
 

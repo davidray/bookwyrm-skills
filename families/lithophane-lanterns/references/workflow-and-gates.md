@@ -16,7 +16,7 @@ Check the overall size against the series. The series sizes are kept consistent 
 
 Ask for approval of named visible properties such as silhouette, composition, roof language, supports, panel prominence, and illuminated mood. Concept approval authorizes blockout only; it does not validate hidden construction, dimensions, panel performance, mechanics, safety, or printability.
 
-Keep the approved concept's look intact. If you think a visible feature is a printing risk, list it separately as your proposal, with the evidence, and let the user decide. Do not record it as an approved "production change". (Dragon: "wings folded" was the agent's idea, written in as if approved; the user has printed many open wings without trouble.)
+Keep the approved concept's look intact. If you think a visible feature is a printing risk, list it separately as your proposal, with the evidence, and let David decide. Do not record it as an approved "production change". (Dragon: "wings folded" was the agent's idea, written in as if approved; David has printed many open wings without trouble.)
 
 ## 2. Functional blockout
 
@@ -45,7 +45,7 @@ Obtain visual/functional blockout review before expensive detail. A material cha
 Do not decorate the whole lantern at once. Procedural whole-lantern decor and AI meshes fitted straight onto the whole blockout both fell well short of the concept on every lantern tried. Work part by part:
 
 1. **Split the decoration into a few parts** (for example: plinth, corner column, panel surround, cornice and roof; or plinth plus four trees). Repeated parts are designed once and placed several times. Part boundaries should make sense as print or assembly segments where possible, but the visual split comes first.
-2. **Write a part brief** for each: which of the approved concept's named visible properties it owns, what it owns visually, which protected interfaces it must respect, and the key protected dimensions (for example "upper step at least 90% of the lower step's width"). Check the art against the blockout and against the visible properties it owns before turning it into 3D. Plinth art twice came back too narrow to carry the body; Lake-town body art came back as an open frame that dropped the concept's plank walls and still missed its ratio. Art that fails either check is regenerated or the failure goes to the user; do not accept it and plan to fix it later.
+2. **Write a part brief** for each: which of the approved concept's named visible properties it owns, what it owns visually, which protected interfaces it must respect, and the key protected dimensions (for example "upper step at least 90% of the lower step's width"). Check the art against the blockout and against the visible properties it owns before turning it into 3D. Plinth art twice came back too narrow to carry the body; Lake-town body art came back as an open frame that dropped the concept's plank walls and still missed its ratio. Art that fails either check is regenerated or the failure goes to David; do not accept it and plan to fix it later.
 
    A part brief also says:
    - **What the part must not include, and where it ends.** For example: no columns under the roof; no slab or plinth on the body; the body ends at the eave line. When parts are cut from a fused scene, the generator adds the neighbours back.
@@ -82,7 +82,7 @@ Export each production part from the current source. Round-trip it, audit the ex
 
 ## Autonomous runs
 
-When the user hands every decision to the agent (a stress test, or "make all the decisions"), keep every gate but replace the user's approvals with an independent review: a separate agent that is given only the approved art, the current renders, and the gate's checklist, not the builder's reasoning. Use it at gate 1 (concept and named properties), gate 2 (blockout and functional checks), gate 3 (each part, the engineered meshes, and the final matched view) and gate 5 (the panel set, including story and style consistency). Also use it whenever a reopening rule below fires. Self-review missed a mismatched panel set, a figure that read as the wrong character, and a body that had drifted from the concept.
+When David hands every decision to the agent (a stress test, or "make all the decisions"), keep every gate but replace David's approvals with an independent review: a separate agent that is given only the approved art, the current renders, and the gate's checklist, not the builder's reasoning. Use it at gate 1 (concept and named properties), gate 2 (blockout and functional checks), gate 3 (each part, the engineered meshes, and the final matched view) and gate 5 (the panel set, including story and style consistency). Also use it whenever a reopening rule below fires. Self-review missed a mismatched panel set, a figure that read as the wrong character, and a body that had drifted from the concept.
 
 Keep the reviewer independent:
 - Give it images, the gate checklist, and a neutral part map (each part, its print orientation, and what is separate or glued on).
@@ -93,7 +93,7 @@ A reviewer FAIL closes only with a fix and a re-review that passes. The builder 
 
 Using a hybrid of the standard architectures, or departing from one (a decor shell over a standard cage, fused skins with split lighting), reopens gate 2. It needs a reviewer pass, a logged decision, and a line at the top of the release.
 
-Log every decision the user would normally make, with the reason, in the checkpoint as it is made. Rewrite the checkpoint's current-state block at every gate and after every decision; in test 3 it went stale for over an hour. Lock the result as described in validation and release, and do not merge it before the user's verdict.
+Log every decision David would normally make, with the reason, in the checkpoint as it is made. Rewrite the checkpoint's current-state block at every gate and after every decision; in test 3 it went stale for over an hour. Lock the result as described in validation and release, and do not merge it before David's verdict.
 
 
 ## Reopening rules
@@ -111,7 +111,7 @@ Do not carry a prior score, pass, or approval across changed geometry unless its
 
 ## Review comments
 
-Users often review by pinning comments on review sheets. Render a close-up of the pinned spot, state how you read the comment, and make the smallest change that fits that reading. If the reading is a guess, say so in the reply. (Lonely Mountain: a pin read as "widen the block sideways" produced a stretch the user undid entirely; the intent was a lid that overlaps the frame.)
+Users often review by pinning comments on review sheets. Render a close-up of the pinned spot, state how you read the comment, and make the smallest change that fits that reading. If the reading is a guess, say so in the reply. (Lonely Mountain: a pin read as "widen the block sideways" produced a stretch David undid entirely; the intent was a lid that overlaps the frame.)
 
 ## Checkpoint
 

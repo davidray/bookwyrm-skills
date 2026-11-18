@@ -24,23 +24,23 @@ Use a battery-powered or otherwise low-voltage LED source. Exclude open flame. D
 
 Read [workflow and gates](references/workflow-and-gates.md) for a new build or a material redesign. Read [engineering](references/engineering.md) before fixing dimensions, interfaces, segmentation, or orientation. Flat structural parts (divider blades, controller and floor plates, diffusers, flat lid decks) are laser-cut acrylic by default, with a printed fallback; see its laser-cut acrylic section.
 
-For Dave's lantern projects, read [Dave's print profile](../../shared/print-profile/print-profile.md) before selecting the build envelope, exterior feature sizes, segmentation, material, nozzle, compatibility target, lithophane recipe, or fit clearances. It holds physically proven settings; reuse them instead of proposing new coupons for the same interfaces. Keep project-specific proportions, visual approvals, hardware, and exceptions in the project checkpoint.
+Read the [print profile](../../shared/print-profile/print-profile.md) before selecting the build envelope, exterior feature sizes, segmentation, material, nozzle, compatibility target, lithophane recipe, or fit clearances. It holds physically proven settings; reuse them instead of proposing new coupons for the same interfaces. Keep project-specific proportions, visual approvals, hardware, and exceptions in the project checkpoint.
 
-When the user hands every decision to you, follow the autonomous-run rules in [workflow and gates](references/workflow-and-gates.md): keep every gate and use an independent reviewer in place of the user's approvals.
+When David hands every decision to you, follow the autonomous-run rules in [workflow and gates](references/workflow-and-gates.md): keep every gate and use an independent reviewer in place of David's approvals.
 
 For tool setup (headless Blender in a container, slicing from the command line), read [tooling](references/tooling.md).
 
-For Dave's lantern projects, read [Dave's art pipeline](../../shared/concept-and-faithfulness/art-pipeline.md) and [image to 3D](../../shared/image-to-3d/image-to-3d.md) before generating concept, part, or panel art or any AI mesh, and before spending generation credits.
+Read the [art pipeline](../../shared/concept-and-faithfulness/art-pipeline.md) and [image to 3D](../../shared/image-to-3d/image-to-3d.md) before generating concept, part, or panel art or any AI mesh, and before spending generation credits.
 
 In a series of lanterns, keep the shared interfaces consistent: panel slot and retention, divider or LED post, strip, hardware plate, and tolerances. Overall size is a target the approved art may break; say so when it does rather than distorting the art to match a sibling.
 
 ## Select the lighting architecture
 
-For Dave's lantern projects, record one of these standard lighting architectures before fixing the internal structure: **split lighting**, **lit shell**, **puck light**, or **tea light**. Do not silently combine their assumptions.
+Record one of these standard lighting architectures before fixing the internal structure: **split lighting**, **lit shell**, **puck light**, or **tea light**. Do not silently combine their assumptions.
 
 - When **split lighting** is selected, read and apply [standard lighting architectures](references/standard-lighting-architectures.md). The named choice imports the established controller and power system, swappable hardware plate, four-chamber split divider (printed core post plus four flat laser-cut or printed blades, never one piece), and four-strip lighting topology as one baseline system.
 - When **lit shell** is selected (an opaque hollow sculpture with lithophane regions printed into its wall, lit from a central LED post), read and apply its section of the same reference. It shares the split-lighting controller, power, and hardware plate but has no divider.
-- For **puck light** or **tea light**, model the actual selected light and its service envelope. Do not inherit the split-lighting PCB, battery, divider, or strip topology unless the user explicitly requests a hybrid.
+- For **puck light** or **tea light**, model the actual selected light and its service envelope. Do not inherit the split-lighting PCB, battery, divider, or strip topology unless David explicitly requests a hybrid.
 
 Treat a standard architecture as a reusable starting system, not proof that it fits a new lantern. Preserve its locked interfaces and revalidate the lantern-specific optical spacing, divider fit, service path, heat behavior, and enclosure integration.
 
@@ -57,7 +57,7 @@ Block out these systems together:
 
 Fit purchased parts (lights, batteries, switches) with generous clearance, so a slightly different part from another pack still fits. Never design a fit that only works if the part is exactly right (David, 2026-11-15). Model clearance and motion reserves as named, visible non-production objects. Do not decorate over them or silently shrink them. A scale change is a redesign whenever it changes the protected hardware envelope, minimum printable features, panel thickness range, light spacing, or service access. Never uniformly scale a finished reference mesh and call the result engineered. To make a small tea-light version of a finished lantern (one-piece body, glued-in panels), read [miniaturize a lantern](references/miniaturize.md).
 
-Record how panels go in and how the roof or lid comes off at blockout, and show it in the review. Default to positive roof location (pegs or a keyed lip); gravity-only seating needs the user's explicit acceptance. For Dave's lanterns, add the central lid tie-down: an M4 eye bolt in a heat-set insert in the lid, a wire down the post bore, and an M4 bolt, washer and nut through the hardware plate. Reserve its axis column at blockout (see [engineering](references/engineering.md), lid tie-down).
+Record how panels go in and how the roof or lid comes off at blockout, and show it in the review. Default to positive roof location (pegs or a keyed lip); gravity-only seating needs David's explicit acceptance. Add the central lid tie-down: an M4 eye bolt in a heat-set insert in the lid, a wire down the post bore, and an M4 bolt, washer and nut through the hardware plate. Reserve its axis column at blockout (see [engineering](references/engineering.md), lid tie-down).
 
 Never use dowels (David, 2026-11-16). Wherever two printed faces are glued, align them with printed alignment tabs: a male tab 4.0 mm in diameter and 4.0 mm tall on one face, a female socket 4.2 mm in diameter and 4.2 mm deep in the other. Joints that are not glued, hinges and pivots need no tab. Plan them when you choose the segmentation; see [glued joints](../../shared/joints-and-assembly/glued-joints.md) and the lantern exceptions in [engineering](references/engineering.md).
 
@@ -65,9 +65,9 @@ Never use dowels (David, 2026-11-16). Wherever two printed faces are glued, alig
 
 Whole-lantern decoration has fallen well short of the concept every time it was tried. After the overall concept and the functional blockout are approved, split the decoration into a few parts, make and approve concept art for each part alone, model each part separately until it is faithful to (or better than) its art, and only then assemble and compare with the overall concept. Read [workflow and gates](references/workflow-and-gates.md) gate 3 for the procedure.
 
-The approved art is the priority, not the blockout geometry. When a faithful part breaks the blockout, change the structure (wider plinth, wider body, taller lantern, lid pocket) or ask the user; do not squash, fold, clamp, or stretch the art to fit. Scale decoration uniformly. Never stretch carved or organic detail along one axis.
+The approved art is the priority, not the blockout geometry. When a faithful part breaks the blockout, change the structure (wider plinth, wider body, taller lantern, lid pocket) or ask David; do not squash, fold, clamp, or stretch the art to fit. Scale decoration uniformly. Never stretch carved or organic detail along one axis.
 
-Label your own ideas. A printability or production change you propose is a proposal until the user accepts it; never write it into the approved visible properties, and do not alter the approved look for printability risk you have not evidenced.
+Label your own ideas. A printability or production change you propose is a proposal until David accepts it; never write it into the approved visible properties, and do not alter the approved look for printability risk you have not evidenced.
 
 Keep lithophanes as separate replaceable parts by default. Integrate them only when the process and assembly plan make that deliberate. Give every panel a positive seat and retention strategy, plus a plausible assembly and replacement path. Mere intersection with a frame is not retention.
 
@@ -96,7 +96,7 @@ Read [modeling and evidence](references/modeling-and-evidence.md) when building 
 
 ## Retire uncertainty with small physical tests
 
-First check the proven settings in the [print profile](../../shared/print-profile/print-profile.md): lithophane relief, panel print settings, pane seats, sliding fits, tongue and groove, and wire exits are already physically proven for Dave's lanterns, so do not propose new coupons for those interfaces. For a genuinely new interface, use the cheapest representative coupon before a long print. Common coupons include:
+First check the proven settings in the [print profile](../../shared/print-profile/print-profile.md): lithophane relief, panel print settings, pane seats, sliding fits, tongue and groove, and wire exits are already physically proven for the lanterns, so do not propose new coupons for those interfaces. For a genuinely new interface, use the cheapest representative coupon before a long print. Common coupons include:
 
 - the actual light-source opening or carrier interface;
 - panel channel, ledge, latch, or roof-capture cross-section;
@@ -116,8 +116,8 @@ Read [validation and release](references/validation-and-release.md) before produ
 
 ## Deliver a durable project state
 
-Maintain a checkpoint whose top block is the current state, rewritten every session: gate, evidence level, active files, open decisions, and next step. Below it, keep the dated history. The checkpoint identifies the active source, exact accepted decisions, protected interfaces, measured hardware, panel parameters, physical results, superseded files, open risks, current evidence level, and next unsatisfied gate. Preserve user-approved visual references and working branches; change locally rather than destructively replacing them.
+Maintain a checkpoint whose top block is the current state, rewritten every session: gate, evidence level, active files, open decisions, and next step. Below it, keep the dated history. The checkpoint identifies the active source, exact accepted decisions, protected interfaces, measured hardware, panel parameters, physical results, superseded files, open risks, current evidence level, and next unsatisfied gate. Preserve David-approved visual references and working branches; change locally rather than destructively replacing them.
 
 For release, provide the editable source, production meshes, panel-to-face mapping, quantities, material and orientation guidance, assembly/service order, hardware requirements, tested and untested interfaces, safety boundary, validation results, and the highest supportable claim level. Avoid the unqualified label “print-ready.”
 
-When a version is ready for the user to see, save it as a draft through the workshop skill (`workshop/SKILL.md` in this repo): one 3MF per part, the approved art and review sheets, and a README, with every generating script committed in the lantern's folder in bookwyrm-lanterns. The user promotes it as `v<N>`. See [validation and release](references/validation-and-release.md). At the end of a session that changed a lantern's meshes without saving a draft, say so in one line.
+When a version is ready for David to see, save it as a draft through the workshop skill (`workshop/SKILL.md` in this repo): one 3MF per part, the approved art and review sheets, and a README, with every generating script committed in the lantern's folder in bookwyrm-lanterns. David promotes it as `v<N>`. See [validation and release](references/validation-and-release.md). At the end of a session that changed a lantern's meshes without saving a draft, say so in one line.
