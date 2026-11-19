@@ -10,7 +10,7 @@ Check current prices before a batch; these were right on 2026-11-16.
 - **Meshy 7.1** only when David asks for it by name: 20 credits a mesh-only image-to-3D or multi-image-to-3D call (about $0.40).
 - **Images** (nano-banana-pro and the other image models Meshy routes) still cost about 9 Meshy credits each. So one part costs an image plus one Tripo call.
 - Keys are read at run time and never written to a file, log, checkpoint or repository.
-- **How a build calls Tripo:** directly, through [`tripo_helper.py`](tripo_helper.py) copied into the project's working folder on the Mac (for example `~/code/bookwyrm-rpg-lantern-art/<project>/`) and run inside Blender with the Blender MCP's `execute_code`; its docstring shows the calls. Copy it rather than writing your own, and set its `CAP` and `IMG_CAP_USD` to what David approved. It posts `image_to_model` to Tripo's `v2/openapi/task` with model `v3.1-20260211`, `texture: false`, `pbr: false` and `geometry_quality: "detailed"`, then polls and downloads the mesh. It reads `TRIPO_API_KEY` from the primary bookwyrm-rpg checkout's `services/builder/.env` and hands it to curl on stdin, so the key never appears in a command line or a file. A `CAP` constant at the top of the helper holds the credits David approved; the helper records each call in `tripo_ledger.json` before submitting it, and refuses a call when committed credits plus the estimate would pass `CAP`.
+- **How a build calls Tripo:** directly, through [`tripo_helper.py`](tripo_helper.py) copied into the project's working folder on the Mac (for example `~/code/bookwyrm-rpg-lantern-art/<project>/`) and run inside Blender with the Blender MCP's `execute_code`; its docstring shows the calls. Copy it rather than writing your own, and set its `CAP` and `IMG_CAP_USD` to what David approved. It posts `image_to_model` to Tripo's `v2/openapi/task` with model `v3.1-20260211`, `texture: false`, `pbr: false` and `geometry_quality: "detailed"`, then polls and downloads the mesh. It reads `TRIPO_API_KEY` from the primary bookwyrm-rpg checkout's `services/builder/.env` and hands it to curl on stdin, so the key never appears in a command line or a file. A `CAP` constant at the top of the helper holds the credits David approved; the helper records each call in `tripo_ledger.json` before submitting it, and refuses a call when committed credits plus the estimate would pass `CAP`. `CAP` is the build's running total, not the price of the next call: for a second 40-credit call after a first, set it to 80, and back to 0 afterwards.
 - **Not these:** the Blender MCP's `generate_3d` tool, and Builder's reconstruct tools, which are for miniatures only. A `run_tripo.py`, if you find one, isn't the standard helper.
 - Ask before each spend with the estimate, read the live balance before the first one, and record task IDs and credits in the ledger and checkpoint.
 
@@ -18,6 +18,13 @@ Check current prices before a batch; these were right on 2026-11-16.
 
 - The generator copies the detail drawn in the picture. Soft input gives soft output. Higher-resolution or upscaled inputs, the 2k mode and polycount settings barely changed the result; the generator already returns 1 to 4 M faces.
 - So spend effort on the input image, not on generator settings. Ask for untextured geometry when only the shape matters; that also costs less.
+
+## Faces
+
+- **The generator ages faces.** On the celestial trinket box (2026-11-19) it gave two smooth, young, sleeping faces furrowed brows, crow's feet, cheek folds and forehead lines that the input never showed. Brows drawn with hair strokes, or as raised ridges, came back as heavy brows and incised lines.
+- **Draw the brows smooth.** Give faces soft, low brows with no hair texture, and skin with no lines at all.
+- **Correct a face by composite, not by prompt.** Asking image-to-image for "softer, younger" faces overshot to children; asking again for smooth adult faces gave heavy brow ridges. Pasting the soft brows from an approved image into the input (feathered masks, matched lighting) fixed the ageing in one free try. Don't name an age, a mood or a type of face ("child", "cherub") in a correction prompt.
+- **Judge the face at full size.** Compare the mesh's face with the input's face in a matched close-up (see [faithfulness review](../concept-and-faithfulness/concept-and-faithfulness.md#faithfulness-review)) before accepting it.
 
 ## Show the part alone
 

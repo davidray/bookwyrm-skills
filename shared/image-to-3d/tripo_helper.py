@@ -10,7 +10,9 @@ approved, and run it inside Blender through the Blender MCP's execute_code:
 
 Keys are read from the bookwyrm-rpg builder .env and passed to curl on stdin, never printed.
 Every paid call is appended to tripo_ledger.json before it is submitted; the cap check refuses
-a call that would take committed Tripo credits past CAP.
+a call that would take committed Tripo credits past CAP. CAP counts the whole ledger, so it is
+the build's running total David approved, not the price of the next call: after one 40-credit
+call, a second approved call needs CAP = 80. Set it back to 0 after each approved call.
 
 Copied from monet-hex-lantern/tpm.py (2026-11-18), the newest of the per-project copies.
 """
@@ -21,7 +23,7 @@ _LOCK = threading.Lock()
 ROOT = os.path.dirname(os.path.abspath(__file__))
 ENV = os.environ.get("BUILDER_ENV", "/Users/dave/code/bookwyrm-rpg/services/builder/.env")
 LEDGER = os.path.join(ROOT, "tripo_ledger.json")
-CAP = 0  # Tripo credits David approved for this build; record when and how much
+CAP = 0  # running total of Tripo credits David approved for this build (whole ledger, not per call)
 IMG_CAP_USD = 0.0  # gpt-image dollars David approved for this build
 TRIPO = "https://api.tripo3d.ai/v2/openapi"
 OPENAI = "https://api.openai.com/v1"

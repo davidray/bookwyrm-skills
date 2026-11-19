@@ -44,7 +44,7 @@ For recognizable organic elements, establish anatomy, gesture, attachments, and 
 
 ## Faithfulness review
 
-Compare the authoritative concept with renders of the actual current model, side by side in one image David can judge. Use matched viewpoints or silhouette overlays when practical, plus diagnostic views for hidden contacts. Do not rely only on the most attractive presentation render.
+Compare the authoritative concept with renders of the actual current model, side by side in one image David can judge. Match the two halves: same viewpoint, same size in frame, same neutral light, plus a close-up of the focal detail (faces, hands, emblems) at the same crop. A comparison that renders the model smaller, darker or under other light hides drift (the celestial trinket box's aged faces were invisible at about half size). Use silhouette overlays and diagnostic views for hidden contacts as well. Do not rely only on the most attractive presentation render.
 
 Review:
 
