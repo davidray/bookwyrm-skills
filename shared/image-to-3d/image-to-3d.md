@@ -70,6 +70,17 @@ Raw generator output is in arbitrary units (standing figures have come in about 
 
 Image-to-3D invents every side the input doesn't show. Gollum's Cave roof corners came out 126 mm deep against about 45 mm in the art, and the Christmas village roof came back as an L-shaped cross gable with an empty back quadrant. Before fitting, render the raw mesh from the views the art doesn't show (back, underside, the far corner) and compare its footprint and topology with the art. If the hidden side is wrong, regenerate it or trim only the invented mass and re-check the approved properties. A mirror repair copies one side's detail onto the others, which costs the part its variety, so record it as a fidelity loss.
 
+## Cutting function into generated art
+
+Keep the generated mesh as the visible exterior and cut the function into it (the lanterns' rule in `families/lithophane-lanterns/SKILL.md`). What the wizard tower taught about doing that:
+
+- **Measure the envelope first.** Map the mesh's inner radius by height and angle before planning chambers, chutes or bores, and keep every internal space inside it with the wall thickness the family needs.
+- **Decide every carved recess by function.** The generator carves openings it was never asked for, often on sides the input didn't show (three window recesses on the tower's back). Whether one becomes a real opening depends on what is behind it, not how it looks: the tower's back recesses sat over the dice chute, so they stayed blind and the wall was padded inward behind them. Check the skin behind each recess you keep blind.
+- **Retouched inputs leave seams.** Where the input image was retouched by hand, the mesh can carry a raised ridge along the retouch edge (2 to 3 mm proud on the tower). Look for it in grazing-light renders and smooth it by hand sculpt, limited to the band it affects: a wider pass tore a row of stonework.
+- **Check minimum thickness after every cut.** Booleans against carved surfaces leave knife edges and feather edges (0.02 mm at the window seats, a feather edge on the crown floor). Measure after cutting, not before.
+- **Appendages that stand off the wall trap supports.** A coil or limb that runs 0.5 to 7 mm off the wall needs supports in a gap they can't easily be pulled from. Measure the gaps, report the steep area that needs support, and ask David before filling a gap, since that changes the art. A head that stands off the structure can be cut off and glued on with a tab (see [glued joints](../joints-and-assembly/glued-joints.md), `shared/joints-and-assembly/glued-joints.md`).
+- **Check function the art can block.** The tower's wyrm head blocked one dice entry. List each function an appendage sits across before cutting anything.
+
 ## Cost
 
 A two-arm test on three subjects cost about 180 credits. Track spend in a ledger beside the outputs and state the cost before large spends. For budget splits across concepts, art, meshes and reserve, see the [art pipeline](../concept-and-faithfulness/art-pipeline.md#spending) (`shared/concept-and-faithfulness/art-pipeline.md`) and the generated-scene-diorama skill.

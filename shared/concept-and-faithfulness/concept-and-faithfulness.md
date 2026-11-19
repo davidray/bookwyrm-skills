@@ -20,7 +20,7 @@ When sources differ or are incomplete, apply this order:
 1. Supplied or explicitly identified user references govern the visual properties assigned to them.
 2. Explicit user requirements govern contents and function.
 3. Generated concepts are provisional until David approves them.
-4. Approved generated concepts govern only the visible properties David reviewed.
+4. Approved generated concepts govern only the visible properties David reviewed. When a concept was made from your own blockout or layout guide, the form is yours until David approves it as form; approving a finish or material on it does not.
 5. Depicted mechanics remain proposals until designed and validated.
 
 For a single-color hand-painted object, keep four review lanes apart: sculptural fidelity (the printed relief), paintability (boundaries a brush can follow), the finish plan (palette and painted look), and physical optics (the real light path, for lithophanes and lit parts). A painted render informs the finish plan only.

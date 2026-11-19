@@ -17,6 +17,7 @@ References:
 - [engineering and validation](references/engineering-and-validation.md): joints, stack-ups, energy safety, orientation, exports.
 - [image to 3D](../../shared/image-to-3d/image-to-3d.md) (`shared/image-to-3d/image-to-3d.md`) (shared): engines and prices, prompts, multi-view sheets, scaling and judging for generated figures, ornaments and carving.
 - [moving parts and figures](references/moving-parts-and-figures.md): hinges, print-in-place mechanisms, sculpted figures, filament saving.
+- [dice towers](references/dice-towers.md): die sizes, passage targets, keeping dice and light apart, the swept-sphere check.
 - [lighting and electronics](../../shared/lighting-and-electronics/lighting-and-electronics.md) (`shared/lighting-and-electronics/lighting-and-electronics.md`) (shared): LED scenes on WLED, controller boards, lighting tests.
 - [box-family standards](references/box-family-standards.md): house dimensions, hardware and defaults.
 - [design rules](../../shared/design-playbook/design-playbook.md) (`shared/design-playbook/design-playbook.md`) (shared): twenty rules from the travel cases; read before a new box.
@@ -37,7 +38,7 @@ For hand-painted work, every paint transition needs a physical boundary in the p
 
 ## Get the concept art approved
 
-Before the blockout, show David a concept image: their own reference, or generated art when the brief is words only. Do not make concept art in Blender. Reconcile the contents with David's own nouns and quantities first (a dice tray stays a dice tray). Label generated art as a provisional interpretation and list what it invents: style, layout, closure, magnets, electronics, scale.
+Before the blockout, show David a concept image: their own reference, or generated art when the brief is words only. Do not make concept art in Blender. Reconcile the contents with David's own nouns and quantities first (a dice tray stays a dice tray). Label generated art as a provisional interpretation and list what it invents: style, layout, closure, magnets, electronics, scale. If you supplied the form yourself (a blockout, layout guide or proportions fed to the image model), list that form as yours too, and ask about form and finish separately: approving a stone finish does not approve the tower under it (the wizard tower's form was rejected two gates after its finish was approved).
 
 Get an explicit approval, revision request, or deferral of the image itself, not of a description. A plain "approved" covers the most recent image and its visible properties only. It never approves dimensions, hidden construction, or pictured mechanisms such as magnets, hinges or latches; those stay proposals until designed and tested. Re-ask if the concept, interior or function changes materially.
 

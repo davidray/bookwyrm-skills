@@ -64,6 +64,7 @@ How much detail a flat-printed lithophane holds is set in XY, by the extrusion l
 ## Test before the full panel
 
 - Print a 100 × 100 mm test crop with the focal figure, the thinnest lines and part of any inscription before the full panel. With David's own image on the Mirkwood case it passed first time, and the full pane matched.
+- When a panel is smaller than the test crop (the wizard tower's windows are about 30 × 41 mm), the whole panel is the test: print the hardest one first (darkest, finest, or nearest the light) in its seat, light it, and then print the rest.
 - Print flat, relief side up, 100% infill, white filament, and mount relief side out, or any text reads backwards.
 - Record the print settings with the result; wrong infill once invalidated a thickness test.
 - The simulated backlit preview is a guide only; say so when showing it.
@@ -83,6 +84,14 @@ Inspect under the intended LED, spacing, diffuser, and ambient-light conditions.
 Tune image curve, thickness range, spacing, or diffusion from this result. A rendered glow preview is useful for composition, not optical qualification.
 
 When a backlit simulation is measured (sharpness, tonal spread, black level, brightness by panel), report the losses beside the recipe's claims in the README and in the message to David. In test 3 the reviewer measured about 85% sharpness loss, but the release and the message to David mentioned only the extra tone levels. Once a coupon has been printed and photographed, fit the simulation's blur and attenuation to the photo.
+
+## Panels set into a generated wall
+
+When the window is cut into a generated mesh (the wizard tower's three windows), the seat is whatever the cut left, not what you drew. Make the panel from the seat as built:
+
+- Measure each seat straight in along the window's normal: on a 0.1 mm grid, cast a ray from outside and record whether it meets the seat face, goes straight through (the light opening), or hits something nearer (jamb, recess wall). Build the panel's outline from the seat mask, then inset it about 0.3 mm. A panel drawn flush with the pocket left no clearance at one edge. bookwyrm-boxes `projects/wizard-tower-dice-tower/scripts/measure_seats_r1.py` does this.
+- Check the cut for knife edges where the seat meets the carving (0.02 mm at the bottom of the wizard tower's seats before they were fixed), and for a seat that undercuts a carved jamb, before the panels are made.
+- Check that no panel overlaps the body, and that each can go straight into its seat.
 
 ## Integrated two-colour lithophane skins
 

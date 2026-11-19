@@ -17,7 +17,7 @@ shared/               method shared by more than one family
   lithophanes/lithophanes.md   lit image panels: source images, relief, recipe, detail limits, tests
   lighting-and-electronics/lighting-and-electronics.md   WLED scenes, boards, light-path tests
   concept-and-faithfulness/   reference authority, faithfulness review, compromise register, art pipeline
-  image-to-3d/image-to-3d.md   engines and prices, sculpt input images, four-view sheets, hidden mass
+  image-to-3d/image-to-3d.md   engines and prices, sculpt input images, four-view sheets, hidden mass, cutting function into generated art
   evidence-and-claims/evidence-and-claims.md   the evidence ladder, statuses, export and slicer checks, physical tests
   independent-review/independent-review.md   the critic reviews before every gate: how it is briefed, what it checks and reports, and how its verdict is used
   design-playbook/design-playbook.md   twenty design rules from the Shire and Mirkwood travel cases
