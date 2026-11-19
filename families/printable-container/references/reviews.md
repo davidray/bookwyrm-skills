@@ -33,4 +33,4 @@ Show the concept and the current model, rendered from the same view, side by sid
 
 ## Independent reviewer
 
-Use a separate reviewing agent only for a new box architecture, a safety-relevant change (power, heat, batteries), or when David asks. Give it the brief, references and actual current files, not the builder's conclusions, and ask it to cite evidence and say what it could not check.
+Use a separate reviewing agent only for a new box architecture, a safety-relevant change (power, heat, batteries), or when David asks. How to brief it and use its verdict is in [independent review](../../../shared/independent-review/independent-review.md) (`shared/independent-review/independent-review.md`).
