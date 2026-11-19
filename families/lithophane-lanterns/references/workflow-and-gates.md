@@ -4,7 +4,7 @@ Use the earliest unsatisfied gate to decide what work is authorized. Preserve ea
 
 ## 1. Brief and concept
 
-Reconcile the lantern's use, scale, panel count and story, hardware, finish, and authoritative visual references. If no concept exists, create a visual interpretation before committing to CAD. List what the concept invents.
+Reconcile the lantern's use, scale, panel count and story, hardware, finish, and authoritative visual references. If no concept exists, create a visual interpretation before committing to CAD. List what the concept invents, including any form you supplied yourself (a blockout or layout guide fed to the image model), and ask about form and finish separately.
 
 Concept art is not to scale. Before blockout, measure the concept's key ratios in pixels and record them: body height to width, base or deck width to body width, roof height and overhang to body, panel field aspect. Carry them into the blockout and compare all of them, not only the body, at every matched view. (Lake-town: only body H/W was checked, and the deck came out 1.12× the body against the concept's ~1.4× until assembly.)
 

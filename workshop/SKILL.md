@@ -107,9 +107,11 @@ A draft becomes the current revision only when David promotes it: with **Promote
 At promotion:
 
 - **version** follows the family's numbering (see its `family.json`). Versions compare as numbers, so `v1.10` is newer than `v1.9`.
-- **status** is the highest claim the evidence supports (see [evidence and claims](../shared/evidence-and-claims/evidence-and-claims.md#status-in-the-hoard) (`shared/evidence-and-claims/evidence-and-claims.md`)): `concept`, `digitally-validated`, `prototype` (printed), `interface-fit-tested`, `qualified`. A render or a slice is never more than `digitally-validated`.
+- **status** is the highest claim the evidence supports (see [evidence and claims](../shared/evidence-and-claims/evidence-and-claims.md#status-in-the-hoard) (`shared/evidence-and-claims/evidence-and-claims.md`)): `concept`, `digitally-validated`, `prototype` (printed, not yet production), `interface-fit-tested`, `qualified`. Files that have not been printed are never more than `digitally-validated`. Use the same word in the README as in the status. A render or a slice is never more than `digitally-validated`.
 
 A change to any mesh, size, clearance, pocket or assembly position is a new draft. Images, listings and the final cut are edited on the current revision in The Hoard and need no draft.
+
+A change to the records only (README, PRINT-AND-TEST, piece.json) needs a draft when David should see it there: before he prints from The Hoard, or when a build is parked, so the item's README matches the decisions he made. Otherwise commit it to the family repo and let the next draft carry it. A change set still holds the complete file set: read the head revision with `read_piece`, copy every unchanged file from the project's build folders (or fetch it with `piece_file`), add the changed records, and check it with `dry_run=True`. Afterwards, `list_drafts` should show only the records as changed.
 
 ## 6. End of session
 

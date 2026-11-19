@@ -17,6 +17,7 @@ References:
 - [engineering and validation](references/engineering-and-validation.md): joints, stack-ups, energy safety, orientation, exports.
 - [image to 3D](../../shared/image-to-3d/image-to-3d.md) (`shared/image-to-3d/image-to-3d.md`) (shared): engines and prices, prompts, multi-view sheets, scaling and judging for generated figures, ornaments and carving.
 - [moving parts and figures](references/moving-parts-and-figures.md): hinges, print-in-place mechanisms, sculpted figures, filament saving.
+- [dice towers](references/dice-towers.md): die sizes, passage targets, keeping dice and light apart, the swept-sphere check.
 - [lighting and electronics](../../shared/lighting-and-electronics/lighting-and-electronics.md) (`shared/lighting-and-electronics/lighting-and-electronics.md`) (shared): LED scenes on WLED, controller boards, lighting tests.
 - [box-family standards](references/box-family-standards.md): house dimensions, hardware and defaults.
 - [design rules](../../shared/design-playbook/design-playbook.md) (`shared/design-playbook/design-playbook.md`) (shared): twenty rules from the travel cases; read before a new box.
@@ -37,7 +38,7 @@ For hand-painted work, every paint transition needs a physical boundary in the p
 
 ## Get the concept art approved
 
-Before the blockout, show David a concept image: their own reference, or generated art when the brief is words only. Do not make concept art in Blender. Reconcile the contents with David's own nouns and quantities first (a dice tray stays a dice tray). Label generated art as a provisional interpretation and list what it invents: style, layout, closure, magnets, electronics, scale.
+Before the blockout, show David a concept image: their own reference, or generated art when the brief is words only. Do not make concept art in Blender. Reconcile the contents with David's own nouns and quantities first (a dice tray stays a dice tray). Label generated art as a provisional interpretation and list what it invents: style, layout, closure, magnets, electronics, scale. If you supplied the form yourself (a blockout, layout guide or proportions fed to the image model), list that form as yours too, and ask about form and finish separately: approving a stone finish does not approve the tower under it (the wizard tower's form was rejected two gates after its finish was approved).
 
 Get an explicit approval, revision request, or deferral of the image itself, not of a description. A plain "approved" covers the most recent image and its visible properties only. It never approves dimensions, hidden construction, or pictured mechanisms such as magnets, hinges or latches; those stay proposals until designed and tested. Re-ask if the concept, interior or function changes materially.
 
@@ -73,7 +74,7 @@ Keep review proportional. `scripts/` holds optional checkers from the earlier ga
 
 ## Keep claims honest
 
-State plainly what has been checked: rendered, checked digitally (mesh and slicer), coupon-tested, or printed and assembled. A good render, closed mesh, or warning-free slice does not prove fit. Any multi-part functional interface needs a physical test before it is called fit-tested. Use "prototype" for printable files whose physical behavior is untested, "fit-tested" only for the named interfaces that passed a physical test, and do not use the standalone label "print-ready".
+State plainly what has been checked: rendered, checked digitally (mesh and slicer), coupon-tested, or printed and assembled. A good render, closed mesh, or warning-free slice does not prove fit. Any multi-part functional interface needs a physical test before it is called fit-tested. Use "digitally-validated" for files that have not been printed, "prototype" for a printed build David does not yet consider production, "fit-tested" only for the named interfaces that passed a physical test, and do not use the standalone label "print-ready".
 
 ## Finish with actual deliverables
 
@@ -92,7 +93,7 @@ Audit the exported files rather than relying only on the source scene: units, sc
 If David hands over their own calls ("make all the decisions", an unattended test):
 
 - Keep a decision log. Mark every call made in David's place PROXY, with the reason, so David can overrule each one.
-- Some verdicts stay David's: whether the result looks right against the concept, any compromise to the focal design, and any release or lock. Deliver at prototype status and ask for those.
+- Some verdicts stay David's: whether the result looks right against the concept, any compromise to the focal design, and any release or lock. Deliver at the status the evidence supports (`digitally-validated` until something is printed) and ask for those.
 - Record every skipped test as a guess, with what would prove it wrong, and still put the coupon in the print folder.
 - Before handing over, have an independent skeptic (a separate agent given the files, not your conclusions) look for over-claims. In the Moria test the builder graded itself generously until challenged; the skeptic caught a blurred inscription and stale files.
 

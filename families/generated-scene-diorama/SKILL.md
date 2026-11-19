@@ -7,7 +7,7 @@ description: "Build a multi-piece printable scene diorama (village, island, mark
 
 Paths such as `shared/...` and `families/...` are from the root of the bookwyrm-skills repo (`~/code/bookwyrm-skills` on David's Mac). Open them from there: a `../` link resolves wrongly when this skill is opened through a link in `~/.claude/skills/`.
 
-This skill turns a brief and a credit budget into a prototype print set of separate pieces, each printed in one colour and painted by hand, on a tiled base. The only human gate is choosing the concept. It was distilled from two runs: the Victorian Christmas village (1000 credits, about 2.5 hours) and the Isle of Berk (899 credits). The run logs and the full spec (LOG.md, SPEC-draft.md) were in another project's files and aren't reachable from here; this skill holds what they taught.
+This skill turns a brief and a credit budget into a print set of separate pieces, each printed in one colour and painted by hand, on a tiled base. The only human gate is choosing the concept. It was distilled from two runs: the Victorian Christmas village (1000 credits, about 2.5 hours) and the Isle of Berk (899 credits). The run logs and the full spec (LOG.md, SPEC-draft.md) were in another project's files and aren't reachable from here; this skill holds what they taught.
 
 Use this skill when most pieces will be generated (image to 3D) and the budget drives the decomposition. Use `layered-diorama` (bookwyrm-dioramas) for a hand-modelled scene built bottom-up. Both save to The Hoard through the `workshop` skill.
 

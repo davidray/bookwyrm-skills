@@ -34,11 +34,11 @@ The `status` given at promotion (see the workshop skill) is the claim:
 | --- | --- |
 | `concept` | Appearance only. |
 | `digitally-validated` | The current exports and slices were checked; no physical-fit claim. A render or a slice is never more than this. |
-| `prototype` | Printed, or printable files supplied for evaluation, with unresolved physical behaviour stated. |
+| `prototype` | Printed, but not yet production in David's view, with unresolved physical behaviour stated. Files that have not been printed are never more than `digitally-validated` (David, 2026-11-19). |
 | `interface-fit-tested` | Named critical interfaces passed representative tests under recorded conditions; the whole product may remain unqualified. |
 | `qualified` | The complete assembly and intended-use acceptance criteria passed, including mechanical, optical, service and safety-relevant interfaces. |
 
-Never write "print-ready" without a qualifier: readers take it as stronger than digital validation. Don't use "fit-tested" more broadly than the interfaces that passed. A multi-part functional design without a complete physical assembly test stays a prototype, or fit-tested only for the named interfaces.
+Never write "print-ready" without a qualifier: readers take it as stronger than digital validation. Don't use "fit-tested" more broadly than the interfaces that passed. A printed multi-part functional design without a complete physical assembly test stays a prototype, or fit-tested only for the named interfaces.
 
 ## Digital checks
 
