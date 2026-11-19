@@ -94,6 +94,15 @@ A lithophane region can be printed into an opaque wall instead of as a separate 
 - Close the lit region's edges against the wall so no gray rock shows between lobes, and keep the region touching the surface it sits on.
 - Tonal relief inside the skin is an optional later refinement; a uniform skin is a valid first print.
 
+## Colouring with alcohol ink (tested, set aside)
+
+David tested alcohol ink on lithophanes on 2026-11-18 with a coupon plate: lead-line windows with and without back grooves, and a thickness wedge with bare and primed rows. The generator and test sheet are in davidray/bookwyrm-lanterns, `coupons/alcohol-ink-stained-glass/` (PR #87).
+
+- Ink works best on the **flat back**. That is also the side facing the LEDs, so the colour sits inside the lantern, away from hands.
+- David has ideas for using it but has set it aside for now. Don't add ink to a lantern unless he asks.
+- When he does, give inked panels **"paint by number" guide lines on the back** that mark each colour region, so he can see where each colour goes while painting from behind. The coupon used 0.8 mm wide, 0.4 mm deep grooves under 3.2 mm lead lines; the back still prints flat on the bed. The groove size is a starting point, not a proven value.
+- Painting from the back flips the design left to right, so any labels or maps for the painter must be drawn as seen from the back.
+
 ## Multi-panel consistency
 
 Name panels by face and viewing direction. Include a face map in the release README. Generate the set in one style (one shared style line in every prompt, all four in the same pass) and regenerate any panel whose medium differs. Normalize the set so one panel does not dominate because its source image was brighter or its relief range differed. Confirm installed orientation in an assembled test; a correct isolated panel can still be reversed or mirrored in the lantern.
