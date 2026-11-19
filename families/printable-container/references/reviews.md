@@ -33,4 +33,4 @@ Show the concept and the current model, rendered from the same view, side by sid
 
 ## Independent reviewer
 
-Use a separate reviewing agent only for a new box architecture, a safety-relevant change (power, heat, batteries), or when David asks. How to brief it and use its verdict is in [independent review](../../../shared/independent-review/independent-review.md) (`shared/independent-review/independent-review.md`).
+The critic reviews before every gate, and also after a new box architecture or a safety-relevant change (power, heat, batteries), and whenever David asks. When, how to brief it and use its verdict is in [independent review](../../../shared/independent-review/independent-review.md) (`shared/independent-review/independent-review.md`).

@@ -19,7 +19,7 @@ shared/               method shared by more than one family
   concept-and-faithfulness/   reference authority, faithfulness review, compromise register, art pipeline
   image-to-3d/image-to-3d.md   engines and prices, sculpt input images, four-view sheets, hidden mass
   evidence-and-claims/evidence-and-claims.md   the evidence ladder, statuses, export and slicer checks, physical tests
-  independent-review/independent-review.md   how the critic is briefed, what it checks and reports, and how its verdict is used
+  independent-review/independent-review.md   the critic reviews before every gate: how it is briefed, what it checks and reports, and how its verdict is used
   design-playbook/design-playbook.md   twenty design rules from the Shire and Mirkwood travel cases
   blender-tooling/render-home/   home-library lantern renders
 tools/check_piece_json.py        checks piece.json in version folders still locked in a family repo

@@ -20,7 +20,7 @@ References:
 - [lighting and electronics](../../shared/lighting-and-electronics/lighting-and-electronics.md) (`shared/lighting-and-electronics/lighting-and-electronics.md`) (shared): LED scenes on WLED, controller boards, lighting tests.
 - [box-family standards](references/box-family-standards.md): house dimensions, hardware and defaults.
 - [design rules](../../shared/design-playbook/design-playbook.md) (`shared/design-playbook/design-playbook.md`) (shared): twenty rules from the travel cases; read before a new box.
-- [reviews](references/reviews.md): review checklists and when to use an independent reviewer.
+- [reviews](references/reviews.md): review checklists and when the critic reviews.
 - [project records](references/project-records.md): checkpoint, test and release records, and the release-and-lock layout.
 
 ## Begin with authority and evidence
@@ -69,7 +69,7 @@ Record actual dimensions and outcomes. A successful test locks only the tested i
 
 David's reaction to a matched render is the faithfulness verdict. Put the concept and the current model, rendered from the same view, side by side in one image, and make a new one for every visible revision before it replaces the last. An audit score never overrides that look: Mirkwood blockout r6 passed an AI audit at 85/100 while its renders were plainly far from the concept.
 
-Keep review proportional. `scripts/` holds optional checkers from the earlier gated process (scorecards, production-relief records, delivery-gate state); use them only when a project asks for that rigor. Run the short self-checks in [reviews](references/reviews.md) before long prints and before handing over a print folder. Use an independent reviewer only for a new box architecture, a safety-relevant change, or when David asks. Hashes, manifests and scorecards do not improve geometry; record only what changes decisions.
+Keep review proportional. `scripts/` holds optional checkers from the earlier gated process (scorecards, production-relief records, delivery-gate state); use them only when a project asks for that rigor. Run the short self-checks in [reviews](references/reviews.md) before long prints and before handing over a print folder. The critic reviews before every gate (see [independent review](../../shared/independent-review/independent-review.md), `shared/independent-review/independent-review.md`). Hashes, manifests and scorecards do not improve geometry; record only what changes decisions.
 
 ## Keep claims honest
 
