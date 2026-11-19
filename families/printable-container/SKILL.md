@@ -74,7 +74,7 @@ Keep review proportional. `scripts/` holds optional checkers from the earlier ga
 
 ## Keep claims honest
 
-State plainly what has been checked: rendered, checked digitally (mesh and slicer), coupon-tested, or printed and assembled. A good render, closed mesh, or warning-free slice does not prove fit. Any multi-part functional interface needs a physical test before it is called fit-tested. Use "prototype" for printable files whose physical behavior is untested, "fit-tested" only for the named interfaces that passed a physical test, and do not use the standalone label "print-ready".
+State plainly what has been checked: rendered, checked digitally (mesh and slicer), coupon-tested, or printed and assembled. A good render, closed mesh, or warning-free slice does not prove fit. Any multi-part functional interface needs a physical test before it is called fit-tested. Use "digitally-validated" for files that have not been printed, "prototype" for a printed build David does not yet consider production, "fit-tested" only for the named interfaces that passed a physical test, and do not use the standalone label "print-ready".
 
 ## Finish with actual deliverables
 
@@ -93,7 +93,7 @@ Audit the exported files rather than relying only on the source scene: units, sc
 If David hands over their own calls ("make all the decisions", an unattended test):
 
 - Keep a decision log. Mark every call made in David's place PROXY, with the reason, so David can overrule each one.
-- Some verdicts stay David's: whether the result looks right against the concept, any compromise to the focal design, and any release or lock. Deliver at prototype status and ask for those.
+- Some verdicts stay David's: whether the result looks right against the concept, any compromise to the focal design, and any release or lock. Deliver at the status the evidence supports (`digitally-validated` until something is printed) and ask for those.
 - Record every skipped test as a guess, with what would prove it wrong, and still put the coupon in the print folder.
 - Before handing over, have an independent skeptic (a separate agent given the files, not your conclusions) look for over-claims. In the Moria test the builder graded itself generously until challenged; the skeptic caught a blurred inscription and stale files.
 

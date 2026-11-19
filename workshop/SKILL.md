@@ -107,7 +107,7 @@ A draft becomes the current revision only when David promotes it: with **Promote
 At promotion:
 
 - **version** follows the family's numbering (see its `family.json`). Versions compare as numbers, so `v1.10` is newer than `v1.9`.
-- **status** is the highest claim the evidence supports (see [evidence and claims](../shared/evidence-and-claims/evidence-and-claims.md#status-in-the-hoard) (`shared/evidence-and-claims/evidence-and-claims.md`)): `concept`, `digitally-validated`, `prototype` (printed, or printable files supplied for evaluation with unresolved physical behaviour stated), `interface-fit-tested`, `qualified`. The table there governs; use the same word in the README as in the status. A render or a slice is never more than `digitally-validated`.
+- **status** is the highest claim the evidence supports (see [evidence and claims](../shared/evidence-and-claims/evidence-and-claims.md#status-in-the-hoard) (`shared/evidence-and-claims/evidence-and-claims.md`)): `concept`, `digitally-validated`, `prototype` (printed, not yet production), `interface-fit-tested`, `qualified`. Files that have not been printed are never more than `digitally-validated`. Use the same word in the README as in the status. A render or a slice is never more than `digitally-validated`.
 
 A change to any mesh, size, clearance, pocket or assembly position is a new draft. Images, listings and the final cut are edited on the current revision in The Hoard and need no draft.
 
