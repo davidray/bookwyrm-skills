@@ -1,13 +1,13 @@
 ---
 name: workshop
-description: Save a 3D-printable build (lantern, box, chest, diorama or any physical product) to The Hoard as a draft, and promote it only when David asks. Use before starting work on an item, whenever a build has files David should see, at a construction skill's lock or release step, and at the end of a session that changed meshes without saving them.
+description: Keep a 3D-printable build (lantern, box, chest, diorama or any physical product) in The Hoard: its build record (stage, gate, brief, checkpoint) while it is made, and its files as drafts that David promotes. Use before starting or resuming work on an item, at every gate, whenever a build has files David should see, at a construction skill's lock or release step, and at the end of a session.
 ---
 
 # Workshop
 
 Paths such as `shared/...` and `families/...` are from the root of the bookwyrm-skills repo (`~/code/bookwyrm-skills` on David's Mac). Open them from there: a `../` link resolves wrongly when this skill is opened through a link in `~/.claude/skills/`.
 
-The Hoard is David's catalogue of everything he builds. It runs on his Mac over one store, the library at `~/bookwyrm/dungeons-and-dragons/library`, which is backed up to R2 every night. Every product is an item there with numbered revisions. Two pointers say where it stands:
+The Hoard is David's catalogue of everything he builds. It runs over one store, the library at `~/bookwyrm/dungeons-and-dragons/library`, which is backed up to R2 every night. Every product is an item there with numbered revisions. Two pointers say where it stands:
 
 - **current**: the promoted revision that the catalogue, downloads and listings show;
 - **head**: the newest revision. While it is a draft, it sits after current and changes nothing anyone sees.
@@ -18,10 +18,23 @@ The construction skill (in `families/`) owns what a version must contain and whe
 
 ## Where things live
 
-- **Family repo** (bookwyrm-lanterns, bookwyrm-boxes, bookwyrm-dioramas, ...): generator scripts, parameter files, design notes, the checkpoint, review notes, and small SVG or DXF art. As a rule, text and anything under 1 MB that a person might diff goes in git.
+- **The build record** (in the store): the piece's brief, its checkpoint, its stage, the gate waiting on David and a few images. Design notes, decisions and review notes go in the checkpoint. This is the project's text: it is not committed to git, and The Hoard's Builds board shows it. See section 1.
+- **Family repo** (bookwyrm-lanterns, bookwyrm-boxes, bookwyrm-dioramas, ...): generator scripts, parameter files and small SVG or DXF art. Every draft also carries the scripts that made it in its `source/` folder.
 - **The store**: meshes, Blender files, renders, images and print files. Don't commit these to the family repo for new work. Locked version folders already in git stay where they are, and history is never rewritten.
 
-## 1. Before you build
+An older project may still have `BRIEF.md` and `CHECKPOINT.md` in its family repo. If it has no build record yet, create one from them (title, family, brief and checkpoint). From then on the record is the one to keep current; leave the old files as they are.
+
+## 1. The build record
+
+A build is the piece while it is being made. The library tools keep it: `read_build`, `write_build`, `list_builds`, and `build_schema` for the stages and gate kinds. The slug is the piece's slug.
+
+- **Starting or resuming:** `read_build(slug)` gives the record, the brief and the checkpoint. Read them before anything else; they replace the project's `BRIEF.md` and `CHECKPOINT.md`. For a new piece, create the record with `write_build(slug, 0, title=..., family=..., brief=..., summary=...)` once the brief is settled.
+- **Every write** passes `expected_revision`, the `revision` you last read (0 creates it). On `Revision conflict`, someone else changed it: read it again and merge your change into what is there.
+- **Keep it current:** set `stage` as the build moves (brief, concept, design, modelling, print-test), `summary` to one line on where it stands, and `checkpoint` to the whole checkpoint text whenever the construction skill says to update the checkpoint. Set `piece` once the piece exists in the store.
+- **At every gate**, before you ask David: set `gate_kind` (concept, paid-call, physical-check or other) and `gate_question` (the numbered decisions, as you will ask them), with `images` listing the images he will be shown, as absolute paths on the machine where the library tools run. `images` replaces the whole list. When he answers, write again with `clear_gate=True` and record his answer, in his words, in the checkpoint.
+- **Pausing:** stage `paused`, with the steps a fresh session needs to resume in the checkpoint. **Finished:** stage `done`, only when David says the piece is finished.
+
+## 2. Before you build
 
 Read the item first with `read_piece` from the library tools. It tells you:
 
@@ -31,11 +44,11 @@ Read the item first with `read_piece` from the library tools. It tells you:
 
 `list_drafts` with the slug shows any open drafts and what each one changed. If there is an open draft you didn't make, say so and build on it, or ask which one to build on. For a new product, check that the slug is unused (`list_pieces`), one per product across every repo, kebab case, never reused.
 
-## 2. Build anywhere
+## 3. Build anywhere
 
-Work wherever suits the job: Blender on the Mac, a cloud container, project files. Commit generator scripts and notes to the family repo as you go, so that every saved draft can name the commit that made it.
+Work wherever suits the job: Blender on the Mac, a cloud container, project files. Commit generator scripts to the family repo as you go, so that every saved draft can name the commit that made it, and keep the build record current (section 1).
 
-## 3. Save a draft (a change set)
+## 4. Save a draft (a change set)
 
 Save a draft whenever David should see the state of a build: a blockout for review, a candidate version, a checkpoint before a risky change, or when a construction skill says to lock or release.
 
@@ -46,7 +59,7 @@ A change set is one folder in the inbox, holding the item's **complete** file se
   piece.json
   print/...            every print file, at the paths the components name
   renders/...          images; the first displayable render is the cover
-  source/...           Blender files and other sources worth keeping
+  source/...           the generator scripts and parameters that made these files, Blender files and other sources worth keeping
 ```
 
 Change sets are for pieces. A collection (piece set) changes only when David asks; save it with `import_piece_set` and `draft=True`.
@@ -64,15 +77,15 @@ Then tell David in one line what the draft is, for example "Dragon Mountain draf
 
 ### From a cloud container
 
-The store's tools run on the Mac. In a cloud thread linked to it, the library tools and the inbox folder come through the device link:
+The store's tools run on the machine that holds the store. In a cloud thread linked to it, the library tools and the inbox folder come through the device link:
 
 1. Build the change set in the project files.
 2. Copy it into `inbox/<slug>/<change set>/` with the device file tools (up to 400 MB a file).
 3. Call `submit_change_set`.
 
-If the Mac is asleep or not linked, keep the change set in the project files, say so in one line, and submit it next time. Nothing is lost.
+If that machine is asleep or not linked, keep the change set in the project files, say so in one line, and submit it next time. Nothing is lost.
 
-## 4. piece.json
+## 5. piece.json
 
 The full rules are in bookwyrm-rpg `services/library/docs/piece-json.md`. In a change set, `version` and `status` may be left out: they are set at promotion.
 
@@ -100,7 +113,7 @@ The full rules are in bookwyrm-rpg `services/library/docs/piece-json.md`. In a c
 
 `submit_change_set` with `dry_run=True` is the check for a change set. `tools/check_piece_json.py` in this repo checks the version folders already locked in a family repo, which need `version` and `status`.
 
-## 5. Promotion is David's
+## 6. Promotion is David's
 
 A draft becomes the current revision only when David promotes it: with **Promote** on Catalogue → Drafts in The Hoard, or by asking in your thread for that exact draft. Only then call `promote_draft(record, slug, revision, expected_revision, version, status)`, where `expected_revision` is the current revision you read. Never promote on your own judgement, and never promote a different draft from the one he named.
 
@@ -111,8 +124,8 @@ At promotion:
 
 A change to any mesh, size, clearance, pocket or assembly position is a new draft. Images, listings and the final cut are edited on the current revision in The Hoard and need no draft.
 
-A change to the records only (README, PRINT-AND-TEST, piece.json) needs a draft when David should see it there: before he prints from The Hoard, or when a build is parked, so the item's README matches the decisions he made. Otherwise commit it to the family repo and let the next draft carry it. A change set still holds the complete file set: read the head revision with `read_piece`, copy every unchanged file from the project's build folders (or fetch it with `piece_file`), add the changed records, and check it with `dry_run=True`. Afterwards, `list_drafts` should show only the records as changed.
+A change to the records only (README, PRINT-AND-TEST, piece.json) needs a draft when David should see it there: before he prints from The Hoard, or when a build is parked, so the item's README matches the decisions he made. Otherwise let the next draft carry it. A change set still holds the complete file set: read the head revision with `read_piece`, copy every unchanged file from the project's build folders (or fetch it with `piece_file`), add the changed records, and check it with `dry_run=True`. Afterwards, `list_drafts` should show only the records as changed.
 
-## 6. End of session
+## 7. End of session
 
-If a session changed an item's meshes, sizes or interfaces without saving a draft, say so in one line, such as "Dragon Mountain has unsaved changes since r12. Save them as a draft?", and save only if David says yes.
+If a session changed an item's meshes, sizes or interfaces without saving a draft, say so in one line, such as "Dragon Mountain has unsaved changes since r12. Save them as a draft?", and save only if David says yes. Bring the build record up to date before you stop: stage, summary and checkpoint.

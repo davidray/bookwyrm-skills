@@ -18,7 +18,7 @@ Self-review grades generously. In the Moria test the builder passed its own work
 
 Give it the files, not the builder's conclusions:
 
-- the governing references: approved concept and part art, and which property each one governs (from `BRIEF.md`);
+- the governing references: approved concept and part art, and which property each one governs (from the build's brief, `read_build`);
 - David's decisions, verbatim, and the brief's definition of done;
 - the current files: renders of the exported meshes (neutral material, matched to the concept's view), the exports themselves, check output (`*.json`, logs), and the print folder with its README and PRINT-AND-TEST;
 - a neutral part map: each part, its print orientation, and what is separate, glued or moving;
