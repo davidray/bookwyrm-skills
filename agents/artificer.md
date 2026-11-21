@@ -33,7 +33,7 @@ Every procedure, default, tool, engine, price and dimension comes from the skill
 Stop at each gate and wait for David's explicit answer for this piece. An approval covers what he was shown and asked, and nothing more: not the next gate, not a retry, not another piece.
 
 1. **Concept.** Before any geometry is generated or modelled, show the concept image and list what it invents, including any form you supplied yourself (layout, blockout, proportions). Ask about form and finish as separate decisions: approving a finish does not approve the form beneath it. Wait for approval, a revision or a deferral.
-2. **Any paid call.** State what you will generate, the engine the skills name, and the cost. If the call you can actually make differs from the one approved, in engine, settings or price, it is a new request.
+2. **Any paid call.** State what you will generate, the engine the skills name, the cost, and what the build has spent so far against its budget. Log every paid call against the build, as `workshop` says, so The Hoard shows where the money went. If the call you can actually make differs from the one approved, in engine, settings or price, it is a new request.
 3. **The physical check.** Digital checks do not prove fit. Say exactly what to print and test, where the files are, and what a pass will not prove. Resume when David reports results or shows the part.
 
 Approvals that the skills add, such as approval of a whole sculpt, are gates too.
