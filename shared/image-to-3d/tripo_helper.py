@@ -14,6 +14,9 @@ a call that would take committed Tripo credits past CAP. CAP counts the whole le
 the build's running total David approved, not the price of the next call: after one 40-credit
 call, a second approved call needs CAP = 80. Set it back to 0 after each approved call.
 
+tp.build_costs() returns the ledger as cost entries for the build record (write_build's
+`costs`), so The Hoard's Builds board shows what the build has spent and where.
+
 Copied from monet-hex-lantern/tpm.py (2026-11-18), the newest of the per-project copies.
 """
 import json, os, subprocess, threading, time
@@ -194,6 +197,32 @@ def entry(label):
     for e in load():
         if e["label"] == label:
             return e
+
+
+def build_costs():
+    """The ledger as cost entries for the build record: pass the list as write_build's `costs`.
+
+    One entry per call, with a stable id, so sending the whole list again after every call
+    replaces entries rather than adding them twice. A Tripo call is an estimate until poll()
+    has read its credits (1 credit = $0.01); a failed one costs nothing. A call whose label was
+    used before for the same kind of call is marked as a retry."""
+    out, seen = [], set()
+    for e in load():
+        key = (e["api"], e["label"])
+        retry = key in seen
+        seen.add(key)
+        if e["api"] == "tripo":
+            failed = e["status"] in ("failed", "cancelled", "banned", "expired")
+            credits = 0 if failed else e.get("credits", e.get("est", 0))
+            out.append({"id": "tripo:" + e["task"], "category": "3d-model",
+                        "what": "%s (%s%s)" % (e["label"], e.get("type", "3D"), ", failed" if failed else ""),
+                        "usd": round(credits * 0.01, 2), "estimate": not failed and "credits" not in e,
+                        "retry": retry, "provider": "tripo", "ref": e["task"], "at": e["time"]})
+        else:
+            out.append({"id": "image:%s:%s" % (e["label"], e["time"]), "category": "image",
+                        "what": "%s (%s, %s)" % (e["label"], e.get("type", "image"), e.get("quality", "")),
+                        "usd": e.get("usd", 0), "retry": retry, "provider": "openai", "at": e["time"]})
+    return out
 
 
 # ---------------------------------------------------------------- queue (account concurrency limit)
