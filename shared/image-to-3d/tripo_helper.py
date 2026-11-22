@@ -1,8 +1,8 @@
 """Spend-guarded helpers for a build: Tripo (3D) and OpenAI gpt-image (2D).
 
 The standard way a lantern, box or diorama build calls Tripo (see image-to-3d.md). Copy this
-file into the project's working folder on David's Mac, set CAP and IMG_CAP_USD to what David
-approved, and run it inside Blender through the Blender MCP's execute_code:
+file into the project's working folder on David's Mac, set CAP and IMG_CAP_USD to the build's
+approved budget (its 3D credits and its image dollars), and run it inside Blender through the Blender MCP's execute_code:
 
     import importlib, sys; sys.path.insert(0, "<project folder>"); import tripo_helper as tp
     importlib.reload(tp); tp.balance(); tp.leaf("<image>.png", "<label>", "<subfolder>")
@@ -11,8 +11,8 @@ approved, and run it inside Blender through the Blender MCP's execute_code:
 Keys are read from the bookwyrm-rpg builder .env and passed to curl on stdin, never printed.
 Every paid call is appended to tripo_ledger.json before it is submitted; the cap check refuses
 a call that would take committed Tripo credits past CAP. CAP counts the whole ledger, so it is
-the build's running total David approved, not the price of the next call: after one 40-credit
-call, a second approved call needs CAP = 80. Set it back to 0 after each approved call.
+the build's running total, not the price of the next call. Set both caps once when David approves
+the budget, and raise them only when he raises it.
 
 tp.build_costs() returns the ledger as cost entries for the build record (write_build's
 `costs`), so The Hoard's Builds board shows what the build has spent and where.
@@ -26,8 +26,8 @@ _LOCK = threading.Lock()
 ROOT = os.path.dirname(os.path.abspath(__file__))
 ENV = os.environ.get("BUILDER_ENV", "/Users/dave/code/bookwyrm-rpg/services/builder/.env")
 LEDGER = os.path.join(ROOT, "tripo_ledger.json")
-CAP = 0  # running total of Tripo credits David approved for this build (whole ledger, not per call)
-IMG_CAP_USD = 0.0  # gpt-image dollars David approved for this build
+CAP = 0  # Tripo credits in the build's approved budget (whole ledger, not per call)
+IMG_CAP_USD = 0.0  # gpt-image dollars in the build's approved budget
 TRIPO = "https://api.tripo3d.ai/v2/openapi"
 OPENAI = "https://api.openai.com/v1"
 IMG_MODEL = "gpt-image-2.5-flare"
