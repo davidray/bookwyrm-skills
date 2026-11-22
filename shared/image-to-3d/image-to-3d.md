@@ -77,6 +77,8 @@ Raw generator output is in arbitrary units (standing figures have come in about 
 
 Image-to-3D invents every side the input doesn't show. Gollum's Cave roof corners came out 126 mm deep against about 45 mm in the art, and the Christmas village roof came back as an L-shaped cross gable with an empty back quadrant. Before fitting, render the raw mesh from the views the art doesn't show (back, underside, the far corner) and compare its footprint and topology with the art. If the hidden side is wrong, regenerate it or trim only the invented mass and re-check the approved properties. A mirror repair copies one side's detail onto the others, which costs the part its variety, so record it as a fidelity loss.
 
+**Regenerate rather than cut and graft.** When a generated model's anatomy is wrong (a tail, a wing, a shoulder), offer a whole new model from a corrected concept plus front, side and back views before cutting, grafting or rerouting parts in voxels. David on the Dragon v2d membrane cut (2026-11-09): "The cutting you did is a mess. I think you are trying too hard to save me credits." One 57-credit multi-view regeneration fixed the tail and both wings. Small local trims are still fine.
+
 ## Cutting function into generated art
 
 Keep the generated mesh as the visible exterior and cut the function into it (the lanterns' rule in `families/lithophane-lanterns/SKILL.md`). What the wizard tower taught about doing that:

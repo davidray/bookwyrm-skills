@@ -36,6 +36,8 @@ When sources differ or are incomplete, apply this order:
 
 For a single-color hand-painted object, keep four review lanes apart: sculptural fidelity (the printed relief), paintability (boundaries a brush can follow), the finish plan (palette and painted look), and physical optics (the real light path, for lithophanes and lit parts). A painted render informs the finish plan only.
 
+**Look or method?** When David approves art and then says "like the X" ("model it like the rough hewn stone the plinth is made of"), assume he is describing the look or material, not the modelling process, or ask in one line before spending credits. On Mirkwood that phrase meant the posts should be stone; reading it as a process cost a full art and 3D round.
+
 ## Brief and blockout
 
 Translate the idea into observable constraints:

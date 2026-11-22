@@ -6,13 +6,13 @@ Use this profile for every one of David's builds (lanterns, boxes, dioramas) unl
 
 | Printer | Intended nozzle | Official build volume | Design note |
 | --- | ---: | ---: | --- |
-| Bambu Lab A2L | 0.6 mm | 330 × 320 × 325 mm | Largest bed; the 0.6 mm nozzle governs conservative shared exterior feature sizing. Usable footprint in Bambu Studio is about 290 × 290 mm (see below). |
+| Bambu Lab A2L | 0.4 mm (was 0.6 mm until 2026-11-17) | 330 × 320 × 325 mm | Largest bed. David switched it to a 0.4 mm nozzle on 2026-11-17: slice for 0.4 unless he says otherwise. Usable footprint in Bambu Studio is about 290 × 290 mm for square parts (see below). |
 | Bambu Lab A1 | 0.4 mm | 256 × 256 × 256 mm | Smallest ordinary single-nozzle build envelope in the fleet. |
 | Bambu Lab X2D | 0.4 mm | 256 × 256 × 260 mm using the main/left nozzle | When both nozzles or the auxiliary/right nozzle are required, use the smaller applicable official print area instead of the main-nozzle envelope. |
 
 **Taller builds.** David's printer handles builds taller than 256 mm (H2D-class; the Christmas village church is 263 mm). Don't cap a part's height at 256 mm; ask which printer it is for when a part needs the extra height.
 
-**Usable A2L footprint.** On 2026-11-06, Bambu Studio 02.09.01.70 accepted a 290 × 290 mm box on the A2L but refused 300 × 300 mm and a 317 × 159 mm half, with or without a brim. Design A2L parts to fit 290 × 290 mm until a larger size is shown to slice. Plan any split at blockout.
+**Usable A2L footprint.** On 2026-11-06, Bambu Studio 02.09.01.70 accepted a 290 × 290 mm box on the A2L but refused 300 × 300 mm and a 317 × 159 mm half, with or without a brim. Design A2L parts to fit 290 × 290 mm until a larger size is shown to slice. Plan any split at blockout. The limit depends on the footprint's shape, not a flat number: a 304 mm Doré body (hexagonal) sliced fine on 2026-11-10, so slice a non-square part before splitting it.
 
 The X2D official areas recorded on 2026-11-02 are:
 
@@ -21,6 +21,8 @@ The X2D official areas recorded on 2026-11-02 are:
 - two-nozzle intersection: 235.5 × 256 × 256 mm.
 
 Laser cutting: flat structural lantern parts are cut from acrylic by default (see the lanterns family's [engineering](../../families/lithophane-lanterns/references/engineering.md#laser-cut-acrylic-parts-series-standard) (`families/lithophane-lanterns/references/engineering.md`)). Cutter not yet named; assume a 12 × 12 in (305 × 305 mm) bed.
+
+Acrylic David has on hand (2026-11-20): **3 mm black cast acrylic in 12 × 12 in sheets** (12-pack, $3.25 a sheet) for structural plates and blades, and **1 mm black acrylic in 8 × 10 in sheets** (12-pack, $1.17 a sheet). Design 3 mm parts again (a short spell of 1 mm-only designs on 2026-11-17 is superseded). Nest each cut file on the sheet size of its thickness. Real material prices are in bookwyrm-lanterns `costs/materials.yaml`.
 
 ## Material and finish preference
 
@@ -46,7 +48,16 @@ These were printed and verified on earlier projects (davidray/shire-travel-case 
 
 ## Exterior process preset (provisional, not yet proven)
 
-The profile has no proven exterior settings yet. Until David supplies theirs, slice structure parts with Bambu's stock "0.30mm Standard @BBL A2L 0.6" process, Bambu Matte PLA, and tree supports, and say in the release that slice times, supports, and filament use come from this stock preset. For A1 or X2D parts, use the matching stock 0.4 mm process: A2L presets don't load on them. Where tree supports leave overhangs uncovered (window heads, bay ceilings), switch that part to normal supports and check the projection again. Replace this section with David's own settings (layer height, walls, infill, support style) when known.
+The profile has no proven exterior settings yet. Until David supplies theirs, slice structure parts with the A2L 0.4 mm profiles flattened from Bambu's system presets (machine `m_a2l04.json`, process `p_a2l04_020.json` 0.20 Standard and the faster `p04_*` variants, filament `f_a2l04.json` PLA Matte), kept on the Mac in `~/code/bookwyrm-rpg-lantern-art/the-gift-v2/print-v1/slice/`, and say in the release that slice times, supports and filament use come from these presets. The older `m_a2l06` 0.6 profiles are retired. The 0.4 nozzle tops out at about 0.28 mm layers (Bambu warns above). For A1 or X2D parts, use the matching stock 0.4 mm process: A2L presets don't load on them. Where tree supports leave overhangs uncovered (window heads, bay ceilings), switch that part to normal supports and check the projection again. Replace this section with David's own settings (layer height, walls, infill, support style) when known.
+
+## What actually drives print time (proven on slices)
+
+Measured on Doré, Van Gogh and Gift stable parts, 2026-11-16 to 2026-11-19. Try these slicer levers on the unchanged model before modelling anything to save time or filament:
+
+- **Slice supports-off first.** On a Gift stable frame side, supports were about 2 of 6.4 hours; layer height mattered little. Check the steep areas by eye before assuming supports are needed.
+- **Lightning infill beats modelled hollowing.** Doré plinth sector: unchanged 505 g / 13.3 h; voxel-hollowed 533–542 g / 17.3 h (the cavity adds a second set of walls and internal supports); unchanged with lightning infill 317 g / 11.4 h. Hollowed roofs on the Gift lanterns also sliced heavier, so they stay solid. Van Gogh roof: a 40° pyramid void over the deck plus lightning infill took 22 h to 12.3 h.
+- **Textured parts are move-count bound.** A 400k-face thatch roof spent about 70% of its time in sub-millimetre wall segments. Slicer `resolution` 0.012 → 0.1 saved 46 min, 3 top layers (`top_shell_thickness` 0) 35 min, arc fitting a few more. Filling buried texture slits deeper than 5 mm (an outer-shell rebuild) helped; tent channels under a flat face did not.
+- **Mitre plugs must not cross the back plane.** A frame side whose plugs pointed 45° below its back floated 2 mm off the bed and needed supports; clipping at the back plane fixed it. Check any part that prints on its back.
 
 Two-colour prints (an opaque body with integrated white lithophane) use the X2D with both nozzles and its 235.5 × 256 × 256 mm two-nozzle area. The opaque colour is ordinary PLA, not Matte.
 
@@ -54,8 +65,7 @@ Two-colour prints (an opaque body with integrated white lithophane) use the X2D 
 
 - When a part must print unchanged on all three machines with one nozzle, use the A1's 256 × 256 × 256 mm volume as the maximum common nominal envelope and leave practical slicer/bed margin rather than designing exactly to the limit.
 - When an X2D job requires both nozzles, constrain the applicable part/plate to 235.5 × 256 × 256 mm unless current official documentation or a verified slicer profile shows otherwise.
-- For exterior parts shared across the fleet, size freestanding details, relief, slots, joints, wall transitions, and support-removal access conservatively for the 0.6 mm A2L nozzle. Do not assume that geometry proven only with a 0.4 mm nozzle will survive the 0.6 mm profile.
-- A 0.4 mm detail or lithophane variant may be supplied separately for the A1 or X2D, but keep it distinct from the 0.6 mm-compatible shared exterior set and validate it independently.
+- The whole fleet now prints with 0.4 mm nozzles (A2L since 2026-11-17). Older lanterns were sized for the A2L's 0.6 mm nozzle; that geometry still prints on 0.4. If a 0.6 mm nozzle comes back, size shared exterior detail for it and don't assume 0.4-only detail survives.
 - Beyond the proven settings above, unknown layer height, line width, shrink/fit compensation, seam behavior, overhang performance, paint allowance, and slicer settings remain project inputs. Retire them with representative coupons instead of inventing universal tolerances.
 - Freestanding decorative detail such as open dragon wings has printed without difficulty for David. Do not thicken, fold, or anchor it on assumption; change it only if a slice or print fails.
 - A whole product (lantern, case, diorama) may exceed the common build envelope only through an explicit segmentation and assembly plan; never uniformly scale protected panel, lighting, or service geometry merely to fit a bed.

@@ -65,7 +65,7 @@ The divider is two kinds of part:
    - First choice: laser-cut from **3 mm opaque black cast acrylic**. White, clear or translucent acrylic glows and leaks light between chambers, so never use it.
    - Printed fallback: the same blade as a 3 mm flat plate in black or dark PLA, printed flat with no supports.
    - Size them per lantern. Length runs from the slot root to 0.5 mm short of the frame's inner corner. Height runs from the slot floor (about 0.5 mm above the deck) to just under the top caps, so the blade covers the whole lithophane field as the governing rules below require. Mirkwood: 67.0 × 254.9 mm.
-   - Ship the laser file as SVG and DXF in mm, cut lines as red hairlines, nested on one sheet that fits a 12 × 12 in (305 × 305 mm) cutter bed; ship a 3MF of the printed fallback beside it. If a blade is too long for the bed, say how to turn it (Mirkwood: 45° on the A1).
+   - Ship the laser file as a DXF in mm (no SVG needed), cut lines as red hairlines, nested on one 12 × 12 in (305 × 305 mm) sheet of 3 mm black (or an 8 × 10 in sheet for 1 mm blades); ship a 3MF of the printed fallback beside it. If a blade is too long for the bed, say how to turn it (Mirkwood: 45° on the A1).
 
 **Fit.** Make the slot 0.4 mm wider than the nominal sheet (3.4 mm for 3 mm). Cast acrylic varies about 2.8–3.2 mm, so this gives a slight slip fit; tape on the blade root firms up a loose one. Clash-check the assembled post and blades against the decor, roof and frame, and keep the LED-to-panel distance in the proven 54–61 mm range.
 

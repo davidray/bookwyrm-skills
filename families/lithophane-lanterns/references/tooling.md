@@ -17,3 +17,8 @@ Bambu Studio 2.8.2's CLI does not resolve stock presets the way the app does:
 - Give the filament and process presets an explicit `compatible_printers` list that names the machine preset.
 - Slice bed-centred copies of each 3MF (`oncentre.py`); off-centre parts can be rejected.
 - `slice_all.sh` and `slice_all.log` in the same folder show a full run. Read the result, not only the return code (see validation and release), and use `gcode_view.py` to project supports onto the part.
+
+## Painting guides and renders
+
+- **Painting guides** (Gift stable, Doré, Lonely Mountain, 2026-11-20): illustrated priming and painting PDFs rendered from the locked print 3MFs with pip `bpy` (Cycles CPU; Workbench and EEVEE fail headless), per-vertex masks (paint colour, red keep-clear, amber hidden) computed with trimesh, HTML to PDF with Playwright Chromium. Only describe geometry that exists in the print files (Lonely Mountain's roof cornice has no knotwork on its back side). Each guide is stored in its piece as `docs/painting-guide.pdf`. The Doré scripts are on the Mac in `~/code/bookwyrm-rpg-lantern-art/project-archive/gustave-dore-painting/source/` (`asm.py` holds the print-to-assembly transforms); start a new guide from them.
+- **Home-library renders** use `shared/blender-tooling/render-home/`. The lit front three-quarter render is each piece's cover; Gollum's Cave stays out of the catalogue's public view (David, 2026-11-15).

@@ -115,7 +115,8 @@ The full rules are in bookwyrm-rpg `services/library/docs/piece-json.md`. In a c
 ```
 
 - **kind:** diorama, figurine, lamp, ornament, terrain, prop or container.
-- **rights:** `design` is `original` or `ai-assisted`. `ip` is the third-party world in kebab case (`middle-earth`, `zelda`) or `none`. Any `ip` other than `none` must have `licence` `personal-use-only`. Original designs default to `all-rights-reserved`.
+- **rights:** `design` is `original` or `ai-assisted`. `ip` is the third-party world in kebab case (`middle-earth`, `zelda`) or `none`. Any `ip` other than `none` must have `licence` `personal-use-only`. Original designs default to `all-rights-reserved`. A public-domain artist (Doré, Van Gogh, Monet) is a theme, not an ip: `ip` `none` with the artist in `themes`, since The Hoard refuses `all-rights-reserved` with an ip.
+- **Selling** (David, 2026-11-17): only original designs (`all-rights-reserved`) are offered for sale. Middle-earth and Zelda pieces are personal and non-commercial; when one is shown publicly it uses no Tolkien or Nintendo names (Lonely Mountain appears only as "Dwarven lantern", a detail demo, not for sale). The Gift lanterns are `personal-use-only` because the song's rights aren't cleared, so sales copy calls the stable a nativity lantern and avoids the song's name and lyrics. Photos of unpainted prints say they are unpainted, and copy says "3D printed", not "made by hand".
 - **source:** the family repo, the product's folder, and the commit of the generator code that made these files. Push that commit first.
 - **components:** every print file (`.stl`, `.3mf`, `.step`, slicer files) is named by one component, with only `name`, `file`, `part_id`, `quantity` (how many to print; never `count`), `printer` and `material`.
 - **uses:** shared pieces (a hardware plate, a controller) pinned as `{piece, revision}`, only when the store already has that revision.
