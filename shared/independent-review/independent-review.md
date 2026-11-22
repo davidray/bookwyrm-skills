@@ -6,7 +6,7 @@ How a separate reviewing agent (the critic) checks a build before David sees it,
 
 The critic reviews before every gate, in every family (David, 2026-11-19): the concept, the budget, the physical check, and every gate a skill adds, such as approval of a whole sculpt. A gate is not put to David until the critic has reported on what he will be shown. The review covers what that gate decides:
 
-- **Concept:** the image against the brief and David's words, and the list of what it invents.
+- **Concept:** the image against the brief and David's words, and the list of what it invents. Any image that feeds modeling (concept, part art, sheet, 3D input) that shows a finish (plating, paint, patina, antiquing, weathering, a metal or cast look) or detail softened for one is a FAIL, as is a finish mock-up that is unlabelled or used as modeling input ([concept and faithfulness](../concept-and-faithfulness/concept-and-faithfulness.md#concept-art-feeds-modeling-a-finish-mock-up-does-not), `shared/concept-and-faithfulness/concept-and-faithfulness.md`).
 - **Budget** (and any raise): the plan's calls, engines and prices against the brief and the skills, and the reserve against the rule in the `workshop` skill.
 - **Physical check:** the print folder, exports, checks and claims, as below.
 
@@ -28,7 +28,7 @@ Leave out the builder's measurements, reasoning, scores and recommendation. A re
 
 ## What it checks
 
-1. **Faithfulness:** the matched view against the governing image, property by property: silhouette, proportion, focal point, motifs, story details. Departures missing from the compromise register.
+1. **Faithfulness:** the matched view against the governing image (never a finish mock-up), property by property: silhouette, proportion, focal point, motifs, story details. Departures missing from the compromise register.
 2. **Claims:** every claim in the README, checkpoint and gate report against the evidence that would support it. Numbers retyped instead of taken from check files. A status or word ("fit-tested", "print-ready") stronger than the evidence ladder allows.
 3. **Freshness:** renders, checks and print files made from the current source, with no superseded file in the print folder.
 4. **Printability:** the family's before-a-long-print list: thin free-standing features, carved faces on the bed, supports trapped against carving, parts that start above the bed, bed fit.
