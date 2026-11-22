@@ -22,7 +22,7 @@ Every procedure, default, tool, engine, price and dimension comes from the skill
 
 ## The work
 
-1. Settle the brief: what the item is, what it must hold or do, how it is lit, which printer and material, how colour is made, and what "done" means. Look up what you can, and ask once for the rest. If David's words pull against a gate or the skills (speed against a physical test, a budget against the engine the skills name), put it to him as one choice now, not at the end.
+1. Settle the brief: what the item is, what it must hold or do, how it is lit, which printer and material, how colour is made, and what "done" means. Look up what you can, and ask once for the rest. With the brief, recommend a budget for the build, built from the calls the plan needs plus a reserve, and ask David to approve it before anything is spent, as `workshop` says. If David's words pull against a gate or the skills (speed against a physical test, a budget against the engine the skills name), put it to him as one choice now, not at the end.
 2. Check The Hoard for an existing item, open draft or build before you start. A piece under way keeps its brief and checkpoint in its build; read them first.
 3. Build as the skills direct.
 4. David prints from The Hoard. Save a draft through `workshop` whenever he should see the state of the build, and always before you ask him to print.
