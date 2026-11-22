@@ -135,11 +135,24 @@ Keep printed: lithophanes, decor, divider core posts, and any part that is curve
 - Cast sheet varies about ±0.2 mm. Size slots, channels and seats that take a cut part for the thickest sheet, and say how to firm up a loose fit.
 - Laser kerf is about 0.1–0.2 mm. Draw outlines at nominal size and note the kerf assumption; adjust after the first cut.
 - Fit the sheet on a 12 × 12 in (305 × 305 mm) cutter bed until David names his cutter or service. A larger part needs a split or a cutting service.
+- Nest on the sheets David buys: 3 mm black in 12 × 12 in, 1 mm black in 8 × 10 in (see the [print profile](../../../shared/print-profile/print-profile.md) (`shared/print-profile/print-profile.md`)). Say how many sheets of each a lantern needs.
+- 1 mm divider blades are acceptable where David asks for them (Gift stable, 2026-11-20): post slots 1.4 mm, printed fallback blade 1.2 mm. Plates that carry screws or the tie-down stay 3 mm.
 - Every cut part also gets a printed fallback 3MF (flat, no supports) of the same outline, dark PLA where the acrylic would be black.
 
-**Release.** Each lantern's print sheet lists which parts are cut and which are printed. Ship one SVG and one DXF per sheet thickness and colour, in mm, with cut lines as red hairlines and engraving (if any) in another colour, nested on one sheet. Generate them from the same script and numbers as the printed parts they fit. Record each cut part's material, thickness, colour and outline in the lantern's facts JSON.
+**Release.** Each lantern's print sheet lists which parts are cut and which are printed. Ship one DXF per sheet thickness and colour (David cuts from the DXF and doesn't use SVG copies, 2026-11-17; don't flag a missing SVG), in mm, with cut lines as red hairlines and engraving (if any) in another colour, nested on one sheet. Generate them from the same script and numbers as the printed parts they fit. Record each cut part's material, thickness, colour and outline in the lantern's facts JSON.
 
 Locked lanterns keep their printed plates unless David asks for a change.
+
+## Panel screw tabs (series standard)
+
+David set this on 2026-11-17 (Doré v1.7/v1.8, Gift stable v0.5.1): lithophane panels screw straight to the frame instead of sitting in acrylic nests under covers.
+
+- Each panel gets **four tabs**, top and bottom on each side, outside the image field, with M3 self-tapping screws into pilot holes in the frame (Doré: tabs at x ±51.5 mm, 40 and 170 mm up; M3 × 14 with brackets; Gift stable 16 × M3 × 12).
+- The frame back is flat where the tabs bear; no recess, nest or cover.
+- Optional printed corner brackets (L-shaped) share the same screws and join neighbouring frame pieces (Doré B1 × 12 + optional B2 × 6; Gift stable 8 L brackets).
+- Tabs and brackets print flat with no supports. Keep tab screws clear of the divider blades and LED strips.
+
+Locked lanterns built with slots, nests or covers stay as they are unless David asks.
 
 ## Scaling
 
