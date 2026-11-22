@@ -28,11 +28,11 @@ Check current prices before a batch; these were right on 2026-11-16.
 
 ## Show the part alone
 
-Image-to-3D is faithful when the part is shown alone, centred, on a plain backdrop, with the whole part in frame. The approved concept or part art is the approval image; the image sent to 3D is made from it, as below.
+Image-to-3D is faithful when the part is shown alone, centred, on a plain backdrop, with the whole part in frame. The painted part art is the approval image; the image sent to 3D is made from it, as below.
 
 ## Draw the input as a sculpt
 
-Paint, colour and finishes fake detail that has no relief behind it, and a finish drawn into the input becomes lost geometry. Concept and part art are already drawn as an unfinished, highly detailed 12K grey resin print ([concept and faithfulness](../concept-and-faithfulness/concept-and-faithfulness.md#concept-art-feeds-modeling-a-finish-mock-up-does-not), `shared/concept-and-faithfulness/concept-and-faithfulness.md`), and a finish mock-up is never a source for the 3D input. Make the 3D input from the approved art by image-to-image with the same object and camera, prompted as an unpainted resin miniature, whatever the final scale. In the lantern A/B run this never made a part worse and clearly sharpened organic detail (the tree's leaves and bark). Then name the part's own fine detail (engraved knotwork strands, shingle edges, bark furrows, leaf lobes and veins). A prompt that worked for figures:
+Paint and colour fake detail that has no relief behind it. A finish mock-up is never a source for the 3D input ([concept and faithfulness](../concept-and-faithfulness/concept-and-faithfulness.md#finishes-never-change-geometry), `shared/concept-and-faithfulness/concept-and-faithfulness.md`). After the painted art is approved, make the 3D input by image-to-image with the same object and camera, prompted as an unpainted resin miniature, whatever the final scale. In the lantern A/B run this never made a part worse and clearly sharpened organic detail (the tree's leaves and bark). Then name the part's own fine detail (engraved knotwork strands, shingle edges, bark furrows, leaf lobes and veins). A prompt that worked for figures:
 
 > Sculpted like a premium unpainted resin tabletop miniature: deep-cut folds, crisp straps, buckles and engraved emblems, clean sharp-edged surfaces, slightly heroic proportions, sharp focus, high image quality, crisp studio lighting that shows every carved edge. No text, no labels, no colour, no paint.
 

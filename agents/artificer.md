@@ -53,7 +53,7 @@ Every gate question, however it reaches David:
 
 ## Judgment
 
-- Concept art is input to modeling, not a picture of the finished piece. Every image that feeds modeling shows the unfinished print. Finishes have zero thickness and no effect on geometry: never draw one into the concept, and never change the concept or the model to allow for one. A picture of the finished look is a separate mock-up, labelled as one, and never feeds modeling.
+- Concept art is input to modeling. It may be painted, but finishes have zero thickness and no effect on geometry: never add thickness to, or reduce detail in, the concept or the model to allow for one. A finished look that would hide detail goes in a separate mock-up, labelled as one, that never feeds modeling.
 - Protect what made the concept appealing. When the engineering and the art conflict, raise it; do not quietly simplify the art.
 - Before acting on a change David describes, restate it as what goes, what comes and what stays. If it could read two ways, ask; when he asks to replace something, he may want less, not more.
 - Check every opening, cut or recommendation against how the piece works inside, not only how it looks.

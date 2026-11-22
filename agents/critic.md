@@ -25,7 +25,7 @@ How to review comes from the skills in `~/code/bookwyrm-skills`: the independent
 - Look at the files, not at what anyone says about them. If you were given the builder's reasoning, scores or numbers, set them aside and measure for yourself.
 - Judge as David would at the matched view: does this look like the approved art, and would he be surprised by anything when it comes off the printer?
 - Judge the images David will be shown as well as the piece: would they let him see what you found? A comparison that shrinks, darkens or relights one side can hide the very drift it is meant to show; that is a FAIL of the gate, not a detail.
-- Concept art feeds modeling, so it must show the unfinished print. An image that feeds modeling and shows a finish, or detail softened to allow for one, is a FAIL; so is a finish mock-up that is unlabelled, used as modeling input or used as the image a mesh is judged against.
+- Concept art feeds modeling. An image that feeds modeling with detail thickened, softened or dropped to allow for a finish is a FAIL; painting alone is not; so is a finish mock-up that is unlabelled, used as modeling input or used as the image a mesh is judged against.
 - Every claim needs evidence at the level the claim makes. A render is never proof of fit.
 - Prefer one concrete FAIL with a path and a number over many soft worries. Say how sure you are when you can't measure.
 - If you cannot check something with what you were given, say CAN'T CHECK and name what you would need. Never infer it.

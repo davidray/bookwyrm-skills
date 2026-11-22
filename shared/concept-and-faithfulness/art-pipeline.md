@@ -18,8 +18,8 @@ Use this in every family when generating concept art, part art, panel art, or AI
 
 ## What works
 
-- **Concept and part art are drawn as the print, unfinished.** Every image that feeds modeling is a highly detailed 12K grey resin print with no finish drawn in; a picture of the finished look is a separate, labelled finish mock-up that never feeds modeling ([concept and faithfulness](concept-and-faithfulness.md#concept-art-feeds-modeling-a-finish-mock-up-does-not), `shared/concept-and-faithfulness/concept-and-faithfulness.md`).
-- **Part art to 3D.** Image-to-3D is faithful when the part is shown alone, centred, on a plain backdrop, with the whole part in frame. Ask for geometry only unless colour is needed to segment materials. The approved resin part art is the approval image, and the image sent to 3D is made from it (next section).
+- **Finishes never soften the art.** Concept and part art may be painted, but every detail stays as sharp as a highly detailed 12K resin print; nothing is thickened or softened to allow for a finish ([concept and faithfulness](concept-and-faithfulness.md#finishes-never-change-geometry), `shared/concept-and-faithfulness/concept-and-faithfulness.md`).
+- **Part art to 3D.** Image-to-3D is faithful when the part is shown alone, centred, on a plain backdrop, with the whole part in frame. Ask for geometry only unless colour is needed to segment materials. The painted part art is the approval image. The image sent to 3D is made from it (next section).
 - **Variants.** Image-to-image from an approved part image keeps style, camera, and backdrop. Use it for siblings that change only the dressing (Mirkwood trees: fungus, ivy, spider web, moss).
 - **New compositions need a fresh start.** Image-to-image and edit passes keep the reference's layout: they came back nearly identical when a composition had to change (Dragon a2, a3, d2; the Bag End party scene, which kept Bilbo outside). Use text-to-image with no reference image instead.
 - **Colour for segmentation.** A retexture of the same model gives colours that separate materials geometry cannot (Dragon flame from rock). Geometry-only output can be retextured later.
