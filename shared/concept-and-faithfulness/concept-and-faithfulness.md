@@ -2,15 +2,14 @@
 
 Read this when a visual reference, decorative identity, story, or recognizable subject materially governs the design.
 
-## Concept art feeds modeling; a finish mock-up does not
+## Finishes never change geometry
 
 This is David's standing rule, in every family.
 
-- **Concept art is input to 3D modeling.** Every image that feeds modeling (the concept, part art, a turnaround sheet, the image sent to the 3D generator) shows the piece as it comes off the printer: unfinished, highly detailed print geometry, rendered as a 12K resin print in plain grey resin, crisp and sharp. Light from inside a lantern is not a finish and may show.
-- **Finishes have zero thickness and no effect on geometry.** A finish is anything applied after printing: plating, paint, washes, patina, antiquing, weathering, gilding, varnish, polish. Never draw one into concept art, and never change the concept or the model to allow for one (no softened detail because plating fills it, no thicker edges because paint rounds them). The mesh copies the image, so a finish drawn into the art becomes lost geometry, and each correction made to match the finished look takes more detail away.
-- **A finish mock-up is a separate picture.** When David wants to see how the piece might look finished, make it from the approved concept with the same object and camera, label it "finish mock-up (not modeling input)" wherever it is shown, and keep it out of everything that feeds modeling: no 3D input, no reference for later art, no faithfulness review of the mesh. It informs the finish plan only. The finish itself is decided in words (a finish plan) or on the mock-up, never by changing the concept.
-- **Keep finish words out of modeling prompts and references.** Words for a material or a product ("silver", "cast", "pendant", "jewelry", "painted", "bronze", "antiqued", "enamel") and a finished-looking reference image pull the model towards a finished object even when the prompt says resin. Use a grey resin image as the only reference, and name the finish nowhere in the call.
-- **A finished-looking image you are given or already have** (David's own reference, an older concept, a painted render) governs only what David says it governs. Before modeling from it, make a grey resin version with the same form and get David's approval of that as the concept; check that its detail is at least as sharp as the source's.
+- **Concept art is input to 3D modeling.** It may show colour, paint and a finish, but it must show every detail as sharp as a highly detailed 12K resin print.
+- **Finishes have zero thickness and no effect on geometry.** A finish is anything applied after printing: plating, paint, washes, patina, antiquing, weathering, gilding, varnish, polish. Never add thickness to, or soften, fill, round or drop detail from, the concept or the model to allow for one (no thicker edges because paint rounds them, no shallower recesses or softer face because plating fills them). The mesh copies the image, so detail given up for a finish is lost geometry, and each correction made to match that look takes more away.
+- **A finish that would hide detail goes in a separate picture.** If showing the finish would mean drawing detail softer (a plated or antiqued casting look over a face, heavy weathering), draw the concept without that effect. When David wants to see it, make a picture from the approved concept with the same object and camera, label it "finish mock-up (not modeling input)" wherever it is shown, and keep it out of everything that feeds modeling: no 3D input, no reference for later art, no faithfulness review of the mesh.
+- **Keep softening words out of modeling prompts and references.** Words for a cast or plated product ("silver casting", "antiqued", "pendant", "jewelry") and a reference image that shows such a finish pull the model towards softened detail even when the prompt asks for crisp relief. Leave them out, and give a reference whose detail is already crisp.
 
 On the tree-of-life pendant the concept was drawn as an antiqued silver casting because the brief said the piece would be plated. The plating look softened the face, and every revision made to match it made the piece worse.
 
@@ -35,7 +34,7 @@ When sources differ or are incomplete, apply this order:
 4. Approved generated concepts govern only the visible properties David reviewed. When a concept was made from your own blockout or layout guide, the form is yours until David approves it as form; approving a finish or material on it does not.
 5. Depicted mechanics remain proposals until designed and validated.
 
-For a single-color hand-painted object, keep four review lanes apart: sculptural fidelity (the printed relief), paintability (boundaries a brush can follow), the finish plan (palette and painted look), and physical optics (the real light path, for lithophanes and lit parts). A painted render or finish mock-up informs the finish plan only.
+For a single-color hand-painted object, keep four review lanes apart: sculptural fidelity (the printed relief), paintability (boundaries a brush can follow), the finish plan (palette and painted look), and physical optics (the real light path, for lithophanes and lit parts). A painted render informs the finish plan only.
 
 ## Brief and blockout
 

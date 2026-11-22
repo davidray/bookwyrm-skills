@@ -6,7 +6,7 @@ How a separate reviewing agent (the critic) checks a build before David sees it,
 
 The critic reviews before every gate, in every family (David, 2026-11-19): the concept, the budget, the physical check, and every gate a skill adds, such as approval of a whole sculpt. A gate is not put to David until the critic has reported on what he will be shown. The review covers what that gate decides:
 
-- **Concept:** the image against the brief and David's words, and the list of what it invents. Any image that feeds modeling (concept, part art, sheet, 3D input) that shows a finish (plating, paint, patina, antiquing, weathering, a metal or cast look) or detail softened for one is a FAIL, as is a finish mock-up that is unlabelled or used as modeling input ([concept and faithfulness](../concept-and-faithfulness/concept-and-faithfulness.md#concept-art-feeds-modeling-a-finish-mock-up-does-not), `shared/concept-and-faithfulness/concept-and-faithfulness.md`).
+- **Concept:** the image against the brief and David's words, and the list of what it invents. Any image that feeds modeling (concept, part art, sheet, 3D input) whose detail is thickened, softened, filled or dropped for a finish (a plated or antiqued casting look over a face, paint-rounded edges) is a FAIL, as is a finish mock-up that is unlabelled or used as modeling input ([concept and faithfulness](../concept-and-faithfulness/concept-and-faithfulness.md#finishes-never-change-geometry), `shared/concept-and-faithfulness/concept-and-faithfulness.md`).
 - **Budget** (and any raise): the plan's calls, engines and prices against the brief and the skills, and the reserve against the rule in the `workshop` skill.
 - **Physical check:** the print folder, exports, checks and claims, as below.
 
