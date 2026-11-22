@@ -11,7 +11,7 @@ Use this in every family when generating concept art, part art, panel art, or AI
 
 ## Spending
 
-- Ask before each spend with the estimated cost, and work under a cap. A device-side permission check may need David's approval in the same thread.
+- Spend inside the build's approved budget without asking for each call, and ask only to raise it (`workshop` skill, section 1). Work under a cap set to that budget. A device-side permission check may still need David's approval in the same thread.
 - Prices and how each engine is called are in [image to 3D](../image-to-3d/image-to-3d.md#engines-and-prices) (`shared/image-to-3d/image-to-3d.md`). Read the live balance before the first spend; checkpoint balances go stale. Record task IDs and credits spent in the ledger and checkpoint.
 - With a fixed budget, plan the split before spending: for a lantern with three decor parts and four panels, roughly 10% concepts, 30% part art (two rounds), 30% image to 3D, 20% panel art and 10% reserve. Add art and 3D for each extra decor part. If that leaves no reserve, cut or merge parts first; never cut the reserve. Stop and re-plan when the reserve can't cover one part retry (new art plus new 3D).
 - Make panel art as one 2×2 grid image by default: one image instead of four, and the set comes out in one style. Four separate images give more pixels than the printer can draw (see [detail limits](../lithophanes/lithophanes.md#detail-limits), `shared/lithophanes/lithophanes.md`). Buy them only when one grid tile gives fewer than about 3 px per mm of panel field.

@@ -4,10 +4,10 @@ How a separate reviewing agent (the critic) checks a build before David sees it,
 
 ## When
 
-The critic reviews before every gate, in every family (David, 2026-11-19): the concept, each paid call, the physical check, and every gate a skill adds, such as approval of a whole sculpt. A gate is not put to David until the critic has reported on what he will be shown. The review covers what that gate decides:
+The critic reviews before every gate, in every family (David, 2026-11-19): the concept, the budget, the physical check, and every gate a skill adds, such as approval of a whole sculpt. A gate is not put to David until the critic has reported on what he will be shown. The review covers what that gate decides:
 
 - **Concept:** the image against the brief and David's words, and the list of what it invents.
-- **Paid call:** the input image and request against what was approved, and the stated engine, settings and cost against the skills.
+- **Budget** (and any raise): the plan's calls, engines and prices against the brief and the skills, and the reserve against the rule in the `workshop` skill.
 - **Physical check:** the print folder, exports, checks and claims, as below.
 
 Family rules add reviews, never remove them: [reviews](../../families/printable-container/references/reviews.md) (`families/printable-container/references/reviews.md`) for containers, [workflow and gates](../../families/lithophane-lanterns/references/workflow-and-gates.md#autonomous-runs) (`families/lithophane-lanterns/references/workflow-and-gates.md`) for lanterns, the cold reviews in `families/generated-scene-diorama/SKILL.md`, and any time David asks. A cold review a family already requires at a gate counts as the critic's review there if it was briefed as below.
