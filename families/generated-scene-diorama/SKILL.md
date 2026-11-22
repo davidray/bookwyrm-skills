@@ -1,6 +1,6 @@
 ---
 name: "generated-scene-diorama"
-description: "Build a multi-piece printable scene diorama (village, island, market) from one approved concept image, with generated pieces (Tripo by default) under a budget, then save it to The Hoard."
+description: "Build a multi-piece printable scene diorama (village, island, market) from one approved concept image, with generated pieces (the 3D generator the image-to-3D reference names as default) under a budget, then save it to The Hoard."
 ---
 
 # Generated scene diorama
@@ -14,14 +14,14 @@ Use this skill when most pieces will be generated (image to 3D) and the budget d
 ## Inputs to settle first
 
 - **Brief:** the theme, the style, and every element the scene must contain.
-- **Budget:** a Tripo credit cap for the 3D calls plus a Meshy credit cap for the images.
+- **Budget:** a credit cap for the 3D calls plus a Meshy credit cap for the images, set from the build's approved budget.
 - **Printer:** the exact model and its build volume. Also the nozzle, which sets the finest detail: a 0.6 mm nozzle gives about 1.2 mm features, and resin figure faces need 0.4 to 0.6 mm. The fleet and its build volumes are in `shared/print-profile/print-profile.md`; ask which one if you don't know.
 - **Scale policy:** for example forced perspective, with buildings at 120 to 235 mm and adults at about 38 mm.
 - **Slug:** one per product, kebab case, and never reused. Check it against The Hoard first: `christmas-village` already belonged to a lantern, so the village became `victorian-christmas-village`.
 
 ## Tools
 
-- **Paid calls:** 3D from Tripo (Meshy only when David asks by name) through the per-project Tripo helper, which enforces a credit cap, and images from Meshy's image models. [Image to 3D](../../shared/image-to-3d/image-to-3d.md#engines-and-prices) (`shared/image-to-3d/image-to-3d.md`) says exactly how a build calls Tripo and what each call costs. Keep one working folder per scene on the Mac, for example `~/code/bookwyrm-rpg-lantern-art/<scene>-diorama/`; `berk-diorama/bk.py` there is the model for the image helper and its ledger (its 3D call is Meshy; use the Tripo helper instead). A helper refuses a call when `committed + estimate > cap`. The human-readable LEDGER.md is generated from the machine ledger and never kept by hand. An image costs 9 Meshy credits. The runs below used Meshy for 3D (20 credits a mesh, 29 a leaf), so rescale their numbers.
+- **Paid calls:** 3D from the default 3D generator in the image-to-3D reference (Meshy for now; Tripo only when David asks by name) through the per-project helper, which enforces a credit cap, and images from Meshy's image models. [Image to 3D](../../shared/image-to-3d/image-to-3d.md#engines-and-prices) (`shared/image-to-3d/image-to-3d.md`) says exactly how a build calls Tripo and what each call costs. Keep one working folder per scene on the Mac, for example `~/code/bookwyrm-rpg-lantern-art/<scene>-diorama/`; `berk-diorama/bk.py` there is the model for the image helper and its ledger (its 3D call is Meshy; use the Tripo helper instead). A helper refuses a call when `committed + estimate > cap`. The human-readable LEDGER.md is generated from the machine ledger and never kept by hand. An image costs 9 Meshy credits. The runs below used Meshy for 3D (20 credits a mesh, 29 a leaf), so rescale their numbers.
 - **Free work:** headless `bpy` in the cloud container (`pip install bpy`) handles blockout, clay renders, procedural ground and props, assembly and print export. The Berk run had scripts for each (render_clay, make_ground, make_props, assemble, export_print); they were in that project's files, so expect to write them again.
 - **Moving files:** device commits refuse files over about 25 MB. Send big meshes in 24 MB chunks, rejoin them with `cat`, and check sha256. Project files cap at 10 GB, so clear superseded assembly and print folders once David agrees.
 - **Optional fan-out:** stages 5 to 9 (decide, generate, render and review, retry) can run as a Claude workflow, only when David opts into workflows. A dry run of the earlier one cost about 1.6M tokens for 6 elements.

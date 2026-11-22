@@ -1,18 +1,21 @@
-"""Spend-guarded helpers for a build: Tripo (3D) and OpenAI gpt-image (2D).
+"""Spend-guarded helpers for a build: Meshy and Tripo (3D) and OpenAI gpt-image (2D).
 
-The standard way a lantern, box or diorama build calls Tripo (see image-to-3d.md). Copy this
-file into the project's working folder on David's Mac, set CAP and IMG_CAP_USD to the build's
-approved budget (its 3D credits and its image dollars), and run it inside Blender through the Blender MCP's execute_code:
+The standard way a lantern, box or diorama build calls the 3D generator (see image-to-3d.md).
+Copy this file into the project's working folder on David's Mac, set MESHY_CAP, CAP and
+IMG_CAP_USD to the build's approved budget (its Meshy credits, Tripo credits and image dollars),
+and run it inside Blender through the Blender MCP's execute_code:
 
     import importlib, sys; sys.path.insert(0, "<project folder>"); import tripo_helper as tp
-    importlib.reload(tp); tp.balance(); tp.leaf("<image>.png", "<label>", "<subfolder>")
+    importlib.reload(tp); tp.meshy_leaf("<image>.png", "<label>", "<subfolder>")  # the default
+    tp.leaf(...)  # Tripo, only when David asks for it
     tp.poll()  # or tp.enqueue([...]) to submit and poll in a background thread
 
 Keys are read from the bookwyrm-rpg builder .env and passed to curl on stdin, never printed.
-Every paid call is appended to tripo_ledger.json before it is submitted; the cap check refuses
-a call that would take committed Tripo credits past CAP. CAP counts the whole ledger, so it is
-the build's running total, not the price of the next call. Set both caps once when David approves
-the budget, and raise them only when he raises it.
+Every paid call is appended to tripo_ledger.json before it is submitted (or right after, for
+Meshy, whose task id comes back with the submit); a cap check refuses a call that would take that
+engine's committed spend past its cap. Each cap counts the whole ledger, so it is the build's
+running total, not the price of the next call. Set the caps once when David approves the budget,
+and raise them only when he raises it.
 
 tp.build_costs() returns the ledger as cost entries for the build record (write_build's
 `costs`), so The Hoard's Builds board shows what the build has spent and where.
@@ -28,6 +31,10 @@ ENV = os.environ.get("BUILDER_ENV", "/Users/dave/code/bookwyrm-rpg/services/buil
 LEDGER = os.path.join(ROOT, "tripo_ledger.json")
 CAP = 0  # Tripo credits in the build's approved budget (whole ledger, not per call)
 IMG_CAP_USD = 0.0  # gpt-image dollars in the build's approved budget
+MESHY_CAP = 0  # Meshy credits in the build's approved budget (whole ledger, not per call)
+MESHY = "https://api.meshy.ai/openapi/v1/image-to-3d"
+MESHY_MODEL = "meshy-7.1"  # pinned, never "latest"
+MESHY_KEYS = ("MESHY_API_KEY", "MESHY_AI_KEY")
 TRIPO = "https://api.tripo3d.ai/v2/openapi"
 OPENAI = "https://api.openai.com/v1"
 IMG_MODEL = "gpt-image-2.5-flare"
@@ -41,8 +48,18 @@ def _key(name):
     raise RuntimeError(name + " not set in builder .env")
 
 
+def _key_any(names):
+    for name in names:
+        try:
+            return _key(name)
+        except RuntimeError:
+            pass
+    raise RuntimeError(" or ".join(names) + " not set in builder .env")
+
+
 def _curl(args, key_name, timeout=300):
-    cfg = 'header = "Authorization: Bearer %s"\n' % _key(key_name)
+    names = key_name if isinstance(key_name, tuple) else (key_name,)
+    cfg = 'header = "Authorization: Bearer %s"\n' % _key_any(names)
     p = subprocess.run(["/usr/bin/curl", "-sS", "-m", str(timeout), "-K", "-"] + args,
                        input=cfg, capture_output=True, text=True)
     if p.returncode:
@@ -67,6 +84,12 @@ def committed():
     """Tripo credits committed: actual where known, else the estimate; failed tasks count 0."""
     return sum(e.get("credits", e.get("est", 0)) for e in load()
                if e["api"] == "tripo" and e["status"] not in ("failed", "cancelled", "banned"))
+
+
+def meshy_committed():
+    """Meshy credits committed: the estimate for every call that has not failed."""
+    return sum(e.get("est", 0) for e in load()
+               if e["api"] == "meshy" and e["status"] not in ("FAILED", "CANCELED"))
 
 
 def usd():
@@ -139,6 +162,50 @@ def poll():
             e["out"] = ["FAILED: " + t["status"]]
         summ.append((e["label"], e["status"], t.get("progress"), e.get("credits", e["est"])))
     save(L)
+    return summ + meshy_poll()
+
+
+# ---------------------------------------------------------------- Meshy (the default for now)
+def meshy_leaf(image_path, label, node, est=20):
+    """Untextured image-to-3D on Meshy 7.1: 20 credits (about $0.40). Same ledger as Tripo."""
+    import base64, tempfile
+    if meshy_committed() + est > MESHY_CAP:
+        raise RuntimeError("Budget cap: Meshy committed %d + %d > %d" % (meshy_committed(), est, MESHY_CAP))
+    ext = os.path.splitext(image_path)[1].lower().strip(".").replace("jpg", "jpeg")
+    body = {"image_url": "data:image/%s;base64,%s" % (ext, base64.b64encode(open(image_path, "rb").read()).decode()),
+            "ai_model": MESHY_MODEL, "should_texture": False, "should_remesh": False, "target_formats": ["glb"]}
+    with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
+        json.dump(body, f)
+    try:
+        out = json.loads(_curl(["-X", "POST", MESHY, "-H", "Content-Type: application/json",
+                                "--data-binary", "@" + f.name], MESHY_KEYS, 120))
+    finally:
+        os.unlink(f.name)
+    if "result" not in out:
+        raise RuntimeError("meshy: " + json.dumps(out)[:400])
+    _log({"api": "meshy", "label": label, "node": node, "type": "image_to_3d", "task": out["result"],
+          "model": MESHY_MODEL, "time": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "est": est,
+          "status": "PENDING", "out": None})
+    return out["result"]
+
+
+def meshy_poll():
+    """Refresh unfinished Meshy tasks and download finished meshes (poll() calls this too)."""
+    L = load(); summ = []
+    for e in L:
+        if e["api"] != "meshy" or e.get("out"):
+            continue
+        t = json.loads(_curl([MESHY + "/" + e["task"]], MESHY_KEYS, 60))
+        e["status"] = t.get("status", e["status"])
+        if e["status"] == "SUCCEEDED":
+            d = os.path.join(ROOT, e["node"]); os.makedirs(d, exist_ok=True)
+            p = os.path.join(d, e["label"] + ".glb")
+            subprocess.run(["/usr/bin/curl", "-sS", "-m", "600", "-o", p, t["model_urls"]["glb"]], check=True)
+            e["out"] = [p]
+        elif e["status"] in ("FAILED", "CANCELED"):
+            e["out"] = ["FAILED: " + ((t.get("task_error") or {}).get("message") or e["status"])]
+        summ.append((e["label"], e["status"], t.get("progress"), e["est"]))
+    save(L)
     return summ
 
 
@@ -204,7 +271,8 @@ def build_costs():
 
     One entry per call, with a stable id, so sending the whole list again after every call
     replaces entries rather than adding them twice. A Tripo call is an estimate until poll()
-    has read its credits (1 credit = $0.01); a failed one costs nothing. A call whose label was
+    has read its credits (1 credit = $0.01); a Meshy call is priced at 20 credits = $0.40 (Pro
+    rate, $0.02 a credit) and stays an estimate; a failed call costs nothing. A call whose label was
     used before for the same kind of call is marked as a retry."""
     out, seen = [], set()
     for e in load():
@@ -218,6 +286,12 @@ def build_costs():
                         "what": "%s (%s%s)" % (e["label"], e.get("type", "3D"), ", failed" if failed else ""),
                         "usd": round(credits * 0.01, 2), "estimate": not failed and "credits" not in e,
                         "retry": retry, "provider": "tripo", "ref": e["task"], "at": e["time"]})
+        elif e["api"] == "meshy":
+            failed = e["status"] in ("FAILED", "CANCELED")
+            out.append({"id": "meshy:" + e["task"], "category": "3d-model",
+                        "what": "%s (%s%s)" % (e["label"], e.get("type", "3D"), ", failed" if failed else ""),
+                        "usd": 0 if failed else round(e.get("est", 20) * 0.02, 2), "estimate": not failed,
+                        "retry": retry, "provider": "meshy", "ref": e["task"], "at": e["time"]})
         else:
             out.append({"id": "image:%s:%s" % (e["label"], e["time"]), "category": "image",
                         "what": "%s (%s, %s)" % (e["label"], e.get("type", "image"), e.get("quality", "")),
