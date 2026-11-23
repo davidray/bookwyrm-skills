@@ -35,7 +35,7 @@ Use published names, monsters and settings only as references for David's own ta
 Miniatures are made exactly as the Miniatures page makes them, by Builder (the `builder` MCP server); this chat only asks for them.
 
 - Search first (`search_miniature_variants`): reuse a print-approved creature whenever one fits, including as a stand-in for a reskinned enemy (say so in the packet note).
-- For a creature that does not exist, file a model request (`create_model_request`, after `model_request_estimate`) with the creature's description, size and the encounter it is for. Builder's own reviews go to Approvals; never decide one.
+- New creatures are made as a roster: start a roster build for them (`families/miniature-roster/SKILL.md` section 5), with `parent` set to this campaign, and list the roster build in the packet (`build`) beside each of its creatures. A single new creature can instead be a model request (`create_model_request`, after `model_request_estimate`). Builder's own reviews wait on David in The Hoard; never decide one.
 - Group every miniature the campaign uses in a Builder collection named after the campaign (`write_miniature_domain`, kind collection), with its quantities. That is the campaign tray on the Miniatures page, which exports print plates for the lot.
 - A miniature's `size_mm` is its base and height (a medium creature on a 25 mm base, about 40 mm tall, is `[25, 25, 40]`).
 
