@@ -1,0 +1,12 @@
+{
+  "family_json": 1,
+  "slug": "miniature-roster",
+  "name": "Rosters",
+  "builds": "Sets of 2 to 20 tabletop miniatures (warbands, an encounter's enemies, chess sets) designed in a chat and made by Builder as one model batch",
+  "skill": "SKILL.md",
+  "kinds": [
+    "roster"
+  ],
+  "versions": "the Builder batch and its members' variants carry their own revisions",
+  "repos": []
+}
