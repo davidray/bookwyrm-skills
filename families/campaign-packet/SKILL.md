@@ -69,4 +69,4 @@ The box is a container build in the boxes family (`families/printable-container/
 
 ## 7. Spend
 
-The campaign's budget covers the paid calls this chat makes (concept images for the campaign and its handouts). Each prop and the box ask for their own budgets in their own builds, and Builder's model requests are approved in Approvals. When you give David the campaign's packet at the concept gate, add up the likely cost of the whole packet as a rough range, so he sees it before anything starts.
+The campaign's budget covers the paid calls this chat makes (concept images for the campaign and its handouts). Each prop and the box ask for their own budgets in their own builds, and David approves Builder's model requests in The Hoard (under the roster's or miniature's chat, or in Models > Reviews). When you give David the campaign's packet at the concept gate, add up the likely cost of the whole packet as a rough range, so he sees it before anything starts.
