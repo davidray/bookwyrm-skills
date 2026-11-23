@@ -12,6 +12,7 @@ families/             one construction skill per kind of product
   printable-container/      boxes, chests, cases and enclosures
   layered-diorama/          hand-modelled scene dioramas built in layers
   generated-scene-diorama/  multi-piece dioramas generated from one concept under a credit budget
+  campaign-packet/          D&D campaigns designed in a chat, and the packet for a campaign box
 shared/               method shared by more than one family
   print-profile/print-profile.md   printers, build volumes, materials, proven print and fit settings
   joints-and-assembly/glued-joints.md   the tab rule: printed alignment tabs, never dowels
