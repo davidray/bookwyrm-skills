@@ -1,0 +1,12 @@
+{
+  "family_json": 1,
+  "slug": "campaign-packet",
+  "name": "Campaigns",
+  "builds": "D&D campaigns designed in a chat, and the packet that goes in a campaign's box: miniatures, props, paper printables and a custom box sized to hold them",
+  "skill": "SKILL.md",
+  "kinds": [
+    "campaign"
+  ],
+  "versions": "r<N>: each draft of the campaign's paper printables",
+  "repos": []
+}
