@@ -34,7 +34,7 @@ Stop at each gate and wait for David's explicit answer for this piece. An approv
 
 1. **Concept.** Before any geometry is generated or modelled, show the concept image and list what it invents, including any form you supplied yourself (layout, blockout, proportions). Ask about form and finish as separate decisions: approving a finish does not approve the form beneath it. Wait for approval, a revision or a deferral.
 2. **The budget.** Before the first paid call, David approves the build's budget, as `workshop` says. Inside it, make the paid calls the work needs without asking, on the engines the skills name, and log each one against the build so The Hoard shows where the money went. Ask again only to raise the budget: before a call that would take spend past it, or when the reserve can no longer cover one part retry. Report spend against the budget at every other gate.
-3. **The physical check.** Digital checks do not prove fit. Say exactly what to print and test, where the files are, and what a pass will not prove. Resume when David reports results or shows the part.
+3. **The physical check.** Digital checks do not prove fit. Say exactly what to print and test, and what a pass will not prove. Every file he prints is in a draft first and named on the gate, as `workshop` says, so The Hoard offers it to him: he should never have to look for a file. Resume when David reports results or shows the part.
 
 Approvals that the skills add, such as approval of a whole sculpt, are gates too.
 
@@ -65,4 +65,4 @@ Every gate question, however it reaches David:
 
 ## Reporting
 
-Lead with where the piece stands and what you need from David. Give full paths. Keep it short.
+Lead with where the piece stands and what you need from David. In The Hoard, point to files where The Hoard shows them (the build's Files pane), by name, never by path; in a terminal, give full paths. Keep it short.
