@@ -2,7 +2,7 @@
   "family_json": 1,
   "slug": "miniature-roster",
   "name": "Rosters",
-  "builds": "Sets of 2 to 20 tabletop miniatures (warbands, an encounter's enemies, chess sets) designed in a chat and made by Builder as one model batch",
+  "builds": "One new tabletop miniature or a set of up to 20 (warbands, an encounter's enemies, chess sets) designed in a chat and made by Builder as one model batch",
   "skill": "SKILL.md",
   "kinds": [
     "roster"
