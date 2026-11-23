@@ -49,7 +49,8 @@ LICENCES = (
     "CC-BY-NC-SA",
 )
 NO_IP = "none"
-COMPONENT_KEYS = ("name", "file", "part_id", "quantity", "printer", "material")
+COMPONENT_KEYS = ("name", "file", "part_id", "quantity", "printer", "material", "process")
+PROCESSES = ("resin", "fdm")  # resin parts go in the resin 3MF; none set is fdm
 PRINT_EXTENSIONS = ".stl .3mf .obj .goo .ctb .gcode .bgcode .step .stp".split()  # role "print"
 SKIP_DIRS = ("__pycache__", "tmp", "scratch")
 SKIP_SUFFIX = ".blend1"
@@ -134,6 +135,8 @@ def problems_for(path: Path, metadata_only: bool = False) -> tuple[list[str], tu
         quantity = component.get("quantity", 1)
         if type(quantity) is not int or quantity < 1:
             problems.append(f"{label}.quantity: {quantity!r} is not a positive integer")
+        if "process" in component and component["process"] not in PROCESSES:
+            problems.append(f"{label}.process: {component['process']!r} is not resin or fdm")
     named = {c.get("file") for c in components if isinstance(c, dict)}
     imported = {}  # revision path -> component file
     for file in sorted(f for f in named if isinstance(f, str)):
