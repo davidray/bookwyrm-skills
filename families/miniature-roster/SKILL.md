@@ -1,6 +1,6 @@
 ---
 name: miniature-roster
-description: Design a roster of 2 to 20 tabletop miniatures with David in a roster build's chat (a warband, an encounter's enemies, a chess set), get it approved at a gate, and record it as one Builder model batch that The Hoard tracks under the build. Use for a roster build (slug roster--<name>, kind roster) or when a campaign needs a set of new miniatures; do not use for a single miniature (the Miniatures page or its chat) or for any wondrous item.
+description: Design a roster of 1 to 20 tabletop miniatures with David in a roster build's chat (a warband, an encounter's enemies, a chess set), get it approved at a gate, and record it as one Builder model batch that The Hoard tracks under the build. Use for a roster build (slug roster--<name>, kind roster) or when a campaign needs new miniatures. A single new miniature is a roster of one. Do not use for a change to an existing miniature (its Request a change or chat on the Miniatures page) or for any wondrous item.
 ---
 
 # Miniature roster
